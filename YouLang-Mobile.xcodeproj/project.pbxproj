@@ -79,13 +79,10 @@
 		57FEF2EC2288AFE7000A4FD7 /* YouLang-Mobile */ = {
 			isa = PBXGroup;
 			children = (
-				57FEF2ED2288AFE7000A4FD7 /* AppDelegate.swift */,
-				57FEF2EF2288AFE7000A4FD7 /* ViewController.swift */,
-				57FEF2F12288AFE7000A4FD7 /* Main.storyboard */,
-				57FEF2F72288AFE9000A4FD7 /* Assets.xcassets */,
-				57FEF2F92288AFE9000A4FD7 /* LaunchScreen.storyboard */,
-				57FEF2FC2288AFE9000A4FD7 /* Info.plist */,
-				57FEF2F42288AFE7000A4FD7 /* YouLang_Mobile.xcdatamodeld */,
+				57FEF3102288B044000A4FD7 /* App */,
+				57FEF3122288B054000A4FD7 /* Core */,
+				57FEF3112288B049000A4FD7 /* Resources */,
+				57FEF3132288B05A000A4FD7 /* Enviroments */,
 			);
 			path = "YouLang-Mobile";
 			sourceTree = "<group>";
@@ -97,6 +94,97 @@
 				57FEF3072288AFE9000A4FD7 /* Info.plist */,
 			);
 			path = "YouLang-MobileTests";
+			sourceTree = "<group>";
+		};
+		57FEF3102288B044000A4FD7 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				57FEF2ED2288AFE7000A4FD7 /* AppDelegate.swift */,
+				57FEF3192288B1EB000A4FD7 /* BusinessLogic */,
+				57FEF3182288B1DF000A4FD7 /* Entity */,
+				57FEF3142288B131000A4FD7 /* Flows */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		57FEF3112288B049000A4FD7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				57FEF2F72288AFE9000A4FD7 /* Assets.xcassets */,
+				57FEF2F92288AFE9000A4FD7 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		57FEF3122288B054000A4FD7 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		57FEF3132288B05A000A4FD7 /* Enviroments */ = {
+			isa = PBXGroup;
+			children = (
+				57FEF2FC2288AFE9000A4FD7 /* Info.plist */,
+			);
+			path = Enviroments;
+			sourceTree = "<group>";
+		};
+		57FEF3142288B131000A4FD7 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				57FEF3162288B13F000A4FD7 /* Storyboards */,
+				57FEF3152288B138000A4FD7 /* Controllers */,
+				57FEF3172288B1CD000A4FD7 /* Cells */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		57FEF3152288B138000A4FD7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				57FEF2EF2288AFE7000A4FD7 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		57FEF3162288B13F000A4FD7 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				57FEF2F12288AFE7000A4FD7 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		57FEF3172288B1CD000A4FD7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		57FEF3182288B1DF000A4FD7 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		57FEF3192288B1EB000A4FD7 /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+				57FEF31A2288B1F7000A4FD7 /* CoreData */,
+			);
+			path = BusinessLogic;
+			sourceTree = "<group>";
+		};
+		57FEF31A2288B1F7000A4FD7 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				57FEF2F42288AFE7000A4FD7 /* YouLang_Mobile.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,7 +454,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YX6VKW92JQ;
-				INFOPLIST_FILE = "YouLang-Mobile/Info.plist";
+				INFOPLIST_FILE = "YouLang-Mobile/Enviroments/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -374,7 +462,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "artemkufaev.YouLang-Mobile";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -384,7 +472,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YX6VKW92JQ;
-				INFOPLIST_FILE = "YouLang-Mobile/Info.plist";
+				INFOPLIST_FILE = "YouLang-Mobile/Enviroments/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -392,7 +480,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "artemkufaev.YouLang-Mobile";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
