@@ -13,10 +13,29 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    let welcomeIds = (storyboardName: "Welcome", vcId: "Page")
+    let authIds = (storyboardName: "Authorization", vcId: "Auth")
+    let mainIds = (storyboardName: "Main", vcId: "TabBar")
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
+        var rootVC: UIViewController
+        let userDefaults = UserDefaults.standard
+        if !userDefaults.bool(forKey: "isWelcome") {
+            rootVC = UIStoryboard(name: welcomeIds.storyboardName, bundle: nil).instantiateViewController(withIdentifier: welcomeIds.vcId)
+        } else {
+            if userDefaults.string(forKey: "accessToken") == nil {
+                let authVC = UIStoryboard(name: authIds.storyboardName, bundle: nil).instantiateViewController(withIdentifier: authIds.vcId)
+                rootVC = UINavigationController(rootViewController: authVC)
+            } else {
+                rootVC = UIStoryboard(name: mainIds.storyboardName, bundle: nil).instantiateViewController(withIdentifier: mainIds.vcId)
+            }
+        }
+        
+        window!.rootViewController = rootVC
+        window!.makeKeyAndVisible()
         return true
     }
 
