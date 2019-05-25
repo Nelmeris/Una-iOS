@@ -10,29 +10,17 @@ import UIKit
 
 class PassRecoveryViewController: UIViewController {
 
+    var loginText: String?
     @IBOutlet weak var loginField: UITextField! {
         didSet {
             loginField.text = loginText
         }
     }
-    var loginText: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = "Восстановление пароля"
-        // Do any additional setup after loading the view.
+        self.navigationItem.title = "ВОССТАНОВЛЕНИЕ ПАРОЛЯ"
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

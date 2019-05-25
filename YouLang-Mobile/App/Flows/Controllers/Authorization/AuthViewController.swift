@@ -12,11 +12,7 @@ class AuthViewController: UIViewController {
     
     @IBOutlet var router: AuthRouter!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+    // MARK: - View states
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -28,6 +24,8 @@ class AuthViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
+    // MARK: - Button handlers
+    
     @IBAction func toLogin(_ sender: Any) {
         router.toLogin(configurate: nil)
     }
@@ -35,15 +33,5 @@ class AuthViewController: UIViewController {
     @IBAction func toRegister(_ sender: Any) {
         router.toRegister(configurate: nil)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -18,13 +18,31 @@
             </objects>
             <point key="canvasLocation" x="-1301" y="113"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0FP-fw-cVo">
+            <objects>
+                <navigationController id="y15-4e-tws" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GN6-4S-ppe">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="kbu-DN-3gu" kind="relationship" relationship="rootViewController" id="fR7-ar-70I"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4pC-lU-aGV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="123" y="819"/>
+        </scene>
         <!--Authorization-->
         <scene sceneID="Ojg-ZD-csi">
             <objects>
-                <viewControllerPlaceholder storyboardName="Authorization" id="kbu-DN-3gu" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P5i-6e-2sf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Authorization" id="kbu-DN-3gu" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="hil-p0-G5v"/>
+                </viewControllerPlaceholder>
             </objects>
-            <point key="canvasLocation" x="-268" y="819"/>
+            <point key="canvasLocation" x="910" y="819"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="xSt-Dm-87l">
@@ -65,7 +83,7 @@
                                 <rect key="frame" x="179.5" y="812" width="55" height="30"/>
                                 <state key="normal" title="Начать!"/>
                                 <connections>
-                                    <segue destination="kbu-DN-3gu" kind="show" id="a91-DE-p8i"/>
+                                    <segue destination="y15-4e-tws" kind="show" id="1eI-Tv-ECn"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вас приветствует команда YouLang Mobile" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Vw-71-ajT">
@@ -90,7 +108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SVG-b3-W0K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-875" y="819"/>
+            <point key="canvasLocation" x="-875.36231884057975" y="818.97321428571422"/>
         </scene>
     </scenes>
 </document>

@@ -10,12 +10,10 @@ import UIKit
 
 final class RegisterRouter: BaseRouter {
     
-    let mainStoryboardName = "Main"
-    
     func toMain(configurate: ((MainTabBarViewController) -> ())?) {
-        let controller = UIStoryboard(name: mainStoryboardName, bundle: nil).instantiateViewController(withIdentifier: "TabBar")
+        let controller = MainTabBarViewController()
         if let configurate = configurate {
-            configurate(controller as! MainTabBarViewController)
+            configurate(controller)
         }
         setAsRoot(controller)
     }

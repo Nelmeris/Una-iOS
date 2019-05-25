@@ -11,7 +11,6 @@ import UIKit
 final class LoginRouter: BaseRouter {
     
     let storyboardName = "Authorization"
-    let mainStoryboardName = "Main"
     
     func toPassRecovery(configurate: ((PassRecoveryViewController) -> ())?) {
         let controller = UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(withIdentifier: "PassRecovery")
@@ -22,9 +21,9 @@ final class LoginRouter: BaseRouter {
     }
     
     func toMain(configurate: ((MainTabBarViewController) -> ())?) {
-        let controller = UIStoryboard(name: mainStoryboardName, bundle: nil).instantiateViewController(withIdentifier: "TabBar")
+        let controller = MainTabBarViewController()
         if let configurate = configurate {
-            configurate(controller as! MainTabBarViewController)
+            configurate(controller)
         }
         setAsRoot(controller)
     }

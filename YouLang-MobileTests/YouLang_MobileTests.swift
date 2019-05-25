@@ -11,24 +11,74 @@ import XCTest
 
 class YouLang_MobileTests: XCTestCase {
 
+    let requestFactory = YLRequestFactory()
+    var auth: YLAuthRequestFactory! = nil
+    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        auth = requestFactory.makeAuthRequestFatory()
     }
-
+    
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        auth = nil
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testGetCources() {
+        let cources = requestFactory.makeCourceRequestFactory()
+        let expectation = XCTestExpectation(description: "Cources")
+        cources.getCources(accessToken: "fqwfqwfqwfqwfq") { response in
+            switch response.result {
+            case .success: break
+            case .failure (let error):
+                print(error)
+                XCTFail()
+            }
+            expectation.fulfill()
         }
+        wait(for: [expectation], timeout: 10.0)
+    }
+    
+    func testLogin() {
+        let expectation = XCTestExpectation(description: "Login")
+        auth.login(email: "Somebody", password: "mypassword") { response in
+            switch response.result {
+            case .success: break
+            case .failure (let error):
+                print(error)
+                XCTFail()
+            }
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 10.0)
+    }
+    
+    func testLogout() {
+        let expectation = XCTestExpectation(description: "Logout")
+        auth.logout(accessToken: "fqfqwfqwfqwf") { response in
+            switch response.result {
+            case .success: break
+            case .failure (let error):
+                print(error)
+                XCTFail()
+            }
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 10.0)
+    }
+    
+    func testRegister() {
+        let expectation = XCTestExpectation(description: "Registration")
+        auth.register(firstName: "Artem", lastName: "Kufaev", email: "kfuaevArtem@icloud.com", password: "596235235") { response in
+            switch response.result {
+            case .success: break
+            case .failure (let error):
+                print(error)
+                XCTFail()
+            }
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 10.0)
     }
 
 }
