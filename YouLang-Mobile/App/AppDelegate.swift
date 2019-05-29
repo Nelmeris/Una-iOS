@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Keychain
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        // Set default settings for UINavigationBar
         let navigationBarAppearace = UINavigationBar.appearance()
         navigationBarAppearace.isTranslucent = false
         navigationBarAppearace.tintColor = UIColor(named: "SecondColor")
@@ -30,10 +32,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         var rootVC: UIViewController
         let userDefaults = UserDefaults.standard
-        if !userDefaults.bool(forKey: "isWelcome") {
+        if !userDefaults.bool(forKey: "isWelcome") { // If need present WelcomePageViewController
             rootVC = UIStoryboard(name: welcomeIds.storyboardName, bundle: nil).instantiateViewController(withIdentifier: welcomeIds.vcId)
         } else {
-            if userDefaults.string(forKey: "access_token") == nil {
+            if Keychain.load("access_token") == nil { // If need authorization
                 let authVC = UIStoryboard(name: authIds.storyboardName, bundle: nil).instantiateViewController(withIdentifier: authIds.vcId)
                 rootVC = UINavigationController(rootViewController: authVC)
             } else {

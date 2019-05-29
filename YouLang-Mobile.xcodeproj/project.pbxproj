@@ -12,6 +12,9 @@
 		5700F29422978FF80060D34A /* TapGestureToHideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5700F29322978FF80060D34A /* TapGestureToHideKeyboard.swift */; };
 		570BBBE42298337A0053DC12 /* YLErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570BBBE32298337A0053DC12 /* YLErrorResponse.swift */; };
 		570BBBE6229834530053DC12 /* YLErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570BBBE5229834530053DC12 /* YLErrorParser.swift */; };
+		572C9047229ED01900154BA9 /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572C9046229ED01800154BA9 /* Validators.swift */; };
+		572C904B229EDD2800154BA9 /* UIAlertViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572C904A229EDD2800154BA9 /* UIAlertViewDelegate.swift */; };
+		572FAE2C229CB0E100C261F7 /* YLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572FAE2B229CB0E100C261F7 /* YLService.swift */; };
 		5757C010229736AD004C9E1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5757C00F229736AD004C9E1E /* Assets.xcassets */; };
 		57635E7C229814B7002AD534 /* YLRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57635E7B229814B7002AD534 /* YLRequestFactory.swift */; };
 		57635E7E2298160D002AD534 /* RequestGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57635E7D2298160D002AD534 /* RequestGroup.swift */; };
@@ -22,6 +25,7 @@
 		57635E8C2298182D002AD534 /* YLCourceRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57635E8B2298182D002AD534 /* YLCourceRequestFactory.swift */; };
 		57635E8E22981837002AD534 /* YLCource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57635E8D22981837002AD534 /* YLCource.swift */; };
 		57635E9422981B93002AD534 /* YLUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57635E9322981B93002AD534 /* YLUserModel.swift */; };
+		5785C69F229F035D006F8B20 /* LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5785C69E229F035D006F8B20 /* LessonViewController.swift */; };
 		57B39D0F229821F60060D4C2 /* YLLogoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B39D0E229821F60060D4C2 /* YLLogoutResponse.swift */; };
 		57B39D132298225D0060D4C2 /* YLLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B39D122298225D0060D4C2 /* YLLoginResponse.swift */; };
 		57B39D15229822680060D4C2 /* YLRegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B39D14229822680060D4C2 /* YLRegisterResponse.swift */; };
@@ -33,7 +37,7 @@
 		57FEF2F32288AFE7000A4FD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57FEF2F12288AFE7000A4FD7 /* Main.storyboard */; };
 		57FEF2F62288AFE7000A4FD7 /* YouLang_Mobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF2F42288AFE7000A4FD7 /* YouLang_Mobile.xcdatamodeld */; };
 		57FEF2FB2288AFE9000A4FD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57FEF2F92288AFE9000A4FD7 /* LaunchScreen.storyboard */; };
-		57FEF3062288AFE9000A4FD7 /* YouLang_MobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF3052288AFE9000A4FD7 /* YouLang_MobileTests.swift */; };
+		57FEF3062288AFE9000A4FD7 /* YLUsersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF3052288AFE9000A4FD7 /* YLUsersTests.swift */; };
 		57FEF3212288BE37000A4FD7 /* AbstractErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF31C2288BE37000A4FD7 /* AbstractErrorParser.swift */; };
 		57FEF3222288BE37000A4FD7 /* AbstractRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF31D2288BE37000A4FD7 /* AbstractRequestFactory.swift */; };
 		57FEF3232288BE37000A4FD7 /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF31E2288BE37000A4FD7 /* DataRequest.swift */; };
@@ -51,7 +55,6 @@
 		57FEF33F2288E37D000A4FD7 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF33E2288E37D000A4FD7 /* AuthRouter.swift */; };
 		57FEF3412288E804000A4FD7 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF3402288E804000A4FD7 /* LoginRouter.swift */; };
 		57FEF3462288E85C000A4FD7 /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF3452288E85C000A4FD7 /* RegisterRouter.swift */; };
-		57FEF34D228961C2000A4FD7 /* ConfiguratePerformForSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF34C228961C2000A4FD7 /* ConfiguratePerformForSegue.swift */; };
 		B51FCFA7182CD31776FA96E6 /* Pods_YouLang_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A2C52EA00EEBF452064C7C /* Pods_YouLang_Mobile.framework */; };
 		E53DEF5C60DC5D613EE48F82 /* Pods_YouLang_MobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2AB75B2C5C1E89A6FE4AD45 /* Pods_YouLang_MobileTests.framework */; };
 /* End PBXBuildFile section */
@@ -75,6 +78,9 @@
 		5700F29322978FF80060D34A /* TapGestureToHideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureToHideKeyboard.swift; sourceTree = "<group>"; };
 		570BBBE32298337A0053DC12 /* YLErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLErrorResponse.swift; sourceTree = "<group>"; };
 		570BBBE5229834530053DC12 /* YLErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLErrorParser.swift; sourceTree = "<group>"; };
+		572C9046229ED01800154BA9 /* Validators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
+		572C904A229EDD2800154BA9 /* UIAlertViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertViewDelegate.swift; sourceTree = "<group>"; };
+		572FAE2B229CB0E100C261F7 /* YLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLService.swift; sourceTree = "<group>"; };
 		5757C00F229736AD004C9E1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57635E7B229814B7002AD534 /* YLRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLRequestFactory.swift; sourceTree = "<group>"; };
 		57635E7D2298160D002AD534 /* RequestGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestGroup.swift; sourceTree = "<group>"; };
@@ -85,6 +91,7 @@
 		57635E8B2298182D002AD534 /* YLCourceRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLCourceRequestFactory.swift; sourceTree = "<group>"; };
 		57635E8D22981837002AD534 /* YLCource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLCource.swift; sourceTree = "<group>"; };
 		57635E9322981B93002AD534 /* YLUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLUserModel.swift; sourceTree = "<group>"; };
+		5785C69E229F035D006F8B20 /* LessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewController.swift; sourceTree = "<group>"; };
 		57B39D0E229821F60060D4C2 /* YLLogoutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLLogoutResponse.swift; sourceTree = "<group>"; };
 		57B39D122298225D0060D4C2 /* YLLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLLoginResponse.swift; sourceTree = "<group>"; };
 		57B39D14229822680060D4C2 /* YLRegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLRegisterResponse.swift; sourceTree = "<group>"; };
@@ -99,7 +106,7 @@
 		57FEF2FA2288AFE9000A4FD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57FEF2FC2288AFE9000A4FD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57FEF3012288AFE9000A4FD7 /* YouLang-MobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "YouLang-MobileTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		57FEF3052288AFE9000A4FD7 /* YouLang_MobileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouLang_MobileTests.swift; sourceTree = "<group>"; };
+		57FEF3052288AFE9000A4FD7 /* YLUsersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLUsersTests.swift; sourceTree = "<group>"; };
 		57FEF3072288AFE9000A4FD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57FEF31C2288BE37000A4FD7 /* AbstractErrorParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractErrorParser.swift; sourceTree = "<group>"; };
 		57FEF31D2288BE37000A4FD7 /* AbstractRequestFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractRequestFactory.swift; sourceTree = "<group>"; };
@@ -118,7 +125,6 @@
 		57FEF33E2288E37D000A4FD7 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		57FEF3402288E804000A4FD7 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		57FEF3452288E85C000A4FD7 /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
-		57FEF34C228961C2000A4FD7 /* ConfiguratePerformForSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguratePerformForSegue.swift; sourceTree = "<group>"; };
 		E2AB75B2C5C1E89A6FE4AD45 /* Pods_YouLang_MobileTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YouLang_MobileTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDBA3370FDDE5AAC315511B7 /* Pods-YouLang-Mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YouLang-Mobile.debug.xcconfig"; path = "Target Support Files/Pods-YouLang-Mobile/Pods-YouLang-Mobile.debug.xcconfig"; sourceTree = "<group>"; };
 		F0A2C52EA00EEBF452064C7C /* Pods_YouLang_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YouLang_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				57635E7B229814B7002AD534 /* YLRequestFactory.swift */,
+				572FAE2B229CB0E100C261F7 /* YLService.swift */,
 				57635E83229817E6002AD534 /* YLAuthRequestFactory.swift */,
 				57635E85229817F9002AD534 /* YLAuth.swift */,
 				57635E8722981814002AD534 /* YLUserRequestFactory.swift */,
@@ -239,7 +246,7 @@
 		57FEF3042288AFE9000A4FD7 /* YouLang-MobileTests */ = {
 			isa = PBXGroup;
 			children = (
-				57FEF3052288AFE9000A4FD7 /* YouLang_MobileTests.swift */,
+				57FEF3052288AFE9000A4FD7 /* YLUsersTests.swift */,
 				57FEF3072288AFE9000A4FD7 /* Info.plist */,
 			);
 			path = "YouLang-MobileTests";
@@ -269,10 +276,11 @@
 		57FEF3122288B054000A4FD7 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				572C9046229ED01800154BA9 /* Validators.swift */,
 				57FEF3382288DF73000A4FD7 /* Router */,
 				57FEF31B2288BE06000A4FD7 /* Network */,
-				57FEF34C228961C2000A4FD7 /* ConfiguratePerformForSegue.swift */,
 				5700F29322978FF80060D34A /* TapGestureToHideKeyboard.swift */,
+				572C904A229EDD2800154BA9 /* UIAlertViewDelegate.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -303,6 +311,7 @@
 				57FEF32A2288C61A000A4FD7 /* Authorization */,
 				57FEF3262288C5E3000A4FD7 /* MainTabBarViewController.swift */,
 				57EED4E42297D20A002B8908 /* StudyViewController.swift */,
+				5785C69E229F035D006F8B20 /* LessonViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -578,6 +587,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-YouLang-Mobile/Pods-YouLang-Mobile-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Keychain/Keychain.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -585,6 +595,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Keychain.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -607,8 +618,11 @@
 				57635E8A2298181D002AD534 /* YLUser.swift in Sources */,
 				570BBBE42298337A0053DC12 /* YLErrorResponse.swift in Sources */,
 				57EED4EB2297D820002B8908 /* DifficultyLevel.swift in Sources */,
+				5785C69F229F035D006F8B20 /* LessonViewController.swift in Sources */,
+				572FAE2C229CB0E100C261F7 /* YLService.swift in Sources */,
 				57FEF3322288CAD2000A4FD7 /* WelcomePageViewController.swift in Sources */,
 				5700F29422978FF80060D34A /* TapGestureToHideKeyboard.swift in Sources */,
+				572C9047229ED01900154BA9 /* Validators.swift in Sources */,
 				57FEF32C2288C6FD000A4FD7 /* RegisterViewController.swift in Sources */,
 				57635E8822981814002AD534 /* YLUserRequestFactory.swift in Sources */,
 				57FEF3222288BE37000A4FD7 /* AbstractRequestFactory.swift in Sources */,
@@ -620,8 +634,8 @@
 				57B39D15229822680060D4C2 /* YLRegisterResponse.swift in Sources */,
 				57FEF3272288C5E3000A4FD7 /* MainTabBarViewController.swift in Sources */,
 				57635E8E22981837002AD534 /* YLCource.swift in Sources */,
-				57FEF34D228961C2000A4FD7 /* ConfiguratePerformForSegue.swift in Sources */,
 				57635E84229817E6002AD534 /* YLAuthRequestFactory.swift in Sources */,
+				572C904B229EDD2800154BA9 /* UIAlertViewDelegate.swift in Sources */,
 				57FEF33F2288E37D000A4FD7 /* AuthRouter.swift in Sources */,
 				57FEF33C2288E2FA000A4FD7 /* BaseRouter.swift in Sources */,
 				57FEF3232288BE37000A4FD7 /* DataRequest.swift in Sources */,
@@ -644,7 +658,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57FEF3062288AFE9000A4FD7 /* YouLang_MobileTests.swift in Sources */,
+				57FEF3062288AFE9000A4FD7 /* YLUsersTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,23 +8,7 @@
 
 import Alamofire
 
-class YLUser: AbstractRequestFactory {
-    let errorParser: AbstractErrorParser
-    let sessionManager: SessionManager
-    let queue: DispatchQueue?
-    let baseUrl = URL(string: "http://127.0.0.1:8181/")!
-    
-    init(
-        errorParser: AbstractErrorParser,
-        sessionManager: SessionManager,
-        queue: DispatchQueue? = DispatchQueue.global(qos: .utility)) {
-        self.errorParser = errorParser
-        self.sessionManager = sessionManager
-        self.queue = queue
-    }
-}
-
-extension YLUser: YLUserRequestFactory {
+extension YLService: YLUserRequestFactory {
     
     func getInfo(accessToken: String, completionHandler: @escaping (DataResponse<YLUserModel>) -> Void) {
         let requestModel = YLUserRequest(baseUrl: baseUrl, accessToken: accessToken)
@@ -33,7 +17,7 @@ extension YLUser: YLUserRequestFactory {
     
 }
 
-extension YLUser {
+extension YLService {
     
     struct YLUserRequest: RequestRouter {
         let baseUrl: URL

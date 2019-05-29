@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Keychain
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate, AlertDelegate {
 
     @IBOutlet var router: LoginRouter!
     
@@ -45,27 +46,30 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Button Handlers
     
     @IBAction func toMain(_ sender: Any) {
-        guard let email = emailField.text,
-            let password = passwordField.text else { return }
-        let factory = YLRequestFactory()
-        let auth = factory.makeAuthRequestFatory()
-        auth.login(email: email, password: password) { (response) in
-            guard let value = response.value else {
-                DispatchQueue.main.async {
-                    self.passwordField.text = nil
-                    let alert = UIAlertController(title: "Ошибка", message: "Неверные данные", preferredStyle: .alert)
-                    let action = UIAlertAction(title: "ОК", style: .cancel, handler: nil)
-                    alert.addAction(action)
-                    self.present(alert, animated: true, completion: nil)
-                    return
+        do {
+            let email = try ValidatorFactory.validatorFor(type: .email).validated(emailField.text ?? "")
+            let password = try ValidatorFactory.validatorFor(type: .password).validated(passwordField.text ?? "")
+            YLService.shared.login(email: email, password: password) { response in
+                switch response.result {
+                case .success(let value):
+                    if (!Keychain.save(value.accessToken, forKey: "access_token")) {
+                        fatalError()
+                    }
+                    DispatchQueue.main.async {
+                        self.router.toMain(configurate: nil)
+                    }
+                case .failure(let error):
+                    if let ylError = error as? YLErrorResponses {
+                        self.showJustAlert(title: "Ошибка", message: ylError.errorDescription!)
+                    } else {
+                        self.showJustAlert(title: "Сетевая ошибка", message: error.localizedDescription)
+                    }
                 }
-                return
             }
-            DispatchQueue.main.async {
-                UserDefaults.standard.set(value.accessToken, forKey: "access_token")
-                self.router.toMain(configurate: nil);
-            }
-        }
+        } catch(let error as ValidationError) {
+            showJustAlert(title: "Ошибка", message: error.message)
+            return
+        } catch(_) {}
     }
     
     @IBAction func toPassRecovery(_ sender: Any) {

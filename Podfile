@@ -8,6 +8,7 @@ target 'YouLang-Mobile' do
   # Pods for YouLang-Mobile
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'Keychain'
 
   target 'YouLang-MobileTests' do
     inherit! :search_paths

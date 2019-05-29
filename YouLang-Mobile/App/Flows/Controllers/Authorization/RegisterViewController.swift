@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import Keychain
 
-class RegisterViewController: UIViewController, UITextFieldDelegate {
-
+class RegisterViewController: UIViewController, UITextFieldDelegate, AlertDelegate {
+    
     @IBOutlet var router: RegisterRouter!
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -56,9 +57,34 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func registrationProcess(_ sender: Any) {
-        if (passwordField.text == rPasswordField.text) {
-            router.toMain(configurate: nil)
-        }
+        do {
+            let firstName = try ValidatorFactory.validatorFor(type: .username).validated(firstNameField.text ?? "")
+            let lastName = try ValidatorFactory.validatorFor(type: .username).validated(lastNameField.text ?? "")
+            let email = try ValidatorFactory.validatorFor(type: .email).validated(emailField.text ?? "")
+            let password = try ValidatorFactory.validatorFor(type: .password).validated(passwordField.text ?? "")
+            let rPassword = try ValidatorFactory.validatorFor(type: .password).validated(rPasswordField.text ?? "")
+            guard password == rPassword else { showJustAlert(title: "Ошибка", message: "Пароли не совпадают"); return }
+            YLService.shared.register(firstName: firstName, lastName: lastName, email: email, password: password) { response in
+                switch response.result {
+                case .success(let value):
+                    if (!Keychain.save(value.accessToken, forKey: "access_token")) {
+                        fatalError()
+                    }
+                    DispatchQueue.main.async {
+                        self.router.toMain(configurate: nil)
+                    }
+                case .failure(let error):
+                    if let ylError = error as? YLErrorResponses {
+                        self.showJustAlert(title: "Ошибка", message: ylError.errorDescription!)
+                    } else {
+                        self.showJustAlert(title: "Сетевая ошибка", message: error.localizedDescription)
+                    }
+                }
+            }
+        } catch(let error as ValidationError) {
+            showJustAlert(title: "Ошибка", message: error.message)
+            return
+        } catch(_) {}
     }
     
     // MARK: - TextField & Keyboard
@@ -108,5 +134,5 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     deinit {
         removeKeyboardNotifications()
     }
-
+    
 }

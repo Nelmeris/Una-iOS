@@ -8,42 +8,26 @@
 
 import Alamofire
 
-class YLAuth: AbstractRequestFactory {
-    let errorParser: AbstractErrorParser
-    let sessionManager: SessionManager
-    let queue: DispatchQueue?
-    let baseUrl = URL(string: "http://127.0.0.1:8181/")!
-    
-    init(
-        errorParser: AbstractErrorParser,
-        sessionManager: SessionManager,
-        queue: DispatchQueue? = DispatchQueue.global(qos: .utility)) {
-        self.errorParser = errorParser
-        self.sessionManager = sessionManager
-        self.queue = queue
-    }
-}
-
-extension YLAuth: YLAuthRequestFactory {
+extension YLService: YLAuthRequestFactory {
     
     func login(email: String, password: String, completionHandler: @escaping (DataResponse<YLLoginResponse>) -> Void) {
         let requestModel = LoginRequest(baseUrl: baseUrl, email: email, password: password)
-        self.request(request: requestModel, completionHandler: completionHandler).session.finishTasksAndInvalidate()
+        self.request(request: requestModel, completionHandler: completionHandler)
     }
     
     func logout(accessToken: String, completionHandler: @escaping (DataResponse<YLLogoutResponse>) -> Void) {
         let requestModel = LogoutRequest(baseUrl: baseUrl, accessToken: accessToken)
-        self.request(request: requestModel, completionHandler: completionHandler).session.finishTasksAndInvalidate()
+        self.request(request: requestModel, completionHandler: completionHandler)
     }
     
     func register(firstName: String, lastName: String, email: String, password: String, completionHandler: @escaping (DataResponse<YLRegisterResponse>) -> Void) {
         let requestModel = RegisterRequest(baseUrl: baseUrl, firstName: firstName, lastName: lastName, email: email, password: password)
-        self.request(request: requestModel, completionHandler: completionHandler).session.finishTasksAndInvalidate()
+        self.request(request: requestModel, completionHandler: completionHandler)
     }
     
 }
 
-extension YLAuth {
+extension YLService {
     
     struct LoginRequest: RequestRouter {
         let baseUrl: URL

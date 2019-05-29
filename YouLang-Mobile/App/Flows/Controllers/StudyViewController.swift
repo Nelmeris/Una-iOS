@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Keychain
 
 class StudyViewController: UITableViewController {
     
@@ -14,11 +15,10 @@ class StudyViewController: UITableViewController {
     let reusableId = "StudyTableViewCellReusable"
     
     override func viewDidLoad() {
-        self.title = "АКТИВНЫЕ КУРСЫ"
-        let factory = YLRequestFactory()
-        let courceFactory = factory.makeCourceRequestFactory()
-        guard let accessToken = UserDefaults.standard.string(forKey: "access_token") else { return }
-        courceFactory.getCources(accessToken: accessToken) { (response) in
+        self.navigationItem.title = "АКТИВНЫЕ КУРСЫ"
+        self.tableView.separatorColor = UIColor.clear;
+        guard let accessToken = Keychain.load("access_token") else { return }
+        YLService.shared.getCources(accessToken: accessToken) { (response) in
             DispatchQueue.main.async {
                 guard let value = response.value else { return }
                 

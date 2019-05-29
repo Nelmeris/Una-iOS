@@ -13,3 +13,7 @@ protocol AbstractHandler {
     func process()
     init(request: HTTPRequest, response: HTTPResponse)
 }
+
+extension AbstractHandler {
+    func process() { }
+}

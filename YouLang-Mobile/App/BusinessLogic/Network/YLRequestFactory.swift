@@ -9,6 +9,7 @@
 import Alamofire
 
 class YLRequestFactory {
+    
     func makeErrorParser() -> AbstractErrorParser {
         return YLErrorParser()
     }
@@ -23,18 +24,4 @@ class YLRequestFactory {
     
     let sessionQueue = DispatchQueue.global(qos: .utility)
     
-    func makeAuthRequestFatory() -> YLAuthRequestFactory {
-        let errorParser = makeErrorParser()
-        return YLAuth(errorParser: errorParser, sessionManager: commonSessionManager, queue: sessionQueue)
-    }
-    
-    func makeUserRequestFactory() -> YLUserRequestFactory {
-        let errorParser = makeErrorParser()
-        return YLUser(errorParser: errorParser, sessionManager: commonSessionManager, queue: sessionQueue)
-    }
-    
-    func makeCourceRequestFactory() -> YLCourceRequestFactory {
-        let errorParser = makeErrorParser()
-        return YLCource(errorParser: errorParser, sessionManager: commonSessionManager, queue: sessionQueue)
-    }
 }

@@ -8,23 +8,7 @@
 
 import Alamofire
 
-class YLCource: AbstractRequestFactory {
-    let errorParser: AbstractErrorParser
-    let sessionManager: SessionManager
-    let queue: DispatchQueue?
-    let baseUrl = URL(string: "http://127.0.0.1:8181/")!
-    
-    init(
-        errorParser: AbstractErrorParser,
-        sessionManager: SessionManager,
-        queue: DispatchQueue? = DispatchQueue.global(qos: .utility)) {
-        self.errorParser = errorParser
-        self.sessionManager = sessionManager
-        self.queue = queue
-    }
-}
-
-extension YLCource: YLCourceRequestFactory {
+extension YLService: YLCourceRequestFactory {
     
     func getCources(accessToken: String, completionHandler: @escaping (DataResponse<[YLCourceModel]>) -> Void) {
         let requestModel = GetCourcesRequest(baseUrl: baseUrl, accessToken: accessToken)
@@ -33,7 +17,7 @@ extension YLCource: YLCourceRequestFactory {
     
 }
 
-extension YLCource {
+extension YLService {
     
     struct GetCourcesRequest: RequestRouter {
         let baseUrl: URL

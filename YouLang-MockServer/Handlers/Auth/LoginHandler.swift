@@ -22,9 +22,12 @@ extension LoginHandler {
     
     func dataValidation() -> Bool {
         guard let email = request.param(name: "email"),
-            let password = request.param(name: "password"),
-            email == "test@mail.ru" && password == "12345678" else {
-            ErrorHandler(request: request, response: response).process()
+            let password = request.param(name: "password") else {
+                ErrorHandler(request: request, response: response).process()
+            return false
+        }
+        guard email == "test@mail.ru" && password == "qwerty1" else {
+            ErrorHandler(request: request, response: response).process(errorMsg: "Неверная почта или пароль")
             return false
         }
         return true

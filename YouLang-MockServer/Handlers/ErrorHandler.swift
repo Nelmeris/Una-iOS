@@ -20,11 +20,11 @@ class ErrorHandler: AbstractHandler {
 
 extension ErrorHandler {
     
-    func process() {
+    func process(errorMsg: String? = nil) {
         response.setHeader(.contentType, value: "application/json")
         let json: [String: Any] = [
             "result": 0,
-            "error_message": "Incorrect request"
+            "error_message": errorMsg ?? "Некорректный запрос"
         ]
 
         do {
