@@ -38,8 +38,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AlertDelegate 
     
     func configureNavigationController() {
         self.navigationItem.title = "АВТОРИЗАЦИЯ"
-        let backButton = UIBarButtonItem()
-        backButton.title = ""
         self.navigationController?.navigationBar.topItem?.title = ""
     }
     

@@ -1,24 +1,28 @@
 PODS:
   - Alamofire (4.8.2)
   - Keychain (0.3.1)
+  - PanModal (1.2.2)
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
   - Alamofire
   - Keychain
+  - PanModal
   - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - Keychain
+    - PanModal
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   Keychain: ef812eafcf6593fe4409b07cfecc00b95fb373ed
+  PanModal: db200380a267634f746f8dea550dc3d1df017fc0
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 0633ced3c0a4b6b6470770d7889f4334c6b2bca9
+PODFILE CHECKSUM: 187db45888e26fa624802cb145708737f7923c9e
 
-COCOAPODS: 1.6.0.beta.1
+COCOAPODS: 1.6.1

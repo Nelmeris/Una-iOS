@@ -32,7 +32,11 @@
 		57EED4E52297D20A002B8908 /* StudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EED4E42297D20A002B8908 /* StudyViewController.swift */; };
 		57EED4E92297D776002B8908 /* YLCourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EED4E82297D776002B8908 /* YLCourceModel.swift */; };
 		57EED4EB2297D820002B8908 /* DifficultyLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EED4EA2297D820002B8908 /* DifficultyLevel.swift */; };
-		57EED4ED2297DA08002B8908 /* StudyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EED4EC2297DA08002B8908 /* StudyTableViewCell.swift */; };
+		57FEBF56229F21B700148709 /* StudyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEBF55229F21B700148709 /* StudyRouter.swift */; };
+		57FEBF58229F28A000148709 /* SetTabBarVisible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEBF57229F28A000148709 /* SetTabBarVisible.swift */; };
+		57FEBF5B229F3CEA00148709 /* StudyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEBF59229F3CEA00148709 /* StudyTableViewCell.swift */; };
+		57FEBF5E229F4CE700148709 /* TheoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEBF5D229F4CE700148709 /* TheoryViewController.swift */; };
+		57FEBF60229F6FB900148709 /* LessonTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEBF5F229F6FB900148709 /* LessonTask.swift */; };
 		57FEF2EE2288AFE7000A4FD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF2ED2288AFE7000A4FD7 /* AppDelegate.swift */; };
 		57FEF2F32288AFE7000A4FD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57FEF2F12288AFE7000A4FD7 /* Main.storyboard */; };
 		57FEF2F62288AFE7000A4FD7 /* YouLang_Mobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF2F42288AFE7000A4FD7 /* YouLang_Mobile.xcdatamodeld */; };
@@ -98,7 +102,11 @@
 		57EED4E42297D20A002B8908 /* StudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyViewController.swift; sourceTree = "<group>"; };
 		57EED4E82297D776002B8908 /* YLCourceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLCourceModel.swift; sourceTree = "<group>"; };
 		57EED4EA2297D820002B8908 /* DifficultyLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyLevel.swift; sourceTree = "<group>"; };
-		57EED4EC2297DA08002B8908 /* StudyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyTableViewCell.swift; sourceTree = "<group>"; };
+		57FEBF55229F21B700148709 /* StudyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyRouter.swift; sourceTree = "<group>"; };
+		57FEBF57229F28A000148709 /* SetTabBarVisible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTabBarVisible.swift; sourceTree = "<group>"; };
+		57FEBF59229F3CEA00148709 /* StudyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyTableViewCell.swift; sourceTree = "<group>"; };
+		57FEBF5D229F4CE700148709 /* TheoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheoryViewController.swift; sourceTree = "<group>"; };
+		57FEBF5F229F6FB900148709 /* LessonTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonTask.swift; sourceTree = "<group>"; };
 		57FEF2EA2288AFE7000A4FD7 /* YouLang-Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YouLang-Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57FEF2ED2288AFE7000A4FD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57FEF2F22288AFE7000A4FD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -281,6 +289,7 @@
 				57FEF31B2288BE06000A4FD7 /* Network */,
 				5700F29322978FF80060D34A /* TapGestureToHideKeyboard.swift */,
 				572C904A229EDD2800154BA9 /* UIAlertViewDelegate.swift */,
+				57FEBF57229F28A000148709 /* SetTabBarVisible.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -312,6 +321,7 @@
 				57FEF3262288C5E3000A4FD7 /* MainTabBarViewController.swift */,
 				57EED4E42297D20A002B8908 /* StudyViewController.swift */,
 				5785C69E229F035D006F8B20 /* LessonViewController.swift */,
+				57FEBF5D229F4CE700148709 /* TheoryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -329,7 +339,7 @@
 		57FEF3172288B1CD000A4FD7 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				57EED4EC2297DA08002B8908 /* StudyTableViewCell.swift */,
+				57FEBF59229F3CEA00148709 /* StudyTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -341,6 +351,7 @@
 				57635E9122981B5F002AD534 /* YLResponses */,
 				57EED4EA2297D820002B8908 /* DifficultyLevel.swift */,
 				570BBBE5229834530053DC12 /* YLErrorParser.swift */,
+				57FEBF5F229F6FB900148709 /* LessonTask.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -399,6 +410,7 @@
 			isa = PBXGroup;
 			children = (
 				57FEF3422288E808000A4FD7 /* Authorization */,
+				57FEBF55229F21B700148709 /* StudyRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -588,6 +600,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-YouLang-Mobile/Pods-YouLang-Mobile-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Keychain/Keychain.framework",
+				"${BUILT_PRODUCTS_DIR}/PanModal/PanModal.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -596,6 +609,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Keychain.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PanModal.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -610,6 +624,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57FEBF60229F6FB900148709 /* LessonTask.swift in Sources */,
 				57EED4E92297D776002B8908 /* YLCourceModel.swift in Sources */,
 				57B39D132298225D0060D4C2 /* YLLoginResponse.swift in Sources */,
 				570BBBE6229834530053DC12 /* YLErrorParser.swift in Sources */,
@@ -617,9 +632,11 @@
 				57FEF3252288BE37000A4FD7 /* RequestRouter.swift in Sources */,
 				57635E8A2298181D002AD534 /* YLUser.swift in Sources */,
 				570BBBE42298337A0053DC12 /* YLErrorResponse.swift in Sources */,
+				57FEBF5E229F4CE700148709 /* TheoryViewController.swift in Sources */,
 				57EED4EB2297D820002B8908 /* DifficultyLevel.swift in Sources */,
 				5785C69F229F035D006F8B20 /* LessonViewController.swift in Sources */,
 				572FAE2C229CB0E100C261F7 /* YLService.swift in Sources */,
+				57FEBF56229F21B700148709 /* StudyRouter.swift in Sources */,
 				57FEF3322288CAD2000A4FD7 /* WelcomePageViewController.swift in Sources */,
 				5700F29422978FF80060D34A /* TapGestureToHideKeyboard.swift in Sources */,
 				572C9047229ED01900154BA9 /* Validators.swift in Sources */,
@@ -631,6 +648,7 @@
 				57635E7C229814B7002AD534 /* YLRequestFactory.swift in Sources */,
 				57FEF2F62288AFE7000A4FD7 /* YouLang_Mobile.xcdatamodeld in Sources */,
 				57FEF3412288E804000A4FD7 /* LoginRouter.swift in Sources */,
+				57FEBF5B229F3CEA00148709 /* StudyTableViewCell.swift in Sources */,
 				57B39D15229822680060D4C2 /* YLRegisterResponse.swift in Sources */,
 				57FEF3272288C5E3000A4FD7 /* MainTabBarViewController.swift in Sources */,
 				57635E8E22981837002AD534 /* YLCource.swift in Sources */,
@@ -641,6 +659,7 @@
 				57FEF3232288BE37000A4FD7 /* DataRequest.swift in Sources */,
 				57635E9422981B93002AD534 /* YLUserModel.swift in Sources */,
 				57FEF3242288BE37000A4FD7 /* ErrorParser.swift in Sources */,
+				57FEBF58229F28A000148709 /* SetTabBarVisible.swift in Sources */,
 				57FEF2EE2288AFE7000A4FD7 /* AppDelegate.swift in Sources */,
 				57EED4E52297D20A002B8908 /* StudyViewController.swift in Sources */,
 				57FEF32E2288C71B000A4FD7 /* PassRecoveryViewController.swift in Sources */,
@@ -650,7 +669,6 @@
 				57FEF3462288E85C000A4FD7 /* RegisterRouter.swift in Sources */,
 				57FEF3292288C616000A4FD7 /* AuthViewController.swift in Sources */,
 				57FEF3212288BE37000A4FD7 /* AbstractErrorParser.swift in Sources */,
-				57EED4ED2297DA08002B8908 /* StudyTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

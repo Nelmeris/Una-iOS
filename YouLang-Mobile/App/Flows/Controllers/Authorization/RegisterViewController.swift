@@ -51,8 +51,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, AlertDelega
     
     func configureNavigationController() {
         self.navigationItem.title = "РЕГИСТРАЦИЯ"
-        let backButton = UIBarButtonItem()
-        backButton.title = ""
         self.navigationController?.navigationBar.topItem?.title = ""
     }
     
