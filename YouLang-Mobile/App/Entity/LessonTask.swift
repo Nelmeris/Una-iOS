@@ -13,9 +13,15 @@ enum LessonTaskTypes: String {
     case find
 }
 
-struct LessonTaskSubstring {
+struct LessonTaskAnswer {
+    let value: String
+    let isCorrect: Bool
+}
+
+struct LessonTaskSubstring: Hashable {
     let value: String
     let position: Int
+    let type: LessonTaskTypes
     
     func uniqueValue() -> String {
         return "\(value)-\(position)"
@@ -25,6 +31,5 @@ struct LessonTaskSubstring {
 struct LessonTask {
     let helpMessage: String
     let text: String
-    let keySubstrings: [LessonTaskSubstring]
-    let type: LessonTaskTypes
+    let keySubstrings: [LessonTaskSubstring: [LessonTaskAnswer]]
 }

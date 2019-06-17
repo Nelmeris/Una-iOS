@@ -18,18 +18,64 @@ class LessonViewController: UIViewController, UIGestureRecognizerDelegate, Alert
     @IBOutlet weak var helpMessageLabel: UILabel!
     
     let tasks = [
-        LessonTask(helpMessage: "Выберите правильное окончание", text: "Мы долго любовались этой прекрасной рекой", keySubstrings: [LessonTaskSubstring(value: "ой", position: 39)], type: .input),
+        LessonTask(helpMessage: "Выберите правильное окончание", text: "Мы долго любовались этой прекрасной рекой",
+                   keySubstrings: [
+                    LessonTaskSubstring(value: "ой", position: 39, type: .input): [
+                        LessonTaskAnswer(value: "ой", isCorrect: true),
+                        LessonTaskAnswer(value: "ый", isCorrect: false)
+                    ]
+            ]),
         LessonTask(helpMessage: "Найдите существительные в творительном падеже",
                    text: "Меня зовут Марк, мне 19. Я живу в Калининграде, в России. Я интересуюсь спортом, особенно футболом. Мой любимый русский футбольный клуб - \"Динамо\". Я очень горжусь этой командой. Когда мне было 10, я тоже занимался футболом",
                    keySubstrings: [
-                    LessonTaskSubstring(value: "спортом", position: 72),
-                    LessonTaskSubstring(value: "футболом", position: 90),
-                    LessonTaskSubstring(value: "командой", position: 171),
-                    LessonTaskSubstring(value: "футболом", position: 215)
-            ], type: .find)
+                    LessonTaskSubstring(value: "спортом", position: 72, type: .find): [
+                        LessonTaskAnswer(value: "", isCorrect: true)
+                    ],
+                    LessonTaskSubstring(value: "футболом", position: 90, type: .find): [
+                        LessonTaskAnswer(value: "", isCorrect: false)
+                    ],
+                    LessonTaskSubstring(value: "командой", position: 169, type: .find): [
+                        LessonTaskAnswer(value: "", isCorrect: false)
+                    ],
+                    LessonTaskSubstring(value: "футболом", position: 215, type: .find): [
+                        LessonTaskAnswer(value: "", isCorrect: true)
+                    ]
+            ]),
+        LessonTask(helpMessage: "Найдите существительные в творительном падеже",
+                   text: "Меня зовут Марк, мне 19. Я живу в Калининграде, в России. Я интересуюсь спортом, особенно футболом. Мой любимый русский футбольный клуб - \"Динамо\". Я очень горжусь этой командой. Когда мне было 10, я тоже занимался футболом",
+                   keySubstrings: [
+                    LessonTaskSubstring(value: "спортом", position: 72, type: .find): [
+                        LessonTaskAnswer(value: "", isCorrect: true)
+                    ],
+                    LessonTaskSubstring(value: "футболом", position: 90, type: .find): [
+                        LessonTaskAnswer(value: "", isCorrect: false)
+                    ],
+                    LessonTaskSubstring(value: "командой", position: 169, type: .find): [
+                        LessonTaskAnswer(value: "", isCorrect: false)
+                    ],
+                    LessonTaskSubstring(value: "футболом", position: 215, type: .find): [
+                        LessonTaskAnswer(value: "", isCorrect: true)
+                    ]
+            ]),
+        LessonTask(helpMessage: "Найдите существительные в творительном падеже",
+                   text: "Меня зовут Марк, мне 19. Я живу в Калининграде, в России. Я интересуюсь спортом, особенно футболом. Мой любимый русский футбольный клуб - \"Динамо\". Я очень горжусь этой командой. Когда мне было 10, я тоже занимался футболом",
+                   keySubstrings: [
+                    LessonTaskSubstring(value: "спортом", position: 72, type: .find): [
+                        LessonTaskAnswer(value: "", isCorrect: true)
+                    ],
+                    LessonTaskSubstring(value: "футболом", position: 90, type: .find): [
+                        LessonTaskAnswer(value: "", isCorrect: false)
+                    ],
+                    LessonTaskSubstring(value: "командой", position: 169, type: .find): [
+                        LessonTaskAnswer(value: "", isCorrect: false)
+                    ],
+                    LessonTaskSubstring(value: "футболом", position: 215, type: .find): [
+                        LessonTaskAnswer(value: "", isCorrect: true)
+                    ]
+            ])
     ]
     
-    var attributedTasks: [NSAttributedString]! = []
+    var attributedTasks: [NSMutableAttributedString]! = []
     var cource: YLCourceModel!
     var currentTask = 0
     
@@ -55,7 +101,51 @@ class LessonViewController: UIViewController, UIGestureRecognizerDelegate, Alert
         self.navigationItem.rightBarButtonItem = theoryButton
     }
     
+    func checkTask(_ number: Int) -> Bool {
+        let task = tasks[number];
+        for substring in task.keySubstrings {
+            let range = NSRange(location: substring.key.position, length: substring.key.value.count)
+            let attributes = attributedTasks[number].attributes(at: substring.key.position, longestEffectiveRange: nil, in: range)
+            
+            for attribute in attributes {
+                if let substring = attribute.value as? LessonTaskSubstring {
+                    switch substring.type {
+                    case .input:
+                        return false;
+                    case .find:
+                        for attr in attributes {
+                            if attr.key == .backgroundColor {
+                                let unselColor = UIColor(named: "UnselectedColor")!
+                                if (attr.value as! UIColor == unselColor && tasks[currentTask].keySubstrings[substring]![0].isCorrect) {
+                                    return false;
+                                }
+                            }
+                        }
+                    }
+                    textView.attributedText = attributedTasks![currentTask]
+                }
+            }
+        }
+        
+        return true;
+    }
+    
+    func checkResult() {
+        var goodCount = 0;
+        let count = tasks.count;
+        for number in 0..<count {
+            if (checkTask(number)) {
+                goodCount += 1;
+            }
+        }
+        showJustAlert(title: "\(goodCount) / \(count)");
+    }
+    
     @IBAction func nextTask(_ sender: Any) {
+        if (currentTask == attributedTasks.count - 1) {
+            checkResult()
+            return
+        }
         guard currentTask < attributedTasks.count else { return }
         currentTask += 1
         updateData()
@@ -82,7 +172,7 @@ class LessonViewController: UIViewController, UIGestureRecognizerDelegate, Alert
         if currentTask == 0 {
             prevTaskButton.isHidden = true
             prevTaskButton.isEnabled = false
-        } else if currentTask == tasks.count - 1 {
+        } else if currentTask == tasks.count {
             nextTaskButton.isHidden = true
             nextTaskButton.isEnabled = false
         }
@@ -122,7 +212,28 @@ class LessonViewController: UIViewController, UIGestureRecognizerDelegate, Alert
             
             for attribute in attributes {
                 if let substring = attribute.value as? LessonTaskSubstring {
-                    showJustAlert(title: "Попадение!", message: substring.uniqueValue())
+                    let range = NSRange(location: substring.position, length: substring.value.count)
+                    switch substring.type {
+                    case .input:
+                        break;
+                    case .find:
+                        for attr in attributes {
+                            if attr.key == .backgroundColor {
+                                let unselColor = UIColor(named: "UnselectedColor")!
+                                if (attr.value as! UIColor == unselColor) {
+                                    let color = UIColor(named: "MainColor")!
+                                    attributedTasks[currentTask].addAttribute(.backgroundColor, value: color, range: range)
+                                    attributedTasks[currentTask].addAttribute(.foregroundColor, value: UIColor.white, range: range)
+                                } else {
+                                    let color = unselColor
+                                    attributedTasks[currentTask].addAttribute(.backgroundColor, value: color, range: range)
+                                    attributedTasks[currentTask].addAttribute(.foregroundColor, value: UIColor.black, range: range)
+                                }
+                                break;
+                            }
+                        }
+                    }
+                    textView.attributedText = attributedTasks![currentTask]
                 }
             }
             
@@ -131,15 +242,15 @@ class LessonViewController: UIViewController, UIGestureRecognizerDelegate, Alert
     
 }
 
-func createAttributedString(_ lessonTask: LessonTask) -> NSAttributedString {
+func createAttributedString(_ lessonTask: LessonTask) -> NSMutableAttributedString {
     
     let string = NSMutableAttributedString(string: lessonTask.text)
     string.addAttribute(.font, value: UIFont(name: "Lato", size: 20)!, range: NSRange(location: 0, length: lessonTask.text.count))
     
     for substring in lessonTask.keySubstrings {
-        let range = NSRange(location: substring.position, length: substring.value.count)
-        string.addAttribute(.init(rawValue: substring.uniqueValue()), value: substring, range: range)
-        switch lessonTask.type {
+        let range = NSRange(location: substring.key.position, length: substring.key.value.count)
+        string.addAttribute(.init(rawValue: substring.key.uniqueValue()), value: substring.key, range: range)
+        switch substring.key.type {
         case .input:
             string.addAttributes([
                 .underlineColor : UIColor.red,
@@ -148,8 +259,9 @@ func createAttributedString(_ lessonTask: LessonTask) -> NSAttributedString {
                 ], range: range)
             break;
         case .find:
+            let color = UIColor(named: "UnselectedColor")!
             string.addAttributes([
-                .backgroundColor : UIColor.red
+                .backgroundColor : color
                 ], range: range)
         }
     }
