@@ -9,15 +9,16 @@
 import UIKit
 
 protocol AlertDelegate: UIViewController {
-    func showJustAlert(title: String, message: String?)
+    func showJustAlert(title: String, message: String?, action: ((UIAlertAction) -> Void)?)
 }
 
 extension AlertDelegate {
     
-    func showJustAlert(title: String, message: String? = nil) {
+    func showJustAlert(title: String, message: String? = nil, action: ((UIAlertAction) -> Void)? = nil) {
         DispatchQueue.main.async {
             let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            let action = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: action)
+            alert.addAction(action)
             self.present(alert, animated: true, completion: nil)
         }
     }

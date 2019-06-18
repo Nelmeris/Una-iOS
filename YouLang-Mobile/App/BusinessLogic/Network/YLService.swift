@@ -12,7 +12,7 @@ class YLService: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: SessionManager
     let queue: DispatchQueue?
-    let baseUrl = URL(string: "http://192.168.0.13:8181/")! 
+    let baseUrl = URL(string: "http://192.168.43.106:8181/")! 
     
     static let shared = YLService()
     

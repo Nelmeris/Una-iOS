@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		5700F29422978FF80060D34A /* TapGestureToHideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5700F29322978FF80060D34A /* TapGestureToHideKeyboard.swift */; };
 		570BBBE42298337A0053DC12 /* YLErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570BBBE32298337A0053DC12 /* YLErrorResponse.swift */; };
 		570BBBE6229834530053DC12 /* YLErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570BBBE5229834530053DC12 /* YLErrorParser.swift */; };
+		5723F12422B8F136002085F8 /* UIColorFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5723F12322B8F136002085F8 /* UIColorFilters.swift */; };
 		572C9047229ED01900154BA9 /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572C9046229ED01800154BA9 /* Validators.swift */; };
 		572C904B229EDD2800154BA9 /* UIAlertViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572C904A229EDD2800154BA9 /* UIAlertViewDelegate.swift */; };
 		572FAE2C229CB0E100C261F7 /* YLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572FAE2B229CB0E100C261F7 /* YLService.swift */; };
@@ -82,6 +83,7 @@
 		5700F29322978FF80060D34A /* TapGestureToHideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureToHideKeyboard.swift; sourceTree = "<group>"; };
 		570BBBE32298337A0053DC12 /* YLErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLErrorResponse.swift; sourceTree = "<group>"; };
 		570BBBE5229834530053DC12 /* YLErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLErrorParser.swift; sourceTree = "<group>"; };
+		5723F12322B8F136002085F8 /* UIColorFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorFilters.swift; sourceTree = "<group>"; };
 		572C9046229ED01800154BA9 /* Validators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
 		572C904A229EDD2800154BA9 /* UIAlertViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertViewDelegate.swift; sourceTree = "<group>"; };
 		572FAE2B229CB0E100C261F7 /* YLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLService.swift; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 				5700F29322978FF80060D34A /* TapGestureToHideKeyboard.swift */,
 				572C904A229EDD2800154BA9 /* UIAlertViewDelegate.swift */,
 				57FEBF57229F28A000148709 /* SetTabBarVisible.swift */,
+				5723F12322B8F136002085F8 /* UIColorFilters.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				57635E8A2298181D002AD534 /* YLUser.swift in Sources */,
 				570BBBE42298337A0053DC12 /* YLErrorResponse.swift in Sources */,
 				57FEBF5E229F4CE700148709 /* TheoryViewController.swift in Sources */,
+				5723F12422B8F136002085F8 /* UIColorFilters.swift in Sources */,
 				57EED4EB2297D820002B8908 /* DifficultyLevel.swift in Sources */,
 				5785C69F229F035D006F8B20 /* LessonViewController.swift in Sources */,
 				572FAE2C229CB0E100C261F7 /* YLService.swift in Sources */,

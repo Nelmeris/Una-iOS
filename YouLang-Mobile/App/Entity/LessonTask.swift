@@ -18,18 +18,41 @@ struct LessonTaskAnswer {
     let isCorrect: Bool
 }
 
-struct LessonTaskSubstring: Hashable {
-    let value: String
+struct LessonTaskSubstring: Equatable {
+    static func == (lhs: LessonTaskSubstring, rhs: LessonTaskSubstring) -> Bool {
+        return lhs.value == rhs.value && lhs.position == rhs.position
+    }
+    
+    private let value: String
+    var changedValue: String
     let position: Int
     let type: LessonTaskTypes
+    let answers: [LessonTaskAnswer]
     
     func uniqueValue() -> String {
         return "\(value)-\(position)"
     }
+    
+    func isCorrectAnswer(value: String) -> Bool {
+        for answer in answers {
+            if (answer.value.lowercased() == value.lowercased() && answer.isCorrect) {
+                return true
+            }
+        }
+        return false
+    }
+    
+    init(value: String, position: Int, type: LessonTaskTypes, answers: [LessonTaskAnswer]) {
+        self.value = value
+        self.changedValue = value
+        self.position = position
+        self.type = type
+        self.answers = answers
+    }
 }
 
-struct LessonTask {
+struct LessonTask: Equatable {
     let helpMessage: String
     let text: String
-    let keySubstrings: [LessonTaskSubstring: [LessonTaskAnswer]]
+    var keySubstrings: [LessonTaskSubstring]
 }
