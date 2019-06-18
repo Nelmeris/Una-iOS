@@ -44,30 +44,25 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AlertDelegate 
     // MARK: - Button Handlers
     
     @IBAction func toMain(_ sender: Any) {
-        do {
-            let email = try ValidatorFactory.validatorFor(type: .email).validated(emailField.text ?? "")
-            let password = try ValidatorFactory.validatorFor(type: .password).validated(passwordField.text ?? "")
-            YLService.shared.login(email: email, password: password) { response in
-                switch response.result {
-                case .success(let value):
-                    if (!Keychain.save(value.accessToken, forKey: "access_token")) {
-                        fatalError()
-                    }
-                    DispatchQueue.main.async {
-                        self.router.toMain(configurate: nil)
-                    }
-                case .failure(let error):
-                    if let ylError = error as? YLErrorResponses {
-                        self.showJustAlert(title: "Ошибка", message: ylError.errorDescription!)
-                    } else {
-                        self.showJustAlert(title: "Сетевая ошибка", message: error.localizedDescription)
-                    }
+        let email = emailField.text ?? ""
+        let password = passwordField.text ?? ""
+        YLService.shared.login(email: email, password: password) { response in
+            switch response.result {
+            case .success(let value):
+                if (!Keychain.save(value.accessToken, forKey: "access_token")) {
+                    fatalError()
+                }
+                DispatchQueue.main.async {
+                    self.router.toMain(configurate: nil)
+                }
+            case .failure(let error):
+                if let ylError = error as? YLErrorResponses {
+                    self.showJustAlert(title: "Ошибка", message: ylError.errorDescription!)
+                } else {
+                    self.showJustAlert(title: "Сетевая ошибка", message: error.localizedDescription)
                 }
             }
-        } catch(let error as ValidationError) {
-            showJustAlert(title: "Ошибка", message: error.message)
-            return
-        } catch(_) {}
+        }
     }
     
     @IBAction func toPassRecovery(_ sender: Any) {

@@ -35,7 +35,7 @@ class YLUsersTests: XCTestCase {
     
     func testLogin() {
         let expectation = XCTestExpectation(description: "Login")
-        YLService.shared.login(email: "Somebody", password: "mypassword") { response in
+        YLService.shared.login(email: "admin@youlang.com", password: "admin") { response in
             switch response.result {
             case .success: break
             case .failure (let error):

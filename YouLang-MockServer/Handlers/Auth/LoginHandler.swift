@@ -26,7 +26,7 @@ extension LoginHandler {
                 ErrorHandler(request: request, response: response).process()
             return false
         }
-        guard email == "test@mail.ru" && password == "qwerty1" else {
+        guard email == "admin@youlang.com" && password == "admin" else {
             ErrorHandler(request: request, response: response).process(errorMsg: "Неверная почта или пароль")
             return false
         }
