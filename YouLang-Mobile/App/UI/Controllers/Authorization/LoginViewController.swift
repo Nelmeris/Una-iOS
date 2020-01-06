@@ -33,9 +33,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AlertDelegate 
     private func configureTextFields() {
         emailField.delegate = self
         emailField.returnKeyType = .next
+        emailField.attributedPlaceholder = NSAttributedString(string: "Email: ",
+                                                              attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         
         passwordField.delegate = self
         passwordField.returnKeyType = .done
+        passwordField.attributedPlaceholder = NSAttributedString(string: "Password: ",
+                                                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
     }
     
     private func configureNavigationController() {

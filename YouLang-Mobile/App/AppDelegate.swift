@@ -32,9 +32,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func configureNavBarAppearance() {
         let navigationBarAppearace = UINavigationBar.appearance()
         navigationBarAppearace.isTranslucent = false
-        navigationBarAppearace.tintColor = UIColor(named: "SecondColor")
-        navigationBarAppearace.barTintColor = UIColor(named: "MainColor")
-        navigationBarAppearace.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "TextColor")!]
+        navigationBarAppearace.tintColor = UIColor(named: "MainColor")
+        navigationBarAppearace.barTintColor = .white
+        navigationBarAppearace.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "MainColor")!]
     }
     
     private func choiseRootController() -> UIViewController {

@@ -31,6 +31,10 @@
 		57B39D132298225D0060D4C2 /* YLLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B39D122298225D0060D4C2 /* YLLoginResponse.swift */; };
 		57B39D15229822680060D4C2 /* YLRegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B39D14229822680060D4C2 /* YLRegisterResponse.swift */; };
 		57C2220623C31F02002A0AD7 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C2220523C31F02002A0AD7 /* NetworkHelper.swift */; };
+		57C2220923C321E9002A0AD7 /* CourceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C2220823C321E9002A0AD7 /* CourceViewModel.swift */; };
+		57C2220E23C329BD002A0AD7 /* StudyViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C2220D23C329BD002A0AD7 /* StudyViewPresenter.swift */; };
+		57C2221023C331B7002A0AD7 /* LessonViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C2220F23C331B7002A0AD7 /* LessonViewPresenter.swift */; };
+		57C2221223C33A7B002A0AD7 /* LessonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C2221123C33A7B002A0AD7 /* LessonViewModel.swift */; };
 		57EED4E52297D20A002B8908 /* StudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EED4E42297D20A002B8908 /* StudyViewController.swift */; };
 		57EED4E92297D776002B8908 /* YLCourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EED4E82297D776002B8908 /* YLCourceModel.swift */; };
 		57EED4EB2297D820002B8908 /* DifficultyLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EED4EA2297D820002B8908 /* DifficultyLevel.swift */; };
@@ -102,6 +106,10 @@
 		57B39D122298225D0060D4C2 /* YLLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLLoginResponse.swift; sourceTree = "<group>"; };
 		57B39D14229822680060D4C2 /* YLRegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLRegisterResponse.swift; sourceTree = "<group>"; };
 		57C2220523C31F02002A0AD7 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		57C2220823C321E9002A0AD7 /* CourceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourceViewModel.swift; sourceTree = "<group>"; };
+		57C2220D23C329BD002A0AD7 /* StudyViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyViewPresenter.swift; sourceTree = "<group>"; };
+		57C2220F23C331B7002A0AD7 /* LessonViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewPresenter.swift; sourceTree = "<group>"; };
+		57C2221123C33A7B002A0AD7 /* LessonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewModel.swift; sourceTree = "<group>"; };
 		57EED4E42297D20A002B8908 /* StudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyViewController.swift; sourceTree = "<group>"; };
 		57EED4E82297D776002B8908 /* YLCourceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLCourceModel.swift; sourceTree = "<group>"; };
 		57EED4EA2297D820002B8908 /* DifficultyLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyLevel.swift; sourceTree = "<group>"; };
@@ -222,6 +230,24 @@
 			path = YLModels;
 			sourceTree = "<group>";
 		};
+		57C2220723C321C6002A0AD7 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				57C2220823C321E9002A0AD7 /* CourceViewModel.swift */,
+				57C2221123C33A7B002A0AD7 /* LessonViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		57C2220C23C32984002A0AD7 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				57C2220D23C329BD002A0AD7 /* StudyViewPresenter.swift */,
+				57C2220F23C331B7002A0AD7 /* LessonViewPresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
 		57FEF2E12288AFE7000A4FD7 = {
 			isa = PBXGroup;
 			children = (
@@ -311,6 +337,7 @@
 			children = (
 				57FEF3162288B13F000A4FD7 /* Storyboards */,
 				57FEF3152288B138000A4FD7 /* Controllers */,
+				57C2220C23C32984002A0AD7 /* Presenters */,
 				57FEF3172288B1CD000A4FD7 /* Cells */,
 				5700F29022977D4C0060D34A /* Views */,
 			);
@@ -350,6 +377,7 @@
 		57FEF3182288B1DF000A4FD7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				57C2220723C321C6002A0AD7 /* ViewModels */,
 				57635E9222981B69002AD534 /* YLModels */,
 				57635E9122981B5F002AD534 /* YLResponses */,
 				57EED4EA2297D820002B8908 /* DifficultyLevel.swift */,
@@ -629,7 +657,9 @@
 				5785C69F229F035D006F8B20 /* LessonViewController.swift in Sources */,
 				572FAE2C229CB0E100C261F7 /* YLService.swift in Sources */,
 				57FEBF56229F21B700148709 /* StudyRouter.swift in Sources */,
+				57C2220923C321E9002A0AD7 /* CourceViewModel.swift in Sources */,
 				57FEF3322288CAD2000A4FD7 /* WelcomePageViewController.swift in Sources */,
+				57C2220E23C329BD002A0AD7 /* StudyViewPresenter.swift in Sources */,
 				5700F29422978FF80060D34A /* TapGestureToHideKeyboard.swift in Sources */,
 				572C9047229ED01900154BA9 /* Validators.swift in Sources */,
 				57FEF32C2288C6FD000A4FD7 /* RegisterViewController.swift in Sources */,
@@ -646,11 +676,13 @@
 				57635E8E22981837002AD534 /* YLCource.swift in Sources */,
 				57C2220623C31F02002A0AD7 /* NetworkHelper.swift in Sources */,
 				57635E84229817E6002AD534 /* YLAuthRequestFactory.swift in Sources */,
+				57C2221223C33A7B002A0AD7 /* LessonViewModel.swift in Sources */,
 				572C904B229EDD2800154BA9 /* UIAlertViewDelegate.swift in Sources */,
 				57FEF33F2288E37D000A4FD7 /* AuthRouter.swift in Sources */,
 				57FEF33C2288E2FA000A4FD7 /* BaseRouter.swift in Sources */,
 				57FEF3232288BE37000A4FD7 /* DataRequest.swift in Sources */,
 				57635E9422981B93002AD534 /* YLUserModel.swift in Sources */,
+				57C2221023C331B7002A0AD7 /* LessonViewPresenter.swift in Sources */,
 				57FEF3242288BE37000A4FD7 /* ErrorParser.swift in Sources */,
 				57FEBF58229F28A000148709 /* SetTabBarVisible.swift in Sources */,
 				57FEF2EE2288AFE7000A4FD7 /* AppDelegate.swift in Sources */,

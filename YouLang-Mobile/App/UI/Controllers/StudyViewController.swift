@@ -9,12 +9,14 @@
 import UIKit
 import Keychain
 
-class StudyViewController: UITableViewController {
+class StudyViewController: UITableViewController, StudyView {
     
     // MARK: - Properties
     
-    var cources: [YLCourceModel] = []
-    let reusableId = "StudyTableViewCellReusable"
+    private var viewModels: [CourceViewModel] = []
+    private var cources: [YLCourceModel] = []
+    private let reusableId = "StudyTableViewCellReusable"
+    private var presenter: StudyViewPresenter!
     
     // MARK: - Outlets
     
@@ -25,29 +27,27 @@ class StudyViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        presenter = StudyPresenter(view: self)
         configureTableView()
         configureNavigationBar()
-        loadData()
+        presenter.showCources()
     }
     
     private func configureTableView() {
-        self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.separatorColor = UIColor.clear
+        view.backgroundColor = .white
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.separatorColor = UIColor.clear
     }
     
     private func configureNavigationBar() {
-        self.navigationItem.title = "АКТИВНЫЕ КУРСЫ"
+        navigationItem.title = "АКТИВНЫЕ КУРСЫ"
     }
     
-    private func loadData() {
-        guard let accessToken = Keychain.load("access_token") else { return }
-        YLService.shared.getCources(accessToken: accessToken) { (response) in
-            guard let value = response.value else { return }
-            
-            self.cources = value
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+    func setCources(cources: [YLCourceModel], viewModels: [CourceViewModel]) {
+        self.cources = cources
+        self.viewModels = viewModels
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
     }
     
@@ -57,24 +57,13 @@ class StudyViewController: UITableViewController {
 extension StudyViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cources.count
+        return viewModels.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cource = self.cources[indexPath.row]
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: reusableId, for: indexPath) as? StudyTableViewCell else {
-            return UITableViewCell()
-        }
-        
-        let color = cource.level.color()
-        cell.levelView.backgroundColor = color
-        cell.titleLabel.text = cource.title
-        cell.stateLabel.text = "\(cource.learnedLessonsCount) ИЗ \(cource.lessonsCount) УРОКОВ"
-        cell.progressView.progress = Float(cource.learnedLessonsCount) / Float(cource.lessonsCount)
-        cell.levelLabel.text = cource.level.rawValue
-        cell.courceImage.image = UIImage(named: "CourceImage")
-        
+        let model = viewModels[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: reusableId, for: indexPath) as! StudyTableViewCell
+        cell.configure(with: model)
         return cell
     }
     

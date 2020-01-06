@@ -8,29 +8,40 @@
 
 import Foundation
 
-enum LessonTaskTypes: String {
+struct LessonTask: Equatable, Hashable {
+    let helpMessage: String
+    let text: String
+    var keySubstrings: [LessonTaskSubstring]
+}
+
+enum LessonTaskTypes: String, Hashable {
     case input
     case find
 }
 
-struct LessonTaskAnswer {
+struct LessonTaskAnswer: Hashable {
     let value: String
     let isCorrect: Bool
 }
 
-struct LessonTaskSubstring: Equatable {
-    static func == (lhs: LessonTaskSubstring, rhs: LessonTaskSubstring) -> Bool {
-        return lhs.value == rhs.value && lhs.position == rhs.position
-    }
+struct LessonTaskSubstring: Equatable, Hashable {
     
-    private let value: String
+    let value: String
     var changedValue: String
     let position: Int
     let type: LessonTaskTypes
     let answers: [LessonTaskAnswer]
     
-    func uniqueValue() -> String {
-        return "\(value)-\(position)"
+    init(value: String, position: Int, type: LessonTaskTypes, answers: [LessonTaskAnswer]) {
+        self.value = value
+        self.changedValue = value
+        self.position = position
+        self.type = type
+        self.answers = answers
+    }
+    
+    func uniqueValue() -> NSAttributedString.Key {
+        return NSAttributedString.Key("\(value)-\(position)")
     }
     
     func isCorrectAnswer(value: String) -> Bool {
@@ -42,17 +53,8 @@ struct LessonTaskSubstring: Equatable {
         return false
     }
     
-    init(value: String, position: Int, type: LessonTaskTypes, answers: [LessonTaskAnswer]) {
-        self.value = value
-        self.changedValue = value
-        self.position = position
-        self.type = type
-        self.answers = answers
+    static func == (lhs: LessonTaskSubstring, rhs: LessonTaskSubstring) -> Bool {
+        return lhs.value == rhs.value && lhs.position == rhs.position
     }
-}
-
-struct LessonTask: Equatable {
-    let helpMessage: String
-    let text: String
-    var keySubstrings: [LessonTaskSubstring]
+    
 }

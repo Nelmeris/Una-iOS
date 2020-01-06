@@ -42,7 +42,6 @@
                                     <constraint firstItem="Z9Z-O9-yRp" firstAttribute="top" secondItem="6Th-2x-FG6" secondAttribute="top" constant="10" id="04N-Q5-eNy"/>
                                     <constraint firstAttribute="bottom" secondItem="bzV-jG-7cI" secondAttribute="bottom" constant="15" id="BCt-I8-SOl"/>
                                     <constraint firstItem="bzV-jG-7cI" firstAttribute="centerX" secondItem="6Th-2x-FG6" secondAttribute="centerX" id="COe-Ox-LNj"/>
-                                    <constraint firstItem="bzV-jG-7cI" firstAttribute="leading" secondItem="6Th-2x-FG6" secondAttribute="leading" constant="10" id="Fiy-Q6-0cY"/>
                                     <constraint firstItem="bzV-jG-7cI" firstAttribute="top" secondItem="Z9Z-O9-yRp" secondAttribute="bottom" constant="20" id="Uwu-MM-kvd"/>
                                     <constraint firstAttribute="trailing" secondItem="bzV-jG-7cI" secondAttribute="trailing" constant="10" id="dZz-c8-CFl"/>
                                     <constraint firstItem="Z9Z-O9-yRp" firstAttribute="leading" secondItem="6Th-2x-FG6" secondAttribute="leading" constant="20" id="onp-xu-6P4"/>
@@ -121,6 +120,7 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="PYm-YP-T5s" secondAttribute="trailing" id="2mY-MI-2Dx"/>
                                     <constraint firstAttribute="bottom" secondItem="IRf-Gj-dJU" secondAttribute="bottom" id="3SM-pM-jl5"/>
+                                    <constraint firstItem="PYm-YP-T5s" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="IRf-Gj-dJU" secondAttribute="trailing" id="Mfk-an-dpD"/>
                                     <constraint firstAttribute="bottom" secondItem="PYm-YP-T5s" secondAttribute="bottom" id="Nzo-gX-e8S"/>
                                     <constraint firstItem="IRf-Gj-dJU" firstAttribute="top" secondItem="hI8-Mo-p3s" secondAttribute="top" id="Pq6-Ti-f4U"/>
                                     <constraint firstItem="PYm-YP-T5s" firstAttribute="width" secondItem="hI8-Mo-p3s" secondAttribute="width" multiplier="0.5" id="U6w-h9-nIo"/>
@@ -162,10 +162,10 @@
             </objects>
             <point key="canvasLocation" x="6044.9275362318849" y="465.40178571428567"/>
         </scene>
-        <!--Theory View Controller-->
+        <!--View Controller-->
         <scene sceneID="URe-nc-reY">
             <objects>
-                <viewController storyboardIdentifier="TheoryViewController" id="RKq-p5-QjP" customClass="TheoryViewController" customModule="YouLang_Mobile" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TheoryViewController" id="RKq-p5-QjP" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e03-ae-sAz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -175,8 +175,8 @@
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCf-0a-Wb7">
                                         <rect key="frame" x="25" y="25" width="314" height="657"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <string key="text">Чтобы узнать падеж существительного, к слову необходимо поставить вопросы творительного падежа (Кем? Чем?), а также выделить у существительного падежное окончание.  Существительные в творительном падеже употребляются как в качестве прямого дополнения (украсить узором, говорить басом), так и с предлогами (стоять перед домом, пролетать над морем)  С существительными в Т.п. употребляются предлоги - за, перед, под (подо), с (со), над, меж, между</string>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <mutableString key="text">Чтобы узнать падеж существительного, к слову необходимо поставить вопросы творительного падежа (Кем? Чем?), а также выделить у существительного падежное окончание.  Существительные в творительном падеже употребляются как в качестве прямого дополнения (украсить узором, говорить басом), так и с предлогами (стоять перед домом, пролетать над морем)  С существительными в Т.п. употребляются предлоги - за, перед, под (подо), с (со), над, меж, между</mutableString>
                                         <color key="textColor" name="SecondColor"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -213,9 +213,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O2u-NH-EMP"/>
                     </view>
-                    <connections>
-                        <outlet property="textView" destination="gCf-0a-Wb7" id="Kcj-7I-rUx"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dlE-O9-j0W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -224,7 +221,7 @@
         <!--Controller-->
         <scene sceneID="hRn-dn-Bkh">
             <objects>
-                <tableViewController storyboardIdentifier="Study" id="zK2-Ye-iC7" customClass="StudyViewController" customModule="YouLang_Mobile" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Study" modalPresentationStyle="fullScreen" id="zK2-Ye-iC7" customClass="StudyViewController" customModule="YouLang_Mobile" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2QL-Uv-QSE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -324,11 +321,12 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="se2-bc-MtG" firstAttribute="top" secondItem="gzT-Gw-QWW" secondAttribute="topMargin" constant="10" id="08c-Ju-Xa4"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="se2-bc-MtG" secondAttribute="bottom" constant="10" id="3dv-la-lNM"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="se2-bc-MtG" secondAttribute="bottom" priority="999" constant="10" id="3dv-la-lNM"/>
                                         <constraint firstItem="se2-bc-MtG" firstAttribute="leading" secondItem="gzT-Gw-QWW" secondAttribute="leadingMargin" id="FzJ-mq-m5E"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="se2-bc-MtG" secondAttribute="trailing" id="Kml-B3-2oo"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="courceImage" destination="CBs-XK-juG" id="U3X-zr-uhC"/>
                                     <outlet property="levelLabel" destination="hxk-q0-CrM" id="27Y-RP-ceu"/>

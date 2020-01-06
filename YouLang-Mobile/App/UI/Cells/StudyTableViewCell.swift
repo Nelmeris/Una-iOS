@@ -27,4 +27,13 @@ class StudyTableViewCell: UITableViewCell {
         courceImage.image = nil
     }
     
+    public func configure(with viewModel: CourceViewModel) {
+        titleLabel.text = viewModel.title
+        stateLabel.text = viewModel.stateText
+        progressView.progress = viewModel.progress
+        levelLabel.text = viewModel.levelTitle
+        levelView.backgroundColor = viewModel.levelColor
+        courceImage.image = viewModel.image
+    }
+    
 }

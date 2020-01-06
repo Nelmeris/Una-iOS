@@ -26,11 +26,12 @@ class MainTabBarViewController: UITabBarController {
     }
     
     private func setControllers() {
-        let controller = UINavigationController(rootViewController: UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Study"))
-        controller.tabBarItem = UITabBarItem(title: "Учеба", image: UIImage(named: "CourcesTabBarIcon"), tag: 0)
-        controller.tabBarItem.badgeColor = UIColor(named: "TextColor")
+        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Study")
+        let navController = UINavigationController(rootViewController: controller)
+        navController.tabBarItem = UITabBarItem(title: "Учеба", image: UIImage(named: "CourcesTabBarIcon"), tag: 0)
+        navController.tabBarItem.badgeColor = UIColor(named: "TextColor")
         
-        self.setViewControllers([controller], animated: true)
+        self.setViewControllers([navController], animated: true)
     }
     
 }
