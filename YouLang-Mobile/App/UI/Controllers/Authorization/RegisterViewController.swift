@@ -11,6 +11,8 @@ import Keychain
 
 class RegisterViewController: UIViewController, UITextFieldDelegate, AlertDelegate {
     
+    // MARK: - Outlets
+    
     @IBOutlet var router: RegisterRouter!
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -30,9 +32,9 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, AlertDelega
         addTapGestureToHideKeyboard()
     }
     
-    // MARK: - Configuratings
+    // MARK: - Configures
     
-    func configureTextFields() {
+    private func configureTextFields() {
         firstNameField.delegate = self
         firstNameField.returnKeyType = .next
         
@@ -49,10 +51,12 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, AlertDelega
         rPasswordField.returnKeyType = .done
     }
     
-    func configureNavigationController() {
+    private func configureNavigationController() {
         self.navigationItem.title = "РЕГИСТРАЦИЯ"
         self.navigationController?.navigationBar.topItem?.title = ""
     }
+    
+    // MARK: - Actions
     
     @IBAction func registrationProcess(_ sender: Any) {
         do {
@@ -85,7 +89,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, AlertDelega
         } catch(_) {}
     }
     
-    // MARK: - TextField & Keyboard
+    // MARK: - TextField
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
@@ -103,19 +107,21 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, AlertDelega
             break
             
         default:
-            self.view.endEditing(true)
+            self.view.dismissKeyboard()
             registrationProcess(textField)
             break;
         }
         return false
     }
     
-    func registerForKeyboardNotifications() {
+    // MARK: - Keyboard
+    
+    private func registerForKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(kbWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(kbWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    func removeKeyboardNotifications() {
+    private func removeKeyboardNotifications() {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }

@@ -7,15 +7,10 @@
 //
 
 import UIKit
-import PanModal
 
 class LessonViewController: UIViewController, UIGestureRecognizerDelegate, AlertDelegate {
     
-    @IBOutlet weak var progressView: UIProgressView!
-    @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var prevTaskButton: UIButton!
-    @IBOutlet weak var nextTaskButton: UIButton!
-    @IBOutlet weak var helpMessageLabel: UILabel!
+    // MARK: - Properties
     
     var tasks = [
         LessonTask(helpMessage: "Выберите правильное окончание", text: "Мы долго любовались этой прекрасной рекой.",
@@ -82,7 +77,16 @@ class LessonViewController: UIViewController, UIGestureRecognizerDelegate, Alert
     var cource: YLCourceModel!
     var currentTask = 0
     
-    // Конфигурация
+    // MARK: - Outlets
+    
+    @IBOutlet weak var progressView: UIProgressView!
+    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var prevTaskButton: UIButton!
+    @IBOutlet weak var nextTaskButton: UIButton!
+    @IBOutlet weak var helpMessageLabel: UILabel!
+    
+    // MARK: - Configures
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -91,35 +95,79 @@ class LessonViewController: UIViewController, UIGestureRecognizerDelegate, Alert
         
         prevTaskButton.isHidden = true
         
-        for task in tasks {
-            attributedTasks.append(createAttributedString(task)) // Сборка атрибутных текстов
-        }
+        tasks.forEach { attributedTasks.append(createAttributedString($0)) }
         
         updateData() // Обновление данных
         addTapGestureRecognizer() // Запуск обработчика кликов
     }
     
+    // Конфигурация навигационного контроллера
+    private func configureNavigationController() {
+        self.title = cource.title.uppercased()
+        configureTheoryButton()
+    }
+    
     // Кнопка открытия теории
-    func configureTheoryButton() {
+    private func configureTheoryButton() {
         let theoryIcon = UIImage(named: "TheoryIcon")
         let theoryButton = UIBarButtonItem(image: theoryIcon, style: .plain, target: self, action: #selector(openTheory))
         self.navigationItem.rightBarButtonItem = theoryButton
     }
     
-    // Конфигурация навигационного контроллера
-    func configureNavigationController() {
-        self.title = cource.title.uppercased()
-        configureTheoryButton()
+    // Обновление данных
+    private func updateData() {
+        textView.attributedText = attributedTasks[currentTask]
+        helpMessageLabel.text = tasks[currentTask].helpMessage
+        progressView.progress = Float(currentTask + 1) / Float(tasks.count)
+        if nextTaskButton.isHidden {
+            nextTaskButton.isHidden = false
+            nextTaskButton.isEnabled = true
+        }
+        if prevTaskButton.isHidden {
+            prevTaskButton.isHidden = false
+            prevTaskButton.isEnabled = true
+        }
+        if currentTask == 0 {
+            prevTaskButton.isHidden = true
+            prevTaskButton.isEnabled = false
+        } else if currentTask == tasks.count {
+            nextTaskButton.isHidden = true
+            nextTaskButton.isEnabled = false
+        }
     }
     
-    // Получение определенного атрибута
-    func getAttributeFrom(_ attributes: [NSAttributedString.Key: Any], key: NSAttributedString.Key) -> Any? {
-        for attr in attributes {
-            if attr.key == key {
-                return attr.value
-            }
+    // MARK: - Actions
+    
+    // Следующее задание
+    @IBAction func nextTask(_ sender: Any) {
+        if (currentTask == attributedTasks.count - 1) {
+            checkResult()
+            return
         }
-        return nil
+        guard currentTask < attributedTasks.count else { return }
+        currentTask += 1
+        if (currentTask == attributedTasks.count - 1) {
+            nextTaskButton.setTitle("ПРОВЕРИТЬ", for: .normal)
+            nextTaskButton.backgroundColor = nextTaskButton.backgroundColor?.darker(by: 5)
+        }
+        updateData()
+    }
+    
+    // Предыдущее задание
+    @IBAction func prevTask(_ sender: Any) {
+        if (currentTask == attributedTasks.count - 1) {
+            nextTaskButton.setTitle("ДАЛЕЕ", for: .normal)
+            nextTaskButton.backgroundColor = UIColor(named: "SecondColor")
+        }
+        guard currentTask > 0 else { return }
+        currentTask -= 1
+        updateData()
+    }
+    
+    // Открытие теории
+    @objc func openTheory() {
+        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TheoryViewController")
+        self.present(controller, animated: true)
     }
     
     // Проверка задания
@@ -155,59 +203,7 @@ class LessonViewController: UIViewController, UIGestureRecognizerDelegate, Alert
         }
     }
     
-    // Следующее задание
-    @IBAction func nextTask(_ sender: Any) {
-        if (currentTask == attributedTasks.count - 1) {
-            checkResult()
-            return
-        }
-        guard currentTask < attributedTasks.count else { return }
-        currentTask += 1
-        if (currentTask == attributedTasks.count - 1) {
-            nextTaskButton.setTitle("ПРОВЕРИТЬ", for: .normal)
-            nextTaskButton.backgroundColor = nextTaskButton.backgroundColor?.darker(by: 5)
-        }
-        updateData()
-    }
-    
-    // Предыдущее задание
-    @IBAction func prevTask(_ sender: Any) {
-        if (currentTask == attributedTasks.count - 1) {
-            nextTaskButton.setTitle("ДАЛЕЕ", for: .normal)
-            nextTaskButton.backgroundColor = UIColor(named: "SecondColor")
-        }
-        guard currentTask > 0 else { return }
-        currentTask -= 1
-        updateData()
-    }
-    
-    // Обновление данных
-    func updateData() {
-        textView.attributedText = attributedTasks[currentTask]
-        helpMessageLabel.text = tasks[currentTask].helpMessage
-        progressView.progress = Float(currentTask + 1) / Float(tasks.count)
-        if nextTaskButton.isHidden {
-            nextTaskButton.isHidden = false
-            nextTaskButton.isEnabled = true
-        }
-        if prevTaskButton.isHidden {
-            prevTaskButton.isHidden = false
-            prevTaskButton.isEnabled = true
-        }
-        if currentTask == 0 {
-            prevTaskButton.isHidden = true
-            prevTaskButton.isEnabled = false
-        } else if currentTask == tasks.count {
-            nextTaskButton.isHidden = true
-            nextTaskButton.isEnabled = false
-        }
-    }
-    
-    // Открытие теории
-    @objc func openTheory() {
-        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TheoryViewController")
-        self.presentPanModal(controller as! UIViewController & PanModalPresentable)
-    }
+    // MARK: - Taps
     
     // Добавление обработчика нажатий
     func addTapGestureRecognizer() {
@@ -249,9 +245,10 @@ class LessonViewController: UIViewController, UIGestureRecognizerDelegate, Alert
     
 }
 
+// MARK: - Substrings
 extension LessonViewController {
     
-    func changeSubstring(taskIndex: Int, substring: LessonTaskSubstring, value: String) -> LessonTaskSubstring {
+    private func changeSubstring(taskIndex: Int, substring: LessonTaskSubstring, value: String) -> LessonTaskSubstring {
         let subIndex = tasks[taskIndex].keySubstrings.firstIndex(of: substring)!
         tasks[taskIndex].keySubstrings[subIndex].changedValue = value
         let newSubstring = tasks[taskIndex].keySubstrings[subIndex]
@@ -265,7 +262,7 @@ extension LessonViewController {
     }
     
     // Создание аттрибута
-    func createAttributedString(_ lessonTask: LessonTask) -> NSMutableAttributedString {
+    private func createAttributedString(_ lessonTask: LessonTask) -> NSMutableAttributedString {
         
         let string = NSMutableAttributedString(string: lessonTask.text)
         string.addAttribute(.font, value: UIFont(name: "Lato", size: 20)!, range: NSRange(location: 0, length: lessonTask.text.count))
@@ -299,7 +296,7 @@ extension LessonViewController {
     }
     
     // Обработка нажатия на ключевое слово
-    func tapOnKeywordProcessing(keyword: LessonTaskSubstring, attributes: [NSAttributedString.Key: Any]) {
+    private func tapOnKeywordProcessing(keyword: LessonTaskSubstring, attributes: [NSAttributedString.Key: Any]) {
         let range = NSRange(location: keyword.position, length: keyword.changedValue.count)
         switch keyword.type {
         case .input:
@@ -332,7 +329,7 @@ extension LessonViewController {
     }
     
     // Проверка ключевого слова
-    func checkKeyword(_ keyword: LessonTaskSubstring, _ attributes: [NSAttributedString.Key: Any]) -> Bool {
+    private func checkKeyword(_ keyword: LessonTaskSubstring, _ attributes: [NSAttributedString.Key: Any]) -> Bool {
         switch keyword.type {
         case .input:
             return keyword.isCorrectAnswer(value: keyword.changedValue)
@@ -344,6 +341,16 @@ extension LessonViewController {
             }
             return true
         }
+    }
+    
+    // Получение определенного атрибута
+    private func getAttributeFrom(_ attributes: [NSAttributedString.Key: Any], key: NSAttributedString.Key) -> Any? {
+        for attr in attributes {
+            if attr.key == key {
+                return attr.value
+            }
+        }
+        return nil
     }
     
 }

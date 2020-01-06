@@ -9,13 +9,20 @@
 import UIKit
 
 class PassRecoveryViewController: UIViewController {
+    
+    // MARK: - Properties
 
     var loginText: String?
+    
+    // MARK: - Outlets
+    
     @IBOutlet weak var loginField: UITextField! {
         didSet {
             loginField.text = loginText
         }
     }
+    
+    // MARK: - Configures
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -30,13 +30,13 @@
 		57B39D0F229821F60060D4C2 /* YLLogoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B39D0E229821F60060D4C2 /* YLLogoutResponse.swift */; };
 		57B39D132298225D0060D4C2 /* YLLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B39D122298225D0060D4C2 /* YLLoginResponse.swift */; };
 		57B39D15229822680060D4C2 /* YLRegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B39D14229822680060D4C2 /* YLRegisterResponse.swift */; };
+		57C2220623C31F02002A0AD7 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C2220523C31F02002A0AD7 /* NetworkHelper.swift */; };
 		57EED4E52297D20A002B8908 /* StudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EED4E42297D20A002B8908 /* StudyViewController.swift */; };
 		57EED4E92297D776002B8908 /* YLCourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EED4E82297D776002B8908 /* YLCourceModel.swift */; };
 		57EED4EB2297D820002B8908 /* DifficultyLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EED4EA2297D820002B8908 /* DifficultyLevel.swift */; };
 		57FEBF56229F21B700148709 /* StudyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEBF55229F21B700148709 /* StudyRouter.swift */; };
 		57FEBF58229F28A000148709 /* SetTabBarVisible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEBF57229F28A000148709 /* SetTabBarVisible.swift */; };
 		57FEBF5B229F3CEA00148709 /* StudyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEBF59229F3CEA00148709 /* StudyTableViewCell.swift */; };
-		57FEBF5E229F4CE700148709 /* TheoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEBF5D229F4CE700148709 /* TheoryViewController.swift */; };
 		57FEBF60229F6FB900148709 /* LessonTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEBF5F229F6FB900148709 /* LessonTask.swift */; };
 		57FEF2EE2288AFE7000A4FD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF2ED2288AFE7000A4FD7 /* AppDelegate.swift */; };
 		57FEF2F32288AFE7000A4FD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57FEF2F12288AFE7000A4FD7 /* Main.storyboard */; };
@@ -101,13 +101,13 @@
 		57B39D0E229821F60060D4C2 /* YLLogoutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLLogoutResponse.swift; sourceTree = "<group>"; };
 		57B39D122298225D0060D4C2 /* YLLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLLoginResponse.swift; sourceTree = "<group>"; };
 		57B39D14229822680060D4C2 /* YLRegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLRegisterResponse.swift; sourceTree = "<group>"; };
+		57C2220523C31F02002A0AD7 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		57EED4E42297D20A002B8908 /* StudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyViewController.swift; sourceTree = "<group>"; };
 		57EED4E82297D776002B8908 /* YLCourceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLCourceModel.swift; sourceTree = "<group>"; };
 		57EED4EA2297D820002B8908 /* DifficultyLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyLevel.swift; sourceTree = "<group>"; };
 		57FEBF55229F21B700148709 /* StudyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyRouter.swift; sourceTree = "<group>"; };
 		57FEBF57229F28A000148709 /* SetTabBarVisible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTabBarVisible.swift; sourceTree = "<group>"; };
 		57FEBF59229F3CEA00148709 /* StudyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyTableViewCell.swift; sourceTree = "<group>"; };
-		57FEBF5D229F4CE700148709 /* TheoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheoryViewController.swift; sourceTree = "<group>"; };
 		57FEBF5F229F6FB900148709 /* LessonTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonTask.swift; sourceTree = "<group>"; };
 		57FEF2EA2288AFE7000A4FD7 /* YouLang-Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YouLang-Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57FEF2ED2288AFE7000A4FD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -267,8 +267,8 @@
 			children = (
 				57FEF2ED2288AFE7000A4FD7 /* AppDelegate.swift */,
 				57FEF3192288B1EB000A4FD7 /* BusinessLogic */,
-				57FEF3182288B1DF000A4FD7 /* Entity */,
-				57FEF3142288B131000A4FD7 /* Flows */,
+				57FEF3182288B1DF000A4FD7 /* Models */,
+				57FEF3142288B131000A4FD7 /* UI */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -293,6 +293,7 @@
 				572C904A229EDD2800154BA9 /* UIAlertViewDelegate.swift */,
 				57FEBF57229F28A000148709 /* SetTabBarVisible.swift */,
 				5723F12322B8F136002085F8 /* UIColorFilters.swift */,
+				57C2220523C31F02002A0AD7 /* NetworkHelper.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -305,15 +306,15 @@
 			path = Enviroments;
 			sourceTree = "<group>";
 		};
-		57FEF3142288B131000A4FD7 /* Flows */ = {
+		57FEF3142288B131000A4FD7 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				5700F29022977D4C0060D34A /* Views */,
 				57FEF3162288B13F000A4FD7 /* Storyboards */,
 				57FEF3152288B138000A4FD7 /* Controllers */,
 				57FEF3172288B1CD000A4FD7 /* Cells */,
+				5700F29022977D4C0060D34A /* Views */,
 			);
-			path = Flows;
+			path = UI;
 			sourceTree = "<group>";
 		};
 		57FEF3152288B138000A4FD7 /* Controllers */ = {
@@ -324,7 +325,6 @@
 				57FEF3262288C5E3000A4FD7 /* MainTabBarViewController.swift */,
 				57EED4E42297D20A002B8908 /* StudyViewController.swift */,
 				5785C69E229F035D006F8B20 /* LessonViewController.swift */,
-				57FEBF5D229F4CE700148709 /* TheoryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -347,7 +347,7 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		57FEF3182288B1DF000A4FD7 /* Entity */ = {
+		57FEF3182288B1DF000A4FD7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				57635E9222981B69002AD534 /* YLModels */,
@@ -356,7 +356,7 @@
 				570BBBE5229834530053DC12 /* YLErrorParser.swift */,
 				57FEBF5F229F6FB900148709 /* LessonTask.swift */,
 			);
-			path = Entity;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		57FEF3192288B1EB000A4FD7 /* BusinessLogic */ = {
@@ -624,7 +624,6 @@
 				57FEF3252288BE37000A4FD7 /* RequestRouter.swift in Sources */,
 				57635E8A2298181D002AD534 /* YLUser.swift in Sources */,
 				570BBBE42298337A0053DC12 /* YLErrorResponse.swift in Sources */,
-				57FEBF5E229F4CE700148709 /* TheoryViewController.swift in Sources */,
 				5723F12422B8F136002085F8 /* UIColorFilters.swift in Sources */,
 				57EED4EB2297D820002B8908 /* DifficultyLevel.swift in Sources */,
 				5785C69F229F035D006F8B20 /* LessonViewController.swift in Sources */,
@@ -645,6 +644,7 @@
 				57B39D15229822680060D4C2 /* YLRegisterResponse.swift in Sources */,
 				57FEF3272288C5E3000A4FD7 /* MainTabBarViewController.swift in Sources */,
 				57635E8E22981837002AD534 /* YLCource.swift in Sources */,
+				57C2220623C31F02002A0AD7 /* NetworkHelper.swift in Sources */,
 				57635E84229817E6002AD534 /* YLAuthRequestFactory.swift in Sources */,
 				572C904B229EDD2800154BA9 /* UIAlertViewDelegate.swift in Sources */,
 				57FEF33F2288E37D000A4FD7 /* AuthRouter.swift in Sources */,

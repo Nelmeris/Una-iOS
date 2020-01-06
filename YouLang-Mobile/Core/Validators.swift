@@ -86,7 +86,7 @@ struct UserNameValidator: ValidatorConvertible {
                 throw ValidationError("Invalid username, username should not contain whitespaces, numbers or special characters")
             }
         } catch {
-            throw ValidationError("Invalid username, username should not contain whitespaces,  or special characters")
+            throw ValidationError("Invalid username, username should not contain whitespaces, or special characters")
         }
         return value
     }

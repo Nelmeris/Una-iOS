@@ -11,6 +11,7 @@ import UIKit
 class CustomTextField: UITextField {
     
     override func awakeFromNib() {
+        super.awakeFromNib()
         // Underline
         let bottomLine = CALayer()
         bottomLine.frame = CGRect(x: 0.0, y: self.frame.height - 1, width: self.frame.width, height: 1.0)
@@ -18,13 +19,5 @@ class CustomTextField: UITextField {
         self.borderStyle = UITextField.BorderStyle.none
         self.layer.addSublayer(bottomLine)
     }
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
 
 }

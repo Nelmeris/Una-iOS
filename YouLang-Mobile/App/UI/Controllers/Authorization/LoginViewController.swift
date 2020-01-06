@@ -10,6 +10,8 @@ import UIKit
 import Keychain
 
 class LoginViewController: UIViewController, UITextFieldDelegate, AlertDelegate {
+    
+    // MARK: - Outlets
 
     @IBOutlet var router: LoginRouter!
     
@@ -17,7 +19,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AlertDelegate 
     @IBOutlet var emailField: CustomTextField!
     @IBOutlet weak var passwordField: CustomTextField!
     
-    // MARK: - Configuratings
+    // MARK: - Configures
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +30,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AlertDelegate 
         addTapGestureToHideKeyboard()
     }
     
-    func configureTextFields() {
+    private func configureTextFields() {
         emailField.delegate = self
         emailField.returnKeyType = .next
         
@@ -36,12 +38,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AlertDelegate 
         passwordField.returnKeyType = .done
     }
     
-    func configureNavigationController() {
+    private func configureNavigationController() {
         self.navigationItem.title = "АВТОРИЗАЦИЯ"
         self.navigationController?.navigationBar.topItem?.title = ""
     }
     
-    // MARK: - Button Handlers
+    // MARK: - Actions
     
     @IBAction func toMain(_ sender: Any) {
         let email = emailField.text ?? ""
@@ -71,24 +73,26 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AlertDelegate 
         }
     }
     
-    // MARK: - TextField & Keyboard
+    // MARK: - TextField
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == emailField {
             passwordField.becomeFirstResponder()
         } else {
-            self.view.endEditing(true)
+            self.view.dismissKeyboard()
             toMain(textField)
         }
         return false
     }
     
-    func registerForKeyboardNotifications() {
+    // MARK: - Keyboard
+    
+    private func registerForKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(kbWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(kbWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    func removeKeyboardNotifications() {
+    private func removeKeyboardNotifications() {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }

@@ -19,33 +19,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let authIds = (storyboardName: "Authorization", vcId: "Auth")
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
         // Set default settings for UINavigationBar
+        configureNavBarAppearance()
+        
+        // Set Root Window
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window!.rootViewController = choiseRootController()
+        window!.makeKeyAndVisible()
+        return true
+    }
+    
+    private func configureNavBarAppearance() {
         let navigationBarAppearace = UINavigationBar.appearance()
         navigationBarAppearace.isTranslucent = false
         navigationBarAppearace.tintColor = UIColor(named: "SecondColor")
         navigationBarAppearace.barTintColor = UIColor(named: "MainColor")
         navigationBarAppearace.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "TextColor")!]
-        
-        // Set Root Window
-        window = UIWindow(frame: UIScreen.main.bounds)
-        
-        var rootVC: UIViewController
+    }
+    
+    private func choiseRootController() -> UIViewController {
         let userDefaults = UserDefaults.standard
         if !userDefaults.bool(forKey: "isWelcome") { // If need present WelcomePageViewController
-            rootVC = UIStoryboard(name: welcomeIds.storyboardName, bundle: nil).instantiateViewController(withIdentifier: welcomeIds.vcId)
+            return UIStoryboard(name: welcomeIds.storyboardName, bundle: nil).instantiateViewController(withIdentifier: welcomeIds.vcId)
         } else {
             if Keychain.load("access_token") == nil { // If need authorization
                 let authVC = UIStoryboard(name: authIds.storyboardName, bundle: nil).instantiateViewController(withIdentifier: authIds.vcId)
-                rootVC = UINavigationController(rootViewController: authVC)
+                let navControl = UINavigationController(rootViewController: authVC)
+                navControl.modalPresentationStyle = .fullScreen
+                return navControl
             } else {
-                rootVC = MainTabBarViewController()
+                return MainTabBarViewController()
             }
         }
-        
-        window!.rootViewController = rootVC
-        window!.makeKeyAndVisible()
-        return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

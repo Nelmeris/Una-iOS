@@ -21,10 +21,6 @@ class StudyTableViewCell: UITableViewCell {
     @IBOutlet weak var levelView: UIView!
     @IBOutlet weak var levelLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
     override func prepareForReuse() {
         super.prepareForReuse()
         

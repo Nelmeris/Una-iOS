@@ -10,9 +10,11 @@ import UIKit
 
 class AuthViewController: UIViewController {
     
+    // MARK: - Properties
+    
     @IBOutlet var router: AuthRouter!
     
-    // MARK: - View states
+    // MARK: - Configures
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -24,7 +26,7 @@ class AuthViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-    // MARK: - Button handlers
+    // MARK: - Actions
     
     @IBAction func toLogin(_ sender: Any) {
         router.toLogin(configurate: nil)

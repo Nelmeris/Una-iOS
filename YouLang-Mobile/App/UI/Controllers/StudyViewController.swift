@@ -11,16 +11,35 @@ import Keychain
 
 class StudyViewController: UITableViewController {
     
+    // MARK: - Properties
+    
     var cources: [YLCourceModel] = []
     let reusableId = "StudyTableViewCellReusable"
+    
+    // MARK: - Outlets
+    
     @IBOutlet var router: StudyRouter!
+    
+    // MARK: - Configures
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureTableView()
         configureNavigationBar()
-        
+        loadData()
+    }
+    
+    private func configureTableView() {
+        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.separatorColor = UIColor.clear
+    }
+    
+    private func configureNavigationBar() {
+        self.navigationItem.title = "АКТИВНЫЕ КУРСЫ"
+    }
+    
+    private func loadData() {
         guard let accessToken = Keychain.load("access_token") else { return }
         YLService.shared.getCources(accessToken: accessToken) { (response) in
             guard let value = response.value else { return }
@@ -32,18 +51,9 @@ class StudyViewController: UITableViewController {
         }
     }
     
-    func configureTableView() {
-        self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.separatorColor = UIColor.clear
-    }
-    
-    func configureNavigationBar() {
-        self.navigationItem.title = "АКТИВНЫЕ КУРСЫ"
-    }
-    
 }
 
-// MARK: - Table view data source
+// MARK: - TableViewDataSource
 extension StudyViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
