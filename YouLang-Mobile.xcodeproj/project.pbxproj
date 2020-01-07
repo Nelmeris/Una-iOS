@@ -27,6 +27,7 @@
 		57635E8E22981837002AD534 /* YLCource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57635E8D22981837002AD534 /* YLCource.swift */; };
 		57635E9422981B93002AD534 /* YLUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57635E9322981B93002AD534 /* YLUserModel.swift */; };
 		5785C69F229F035D006F8B20 /* LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5785C69E229F035D006F8B20 /* LessonViewController.swift */; };
+		57A9D73423C3D226005D1953 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A9D73323C3D226005D1953 /* UIViewExtensions.swift */; };
 		57B39D0F229821F60060D4C2 /* YLLogoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B39D0E229821F60060D4C2 /* YLLogoutResponse.swift */; };
 		57B39D132298225D0060D4C2 /* YLLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B39D122298225D0060D4C2 /* YLLoginResponse.swift */; };
 		57B39D15229822680060D4C2 /* YLRegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B39D14229822680060D4C2 /* YLRegisterResponse.swift */; };
@@ -35,6 +36,7 @@
 		57C2220E23C329BD002A0AD7 /* StudyViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C2220D23C329BD002A0AD7 /* StudyViewPresenter.swift */; };
 		57C2221023C331B7002A0AD7 /* LessonViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C2220F23C331B7002A0AD7 /* LessonViewPresenter.swift */; };
 		57C2221223C33A7B002A0AD7 /* LessonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C2221123C33A7B002A0AD7 /* LessonViewModel.swift */; };
+		57C2226823C3B1CC002A0AD7 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C2226723C3B1CC002A0AD7 /* GradientView.swift */; };
 		57EED4E52297D20A002B8908 /* StudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EED4E42297D20A002B8908 /* StudyViewController.swift */; };
 		57EED4E92297D776002B8908 /* YLCourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EED4E82297D776002B8908 /* YLCourceModel.swift */; };
 		57EED4EB2297D820002B8908 /* DifficultyLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EED4EA2297D820002B8908 /* DifficultyLevel.swift */; };
@@ -102,6 +104,7 @@
 		57635E8D22981837002AD534 /* YLCource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLCource.swift; sourceTree = "<group>"; };
 		57635E9322981B93002AD534 /* YLUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLUserModel.swift; sourceTree = "<group>"; };
 		5785C69E229F035D006F8B20 /* LessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewController.swift; sourceTree = "<group>"; };
+		57A9D73323C3D226005D1953 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		57B39D0E229821F60060D4C2 /* YLLogoutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLLogoutResponse.swift; sourceTree = "<group>"; };
 		57B39D122298225D0060D4C2 /* YLLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLLoginResponse.swift; sourceTree = "<group>"; };
 		57B39D14229822680060D4C2 /* YLRegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLRegisterResponse.swift; sourceTree = "<group>"; };
@@ -110,6 +113,7 @@
 		57C2220D23C329BD002A0AD7 /* StudyViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyViewPresenter.swift; sourceTree = "<group>"; };
 		57C2220F23C331B7002A0AD7 /* LessonViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewPresenter.swift; sourceTree = "<group>"; };
 		57C2221123C33A7B002A0AD7 /* LessonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewModel.swift; sourceTree = "<group>"; };
+		57C2226723C3B1CC002A0AD7 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		57EED4E42297D20A002B8908 /* StudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyViewController.swift; sourceTree = "<group>"; };
 		57EED4E82297D776002B8908 /* YLCourceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLCourceModel.swift; sourceTree = "<group>"; };
 		57EED4EA2297D820002B8908 /* DifficultyLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyLevel.swift; sourceTree = "<group>"; };
@@ -198,14 +202,9 @@
 		57635E76229813B1002AD534 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				57635E7B229814B7002AD534 /* YLRequestFactory.swift */,
+				57C2226623C3ADDB002A0AD7 /* Requests */,
 				572FAE2B229CB0E100C261F7 /* YLService.swift */,
-				57635E83229817E6002AD534 /* YLAuthRequestFactory.swift */,
-				57635E85229817F9002AD534 /* YLAuth.swift */,
-				57635E8722981814002AD534 /* YLUserRequestFactory.swift */,
-				57635E892298181D002AD534 /* YLUser.swift */,
-				57635E8B2298182D002AD534 /* YLCourceRequestFactory.swift */,
-				57635E8D22981837002AD534 /* YLCource.swift */,
+				57635E7B229814B7002AD534 /* YLRequestFactory.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -246,6 +245,19 @@
 				57C2220F23C331B7002A0AD7 /* LessonViewPresenter.swift */,
 			);
 			path = Presenters;
+			sourceTree = "<group>";
+		};
+		57C2226623C3ADDB002A0AD7 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				57635E83229817E6002AD534 /* YLAuthRequestFactory.swift */,
+				57635E85229817F9002AD534 /* YLAuth.swift */,
+				57635E8722981814002AD534 /* YLUserRequestFactory.swift */,
+				57635E892298181D002AD534 /* YLUser.swift */,
+				57635E8B2298182D002AD534 /* YLCourceRequestFactory.swift */,
+				57635E8D22981837002AD534 /* YLCource.swift */,
+			);
+			path = Requests;
 			sourceTree = "<group>";
 		};
 		57FEF2E12288AFE7000A4FD7 = {
@@ -320,6 +332,8 @@
 				57FEBF57229F28A000148709 /* SetTabBarVisible.swift */,
 				5723F12322B8F136002085F8 /* UIColorFilters.swift */,
 				57C2220523C31F02002A0AD7 /* NetworkHelper.swift */,
+				57C2226723C3B1CC002A0AD7 /* GradientView.swift */,
+				57A9D73323C3D226005D1953 /* UIViewExtensions.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -649,6 +663,7 @@
 				57B39D132298225D0060D4C2 /* YLLoginResponse.swift in Sources */,
 				570BBBE6229834530053DC12 /* YLErrorParser.swift in Sources */,
 				57FEF3302288C7BC000A4FD7 /* LoginViewController.swift in Sources */,
+				57C2226823C3B1CC002A0AD7 /* GradientView.swift in Sources */,
 				57FEF3252288BE37000A4FD7 /* RequestRouter.swift in Sources */,
 				57635E8A2298181D002AD534 /* YLUser.swift in Sources */,
 				570BBBE42298337A0053DC12 /* YLErrorResponse.swift in Sources */,
@@ -685,6 +700,7 @@
 				57C2221023C331B7002A0AD7 /* LessonViewPresenter.swift in Sources */,
 				57FEF3242288BE37000A4FD7 /* ErrorParser.swift in Sources */,
 				57FEBF58229F28A000148709 /* SetTabBarVisible.swift in Sources */,
+				57A9D73423C3D226005D1953 /* UIViewExtensions.swift in Sources */,
 				57FEF2EE2288AFE7000A4FD7 /* AppDelegate.swift in Sources */,
 				57EED4E52297D20A002B8908 /* StudyViewController.swift in Sources */,
 				57FEF32E2288C71B000A4FD7 /* PassRecoveryViewController.swift in Sources */,

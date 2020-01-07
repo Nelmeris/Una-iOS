@@ -27,12 +27,13 @@ struct LessonViewModel {
     }
     
     private mutating func createAttributedText() {
-        attributedText.addAttribute(.font,
-                          value: UIFont(name: "Lato", size: 20)!,
-                          range: NSRange(location: 0, length: text.count))
+        var range = NSRange(location: 0, length: text.count)
+        attributedText.addAttributes([
+            .font: UIFont(name: "Lato", size: 24)!],
+                                     range: range)
         
         for substring in substrings {
-            var range = NSRange(location: substring.position, length: substring.value.count)
+            range = NSRange(location: substring.position, length: substring.value.count)
             attributedText.addAttribute(substring.uniqueValue(), value: substring, range: range)
             
             switch substring.type {

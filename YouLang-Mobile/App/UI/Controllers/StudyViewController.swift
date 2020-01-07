@@ -40,7 +40,7 @@ class StudyViewController: UITableViewController, StudyView {
     }
     
     private func configureNavigationBar() {
-        navigationItem.title = "АКТИВНЫЕ КУРСЫ"
+        navigationItem.title = "Уроки".uppercased()
     }
     
     func setCources(cources: [YLCourceModel], viewModels: [CourceViewModel]) {
