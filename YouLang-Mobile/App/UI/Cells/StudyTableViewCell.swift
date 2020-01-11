@@ -15,7 +15,7 @@ class StudyTableViewCell: UITableViewCell {
     @IBOutlet weak var levelView: UIView!
     @IBOutlet weak var levelLabel: UILabel!
     
-    public func configure(with viewModel: CourceViewModel) {
+    public func configure(with viewModel: LessonViewModel) {
         titleLabel.text = viewModel.title
         stateLabel.text = viewModel.stateText
         levelLabel.text = viewModel.levelTitle

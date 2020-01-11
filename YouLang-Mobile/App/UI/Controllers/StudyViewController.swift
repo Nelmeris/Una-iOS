@@ -13,8 +13,8 @@ class StudyViewController: UITableViewController, StudyView {
     
     // MARK: - Properties
     
-    private var viewModels: [CourceViewModel] = []
-    private var cources: [YLCourceModel] = []
+    private var viewModels: [LessonViewModel] = []
+    private var lessons: [UnaLesson] = []
     private let reusableId = "StudyTableViewCellReusable"
     private var presenter: StudyViewPresenter!
     
@@ -43,8 +43,8 @@ class StudyViewController: UITableViewController, StudyView {
         navigationItem.title = "Уроки".uppercased()
     }
     
-    func setCources(cources: [YLCourceModel], viewModels: [CourceViewModel]) {
-        self.cources = cources
+    func setCources(lessons: [UnaLesson], viewModels: [LessonViewModel]) {
+        self.lessons = lessons
         self.viewModels = viewModels
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -71,7 +71,7 @@ extension StudyViewController {
         self.hidesBottomBarWhenPushed = true
         router.toLesson { (controller) in
             self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-            controller.cource = self.cources[indexPath.row]
+            controller.lesson = self.lessons[indexPath.row]
         }
         self.hidesBottomBarWhenPushed = false
     }

@@ -1,5 +1,5 @@
 //
-//  LessonViewPresenter.swift
+//  LessonTaskViewPresenter.swift
 //  YouLang-Mobile
 //
 //  Created by Artem Kufaev on 06.01.2020.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol LessonView: class {
-    func setTask(_ task: LessonViewModel, isFirst: Bool, isLast: Bool)
+protocol LessonTaskView: class {
+    func setTask(_ task: LessonTaskViewModel, isFirst: Bool, isLast: Bool)
     func setResult(message: String)
 }
 
-protocol LessonViewPresenter {
-    init(view: LessonView)
+protocol LessonTaskViewPresenter {
+    init(view: LessonTaskView)
     func showLesson()
     func showNextTask()
     func showPrevTask()
@@ -23,16 +23,16 @@ protocol LessonViewPresenter {
 }
 
 
-class LessonPresenter : LessonViewPresenter {
+class LessonTaskPresenter : LessonTaskViewPresenter {
     
-    unowned let view: LessonView
+    unowned let view: LessonTaskView
     
     private var lessonTasks: [LessonTask] = []
-    private var viewModels: [LessonViewModel] = []
-    private let viewModelFactory = LessonViewModelFactory()
+    private var viewModels: [LessonTaskViewModel] = []
+    private let viewModelFactory = LessonTaskViewModelFactory()
     private var currentTask = 0
     
-    required init(view: LessonView) {
+    required init(view: LessonTaskView) {
         self.view = view
         lessonTasks = tasks
     }
@@ -83,7 +83,7 @@ class LessonPresenter : LessonViewPresenter {
     }
     
     // Проверка задания
-    func checkTask(_ viewModel: LessonViewModel) -> Bool {
+    func checkTask(_ viewModel: LessonTaskViewModel) -> Bool {
         let attributedText = viewModel.attributedText
         for substring in viewModel.substrings { // Все ключевые слова
             let range = NSRange(location: substring.position, length: substring.changedValue.count)

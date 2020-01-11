@@ -9,6 +9,7 @@
 import UIKit
 
 enum DifficultyLevel: String {
+    
     case a1 = "A1"
     case a2 = "A2"
     case b1 = "B1"

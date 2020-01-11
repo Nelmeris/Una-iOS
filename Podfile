@@ -9,6 +9,8 @@ target 'YouLang-Mobile' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'Keychain'
+  pod 'PostgresClientKit'
+  pod 'CryptoSwift', '~> 1.0'
 
   target 'YouLang-MobileTests' do
     inherit! :search_paths

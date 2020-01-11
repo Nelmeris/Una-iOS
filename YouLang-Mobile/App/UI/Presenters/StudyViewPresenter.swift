@@ -10,7 +10,7 @@ import Foundation
 import Keychain
 
 protocol StudyView: class {
-    func setCources(cources: [YLCourceModel], viewModels: [CourceViewModel])
+    func setCources(lessons: [UnaLesson], viewModels: [LessonViewModel])
 }
 
 protocol StudyViewPresenter {
@@ -22,29 +22,26 @@ protocol StudyViewPresenter {
 class StudyPresenter : StudyViewPresenter {
     
     unowned let view: StudyView
-    private let viewModelFactory = CourceViewModelFactory()
+    private let viewModelFactory = LessonViewModelFactory()
     
     required init(view: StudyView) {
         self.view = view
     }
     
     func showCources() {
-        loadData { cources in
-            let viewModels = self.viewModelFactory.construct(from: cources)
-            self.view.setCources(cources: cources, viewModels: viewModels)
+        loadData { lessons in
+            let viewModels = self.viewModelFactory.construct(from: lessons)
+            self.view.setCources(lessons: lessons, viewModels: viewModels)
         }
     }
     
-    private func loadData(completion: @escaping ([YLCourceModel]) -> ()) {
-        guard let accessToken = Keychain.load("access_token") else { return }
-        YLService.shared.getCources(accessToken: accessToken) { (response) in
-            switch response.result {
-            case .success(let cources):
-                completion(cources)
-            case .failure(let error):
-                print(error)
-                completion([])
+    private func loadData(completion: @escaping ([UnaLesson]) -> ()) {
+        do {
+            try UnaService.shared.getLessons { lessons in
+                completion(lessons)
             }
+        } catch {
+            print(error)
         }
     }
     

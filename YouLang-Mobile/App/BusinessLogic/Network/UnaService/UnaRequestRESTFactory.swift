@@ -1,17 +1,19 @@
 //
-//  YLRequestFactory.swift
+//  UnaRequestRESTFactory.swift
 //  YouLang-Mobile
 //
-//  Created by Artem Kufaev on 24/05/2019.
-//  Copyright © 2019 Artem Kufaev. All rights reserved.
+//  Created by Artem Kufaev on 11.01.2020.
+//  Copyright © 2020 Artem Kufaev. All rights reserved.
 //
 
 import Alamofire
 
-class YLRequestFactory {
+final class UnaRequestRESTFactory {
+    
+    let sessionQueue = DispatchQueue.global(qos: .utility)
     
     func makeErrorParser() -> AbstractErrorParser {
-        return YLErrorParser()
+        return UnaErrorParser()
     }
     
     lazy var commonSessionManager: SessionManager = {
@@ -21,7 +23,5 @@ class YLRequestFactory {
         let manager = SessionManager(configuration: configuration)
         return manager
     }()
-    
-    let sessionQueue = DispatchQueue.global(qos: .utility)
     
 }

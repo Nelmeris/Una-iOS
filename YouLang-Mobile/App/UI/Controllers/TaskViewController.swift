@@ -1,5 +1,5 @@
 //
-//  LessonViewController.swift
+//  TaskViewController.swift
 //  YouLang-Mobile
 //
 //  Created by Artem Kufaev on 29/05/2019.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class LessonViewController: UIViewController, UIGestureRecognizerDelegate, AlertDelegate, LessonView {
+class TaskViewController: UIViewController, UIGestureRecognizerDelegate, AlertDelegate, LessonTaskView {
     
     // MARK: - Properties
-    private var presenter: LessonViewPresenter!
+    private var presenter: LessonTaskViewPresenter!
     
-    var cource: YLCourceModel!
-    private var viewModel: LessonViewModel!
+    var lessonPart: UnaLessonPart!
+    private var viewModel: LessonTaskViewModel!
     private let animationDuration = 0.8
     
     // MARK: - Outlets
@@ -36,7 +36,7 @@ class LessonViewController: UIViewController, UIGestureRecognizerDelegate, Alert
         configureProgressView()
         configureNavigationController() // конфигурация навигационного контроллера
         
-        presenter = LessonPresenter(view: self)
+        presenter = LessonTaskPresenter(view: self)
         presenter.showLesson()
     }
     
@@ -44,6 +44,7 @@ class LessonViewController: UIViewController, UIGestureRecognizerDelegate, Alert
         super.viewWillAppear(animated)
         configureNavigationController()
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -57,6 +58,7 @@ class LessonViewController: UIViewController, UIGestureRecognizerDelegate, Alert
         navBar?.isTranslucent = false
         navBar?.tintColor = UIColor(named: "MainColor")
         navBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "MainColor")!]
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
     
     // Прогресс бара
@@ -79,7 +81,7 @@ class LessonViewController: UIViewController, UIGestureRecognizerDelegate, Alert
     
     // Навигационная панель
     private func configureNavigationController() {
-        self.title = cource.title.uppercased()
+        self.title = lessonPart.title.uppercased()
         let navBar = self.navigationController?.navigationBar
         navBar?.setBackgroundImage(UIImage(), for: .default)
         navBar?.shadowImage = UIImage()
@@ -116,7 +118,7 @@ class LessonViewController: UIViewController, UIGestureRecognizerDelegate, Alert
         self.present(controller, animated: true)
     }
     
-    func setTask(_ task: LessonViewModel, isFirst: Bool, isLast: Bool) {
+    func setTask(_ task: LessonTaskViewModel, isFirst: Bool, isLast: Bool) {
         if let viewModel = viewModel,
             viewModel.progress == task.progress {
             setTaskText(task.attributedText)
@@ -154,21 +156,6 @@ class LessonViewController: UIViewController, UIGestureRecognizerDelegate, Alert
             self.navigationController?.popViewController(animated: true)
         }
     }
-    
-//    private func setPrevButton(isEnabled: Bool) {
-//        prevTaskButton.isHidden = !isEnabled
-//        prevTaskButton.isEnabled = isEnabled
-//    }
-//
-//    private func configureNextTaskButton(isLast: Bool) {
-//        if isLast {
-//            nextTaskButton.setTitle("ПРОВЕРИТЬ", for: .normal)
-//            nextTaskButton.backgroundColor = nextTaskButton.backgroundColor?.darker(by: 5)
-//        } else {
-//            nextTaskButton.setTitle("ДАЛЕЕ", for: .normal)
-//            nextTaskButton.backgroundColor = UIColor(named: "SecondColor")
-//        }
-//    }
     
     // MARK: - Taps
     

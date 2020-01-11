@@ -12,8 +12,8 @@ final class StudyRouter: BaseRouter {
     
     let storyboardName = "Main"
     
-    func toLesson(configurate: ((LessonViewController) -> ())?) {
-        let controller = UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(withIdentifier: "Lesson") as! LessonViewController
+    func toLesson(configurate: ((LessonPartsViewController) -> ())?) {
+        let controller = UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(withIdentifier: "Lesson") as! LessonPartsViewController
         if let configurate = configurate {
             configurate(controller)
         }
