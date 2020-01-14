@@ -1,18 +1,18 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'YouLang-Mobile' do
+target 'Una-Mobile' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for YouLang-Mobile
+  # Pods for Una-Mobile
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'Keychain'
   pod 'PostgresClientKit'
   pod 'CryptoSwift', '~> 1.0'
 
-  target 'YouLang-MobileTests' do
+  target 'Una-MobileTests' do
     inherit! :search_paths
     # Pods for testing
   end

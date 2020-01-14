@@ -1,0 +1,1122 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5700F28F22975F3A0060D34A /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5700F28E22975F3A0060D34A /* Lato-Regular.ttf */; };
+		5700F29222977D790060D34A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5700F29122977D790060D34A /* CustomTextField.swift */; };
+		5700F29422978FF80060D34A /* TapGestureToHideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5700F29322978FF80060D34A /* TapGestureToHideKeyboard.swift */; };
+		570BBBE42298337A0053DC12 /* YLErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570BBBE32298337A0053DC12 /* YLErrorResponse.swift */; };
+		570BBBE6229834530053DC12 /* YLErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570BBBE5229834530053DC12 /* YLErrorParser.swift */; };
+		570EB89723CA141900037211 /* UnaDBServiceLessons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570EB89623CA141900037211 /* UnaDBServiceLessons.swift */; };
+		570EB89A23CA155700037211 /* UnaLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570EB89923CA155700037211 /* UnaLesson.swift */; };
+		570EB89C23CA15F600037211 /* UnaLessonPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570EB89B23CA15F600037211 /* UnaLessonPart.swift */; };
+		570EB8A023CA199300037211 /* UnaRequestRESTFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570EB89F23CA199300037211 /* UnaRequestRESTFactory.swift */; };
+		570EB8A323CA19CD00037211 /* UnaErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570EB8A223CA19CD00037211 /* UnaErrorParser.swift */; };
+		570EB8A523CA1DBD00037211 /* AbstractPostgresRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570EB8A423CA1DBD00037211 /* AbstractPostgresRequestFactory.swift */; };
+		5723F12422B8F136002085F8 /* UIColorFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5723F12322B8F136002085F8 /* UIColorFilters.swift */; };
+		572C9047229ED01900154BA9 /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572C9046229ED01800154BA9 /* Validators.swift */; };
+		572C904B229EDD2800154BA9 /* UIAlertViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572C904A229EDD2800154BA9 /* UIAlertViewDelegate.swift */; };
+		572FAE2C229CB0E100C261F7 /* YLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572FAE2B229CB0E100C261F7 /* YLService.swift */; };
+		5757C010229736AD004C9E1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5757C00F229736AD004C9E1E /* Assets.xcassets */; };
+		57635E7C229814B7002AD534 /* YLRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57635E7B229814B7002AD534 /* YLRequestFactory.swift */; };
+		57635E7E2298160D002AD534 /* RequestGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57635E7D2298160D002AD534 /* RequestGroup.swift */; };
+		57635E84229817E6002AD534 /* YLAuthRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57635E83229817E6002AD534 /* YLAuthRequestFactory.swift */; };
+		57635E86229817F9002AD534 /* YLAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57635E85229817F9002AD534 /* YLAuth.swift */; };
+		57635E8822981814002AD534 /* YLUserRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57635E8722981814002AD534 /* YLUserRequestFactory.swift */; };
+		57635E8A2298181D002AD534 /* YLUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57635E892298181D002AD534 /* YLUser.swift */; };
+		57635E8C2298182D002AD534 /* YLCourceRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57635E8B2298182D002AD534 /* YLCourceRequestFactory.swift */; };
+		57635E8E22981837002AD534 /* YLCource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57635E8D22981837002AD534 /* YLCource.swift */; };
+		57635E9422981B93002AD534 /* YLUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57635E9322981B93002AD534 /* YLUserModel.swift */; };
+		5785C69F229F035D006F8B20 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5785C69E229F035D006F8B20 /* TaskViewController.swift */; };
+		57A9D73423C3D226005D1953 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A9D73323C3D226005D1953 /* UIViewExtensions.swift */; };
+		57A9D73823C4AF2B005D1953 /* UnaDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A9D73723C4AF2B005D1953 /* UnaDBService.swift */; };
+		57B39D0F229821F60060D4C2 /* YLLogoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B39D0E229821F60060D4C2 /* YLLogoutResponse.swift */; };
+		57B39D132298225D0060D4C2 /* YLLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B39D122298225D0060D4C2 /* YLLoginResponse.swift */; };
+		57B39D15229822680060D4C2 /* YLRegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B39D14229822680060D4C2 /* YLRegisterResponse.swift */; };
+		57B7278623CA2955008B95C4 /* LessonPartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7278523CA2955008B95C4 /* LessonPartsViewController.swift */; };
+		57B7278823CA2B66008B95C4 /* LessonRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7278723CA2B66008B95C4 /* LessonRouter.swift */; };
+		57B7278A23CA2D57008B95C4 /* LessonPartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7278923CA2D57008B95C4 /* LessonPartViewModel.swift */; };
+		57B7278C23CA2DC8008B95C4 /* LessonPartViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7278B23CA2DC8008B95C4 /* LessonPartViewPresenter.swift */; };
+		57C2220623C31F02002A0AD7 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C2220523C31F02002A0AD7 /* NetworkHelper.swift */; };
+		57C2220923C321E9002A0AD7 /* LessonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C2220823C321E9002A0AD7 /* LessonViewModel.swift */; };
+		57C2220E23C329BD002A0AD7 /* StudyViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C2220D23C329BD002A0AD7 /* StudyViewPresenter.swift */; };
+		57C2221023C331B7002A0AD7 /* LessonTaskViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C2220F23C331B7002A0AD7 /* LessonTaskViewPresenter.swift */; };
+		57C2221223C33A7B002A0AD7 /* LessonTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C2221123C33A7B002A0AD7 /* LessonTaskViewModel.swift */; };
+		57C2226823C3B1CC002A0AD7 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C2226723C3B1CC002A0AD7 /* GradientView.swift */; };
+		57EC310323CA343C00241831 /* UnaRESTService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EC310223CA343C00241831 /* UnaRESTService.swift */; };
+		57EC310723CA35FA00241831 /* UnaLessonTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EC310623CA35FA00241831 /* UnaLessonTask.swift */; };
+		57EC310923CA387F00241831 /* UnaDBServiceTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EC310823CA387F00241831 /* UnaDBServiceTasks.swift */; };
+		57EC310B23CDDB3C00241831 /* StringOccurrences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EC310A23CDDB3C00241831 /* StringOccurrences.swift */; };
+		57EED4E52297D20A002B8908 /* StudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EED4E42297D20A002B8908 /* StudyViewController.swift */; };
+		57EED4E92297D776002B8908 /* YLCourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EED4E82297D776002B8908 /* YLCourceModel.swift */; };
+		57EED4EB2297D820002B8908 /* DifficultyLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EED4EA2297D820002B8908 /* DifficultyLevel.swift */; };
+		57FEBF56229F21B700148709 /* StudyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEBF55229F21B700148709 /* StudyRouter.swift */; };
+		57FEBF58229F28A000148709 /* SetTabBarVisible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEBF57229F28A000148709 /* SetTabBarVisible.swift */; };
+		57FEBF5B229F3CEA00148709 /* StudyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEBF59229F3CEA00148709 /* StudyTableViewCell.swift */; };
+		57FEBF60229F6FB900148709 /* LessonTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEBF5F229F6FB900148709 /* LessonTask.swift */; };
+		57FEF2EE2288AFE7000A4FD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF2ED2288AFE7000A4FD7 /* AppDelegate.swift */; };
+		57FEF2F32288AFE7000A4FD7 /* Study.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57FEF2F12288AFE7000A4FD7 /* Study.storyboard */; };
+		57FEF2F62288AFE7000A4FD7 /* Una_Mobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF2F42288AFE7000A4FD7 /* Una_Mobile.xcdatamodeld */; };
+		57FEF2FB2288AFE9000A4FD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57FEF2F92288AFE9000A4FD7 /* LaunchScreen.storyboard */; };
+		57FEF3062288AFE9000A4FD7 /* YLUsersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF3052288AFE9000A4FD7 /* YLUsersTests.swift */; };
+		57FEF3212288BE37000A4FD7 /* AbstractErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF31C2288BE37000A4FD7 /* AbstractErrorParser.swift */; };
+		57FEF3222288BE37000A4FD7 /* AbstractRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF31D2288BE37000A4FD7 /* AbstractRequestFactory.swift */; };
+		57FEF3232288BE37000A4FD7 /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF31E2288BE37000A4FD7 /* DataRequest.swift */; };
+		57FEF3242288BE37000A4FD7 /* ErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF31F2288BE37000A4FD7 /* ErrorParser.swift */; };
+		57FEF3252288BE37000A4FD7 /* RequestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF3202288BE37000A4FD7 /* RequestRouter.swift */; };
+		57FEF3272288C5E3000A4FD7 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF3262288C5E3000A4FD7 /* MainTabBarViewController.swift */; };
+		57FEF3292288C616000A4FD7 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF3282288C616000A4FD7 /* AuthViewController.swift */; };
+		57FEF32C2288C6FD000A4FD7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF32B2288C6FD000A4FD7 /* RegisterViewController.swift */; };
+		57FEF32E2288C71B000A4FD7 /* PassRecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF32D2288C71B000A4FD7 /* PassRecoveryViewController.swift */; };
+		57FEF3302288C7BC000A4FD7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF32F2288C7BC000A4FD7 /* LoginViewController.swift */; };
+		57FEF3322288CAD2000A4FD7 /* WelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF3312288CAD2000A4FD7 /* WelcomePageViewController.swift */; };
+		57FEF3342288D214000A4FD7 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57FEF3332288D214000A4FD7 /* Welcome.storyboard */; };
+		57FEF3362288D223000A4FD7 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57FEF3352288D223000A4FD7 /* Authorization.storyboard */; };
+		57FEF33C2288E2FA000A4FD7 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF33B2288E2FA000A4FD7 /* BaseRouter.swift */; };
+		57FEF33F2288E37D000A4FD7 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF33E2288E37D000A4FD7 /* AuthRouter.swift */; };
+		57FEF3412288E804000A4FD7 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF3402288E804000A4FD7 /* LoginRouter.swift */; };
+		57FEF3462288E85C000A4FD7 /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF3452288E85C000A4FD7 /* RegisterRouter.swift */; };
+		B1EE5F477F3ECAF3E6F51AF3 /* Pods_Una_MobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93659C28406E0E0F9F95D8AE /* Pods_Una_MobileTests.framework */; };
+		DE83B44F480C2984E345AE22 /* Pods_Una_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F5D27DD1B24409E4124990F /* Pods_Una_Mobile.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		57FEF3022288AFE9000A4FD7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 57FEF2E22288AFE7000A4FD7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 57FEF2E92288AFE7000A4FD7;
+			remoteInfo = "YouLang-Mobile";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1B6DF04993FC115EDDD7E46D /* Pods-YouLang-Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YouLang-Mobile.release.xcconfig"; path = "Target Support Files/Pods-YouLang-Mobile/Pods-YouLang-Mobile.release.xcconfig"; sourceTree = "<group>"; };
+		1BE433E613F43777DB7C3CEE /* Pods-YouLang-MobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YouLang-MobileTests.debug.xcconfig"; path = "Target Support Files/Pods-YouLang-MobileTests/Pods-YouLang-MobileTests.debug.xcconfig"; sourceTree = "<group>"; };
+		22D60672292A5D2598ECBA36 /* Pods-Una-MobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Una-MobileTests.release.xcconfig"; path = "Target Support Files/Pods-Una-MobileTests/Pods-Una-MobileTests.release.xcconfig"; sourceTree = "<group>"; };
+		267454CD7156138067B33D07 /* Pods-YouLang-MobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YouLang-MobileTests.release.xcconfig"; path = "Target Support Files/Pods-YouLang-MobileTests/Pods-YouLang-MobileTests.release.xcconfig"; sourceTree = "<group>"; };
+		5700F28E22975F3A0060D34A /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		5700F29122977D790060D34A /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		5700F29322978FF80060D34A /* TapGestureToHideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureToHideKeyboard.swift; sourceTree = "<group>"; };
+		570BBBE32298337A0053DC12 /* YLErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLErrorResponse.swift; sourceTree = "<group>"; };
+		570BBBE5229834530053DC12 /* YLErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLErrorParser.swift; sourceTree = "<group>"; };
+		570EB89623CA141900037211 /* UnaDBServiceLessons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnaDBServiceLessons.swift; sourceTree = "<group>"; };
+		570EB89923CA155700037211 /* UnaLesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnaLesson.swift; sourceTree = "<group>"; };
+		570EB89B23CA15F600037211 /* UnaLessonPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnaLessonPart.swift; sourceTree = "<group>"; };
+		570EB89F23CA199300037211 /* UnaRequestRESTFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnaRequestRESTFactory.swift; sourceTree = "<group>"; };
+		570EB8A223CA19CD00037211 /* UnaErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnaErrorParser.swift; sourceTree = "<group>"; };
+		570EB8A423CA1DBD00037211 /* AbstractPostgresRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractPostgresRequestFactory.swift; sourceTree = "<group>"; };
+		5723F12322B8F136002085F8 /* UIColorFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorFilters.swift; sourceTree = "<group>"; };
+		572C9046229ED01800154BA9 /* Validators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
+		572C904A229EDD2800154BA9 /* UIAlertViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertViewDelegate.swift; sourceTree = "<group>"; };
+		572FAE2B229CB0E100C261F7 /* YLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLService.swift; sourceTree = "<group>"; };
+		5757C00F229736AD004C9E1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		57635E7B229814B7002AD534 /* YLRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLRequestFactory.swift; sourceTree = "<group>"; };
+		57635E7D2298160D002AD534 /* RequestGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestGroup.swift; sourceTree = "<group>"; };
+		57635E83229817E6002AD534 /* YLAuthRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLAuthRequestFactory.swift; sourceTree = "<group>"; };
+		57635E85229817F9002AD534 /* YLAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLAuth.swift; sourceTree = "<group>"; };
+		57635E8722981814002AD534 /* YLUserRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLUserRequestFactory.swift; sourceTree = "<group>"; };
+		57635E892298181D002AD534 /* YLUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLUser.swift; sourceTree = "<group>"; };
+		57635E8B2298182D002AD534 /* YLCourceRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLCourceRequestFactory.swift; sourceTree = "<group>"; };
+		57635E8D22981837002AD534 /* YLCource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLCource.swift; sourceTree = "<group>"; };
+		57635E9322981B93002AD534 /* YLUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLUserModel.swift; sourceTree = "<group>"; };
+		5785C69E229F035D006F8B20 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		57A9D73323C3D226005D1953 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		57A9D73723C4AF2B005D1953 /* UnaDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnaDBService.swift; sourceTree = "<group>"; };
+		57B39D0E229821F60060D4C2 /* YLLogoutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLLogoutResponse.swift; sourceTree = "<group>"; };
+		57B39D122298225D0060D4C2 /* YLLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLLoginResponse.swift; sourceTree = "<group>"; };
+		57B39D14229822680060D4C2 /* YLRegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLRegisterResponse.swift; sourceTree = "<group>"; };
+		57B7278523CA2955008B95C4 /* LessonPartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonPartsViewController.swift; sourceTree = "<group>"; };
+		57B7278723CA2B66008B95C4 /* LessonRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonRouter.swift; sourceTree = "<group>"; };
+		57B7278923CA2D57008B95C4 /* LessonPartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonPartViewModel.swift; sourceTree = "<group>"; };
+		57B7278B23CA2DC8008B95C4 /* LessonPartViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonPartViewPresenter.swift; sourceTree = "<group>"; };
+		57C2220523C31F02002A0AD7 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		57C2220823C321E9002A0AD7 /* LessonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewModel.swift; sourceTree = "<group>"; };
+		57C2220D23C329BD002A0AD7 /* StudyViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyViewPresenter.swift; sourceTree = "<group>"; };
+		57C2220F23C331B7002A0AD7 /* LessonTaskViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonTaskViewPresenter.swift; sourceTree = "<group>"; };
+		57C2221123C33A7B002A0AD7 /* LessonTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonTaskViewModel.swift; sourceTree = "<group>"; };
+		57C2226723C3B1CC002A0AD7 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		57EC310223CA343C00241831 /* UnaRESTService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnaRESTService.swift; sourceTree = "<group>"; };
+		57EC310623CA35FA00241831 /* UnaLessonTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnaLessonTask.swift; sourceTree = "<group>"; };
+		57EC310823CA387F00241831 /* UnaDBServiceTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnaDBServiceTasks.swift; sourceTree = "<group>"; };
+		57EC310A23CDDB3C00241831 /* StringOccurrences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringOccurrences.swift; sourceTree = "<group>"; };
+		57EED4E42297D20A002B8908 /* StudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyViewController.swift; sourceTree = "<group>"; };
+		57EED4E82297D776002B8908 /* YLCourceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLCourceModel.swift; sourceTree = "<group>"; };
+		57EED4EA2297D820002B8908 /* DifficultyLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyLevel.swift; sourceTree = "<group>"; };
+		57FEBF55229F21B700148709 /* StudyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyRouter.swift; sourceTree = "<group>"; };
+		57FEBF57229F28A000148709 /* SetTabBarVisible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTabBarVisible.swift; sourceTree = "<group>"; };
+		57FEBF59229F3CEA00148709 /* StudyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyTableViewCell.swift; sourceTree = "<group>"; };
+		57FEBF5F229F6FB900148709 /* LessonTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonTask.swift; sourceTree = "<group>"; };
+		57FEF2EA2288AFE7000A4FD7 /* Юна.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Юна.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		57FEF2ED2288AFE7000A4FD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		57FEF2F22288AFE7000A4FD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Study.storyboard; sourceTree = "<group>"; };
+		57FEF2F52288AFE7000A4FD7 /* YouLang_Mobile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YouLang_Mobile.xcdatamodel; sourceTree = "<group>"; };
+		57FEF2FA2288AFE9000A4FD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		57FEF2FC2288AFE9000A4FD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57FEF3012288AFE9000A4FD7 /* Una-MobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Una-MobileTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		57FEF3052288AFE9000A4FD7 /* YLUsersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLUsersTests.swift; sourceTree = "<group>"; };
+		57FEF3072288AFE9000A4FD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57FEF31C2288BE37000A4FD7 /* AbstractErrorParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractErrorParser.swift; sourceTree = "<group>"; };
+		57FEF31D2288BE37000A4FD7 /* AbstractRequestFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractRequestFactory.swift; sourceTree = "<group>"; };
+		57FEF31E2288BE37000A4FD7 /* DataRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
+		57FEF31F2288BE37000A4FD7 /* ErrorParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorParser.swift; sourceTree = "<group>"; };
+		57FEF3202288BE37000A4FD7 /* RequestRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestRouter.swift; sourceTree = "<group>"; };
+		57FEF3262288C5E3000A4FD7 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		57FEF3282288C616000A4FD7 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		57FEF32B2288C6FD000A4FD7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		57FEF32D2288C71B000A4FD7 /* PassRecoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassRecoveryViewController.swift; sourceTree = "<group>"; };
+		57FEF32F2288C7BC000A4FD7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		57FEF3312288CAD2000A4FD7 /* WelcomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageViewController.swift; sourceTree = "<group>"; };
+		57FEF3332288D214000A4FD7 /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
+		57FEF3352288D223000A4FD7 /* Authorization.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authorization.storyboard; sourceTree = "<group>"; };
+		57FEF33B2288E2FA000A4FD7 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		57FEF33E2288E37D000A4FD7 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
+		57FEF3402288E804000A4FD7 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		57FEF3452288E85C000A4FD7 /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
+		5F5D27DD1B24409E4124990F /* Pods_Una_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Una_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EB9405A69C81543959E28F9 /* Pods-Una-MobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Una-MobileTests.debug.xcconfig"; path = "Target Support Files/Pods-Una-MobileTests/Pods-Una-MobileTests.debug.xcconfig"; sourceTree = "<group>"; };
+		93659C28406E0E0F9F95D8AE /* Pods_Una_MobileTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Una_MobileTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1AD8EDF9C46E60F522F1F4A /* Pods-Una-Mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Una-Mobile.debug.xcconfig"; path = "Target Support Files/Pods-Una-Mobile/Pods-Una-Mobile.debug.xcconfig"; sourceTree = "<group>"; };
+		EDBA3370FDDE5AAC315511B7 /* Pods-YouLang-Mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YouLang-Mobile.debug.xcconfig"; path = "Target Support Files/Pods-YouLang-Mobile/Pods-YouLang-Mobile.debug.xcconfig"; sourceTree = "<group>"; };
+		FCD404A5DFFC3B6241C40D6B /* Pods-Una-Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Una-Mobile.release.xcconfig"; path = "Target Support Files/Pods-Una-Mobile/Pods-Una-Mobile.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		57FEF2E72288AFE7000A4FD7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE83B44F480C2984E345AE22 /* Pods_Una_Mobile.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57FEF2FE2288AFE9000A4FD7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1EE5F477F3ECAF3E6F51AF3 /* Pods_Una_MobileTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		50FAD5C79B41227A04AF85D8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EDBA3370FDDE5AAC315511B7 /* Pods-YouLang-Mobile.debug.xcconfig */,
+				1B6DF04993FC115EDDD7E46D /* Pods-YouLang-Mobile.release.xcconfig */,
+				1BE433E613F43777DB7C3CEE /* Pods-YouLang-MobileTests.debug.xcconfig */,
+				267454CD7156138067B33D07 /* Pods-YouLang-MobileTests.release.xcconfig */,
+				A1AD8EDF9C46E60F522F1F4A /* Pods-Una-Mobile.debug.xcconfig */,
+				FCD404A5DFFC3B6241C40D6B /* Pods-Una-Mobile.release.xcconfig */,
+				8EB9405A69C81543959E28F9 /* Pods-Una-MobileTests.debug.xcconfig */,
+				22D60672292A5D2598ECBA36 /* Pods-Una-MobileTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5700F28D22975EFE0060D34A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5700F28E22975F3A0060D34A /* Lato-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		5700F29022977D4C0060D34A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5700F29122977D790060D34A /* CustomTextField.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		570EB89823CA154100037211 /* UnaModels */ = {
+			isa = PBXGroup;
+			children = (
+				570EB89923CA155700037211 /* UnaLesson.swift */,
+				570EB89B23CA15F600037211 /* UnaLessonPart.swift */,
+				57EC310623CA35FA00241831 /* UnaLessonTask.swift */,
+			);
+			path = UnaModels;
+			sourceTree = "<group>";
+		};
+		570EB8A123CA19B400037211 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				570EB89623CA141900037211 /* UnaDBServiceLessons.swift */,
+				57EC310823CA387F00241831 /* UnaDBServiceTasks.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		57635E76229813B1002AD534 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				57A9D73623C4AEF5005D1953 /* UnaDBService */,
+				57EC310423CA344000241831 /* UnaRESTService */,
+				57A9D73523C4ACCA005D1953 /* MockServer */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		57635E9122981B5F002AD534 /* YLResponses */ = {
+			isa = PBXGroup;
+			children = (
+				57B39D0E229821F60060D4C2 /* YLLogoutResponse.swift */,
+				57B39D122298225D0060D4C2 /* YLLoginResponse.swift */,
+				57B39D14229822680060D4C2 /* YLRegisterResponse.swift */,
+				570BBBE32298337A0053DC12 /* YLErrorResponse.swift */,
+			);
+			path = YLResponses;
+			sourceTree = "<group>";
+		};
+		57635E9222981B69002AD534 /* YLModels */ = {
+			isa = PBXGroup;
+			children = (
+				57EED4E82297D776002B8908 /* YLCourceModel.swift */,
+				57635E9322981B93002AD534 /* YLUserModel.swift */,
+			);
+			path = YLModels;
+			sourceTree = "<group>";
+		};
+		57A9D73523C4ACCA005D1953 /* MockServer */ = {
+			isa = PBXGroup;
+			children = (
+				572FAE2B229CB0E100C261F7 /* YLService.swift */,
+				57635E7B229814B7002AD534 /* YLRequestFactory.swift */,
+				570BBBE5229834530053DC12 /* YLErrorParser.swift */,
+				57C2226623C3ADDB002A0AD7 /* Requests */,
+			);
+			path = MockServer;
+			sourceTree = "<group>";
+		};
+		57A9D73623C4AEF5005D1953 /* UnaDBService */ = {
+			isa = PBXGroup;
+			children = (
+				57A9D73723C4AF2B005D1953 /* UnaDBService.swift */,
+				570EB8A123CA19B400037211 /* Requests */,
+			);
+			path = UnaDBService;
+			sourceTree = "<group>";
+		};
+		57C2220723C321C6002A0AD7 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				57C2220823C321E9002A0AD7 /* LessonViewModel.swift */,
+				57B7278923CA2D57008B95C4 /* LessonPartViewModel.swift */,
+				57C2221123C33A7B002A0AD7 /* LessonTaskViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		57C2220C23C32984002A0AD7 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				57C2220D23C329BD002A0AD7 /* StudyViewPresenter.swift */,
+				57B7278B23CA2DC8008B95C4 /* LessonPartViewPresenter.swift */,
+				57C2220F23C331B7002A0AD7 /* LessonTaskViewPresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		57C2226623C3ADDB002A0AD7 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				57635E83229817E6002AD534 /* YLAuthRequestFactory.swift */,
+				57635E85229817F9002AD534 /* YLAuth.swift */,
+				57635E8722981814002AD534 /* YLUserRequestFactory.swift */,
+				57635E892298181D002AD534 /* YLUser.swift */,
+				57635E8B2298182D002AD534 /* YLCourceRequestFactory.swift */,
+				57635E8D22981837002AD534 /* YLCource.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		57EC310423CA344000241831 /* UnaRESTService */ = {
+			isa = PBXGroup;
+			children = (
+				57EC310223CA343C00241831 /* UnaRESTService.swift */,
+				570EB89F23CA199300037211 /* UnaRequestRESTFactory.swift */,
+				570EB8A223CA19CD00037211 /* UnaErrorParser.swift */,
+				57EC310523CA345E00241831 /* Requests */,
+			);
+			path = UnaRESTService;
+			sourceTree = "<group>";
+		};
+		57EC310523CA345E00241831 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		57EC310C23CDE9A100241831 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		57FEF2E12288AFE7000A4FD7 = {
+			isa = PBXGroup;
+			children = (
+				57FEF2EC2288AFE7000A4FD7 /* Una-Mobile */,
+				57FEF3042288AFE9000A4FD7 /* Una-MobileTests */,
+				57FEF2EB2288AFE7000A4FD7 /* Products */,
+				50FAD5C79B41227A04AF85D8 /* Pods */,
+				9FB4C26043A3E53A092E5EB7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		57FEF2EB2288AFE7000A4FD7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				57FEF2EA2288AFE7000A4FD7 /* Юна.app */,
+				57FEF3012288AFE9000A4FD7 /* Una-MobileTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		57FEF2EC2288AFE7000A4FD7 /* Una-Mobile */ = {
+			isa = PBXGroup;
+			children = (
+				57FEF3102288B044000A4FD7 /* App */,
+				57FEF3122288B054000A4FD7 /* Core */,
+				57FEF3112288B049000A4FD7 /* Resources */,
+				57FEF3132288B05A000A4FD7 /* Enviroments */,
+			);
+			path = "Una-Mobile";
+			sourceTree = "<group>";
+		};
+		57FEF3042288AFE9000A4FD7 /* Una-MobileTests */ = {
+			isa = PBXGroup;
+			children = (
+				57FEF3052288AFE9000A4FD7 /* YLUsersTests.swift */,
+				57FEF3072288AFE9000A4FD7 /* Info.plist */,
+			);
+			path = "Una-MobileTests";
+			sourceTree = "<group>";
+		};
+		57FEF3102288B044000A4FD7 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				57FEF2ED2288AFE7000A4FD7 /* AppDelegate.swift */,
+				57FEF3192288B1EB000A4FD7 /* BusinessLogic */,
+				57FEF3182288B1DF000A4FD7 /* Models */,
+				57FEF3142288B131000A4FD7 /* UI */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		57FEF3112288B049000A4FD7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5700F28D22975EFE0060D34A /* Fonts */,
+				5757C00F229736AD004C9E1E /* Assets.xcassets */,
+				57FEF2F92288AFE9000A4FD7 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		57FEF3122288B054000A4FD7 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				572C9046229ED01800154BA9 /* Validators.swift */,
+				57FEF3382288DF73000A4FD7 /* Router */,
+				57FEF31B2288BE06000A4FD7 /* Network */,
+				5700F29322978FF80060D34A /* TapGestureToHideKeyboard.swift */,
+				572C904A229EDD2800154BA9 /* UIAlertViewDelegate.swift */,
+				57FEBF57229F28A000148709 /* SetTabBarVisible.swift */,
+				5723F12322B8F136002085F8 /* UIColorFilters.swift */,
+				57C2220523C31F02002A0AD7 /* NetworkHelper.swift */,
+				57C2226723C3B1CC002A0AD7 /* GradientView.swift */,
+				57A9D73323C3D226005D1953 /* UIViewExtensions.swift */,
+				57EC310A23CDDB3C00241831 /* StringOccurrences.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		57FEF3132288B05A000A4FD7 /* Enviroments */ = {
+			isa = PBXGroup;
+			children = (
+				57FEF2FC2288AFE9000A4FD7 /* Info.plist */,
+			);
+			path = Enviroments;
+			sourceTree = "<group>";
+		};
+		57FEF3142288B131000A4FD7 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				57FEF3162288B13F000A4FD7 /* Storyboards */,
+				57FEF3152288B138000A4FD7 /* Controllers */,
+				57C2220C23C32984002A0AD7 /* Presenters */,
+				57FEF3172288B1CD000A4FD7 /* Cells */,
+				5700F29022977D4C0060D34A /* Views */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		57FEF3152288B138000A4FD7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				57FEF3442288E819000A4FD7 /* Welcome */,
+				57FEF32A2288C61A000A4FD7 /* Authorization */,
+				57FEF3262288C5E3000A4FD7 /* MainTabBarViewController.swift */,
+				57EED4E42297D20A002B8908 /* StudyViewController.swift */,
+				57B7278523CA2955008B95C4 /* LessonPartsViewController.swift */,
+				5785C69E229F035D006F8B20 /* TaskViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		57FEF3162288B13F000A4FD7 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				57FEF3332288D214000A4FD7 /* Welcome.storyboard */,
+				57FEF3352288D223000A4FD7 /* Authorization.storyboard */,
+				57FEF2F12288AFE7000A4FD7 /* Study.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		57FEF3172288B1CD000A4FD7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				57FEBF59229F3CEA00148709 /* StudyTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		57FEF3182288B1DF000A4FD7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				57C2220723C321C6002A0AD7 /* ViewModels */,
+				57635E9222981B69002AD534 /* YLModels */,
+				57635E9122981B5F002AD534 /* YLResponses */,
+				570EB89823CA154100037211 /* UnaModels */,
+				57EED4EA2297D820002B8908 /* DifficultyLevel.swift */,
+				57FEBF5F229F6FB900148709 /* LessonTask.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		57FEF3192288B1EB000A4FD7 /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+				57EC310C23CDE9A100241831 /* Operations */,
+				57635E76229813B1002AD534 /* Network */,
+				57FEF33D2288E327000A4FD7 /* Routers */,
+				57FEF31A2288B1F7000A4FD7 /* CoreData */,
+			);
+			path = BusinessLogic;
+			sourceTree = "<group>";
+		};
+		57FEF31A2288B1F7000A4FD7 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				57FEF2F42288AFE7000A4FD7 /* Una_Mobile.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		57FEF31B2288BE06000A4FD7 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				57635E7D2298160D002AD534 /* RequestGroup.swift */,
+				57FEF31C2288BE37000A4FD7 /* AbstractErrorParser.swift */,
+				57FEF31D2288BE37000A4FD7 /* AbstractRequestFactory.swift */,
+				570EB8A423CA1DBD00037211 /* AbstractPostgresRequestFactory.swift */,
+				57FEF31E2288BE37000A4FD7 /* DataRequest.swift */,
+				57FEF31F2288BE37000A4FD7 /* ErrorParser.swift */,
+				57FEF3202288BE37000A4FD7 /* RequestRouter.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		57FEF32A2288C61A000A4FD7 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				57FEF3282288C616000A4FD7 /* AuthViewController.swift */,
+				57FEF32F2288C7BC000A4FD7 /* LoginViewController.swift */,
+				57FEF32B2288C6FD000A4FD7 /* RegisterViewController.swift */,
+				57FEF32D2288C71B000A4FD7 /* PassRecoveryViewController.swift */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		57FEF3382288DF73000A4FD7 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				57FEF33B2288E2FA000A4FD7 /* BaseRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		57FEF33D2288E327000A4FD7 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				57FEF3422288E808000A4FD7 /* Authorization */,
+				57FEBF55229F21B700148709 /* StudyRouter.swift */,
+				57B7278723CA2B66008B95C4 /* LessonRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		57FEF3422288E808000A4FD7 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				57FEF33E2288E37D000A4FD7 /* AuthRouter.swift */,
+				57FEF3402288E804000A4FD7 /* LoginRouter.swift */,
+				57FEF3452288E85C000A4FD7 /* RegisterRouter.swift */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		57FEF3442288E819000A4FD7 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				57FEF3312288CAD2000A4FD7 /* WelcomePageViewController.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		9FB4C26043A3E53A092E5EB7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5F5D27DD1B24409E4124990F /* Pods_Una_Mobile.framework */,
+				93659C28406E0E0F9F95D8AE /* Pods_Una_MobileTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		57FEF2E92288AFE7000A4FD7 /* Una-Mobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57FEF30A2288AFE9000A4FD7 /* Build configuration list for PBXNativeTarget "Una-Mobile" */;
+			buildPhases = (
+				0CF4A2B23269340B0708D70C /* [CP] Check Pods Manifest.lock */,
+				57FEF2E62288AFE7000A4FD7 /* Sources */,
+				57FEF2E72288AFE7000A4FD7 /* Frameworks */,
+				57FEF2E82288AFE7000A4FD7 /* Resources */,
+				D091176F96A0D9DD9A1298A9 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Una-Mobile";
+			productName = "YouLang-Mobile";
+			productReference = 57FEF2EA2288AFE7000A4FD7 /* Юна.app */;
+			productType = "com.apple.product-type.application";
+		};
+		57FEF3002288AFE9000A4FD7 /* Una-MobileTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57FEF30D2288AFE9000A4FD7 /* Build configuration list for PBXNativeTarget "Una-MobileTests" */;
+			buildPhases = (
+				C01FE61E705C05CC4ABEF6F5 /* [CP] Check Pods Manifest.lock */,
+				57FEF2FD2288AFE9000A4FD7 /* Sources */,
+				57FEF2FE2288AFE9000A4FD7 /* Frameworks */,
+				57FEF2FF2288AFE9000A4FD7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				57FEF3032288AFE9000A4FD7 /* PBXTargetDependency */,
+			);
+			name = "Una-MobileTests";
+			productName = "YouLang-MobileTests";
+			productReference = 57FEF3012288AFE9000A4FD7 /* Una-MobileTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		57FEF2E22288AFE7000A4FD7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Artem Kufaev";
+				TargetAttributes = {
+					57FEF2E92288AFE7000A4FD7 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					57FEF3002288AFE9000A4FD7 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 57FEF2E92288AFE7000A4FD7;
+					};
+				};
+			};
+			buildConfigurationList = 57FEF2E52288AFE7000A4FD7 /* Build configuration list for PBXProject "Una-Mobile" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 57FEF2E12288AFE7000A4FD7;
+			productRefGroup = 57FEF2EB2288AFE7000A4FD7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				57FEF2E92288AFE7000A4FD7 /* Una-Mobile */,
+				57FEF3002288AFE9000A4FD7 /* Una-MobileTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		57FEF2E82288AFE7000A4FD7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57FEF2FB2288AFE9000A4FD7 /* LaunchScreen.storyboard in Resources */,
+				5700F28F22975F3A0060D34A /* Lato-Regular.ttf in Resources */,
+				57FEF3362288D223000A4FD7 /* Authorization.storyboard in Resources */,
+				57FEF3342288D214000A4FD7 /* Welcome.storyboard in Resources */,
+				57FEF2F32288AFE7000A4FD7 /* Study.storyboard in Resources */,
+				5757C010229736AD004C9E1E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57FEF2FF2288AFE9000A4FD7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0CF4A2B23269340B0708D70C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Una-Mobile-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C01FE61E705C05CC4ABEF6F5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Una-MobileTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D091176F96A0D9DD9A1298A9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Una-Mobile/Pods-Una-Mobile-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Una-Mobile/Pods-Una-Mobile-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Una-Mobile/Pods-Una-Mobile-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		57FEF2E62288AFE7000A4FD7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57FEBF60229F6FB900148709 /* LessonTask.swift in Sources */,
+				57B7278C23CA2DC8008B95C4 /* LessonPartViewPresenter.swift in Sources */,
+				57EED4E92297D776002B8908 /* YLCourceModel.swift in Sources */,
+				57B39D132298225D0060D4C2 /* YLLoginResponse.swift in Sources */,
+				57B7278623CA2955008B95C4 /* LessonPartsViewController.swift in Sources */,
+				570BBBE6229834530053DC12 /* YLErrorParser.swift in Sources */,
+				57FEF3302288C7BC000A4FD7 /* LoginViewController.swift in Sources */,
+				57C2226823C3B1CC002A0AD7 /* GradientView.swift in Sources */,
+				570EB8A323CA19CD00037211 /* UnaErrorParser.swift in Sources */,
+				57FEF3252288BE37000A4FD7 /* RequestRouter.swift in Sources */,
+				57635E8A2298181D002AD534 /* YLUser.swift in Sources */,
+				570EB89C23CA15F600037211 /* UnaLessonPart.swift in Sources */,
+				57B7278A23CA2D57008B95C4 /* LessonPartViewModel.swift in Sources */,
+				570BBBE42298337A0053DC12 /* YLErrorResponse.swift in Sources */,
+				570EB89723CA141900037211 /* UnaDBServiceLessons.swift in Sources */,
+				5723F12422B8F136002085F8 /* UIColorFilters.swift in Sources */,
+				57EED4EB2297D820002B8908 /* DifficultyLevel.swift in Sources */,
+				5785C69F229F035D006F8B20 /* TaskViewController.swift in Sources */,
+				572FAE2C229CB0E100C261F7 /* YLService.swift in Sources */,
+				57FEBF56229F21B700148709 /* StudyRouter.swift in Sources */,
+				57C2220923C321E9002A0AD7 /* LessonViewModel.swift in Sources */,
+				57FEF3322288CAD2000A4FD7 /* WelcomePageViewController.swift in Sources */,
+				57B7278823CA2B66008B95C4 /* LessonRouter.swift in Sources */,
+				57C2220E23C329BD002A0AD7 /* StudyViewPresenter.swift in Sources */,
+				570EB89A23CA155700037211 /* UnaLesson.swift in Sources */,
+				5700F29422978FF80060D34A /* TapGestureToHideKeyboard.swift in Sources */,
+				57EC310B23CDDB3C00241831 /* StringOccurrences.swift in Sources */,
+				572C9047229ED01900154BA9 /* Validators.swift in Sources */,
+				57FEF32C2288C6FD000A4FD7 /* RegisterViewController.swift in Sources */,
+				57EC310723CA35FA00241831 /* UnaLessonTask.swift in Sources */,
+				57635E8822981814002AD534 /* YLUserRequestFactory.swift in Sources */,
+				570EB8A023CA199300037211 /* UnaRequestRESTFactory.swift in Sources */,
+				57FEF3222288BE37000A4FD7 /* AbstractRequestFactory.swift in Sources */,
+				5700F29222977D790060D34A /* CustomTextField.swift in Sources */,
+				57B39D0F229821F60060D4C2 /* YLLogoutResponse.swift in Sources */,
+				570EB8A523CA1DBD00037211 /* AbstractPostgresRequestFactory.swift in Sources */,
+				57EC310323CA343C00241831 /* UnaRESTService.swift in Sources */,
+				57635E7C229814B7002AD534 /* YLRequestFactory.swift in Sources */,
+				57FEF2F62288AFE7000A4FD7 /* Una_Mobile.xcdatamodeld in Sources */,
+				57FEF3412288E804000A4FD7 /* LoginRouter.swift in Sources */,
+				57FEBF5B229F3CEA00148709 /* StudyTableViewCell.swift in Sources */,
+				57B39D15229822680060D4C2 /* YLRegisterResponse.swift in Sources */,
+				57FEF3272288C5E3000A4FD7 /* MainTabBarViewController.swift in Sources */,
+				57635E8E22981837002AD534 /* YLCource.swift in Sources */,
+				57C2220623C31F02002A0AD7 /* NetworkHelper.swift in Sources */,
+				57635E84229817E6002AD534 /* YLAuthRequestFactory.swift in Sources */,
+				57C2221223C33A7B002A0AD7 /* LessonTaskViewModel.swift in Sources */,
+				572C904B229EDD2800154BA9 /* UIAlertViewDelegate.swift in Sources */,
+				57FEF33F2288E37D000A4FD7 /* AuthRouter.swift in Sources */,
+				57FEF33C2288E2FA000A4FD7 /* BaseRouter.swift in Sources */,
+				57EC310923CA387F00241831 /* UnaDBServiceTasks.swift in Sources */,
+				57FEF3232288BE37000A4FD7 /* DataRequest.swift in Sources */,
+				57635E9422981B93002AD534 /* YLUserModel.swift in Sources */,
+				57C2221023C331B7002A0AD7 /* LessonTaskViewPresenter.swift in Sources */,
+				57FEF3242288BE37000A4FD7 /* ErrorParser.swift in Sources */,
+				57FEBF58229F28A000148709 /* SetTabBarVisible.swift in Sources */,
+				57A9D73423C3D226005D1953 /* UIViewExtensions.swift in Sources */,
+				57FEF2EE2288AFE7000A4FD7 /* AppDelegate.swift in Sources */,
+				57EED4E52297D20A002B8908 /* StudyViewController.swift in Sources */,
+				57FEF32E2288C71B000A4FD7 /* PassRecoveryViewController.swift in Sources */,
+				57635E86229817F9002AD534 /* YLAuth.swift in Sources */,
+				57635E8C2298182D002AD534 /* YLCourceRequestFactory.swift in Sources */,
+				57635E7E2298160D002AD534 /* RequestGroup.swift in Sources */,
+				57FEF3462288E85C000A4FD7 /* RegisterRouter.swift in Sources */,
+				57FEF3292288C616000A4FD7 /* AuthViewController.swift in Sources */,
+				57FEF3212288BE37000A4FD7 /* AbstractErrorParser.swift in Sources */,
+				57A9D73823C4AF2B005D1953 /* UnaDBService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57FEF2FD2288AFE9000A4FD7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57FEF3062288AFE9000A4FD7 /* YLUsersTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		57FEF3032288AFE9000A4FD7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 57FEF2E92288AFE7000A4FD7 /* Una-Mobile */;
+			targetProxy = 57FEF3022288AFE9000A4FD7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		57FEF2F12288AFE7000A4FD7 /* Study.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				57FEF2F22288AFE7000A4FD7 /* Base */,
+			);
+			name = Study.storyboard;
+			sourceTree = "<group>";
+		};
+		57FEF2F92288AFE9000A4FD7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				57FEF2FA2288AFE9000A4FD7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		57FEF3082288AFE9000A4FD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		57FEF3092288AFE9000A4FD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		57FEF30B2288AFE9000A4FD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1AD8EDF9C46E60F522F1F4A /* Pods-Una-Mobile.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YX6VKW92JQ;
+				INFOPLIST_FILE = "Una-Mobile/Enviroments/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "artemkufaev.Una-Mobile";
+				PRODUCT_NAME = "Юна";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		57FEF30C2288AFE9000A4FD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCD404A5DFFC3B6241C40D6B /* Pods-Una-Mobile.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YX6VKW92JQ;
+				INFOPLIST_FILE = "Una-Mobile/Enviroments/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "artemkufaev.Una-Mobile";
+				PRODUCT_NAME = "Юна";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		57FEF30E2288AFE9000A4FD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8EB9405A69C81543959E28F9 /* Pods-Una-MobileTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YX6VKW92JQ;
+				INFOPLIST_FILE = "YouLang-MobileTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "artemkufaev.YouLang-MobileTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Una-Mobile.app/Una-Mobile";
+			};
+			name = Debug;
+		};
+		57FEF30F2288AFE9000A4FD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22D60672292A5D2598ECBA36 /* Pods-Una-MobileTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YX6VKW92JQ;
+				INFOPLIST_FILE = "YouLang-MobileTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "artemkufaev.YouLang-MobileTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Una-Mobile.app/Una-Mobile";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		57FEF2E52288AFE7000A4FD7 /* Build configuration list for PBXProject "Una-Mobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57FEF3082288AFE9000A4FD7 /* Debug */,
+				57FEF3092288AFE9000A4FD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		57FEF30A2288AFE9000A4FD7 /* Build configuration list for PBXNativeTarget "Una-Mobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57FEF30B2288AFE9000A4FD7 /* Debug */,
+				57FEF30C2288AFE9000A4FD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		57FEF30D2288AFE9000A4FD7 /* Build configuration list for PBXNativeTarget "Una-MobileTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57FEF30E2288AFE9000A4FD7 /* Debug */,
+				57FEF30F2288AFE9000A4FD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		57FEF2F42288AFE7000A4FD7 /* Una_Mobile.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				57FEF2F52288AFE7000A4FD7 /* YouLang_Mobile.xcdatamodel */,
+			);
+			currentVersion = 57FEF2F52288AFE7000A4FD7 /* YouLang_Mobile.xcdatamodel */;
+			path = Una_Mobile.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 57FEF2E22288AFE7000A4FD7 /* Project object */;
+}
