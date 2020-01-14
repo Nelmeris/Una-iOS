@@ -14,7 +14,7 @@ protocol LessonTaskView: class {
 }
 
 protocol LessonTaskViewPresenter {
-    init(view: LessonTaskView)
+    init(view: LessonTaskView, lessonPart: UnaLessonPart)
     func showLesson()
     func showNextTask()
     func showPrevTask()
@@ -27,19 +27,33 @@ class LessonTaskPresenter : LessonTaskViewPresenter {
     
     unowned let view: LessonTaskView
     
-    private var lessonTasks: [LessonTask] = []
+    private var lessonTasks: [UnaLessonTask] = []
+    private let lessonPart: UnaLessonPart
     private var viewModels: [LessonTaskViewModel] = []
     private let viewModelFactory = LessonTaskViewModelFactory()
     private var currentTask = 0
     
-    required init(view: LessonTaskView) {
+    required init(view: LessonTaskView, lessonPart: UnaLessonPart) {
         self.view = view
-        lessonTasks = tasks
+        self.lessonPart = lessonPart
+    }
+    
+    private func loadData(completion: @escaping ([UnaLessonTask]) -> ()) {
+        do {
+            try UnaDBService.shared.getTasks(for: lessonPart.id) { tasks in
+                completion(tasks)
+            }
+        } catch {
+            print(error)
+        }
     }
     
     func showLesson() {
-        self.viewModels = viewModelFactory.construct(from: lessonTasks)
-        showTask()
+        loadData { tasks in
+            self.lessonTasks = tasks
+            self.viewModels = self.viewModelFactory.construct(from: tasks)
+            self.showTask()
+        }
     }
     
     func showNextTask() {
@@ -59,6 +73,7 @@ class LessonTaskPresenter : LessonTaskViewPresenter {
     }
     
     func showTask() {
+        guard viewModels.count != 0 else { return }
         let isFirst = currentTask == 0
         let isLast = currentTask == viewModels.count - 1
         let viewModel = viewModels[currentTask]
@@ -73,7 +88,7 @@ class LessonTaskPresenter : LessonTaskViewPresenter {
     // Проверка общего результата
     private func getResult() -> (goodCount: Int, count: Int) {
         var goodCount = 0
-        let count = tasks.count
+        let count = viewModels.count
         viewModels.forEach { model in
             if checkTask(model) {
                 goodCount += 1
@@ -130,64 +145,3 @@ class LessonTaskPresenter : LessonTaskViewPresenter {
     }
     
 }
-
-let tasks = [
-    LessonTask(helpMessage: "Выберите правильное окончание", text: "Мы долго любовались этой прекрасной рекой.",
-               keySubstrings: [
-                LessonTaskSubstring(value: "ой", position: 39, type: .input, answers: [
-                    LessonTaskAnswer(value: "ой", isCorrect: true),
-                    LessonTaskAnswer(value: "ый", isCorrect: false),
-                    LessonTaskAnswer(value: "ому", isCorrect: false),
-                    LessonTaskAnswer(value: "ему", isCorrect: false),
-                    LessonTaskAnswer(value: "его", isCorrect: false)
-                ])
-        ]),
-    LessonTask(helpMessage: "Найдите существительные в творительном падеже",
-               text: "Меня зовут Марк, мне 19. Я живу в Калининграде, в России. Я интересуюсь спортом, особенно футболом. Мой любимый русский футбольный клуб - \"Динамо\". Я очень горжусь этой командой. Когда мне было 10, я тоже занимался футболом",
-               keySubstrings: [
-                LessonTaskSubstring(value: "спортом", position: 72, type: .find, answers: [
-                    LessonTaskAnswer(value: "", isCorrect: true)
-                ]),
-                LessonTaskSubstring(value: "футболом", position: 90, type: .find, answers: [
-                    LessonTaskAnswer(value: "", isCorrect: false)
-                ]),
-                LessonTaskSubstring(value: "командой", position: 169, type: .find, answers: [
-                    LessonTaskAnswer(value: "", isCorrect: false)
-                ]),
-                LessonTaskSubstring(value: "футболом", position: 215, type: .find, answers: [
-                    LessonTaskAnswer(value: "", isCorrect: true)
-                ])
-        ]),
-    LessonTask(helpMessage: "Найдите существительные в творительном падеже",
-               text: "Меня зовут Марк, мне 19. Я живу в Калининграде, в России. Я интересуюсь спортом, особенно футболом. Мой любимый русский футбольный клуб - \"Динамо\". Я очень горжусь этой командой. Когда мне было 10, я тоже занимался футболом",
-               keySubstrings: [
-                LessonTaskSubstring(value: "спортом", position: 72, type: .find, answers: [
-                    LessonTaskAnswer(value: "", isCorrect: true)
-                    ]),
-                LessonTaskSubstring(value: "футболом", position: 90, type: .find, answers: [
-                    LessonTaskAnswer(value: "", isCorrect: false)
-                    ]),
-                LessonTaskSubstring(value: "командой", position: 169, type: .find, answers: [
-                    LessonTaskAnswer(value: "", isCorrect: false)
-                    ]),
-                LessonTaskSubstring(value: "футболом", position: 215, type: .find, answers: [
-                    LessonTaskAnswer(value: "", isCorrect: true)
-                    ])
-        ]),
-    LessonTask(helpMessage: "Найдите существительные в творительном падеже",
-               text: "Меня зовут Марк, мне 19. Я живу в Калининграде, в России. Я интересуюсь спортом, особенно футболом. Мой любимый русский футбольный клуб - \"Динамо\". Я очень горжусь этой командой. Когда мне было 10, я тоже занимался футболом",
-               keySubstrings: [
-                LessonTaskSubstring(value: "спортом", position: 72, type: .find, answers: [
-                    LessonTaskAnswer(value: "", isCorrect: true)
-                    ]),
-                LessonTaskSubstring(value: "футболом", position: 90, type: .find, answers: [
-                    LessonTaskAnswer(value: "", isCorrect: false)
-                    ]),
-                LessonTaskSubstring(value: "командой", position: 169, type: .find, answers: [
-                    LessonTaskAnswer(value: "", isCorrect: false)
-                    ]),
-                LessonTaskSubstring(value: "футболом", position: 215, type: .find, answers: [
-                    LessonTaskAnswer(value: "", isCorrect: true)
-                    ])
-        ])
-]

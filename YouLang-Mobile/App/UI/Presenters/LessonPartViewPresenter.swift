@@ -38,7 +38,7 @@ class LessonPartPresenter : LessonPartViewPresenter {
     
     private func loadData(completion: @escaping ([UnaLessonPart]) -> ()) {
         do {
-            try UnaService.shared.getLessonParts(for: lesson.id) { parts in
+            try UnaDBService.shared.getLessonParts(for: lesson.id) { parts in
                 completion(parts)
             }
         } catch {

@@ -10,7 +10,7 @@ import UIKit
 
 final class LessonRouter: BaseRouter {
     
-    let storyboardName = "Main"
+    let storyboardName = "Study"
     
     func toTask(configurate: ((TaskViewController) -> ())?) {
         let controller = UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(withIdentifier: "LessonTask") as! TaskViewController

@@ -12,6 +12,7 @@ class TaskViewController: UIViewController, UIGestureRecognizerDelegate, AlertDe
     
     // MARK: - Properties
     private var presenter: LessonTaskViewPresenter!
+    let storyboardName = "Study"
     
     var lessonPart: UnaLessonPart!
     private var viewModel: LessonTaskViewModel!
@@ -36,7 +37,7 @@ class TaskViewController: UIViewController, UIGestureRecognizerDelegate, AlertDe
         configureProgressView()
         configureNavigationController() // конфигурация навигационного контроллера
         
-        presenter = LessonTaskPresenter(view: self)
+        presenter = LessonTaskPresenter(view: self, lessonPart: lessonPart)
         presenter.showLesson()
     }
     
@@ -114,7 +115,7 @@ class TaskViewController: UIViewController, UIGestureRecognizerDelegate, AlertDe
     
     // Открытие теории
     @objc func openTheory() {
-        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TheoryViewController")
+        let controller = UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(withIdentifier: "TheoryViewController")
         self.present(controller, animated: true)
     }
     

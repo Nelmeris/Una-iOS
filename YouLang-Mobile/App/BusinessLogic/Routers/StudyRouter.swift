@@ -10,7 +10,7 @@ import UIKit
 
 final class StudyRouter: BaseRouter {
     
-    let storyboardName = "Main"
+    let storyboardName = "Study"
     
     func toLesson(configurate: ((LessonPartsViewController) -> ())?) {
         let controller = UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(withIdentifier: "Lesson") as! LessonPartsViewController

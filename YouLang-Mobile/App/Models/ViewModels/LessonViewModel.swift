@@ -27,8 +27,8 @@ final class LessonViewModelFactory {
     
     private func viewModel(from lesson: UnaLesson) -> LessonViewModel {
         let title = lesson.title
-        let stateText = "\(0) ИЗ \(0) УРОКОВ"
-        let progress = Float(0.0)
+        let stateText = "\(0) ИЗ \(lesson.parts?.count ?? 0) УРОКОВ"
+        let progress = Float(0) / Float(lesson.parts?.count ?? 0)
         let levelColor = lesson.difficulty.color()
         let levelTitle = lesson.difficulty.rawValue
         let image = UIImage(named: "CourceImage")!

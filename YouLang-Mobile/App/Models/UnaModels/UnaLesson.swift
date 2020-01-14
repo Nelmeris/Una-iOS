@@ -19,6 +19,8 @@ struct UnaLesson: Decodable {
     let shortDescription: String
     let difficulty: DifficultyLevel
     
+    var parts: [UnaLessonPart]? = nil
+    
     enum CodingKeys: String, CodingKey {
         case id, title, description, difficulty
         case underTitle = "under_title"
@@ -50,6 +52,10 @@ struct UnaLesson: Decodable {
         imageURL = URL(string: try postgresValues[4].optionalString() ?? "")
         difficulty = DifficultyLevel(rawValue: try postgresValues[5].string())!
         shortDescription = try postgresValues[6].string()
+    }
+    
+    mutating func setParts(_ parts: [UnaLessonPart]) {
+        self.parts = parts
     }
     
 }

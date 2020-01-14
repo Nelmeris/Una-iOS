@@ -8,12 +8,6 @@
 
 import Foundation
 
-struct LessonTask: Equatable, Hashable {
-    let helpMessage: String
-    let text: String
-    var keySubstrings: [LessonTaskSubstring]
-}
-
 enum LessonTaskTypes: String, Hashable {
     case input
     case find

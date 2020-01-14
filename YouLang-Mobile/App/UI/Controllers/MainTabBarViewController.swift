@@ -10,6 +10,10 @@ import UIKit
 
 class MainTabBarViewController: UITabBarController {
     
+    // MARK: - Properties
+    
+    let storyboardName = "Study"
+    
     // MARK: - Configures
     
     override func viewDidLoad() {
@@ -26,7 +30,7 @@ class MainTabBarViewController: UITabBarController {
     }
     
     private func setControllers() {
-        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Study")
+        let controller = UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(withIdentifier: "Study")
         let navController = UINavigationController(rootViewController: controller)
         navController.tabBarItem = UITabBarItem(title: "Уроки", image: UIImage(named: "CourcesTabBarIcon"), tag: 0)
         navController.tabBarItem.badgeColor = UIColor(named: "TextColor")

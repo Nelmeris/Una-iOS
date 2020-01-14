@@ -115,7 +115,7 @@ struct LessonTaskViewModel {
 
 final class LessonTaskViewModelFactory {
     
-    func construct(from tasks: [LessonTask]) -> [LessonTaskViewModel] {
+    func construct(from tasks: [UnaLessonTask]) -> [LessonTaskViewModel] {
         var models: [LessonTaskViewModel] = []
         var number = 0
         tasks.forEach { task in
@@ -125,11 +125,27 @@ final class LessonTaskViewModelFactory {
         return models
     }
     
-    private func viewModel(from task: LessonTask, number: Int, count: Int) -> LessonTaskViewModel {
-        let text = task.text
-        let helpMessage = task.helpMessage
+    private func viewModel(from task: UnaLessonTask, number: Int, count: Int) -> LessonTaskViewModel {
+        var text = task.text
+        let helpMessage = task.title
         let progress = Float(number) / Float(count)
-        let substrings = task.keySubstrings
+        var substrings: [LessonTaskSubstring] = []
+        
+        switch task {
+        case let task as UnaLessonTaskFind:
+            var count = 0
+            while let startIndex = text.index(of: "//"), let endIndex = text.endIndex(of: "//") {
+                let str = task.answers[count].0
+                let range = Range<String.Index>(uncheckedBounds: (startIndex, endIndex))
+                text.replaceSubrange(range, with: str)
+                let index: Int = text.distance(from: text.startIndex, to: range.lowerBound)
+                let substring = LessonTaskSubstring(value: str, position: index, type: .find, answers: [LessonTaskAnswer(value: str, isCorrect: task.answers[count].1)])
+                substrings.append(substring)
+                count += 1
+            }
+        default: break
+        }
+        
         return LessonTaskViewModel(text: text, helpMessage: helpMessage, progress: progress, substrings: substrings)
     }
     

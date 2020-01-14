@@ -1,18 +1,19 @@
 //
-//  UnaServiceLessons.swift
+//  UnaDBServiceLessons.swift
 //  YouLang-Mobile
 //
 //  Created by Artem Kufaev on 11.01.2020.
 //  Copyright © 2020 Artem Kufaev. All rights reserved.
 //
 
-import CryptoSwift
+import Foundation
 
-protocol UnaServiceLessonsFactory {
+protocol UnaDBServiceLessonsFactory {
     func getLessons(complete: @escaping ([UnaLesson]) -> ()) throws
+    func getLessonParts(for id: Int, complete: @escaping ([UnaLessonPart]) -> ()) throws
 }
 
-extension UnaService: UnaServiceLessonsFactory {
+extension UnaDBService: UnaDBServiceLessonsFactory {
     
     func getLessons(complete: @escaping ([UnaLesson]) -> ()) throws {
         try self.request(with: (getLessonsSQL(), [])) { values in
