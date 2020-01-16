@@ -12,27 +12,28 @@ class MainTabBarViewController: UITabBarController {
     
     // MARK: - Properties
     
-    let storyboardName = "Study"
+    private let storyboardName = "Study"
+    private let lessonItemTitle = "Уроки"
     
     // MARK: - Configures
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configure()
         setControllers()
     }
     
     private func configure() {
-        self.tabBar.isTranslucent = false
+        self.tabBar.isTranslucent = true
         self.tabBar.barTintColor = UIColor(named: "SecondColor")
         self.tabBar.tintColor = UIColor(named: "MainColor")
     }
     
     private func setControllers() {
-        let controller = UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(withIdentifier: "Study")
+        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "Study")
         let navController = UINavigationController(rootViewController: controller)
-        navController.tabBarItem = UITabBarItem(title: "Уроки", image: UIImage(named: "CourcesTabBarIcon"), tag: 0)
+        navController.tabBarItem = UITabBarItem(title: lessonItemTitle, image: UIImage(named: "CourcesTabBarIcon"), tag: 0)
         navController.tabBarItem.badgeColor = UIColor(named: "TextColor")
         
         self.setViewControllers([navController], animated: true)

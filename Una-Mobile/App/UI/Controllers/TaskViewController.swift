@@ -12,7 +12,7 @@ class TaskViewController: UIViewController, UIGestureRecognizerDelegate, AlertDe
     
     // MARK: - Properties
     private var presenter: LessonTaskViewPresenter!
-    let storyboardName = "Study"
+    private let storyboardName = "Study"
     
     var lessonPart: UnaLessonPart!
     private var viewModel: LessonTaskViewModel!
@@ -44,15 +44,11 @@ class TaskViewController: UIViewController, UIGestureRecognizerDelegate, AlertDe
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureNavigationController()
-        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if #available(iOS 13.0, *) {
-            UIApplication.shared.statusBarStyle = UIStatusBarStyle.darkContent
-        }
         let navBar = self.navigationController?.navigationBar
         navBar?.setBackgroundImage(nil, for: .default)
         navBar?.shadowImage = nil
@@ -60,6 +56,10 @@ class TaskViewController: UIViewController, UIGestureRecognizerDelegate, AlertDe
         navBar?.tintColor = UIColor(named: "MainColor")
         navBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "MainColor")!]
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     // Прогресс бара

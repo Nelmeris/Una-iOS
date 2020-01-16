@@ -44,5 +44,4 @@ final class NetworkHelper {
         return address
     }
 
-    
 }

@@ -10,11 +10,9 @@ import UIKit
 
 final class RegisterRouter: BaseRouter {
     
-    func toMain(configurate: ((MainTabBarViewController) -> ())?) {
+    func toMain(configurate: ((MainTabBarViewController) -> ())? = nil) {
         let controller = MainTabBarViewController()
-        if let configurate = configurate {
-            configurate(controller)
-        }
+        configurate?(controller)
         setAsRoot(controller)
     }
     

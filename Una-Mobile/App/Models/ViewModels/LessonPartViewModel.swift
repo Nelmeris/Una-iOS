@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct LessonPartViewModel {
+struct LessonPartViewModel: Hashable {
     
     let title: String
     

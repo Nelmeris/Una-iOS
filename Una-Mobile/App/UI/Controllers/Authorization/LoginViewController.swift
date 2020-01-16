@@ -16,8 +16,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AlertDelegate 
     @IBOutlet var router: LoginRouter!
     
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet var emailField: CustomTextField!
-    @IBOutlet weak var passwordField: CustomTextField!
+    @IBOutlet var emailField: TextFieldUnderline!
+    @IBOutlet weak var passwordField: TextFieldUnderline!
     
     // MARK: - Configures
     
@@ -28,6 +28,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AlertDelegate 
         configureTextFields()
         configureNavigationController()
         addTapGestureToHideKeyboard()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        if #available(iOS 13.0, *) {
+            return .darkContent
+        } else {
+            return .default
+        }
     }
     
     private func configureTextFields() {
@@ -43,7 +51,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AlertDelegate 
     }
     
     private func configureNavigationController() {
-        self.navigationItem.title = "АВТОРИЗАЦИЯ"
+        self.navigationItem.title = "Авторизация".uppercased()
         self.navigationController?.navigationBar.topItem?.title = ""
     }
     
@@ -59,7 +67,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AlertDelegate 
                     fatalError()
                 }
                 DispatchQueue.main.async {
-                    self.router.toMain(configurate: nil)
+                    self.router.toMain()
                 }
             case .failure(let error):
                 if let ylError = error as? YLErrorResponses {
@@ -72,7 +80,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AlertDelegate 
     }
     
     @IBAction func toPassRecovery(_ sender: Any) {
-        router.toPassRecovery { (controller) in
+        router.toPassRecovery { controller in
             controller.loginText = self.emailField.text
         }
     }

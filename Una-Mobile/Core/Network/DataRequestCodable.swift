@@ -1,5 +1,5 @@
 //
-//  DataRequest.swift
+//  DataRequestCodable.swift
 //  NetworkCore
 //
 //  Created by Artem Kufaev on 23/04/2019.
@@ -9,6 +9,7 @@
 import Alamofire
 
 extension DataRequest {
+    
     @discardableResult
     func responseCodable<T: Decodable>(
         errorParser: AbstractErrorParser,
@@ -36,4 +37,5 @@ extension DataRequest {
             }
             return response(queue: queue, responseSerializer: responseSerializer, completionHandler: completionHandler)
     }
+    
 }

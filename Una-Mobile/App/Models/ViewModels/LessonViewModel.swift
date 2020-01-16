@@ -8,14 +8,13 @@
 
 import UIKit
 
-struct LessonViewModel {
+struct LessonViewModel: Hashable {
     
     let title: String
     let stateText: String
     let progress: Float
     let levelColor: UIColor
     let levelTitle: String
-    let image: UIImage
     
 }
 
@@ -31,8 +30,7 @@ final class LessonViewModelFactory {
         let progress = Float(0) / Float(lesson.parts?.count ?? 0)
         let levelColor = lesson.difficulty.color()
         let levelTitle = lesson.difficulty.rawValue
-        let image = UIImage(named: "CourceImage")!
-        return LessonViewModel(title: title, stateText: stateText, progress: progress, levelColor: levelColor, levelTitle: levelTitle, image: image)
+        return LessonViewModel(title: title, stateText: stateText, progress: progress, levelColor: levelColor, levelTitle: levelTitle)
     }
     
 }

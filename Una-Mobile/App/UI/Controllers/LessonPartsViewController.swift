@@ -22,11 +22,29 @@ class LessonPartsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
+        
+        configureNavBar()
+        configureTableView()
+        
         presenter = LessonPartPresenter(view: self, lesson: lesson)
         presenter.showParts()
+    }
+    
+    private func configureNavBar() {
         self.title = lesson.title.uppercased()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        if #available(iOS 13.0, *) {
+            return .darkContent
+        } else {
+            return .default
+        }
+    }
+    
+    private func configureTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
 }
@@ -35,8 +53,7 @@ extension LessonPartsViewController: LessonPartView {
     
     func setParts(_ parts: [UnaLessonPart], viewModels: [LessonPartViewModel]) {
         self.parts = parts
-        self.viewModels = viewModels
-        self.tableView.reloadData()
+        self.updateTable(with: viewModels)
     }
     
 }
@@ -61,6 +78,13 @@ extension LessonPartsViewController: UITableViewDelegate, UITableViewDataSource 
             controller.lessonPart = self.parts[indexPath.row]
         }
         self.hidesBottomBarWhenPushed = false
+    }
+    
+    private func updateTable(with models: [LessonPartViewModel]) {
+        self.viewModels = models
+        DispatchQueue.main.async {
+            self.tableView.updateData(data: self.viewModels, newData: models)
+        }
     }
     
 }

@@ -17,11 +17,11 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, AlertDelega
     
     @IBOutlet weak var scrollView: UIScrollView!
     
-    @IBOutlet weak var firstNameField: CustomTextField!
-    @IBOutlet weak var lastNameField: CustomTextField!
-    @IBOutlet weak var emailField: CustomTextField!
-    @IBOutlet weak var passwordField: CustomTextField!
-    @IBOutlet weak var rPasswordField: CustomTextField!
+    @IBOutlet weak var firstNameField: TextFieldUnderline!
+    @IBOutlet weak var lastNameField: TextFieldUnderline!
+    @IBOutlet weak var emailField: TextFieldUnderline!
+    @IBOutlet weak var passwordField: TextFieldUnderline!
+    @IBOutlet weak var rPasswordField: TextFieldUnderline!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +30,14 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, AlertDelega
         configureNavigationController()
         registerForKeyboardNotifications()
         addTapGestureToHideKeyboard()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        if #available(iOS 13.0, *) {
+            return .darkContent
+        } else {
+            return .default
+        }
     }
     
     // MARK: - Configures
@@ -52,7 +60,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, AlertDelega
     }
     
     private func configureNavigationController() {
-        self.navigationItem.title = "РЕГИСТРАЦИЯ"
+        self.navigationItem.title = "Регистрация".uppercased()
         self.navigationController?.navigationBar.topItem?.title = ""
     }
     

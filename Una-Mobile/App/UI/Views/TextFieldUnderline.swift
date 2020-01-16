@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomTextField: UITextField {
+class TextFieldUnderline: UITextField {
     
     override func awakeFromNib() {
         super.awakeFromNib()

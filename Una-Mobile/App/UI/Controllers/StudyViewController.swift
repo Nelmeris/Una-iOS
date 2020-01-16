@@ -27,10 +27,19 @@ class StudyViewController: UITableViewController, StudyView {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        presenter = StudyPresenter(view: self)
         configureTableView()
         configureNavigationBar()
+        
+        presenter = StudyPresenter(view: self)
         presenter.showCources()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        if #available(iOS 13.0, *) {
+            return .darkContent
+        } else {
+            return .default
+        }
     }
     
     private func configureTableView() {
@@ -41,14 +50,12 @@ class StudyViewController: UITableViewController, StudyView {
     
     private func configureNavigationBar() {
         navigationItem.title = "Уроки".uppercased()
+        navigationController?.navigationBar.barStyle = .black
     }
     
     func setCources(lessons: [UnaLesson], viewModels: [LessonViewModel]) {
         self.lessons = lessons
-        self.viewModels = viewModels
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
+        self.updateTable(with: viewModels)
     }
     
 }
@@ -74,6 +81,13 @@ extension StudyViewController {
             controller.lesson = self.lessons[indexPath.row]
         }
         self.hidesBottomBarWhenPushed = false
+    }
+    
+    private func updateTable(with models: [LessonViewModel]) {
+        self.viewModels = models
+        DispatchQueue.main.async {
+            self.tableView.updateData(data: self.viewModels, newData: models)
+        }
     }
     
 }

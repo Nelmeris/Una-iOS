@@ -26,14 +26,18 @@ class AuthViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     // MARK: - Actions
     
     @IBAction func toLogin(_ sender: Any) {
-        router.toLogin(configurate: nil)
+        router.toLogin()
     }
     
     @IBAction func toRegister(_ sender: Any) {
-        router.toRegister(configurate: nil)
+        router.toRegister()
     }
 
 }

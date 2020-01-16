@@ -17,8 +17,8 @@
         <!--Task View Controller-->
         <scene sceneID="Dlu-sQ-G2b">
             <objects>
-                <viewController storyboardIdentifier="LessonTask" id="p5b-Vx-nJk" customClass="TaskViewController" customModule="YouLang_Mobile" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vkL-fm-UC4" customClass="GradientView" customModule="YouLang_Mobile" customModuleProvider="target">
+                <viewController storyboardIdentifier="LessonTask" id="p5b-Vx-nJk" customClass="TaskViewController" customModule="Юна" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vkL-fm-UC4" customClass="GradientView" customModule="Юна" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -33,8 +33,8 @@
                                 <color key="textColor" name="AdditionalTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" allowsEditingTextAttributes="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVs-He-1dT">
-                                <rect key="frame" x="25" y="231" width="364" height="159.5"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" allowsEditingTextAttributes="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVs-He-1dT">
+                                <rect key="frame" x="25" y="231" width="364" height="431"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -56,6 +56,7 @@
                             <constraint firstItem="Z9Z-O9-yRp" firstAttribute="leading" secondItem="vkL-fm-UC4" secondAttribute="leadingMargin" id="AsA-zP-isN"/>
                             <constraint firstItem="zVs-He-1dT" firstAttribute="top" secondItem="bzV-jG-7cI" secondAttribute="bottom" constant="125" id="Q86-uZ-Au1"/>
                             <constraint firstItem="Z9Z-O9-yRp" firstAttribute="trailing" secondItem="vkL-fm-UC4" secondAttribute="trailingMargin" id="Qzu-5q-tqz"/>
+                            <constraint firstItem="POa-jD-O1H" firstAttribute="bottom" secondItem="zVs-He-1dT" secondAttribute="bottom" constant="200" id="V9U-Gd-uXX"/>
                             <constraint firstItem="bzV-jG-7cI" firstAttribute="leading" secondItem="POa-jD-O1H" secondAttribute="leading" constant="20" id="XKs-bL-V1D"/>
                             <constraint firstItem="Z9Z-O9-yRp" firstAttribute="top" secondItem="POa-jD-O1H" secondAttribute="top" constant="30" id="hs3-qE-d57"/>
                             <constraint firstItem="POa-jD-O1H" firstAttribute="trailing" secondItem="zVs-He-1dT" secondAttribute="trailing" constant="25" id="qrO-Gl-Gmz"/>
@@ -165,20 +166,20 @@
         <!--Controller-->
         <scene sceneID="hRn-dn-Bkh">
             <objects>
-                <tableViewController storyboardIdentifier="Study" modalPresentationStyle="fullScreen" id="zK2-Ye-iC7" customClass="StudyViewController" customModule="YouLang_Mobile" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Study" modalPresentationStyle="fullScreen" id="zK2-Ye-iC7" customClass="StudyViewController" customModule="Юна" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2QL-Uv-QSE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="StudyTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="StudyTableViewCellReusable" id="bSh-Wn-W1V" customClass="StudyTableViewCell" customModule="YouLang_Mobile" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="StudyTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="StudyTableViewCellReusable" id="bSh-Wn-W1V" customClass="StudyTableViewCell" customModule="Юна" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="247.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bSh-Wn-W1V" id="gzT-Gw-QWW">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="247.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="se2-bc-MtG" customClass="GradientView" customModule="YouLang_Mobile" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="se2-bc-MtG" customClass="GradientView" customModule="Юна" customModuleProvider="target">
                                             <rect key="frame" x="20" y="11" width="374" height="225"/>
                                             <subviews>
                                                 <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wLb-Qp-fC6">
@@ -294,7 +295,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eCx-UJ-iXe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="HNx-Hb-cWY" customClass="StudyRouter" customModule="YouLang_Mobile" customModuleProvider="target">
+                <customObject id="HNx-Hb-cWY" customClass="StudyRouter" customModule="Юна" customModuleProvider="target">
                     <connections>
                         <outlet property="controller" destination="zK2-Ye-iC7" id="dnd-T5-lqS"/>
                     </connections>
@@ -305,7 +306,7 @@
         <!--Controller-->
         <scene sceneID="D2I-Ah-4y3">
             <objects>
-                <viewController storyboardIdentifier="Lesson" id="5Bx-5V-lU2" customClass="LessonPartsViewController" customModule="YouLang_Mobile" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Lesson" id="5Bx-5V-lU2" customClass="LessonPartsViewController" customModule="Юна" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CcS-o2-lmf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -330,7 +331,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8QT-a8-njT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <customObject id="Ne6-cN-GPV" customClass="LessonRouter" customModule="YouLang_Mobile" customModuleProvider="target">
+                <customObject id="Ne6-cN-GPV" customClass="LessonRouter" customModule="Юна" customModuleProvider="target">
                     <connections>
                         <outlet property="controller" destination="5Bx-5V-lU2" id="B87-3G-8xB"/>
                     </connections>

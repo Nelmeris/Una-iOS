@@ -27,7 +27,15 @@ class PassRecoveryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = "ВОССТАНОВЛЕНИЕ ПАРОЛЯ"
+        self.navigationItem.title = "Восстановление пароля".uppercased()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        if #available(iOS 13.0, *) {
+            return .darkContent
+        } else {
+            return .default
+        }
     }
 
 }

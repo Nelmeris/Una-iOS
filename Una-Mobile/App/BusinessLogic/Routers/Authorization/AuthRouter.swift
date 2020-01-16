@@ -10,22 +10,25 @@ import UIKit
 
 final class AuthRouter: BaseRouter {
     
-    let storyboardName = "Authorization"
+    private let storyboardName = "Authorization"
     
-    func toLogin(configurate: ((LoginViewController) -> ())?) {
-        let controller = UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(withIdentifier: "Login")
-        if let configurate = configurate {
-            configurate(controller as! LoginViewController)
-        }
-        show(controller, sender: self.controller)
+    private let loginVCId = "Login"
+    private let registerVCId = "Register"
+    
+    func toLogin(configurate: ((LoginViewController) -> ())? = nil) {
+        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: loginVCId)
+        guard let loginVC = controller as? LoginViewController else { fatalError() }
+        configurate?(loginVC)
+        show(loginVC, sender: self.controller)
     }
     
-    func toRegister(configurate: ((RegisterViewController) -> ())?) {
-        let controller = UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(withIdentifier: "Register")
-        if let configurate = configurate {
-            configurate(controller as! RegisterViewController)
-        }
-        show(controller, sender: self.controller)
+    func toRegister(configurate: ((RegisterViewController) -> ())? = nil) {
+        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: registerVCId)
+        guard let registerVC = controller as? RegisterViewController else { fatalError() }
+        configurate?(registerVC)
+        show(registerVC, sender: self.controller)
     }
     
 }
