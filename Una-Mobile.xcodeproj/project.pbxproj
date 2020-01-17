@@ -37,6 +37,7 @@
 		57A343C023D117B400C734F8 /* LastWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A343BF23D117B400C734F8 /* LastWelcomeViewController.swift */; };
 		57A343C223D11E8C00C734F8 /* PreferredStatusBarStyleNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A343C123D11E8C00C734F8 /* PreferredStatusBarStyleNavigationController.swift */; };
 		57A343C423D123F900C734F8 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A343C323D123F900C734F8 /* AsyncOperation.swift */; };
+		57A343C623D1E67100C734F8 /* Moya-Codable in Resources */ = {isa = PBXBuildFile; fileRef = 57A343C523D1E67100C734F8 /* Moya-Codable */; };
 		57A9D73423C3D226005D1953 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A9D73323C3D226005D1953 /* UIViewExtensions.swift */; };
 		57A9D73823C4AF2B005D1953 /* UnaDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A9D73723C4AF2B005D1953 /* UnaDBService.swift */; };
 		57B39D0F229821F60060D4C2 /* YLLogoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B39D0E229821F60060D4C2 /* YLLogoutResponse.swift */; };
@@ -133,6 +134,7 @@
 		57A343BF23D117B400C734F8 /* LastWelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastWelcomeViewController.swift; sourceTree = "<group>"; };
 		57A343C123D11E8C00C734F8 /* PreferredStatusBarStyleNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferredStatusBarStyleNavigationController.swift; sourceTree = "<group>"; };
 		57A343C323D123F900C734F8 /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
+		57A343C523D1E67100C734F8 /* Moya-Codable */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Moya-Codable"; sourceTree = "<group>"; };
 		57A9D73323C3D226005D1953 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		57A9D73723C4AF2B005D1953 /* UnaDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnaDBService.swift; sourceTree = "<group>"; };
 		57B39D0E229821F60060D4C2 /* YLLogoutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLLogoutResponse.swift; sourceTree = "<group>"; };
@@ -560,6 +562,7 @@
 				570EB8A423CA1DBD00037211 /* AbstractPostgresRequestFactory.swift */,
 				57FEF31E2288BE37000A4FD7 /* DataRequestCodable.swift */,
 				57FEF3202288BE37000A4FD7 /* RequestRouter.swift */,
+				57A343C523D1E67100C734F8 /* Moya-Codable */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -709,6 +712,7 @@
 				5700F28F22975F3A0060D34A /* Lato-Regular.ttf in Resources */,
 				57FEF3362288D223000A4FD7 /* Authorization.storyboard in Resources */,
 				57FEF3342288D214000A4FD7 /* Welcome.storyboard in Resources */,
+				57A343C623D1E67100C734F8 /* Moya-Codable in Resources */,
 				57FEF2F32288AFE7000A4FD7 /* Study.storyboard in Resources */,
 				5757C010229736AD004C9E1E /* Assets.xcassets in Resources */,
 			);
