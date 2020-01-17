@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import CoreData
-import Keychain
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
