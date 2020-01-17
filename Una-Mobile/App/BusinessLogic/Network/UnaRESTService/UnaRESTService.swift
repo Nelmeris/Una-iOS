@@ -6,23 +6,57 @@
 //  Copyright © 2020 Artem Kufaev. All rights reserved.
 //
 
-import Alamofire
+import Moya
 
-class UnaRESTService: AbstractRequestFactory {
+enum UnaRESTService {
+    case login(email: String, password: String)
+    case getLessons
+}
+
+extension UnaRESTService: TargetType {
     
-    private let host = URL(string: "http://5.23.55.140/")!
-    
-    var errorParser: AbstractErrorParser
-    var sessionManager: SessionManager
-    var queue: DispatchQueue?
-    
-    static let shared = UnaRESTService()
-    
-    private init() {
-        let factory = UnaRequestRESTFactory()
-        self.errorParser = factory.makeErrorParser()
-        self.sessionManager = factory.commonSessionManager
-        self.queue = factory.sessionQueue
+    var baseURL: URL {
+        switch self {
+        case .login(email: _, password: _):
+            return URL(string: "http://5.23.55.140/api-auth/")!
+        case .getLessons:
+            return URL(string: "http://5.23.55.140/api/")!
+        }
     }
     
+    var path: String {
+        switch self {
+        case .login(email: _, password: _):
+            return "login"
+        case .getLessons:
+            return "lessons/"
+        }
+    }
+    
+    var method: Method {
+        switch self {
+        case .login(email: _, password: _):
+            return .post
+        case .getLessons:
+            return .get
+        }
+    }
+    
+    var sampleData: Data {
+        return Data()
+    }
+    
+    var task: Task {
+        switch self {
+        case .login(email: let email, password: let password):
+            return .requestParameters(parameters: ["email": email, "password": password], encoding: URLEncoding.queryString)
+        case .getLessons:
+            return .requestPlain
+        }
+    }
+    
+    var headers: [String : String]? {
+        return nil
+    }
+
 }

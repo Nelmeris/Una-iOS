@@ -3,17 +3,22 @@ PODS:
   - BlueSocket (1.0.52)
   - BlueSSLService (1.0.52):
     - BlueSocket (~> 1.0.52)
-  - CryptoSwift (1.3.0)
   - Keychain (0.3.1)
+  - Moya (13.0.1):
+    - Moya/Core (= 13.0.1)
+  - Moya/Core (13.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.1)
   - PostgresClientKit (1.1.1):
     - BlueSocket (~> 1.0)
     - BlueSSLService (~> 1.0)
+  - Result (4.1.0)
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
   - Alamofire
-  - CryptoSwift (~> 1.0)
   - Keychain
+  - Moya
   - PostgresClientKit
   - SwiftyJSON
 
@@ -22,20 +27,22 @@ SPEC REPOS:
     - Alamofire
     - BlueSocket
     - BlueSSLService
-    - CryptoSwift
     - Keychain
+    - Moya
     - PostgresClientKit
+    - Result
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   BlueSocket: 1acd943acb07b55905291d608649fcfbf8cbd57d
   BlueSSLService: b791a3db95b841973c44870f59bbf94628845b58
-  CryptoSwift: 1283821600233bdbeb96d7b389c3288c3bf77211
   Keychain: ef812eafcf6593fe4409b07cfecc00b95fb373ed
+  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   PostgresClientKit: 2137fe1d0f553aca00283474b28816ec88462071
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 8cf9cc13f10e6ec50ccbdcc277f4360429d2e9f8
+PODFILE CHECKSUM: 960724205420b76ed42d6525640d88b948c20903
 
 COCOAPODS: 1.8.4

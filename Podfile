@@ -10,7 +10,7 @@ target 'Una-Mobile' do
   pod 'SwiftyJSON'
   pod 'Keychain'
   pod 'PostgresClientKit'
-  pod 'CryptoSwift', '~> 1.0'
+  pod 'Moya' 
 
   target 'Una-MobileTests' do
     inherit! :search_paths
