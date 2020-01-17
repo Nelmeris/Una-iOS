@@ -7,11 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5700F28F22975F3A0060D34A /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5700F28E22975F3A0060D34A /* Lato-Regular.ttf */; };
 		5700F29222977D790060D34A /* TextFieldUnderline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5700F29122977D790060D34A /* TextFieldUnderline.swift */; };
 		5700F29422978FF80060D34A /* TapGestureToHideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5700F29322978FF80060D34A /* TapGestureToHideKeyboard.swift */; };
-		570BBBE42298337A0053DC12 /* YLErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570BBBE32298337A0053DC12 /* YLErrorResponse.swift */; };
-		570BBBE6229834530053DC12 /* YLErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570BBBE5229834530053DC12 /* YLErrorParser.swift */; };
 		570EB89723CA141900037211 /* UnaDBServiceLessons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570EB89623CA141900037211 /* UnaDBServiceLessons.swift */; };
 		570EB89A23CA155700037211 /* UnaLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570EB89923CA155700037211 /* UnaLesson.swift */; };
 		570EB89C23CA15F600037211 /* UnaLessonPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570EB89B23CA15F600037211 /* UnaLessonPart.swift */; };
@@ -19,16 +16,6 @@
 		5723F12422B8F136002085F8 /* UIColorFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5723F12322B8F136002085F8 /* UIColorFilters.swift */; };
 		572C9047229ED01900154BA9 /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572C9046229ED01800154BA9 /* Validators.swift */; };
 		572C904B229EDD2800154BA9 /* UIAlertViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572C904A229EDD2800154BA9 /* UIAlertViewDelegate.swift */; };
-		572FAE2C229CB0E100C261F7 /* YLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572FAE2B229CB0E100C261F7 /* YLService.swift */; };
-		5757C010229736AD004C9E1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5757C00F229736AD004C9E1E /* Assets.xcassets */; };
-		57635E7C229814B7002AD534 /* YLRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57635E7B229814B7002AD534 /* YLRequestFactory.swift */; };
-		57635E84229817E6002AD534 /* YLAuthRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57635E83229817E6002AD534 /* YLAuthRequestFactory.swift */; };
-		57635E86229817F9002AD534 /* YLAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57635E85229817F9002AD534 /* YLAuth.swift */; };
-		57635E8822981814002AD534 /* YLUserRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57635E8722981814002AD534 /* YLUserRequestFactory.swift */; };
-		57635E8A2298181D002AD534 /* YLUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57635E892298181D002AD534 /* YLUser.swift */; };
-		57635E8C2298182D002AD534 /* YLCourceRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57635E8B2298182D002AD534 /* YLCourceRequestFactory.swift */; };
-		57635E8E22981837002AD534 /* YLCource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57635E8D22981837002AD534 /* YLCource.swift */; };
-		57635E9422981B93002AD534 /* YLUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57635E9322981B93002AD534 /* YLUserModel.swift */; };
 		5785C69F229F035D006F8B20 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5785C69E229F035D006F8B20 /* TaskViewController.swift */; };
 		57A343B523D1008D00C734F8 /* Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A343B423D1008D00C734F8 /* Start.swift */; };
 		57A343B823D109C800C734F8 /* UITableViewDataUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A343B723D109C800C734F8 /* UITableViewDataUpdater.swift */; };
@@ -37,12 +24,20 @@
 		57A343C023D117B400C734F8 /* LastWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A343BF23D117B400C734F8 /* LastWelcomeViewController.swift */; };
 		57A343C223D11E8C00C734F8 /* PreferredStatusBarStyleNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A343C123D11E8C00C734F8 /* PreferredStatusBarStyleNavigationController.swift */; };
 		57A343C423D123F900C734F8 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A343C323D123F900C734F8 /* AsyncOperation.swift */; };
-		57A343C623D1E67100C734F8 /* Moya-Codable in Resources */ = {isa = PBXBuildFile; fileRef = 57A343C523D1E67100C734F8 /* Moya-Codable */; };
+		57A343C823D1E74500C734F8 /* UnaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A343C723D1E74500C734F8 /* UnaAPI.swift */; };
+		57A343CA23D1E88000C734F8 /* UnaNetworkable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A343C923D1E88000C734F8 /* UnaNetworkable.swift */; };
+		57A343CC23D1E8F500C734F8 /* UnaNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A343CB23D1E8F500C734F8 /* UnaNetworkManager.swift */; };
+		57A343D023D1EA6600C734F8 /* Response+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A343CF23D1EA6600C734F8 /* Response+Codable.swift */; };
+		57A343D323D1EA7200C734F8 /* MoyaProvider+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A343D223D1EA7100C734F8 /* MoyaProvider+Request.swift */; };
+		57A343D623D1EA8900C734F8 /* ObservableType+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A343D523D1EA8900C734F8 /* ObservableType+Codable.swift */; };
+		57A343D823D1EA8B00C734F8 /* Single+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A343D723D1EA8B00C734F8 /* Single+Codable.swift */; };
+		57A343E123D1EDB000C734F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A343DC23D1EDB000C734F8 /* Assets.xcassets */; };
+		57A343E223D1EDB000C734F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A343DD23D1EDB000C734F8 /* LaunchScreen.storyboard */; };
+		57A343E323D1EDB000C734F8 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57A343E023D1EDB000C734F8 /* Lato-Regular.ttf */; };
+		57A343E923D1F41100C734F8 /* UnaNetworkErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A343E823D1F41100C734F8 /* UnaNetworkErrorParser.swift */; };
+		57A343EB23D1FD2400C734F8 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A343EA23D1FD2400C734F8 /* AuthService.swift */; };
 		57A9D73423C3D226005D1953 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A9D73323C3D226005D1953 /* UIViewExtensions.swift */; };
 		57A9D73823C4AF2B005D1953 /* UnaDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A9D73723C4AF2B005D1953 /* UnaDBService.swift */; };
-		57B39D0F229821F60060D4C2 /* YLLogoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B39D0E229821F60060D4C2 /* YLLogoutResponse.swift */; };
-		57B39D132298225D0060D4C2 /* YLLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B39D122298225D0060D4C2 /* YLLoginResponse.swift */; };
-		57B39D15229822680060D4C2 /* YLRegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B39D14229822680060D4C2 /* YLRegisterResponse.swift */; };
 		57B7278623CA2955008B95C4 /* LessonPartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7278523CA2955008B95C4 /* LessonPartsViewController.swift */; };
 		57B7278823CA2B66008B95C4 /* LessonRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7278723CA2B66008B95C4 /* LessonRouter.swift */; };
 		57B7278A23CA2D57008B95C4 /* LessonPartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7278923CA2D57008B95C4 /* LessonPartViewModel.swift */; };
@@ -53,12 +48,10 @@
 		57C2221023C331B7002A0AD7 /* LessonTaskViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C2220F23C331B7002A0AD7 /* LessonTaskViewPresenter.swift */; };
 		57C2221223C33A7B002A0AD7 /* LessonTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C2221123C33A7B002A0AD7 /* LessonTaskViewModel.swift */; };
 		57C2226823C3B1CC002A0AD7 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C2226723C3B1CC002A0AD7 /* GradientView.swift */; };
-		57EC310323CA343C00241831 /* UnaRESTService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EC310223CA343C00241831 /* UnaRESTService.swift */; };
 		57EC310723CA35FA00241831 /* UnaLessonTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EC310623CA35FA00241831 /* UnaLessonTask.swift */; };
 		57EC310923CA387F00241831 /* UnaDBServiceTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EC310823CA387F00241831 /* UnaDBServiceTasks.swift */; };
 		57EC310B23CDDB3C00241831 /* StringOccurrences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EC310A23CDDB3C00241831 /* StringOccurrences.swift */; };
 		57EED4E52297D20A002B8908 /* StudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EED4E42297D20A002B8908 /* StudyViewController.swift */; };
-		57EED4E92297D776002B8908 /* YLCourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EED4E82297D776002B8908 /* YLCourceModel.swift */; };
 		57EED4EB2297D820002B8908 /* DifficultyLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EED4EA2297D820002B8908 /* DifficultyLevel.swift */; };
 		57FEBF56229F21B700148709 /* StudyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEBF55229F21B700148709 /* StudyRouter.swift */; };
 		57FEBF58229F28A000148709 /* SetTabBarVisible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEBF57229F28A000148709 /* SetTabBarVisible.swift */; };
@@ -67,12 +60,7 @@
 		57FEF2EE2288AFE7000A4FD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF2ED2288AFE7000A4FD7 /* AppDelegate.swift */; };
 		57FEF2F32288AFE7000A4FD7 /* Study.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57FEF2F12288AFE7000A4FD7 /* Study.storyboard */; };
 		57FEF2F62288AFE7000A4FD7 /* Una_Mobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF2F42288AFE7000A4FD7 /* Una_Mobile.xcdatamodeld */; };
-		57FEF2FB2288AFE9000A4FD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57FEF2F92288AFE9000A4FD7 /* LaunchScreen.storyboard */; };
-		57FEF3062288AFE9000A4FD7 /* YLUsersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF3052288AFE9000A4FD7 /* YLUsersTests.swift */; };
 		57FEF3212288BE37000A4FD7 /* AbstractErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF31C2288BE37000A4FD7 /* AbstractErrorParser.swift */; };
-		57FEF3222288BE37000A4FD7 /* AbstractRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF31D2288BE37000A4FD7 /* AbstractRequestFactory.swift */; };
-		57FEF3232288BE37000A4FD7 /* DataRequestCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF31E2288BE37000A4FD7 /* DataRequestCodable.swift */; };
-		57FEF3252288BE37000A4FD7 /* RequestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF3202288BE37000A4FD7 /* RequestRouter.swift */; };
 		57FEF3272288C5E3000A4FD7 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF3262288C5E3000A4FD7 /* MainTabBarViewController.swift */; };
 		57FEF3292288C616000A4FD7 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF3282288C616000A4FD7 /* AuthViewController.swift */; };
 		57FEF32C2288C6FD000A4FD7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF32B2288C6FD000A4FD7 /* RegisterViewController.swift */; };
@@ -104,11 +92,8 @@
 		1BE433E613F43777DB7C3CEE /* Pods-YouLang-MobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YouLang-MobileTests.debug.xcconfig"; path = "Target Support Files/Pods-YouLang-MobileTests/Pods-YouLang-MobileTests.debug.xcconfig"; sourceTree = "<group>"; };
 		22D60672292A5D2598ECBA36 /* Pods-Una-MobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Una-MobileTests.release.xcconfig"; path = "Target Support Files/Pods-Una-MobileTests/Pods-Una-MobileTests.release.xcconfig"; sourceTree = "<group>"; };
 		267454CD7156138067B33D07 /* Pods-YouLang-MobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YouLang-MobileTests.release.xcconfig"; path = "Target Support Files/Pods-YouLang-MobileTests/Pods-YouLang-MobileTests.release.xcconfig"; sourceTree = "<group>"; };
-		5700F28E22975F3A0060D34A /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		5700F29122977D790060D34A /* TextFieldUnderline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldUnderline.swift; sourceTree = "<group>"; };
 		5700F29322978FF80060D34A /* TapGestureToHideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureToHideKeyboard.swift; sourceTree = "<group>"; };
-		570BBBE32298337A0053DC12 /* YLErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLErrorResponse.swift; sourceTree = "<group>"; };
-		570BBBE5229834530053DC12 /* YLErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLErrorParser.swift; sourceTree = "<group>"; };
 		570EB89623CA141900037211 /* UnaDBServiceLessons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnaDBServiceLessons.swift; sourceTree = "<group>"; };
 		570EB89923CA155700037211 /* UnaLesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnaLesson.swift; sourceTree = "<group>"; };
 		570EB89B23CA15F600037211 /* UnaLessonPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnaLessonPart.swift; sourceTree = "<group>"; };
@@ -116,16 +101,6 @@
 		5723F12322B8F136002085F8 /* UIColorFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorFilters.swift; sourceTree = "<group>"; };
 		572C9046229ED01800154BA9 /* Validators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
 		572C904A229EDD2800154BA9 /* UIAlertViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertViewDelegate.swift; sourceTree = "<group>"; };
-		572FAE2B229CB0E100C261F7 /* YLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLService.swift; sourceTree = "<group>"; };
-		5757C00F229736AD004C9E1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		57635E7B229814B7002AD534 /* YLRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLRequestFactory.swift; sourceTree = "<group>"; };
-		57635E83229817E6002AD534 /* YLAuthRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLAuthRequestFactory.swift; sourceTree = "<group>"; };
-		57635E85229817F9002AD534 /* YLAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLAuth.swift; sourceTree = "<group>"; };
-		57635E8722981814002AD534 /* YLUserRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLUserRequestFactory.swift; sourceTree = "<group>"; };
-		57635E892298181D002AD534 /* YLUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLUser.swift; sourceTree = "<group>"; };
-		57635E8B2298182D002AD534 /* YLCourceRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLCourceRequestFactory.swift; sourceTree = "<group>"; };
-		57635E8D22981837002AD534 /* YLCource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLCource.swift; sourceTree = "<group>"; };
-		57635E9322981B93002AD534 /* YLUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLUserModel.swift; sourceTree = "<group>"; };
 		5785C69E229F035D006F8B20 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		57A343B423D1008D00C734F8 /* Start.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start.swift; sourceTree = "<group>"; };
 		57A343B723D109C800C734F8 /* UITableViewDataUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewDataUpdater.swift; sourceTree = "<group>"; };
@@ -134,12 +109,20 @@
 		57A343BF23D117B400C734F8 /* LastWelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastWelcomeViewController.swift; sourceTree = "<group>"; };
 		57A343C123D11E8C00C734F8 /* PreferredStatusBarStyleNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferredStatusBarStyleNavigationController.swift; sourceTree = "<group>"; };
 		57A343C323D123F900C734F8 /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
-		57A343C523D1E67100C734F8 /* Moya-Codable */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Moya-Codable"; sourceTree = "<group>"; };
+		57A343C723D1E74500C734F8 /* UnaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnaAPI.swift; sourceTree = "<group>"; };
+		57A343C923D1E88000C734F8 /* UnaNetworkable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnaNetworkable.swift; sourceTree = "<group>"; };
+		57A343CB23D1E8F500C734F8 /* UnaNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnaNetworkManager.swift; sourceTree = "<group>"; };
+		57A343CF23D1EA6600C734F8 /* Response+Codable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Response+Codable.swift"; sourceTree = "<group>"; };
+		57A343D223D1EA7100C734F8 /* MoyaProvider+Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MoyaProvider+Request.swift"; sourceTree = "<group>"; };
+		57A343D523D1EA8900C734F8 /* ObservableType+Codable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ObservableType+Codable.swift"; sourceTree = "<group>"; };
+		57A343D723D1EA8B00C734F8 /* Single+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Single+Codable.swift"; sourceTree = "<group>"; };
+		57A343DC23D1EDB000C734F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		57A343DE23D1EDB000C734F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		57A343E023D1EDB000C734F8 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		57A343E823D1F41100C734F8 /* UnaNetworkErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnaNetworkErrorParser.swift; sourceTree = "<group>"; };
+		57A343EA23D1FD2400C734F8 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		57A9D73323C3D226005D1953 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		57A9D73723C4AF2B005D1953 /* UnaDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnaDBService.swift; sourceTree = "<group>"; };
-		57B39D0E229821F60060D4C2 /* YLLogoutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLLogoutResponse.swift; sourceTree = "<group>"; };
-		57B39D122298225D0060D4C2 /* YLLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLLoginResponse.swift; sourceTree = "<group>"; };
-		57B39D14229822680060D4C2 /* YLRegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLRegisterResponse.swift; sourceTree = "<group>"; };
 		57B7278523CA2955008B95C4 /* LessonPartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonPartsViewController.swift; sourceTree = "<group>"; };
 		57B7278723CA2B66008B95C4 /* LessonRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonRouter.swift; sourceTree = "<group>"; };
 		57B7278923CA2D57008B95C4 /* LessonPartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonPartViewModel.swift; sourceTree = "<group>"; };
@@ -150,12 +133,10 @@
 		57C2220F23C331B7002A0AD7 /* LessonTaskViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonTaskViewPresenter.swift; sourceTree = "<group>"; };
 		57C2221123C33A7B002A0AD7 /* LessonTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonTaskViewModel.swift; sourceTree = "<group>"; };
 		57C2226723C3B1CC002A0AD7 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		57EC310223CA343C00241831 /* UnaRESTService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnaRESTService.swift; sourceTree = "<group>"; };
 		57EC310623CA35FA00241831 /* UnaLessonTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnaLessonTask.swift; sourceTree = "<group>"; };
 		57EC310823CA387F00241831 /* UnaDBServiceTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnaDBServiceTasks.swift; sourceTree = "<group>"; };
 		57EC310A23CDDB3C00241831 /* StringOccurrences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringOccurrences.swift; sourceTree = "<group>"; };
 		57EED4E42297D20A002B8908 /* StudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyViewController.swift; sourceTree = "<group>"; };
-		57EED4E82297D776002B8908 /* YLCourceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLCourceModel.swift; sourceTree = "<group>"; };
 		57EED4EA2297D820002B8908 /* DifficultyLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyLevel.swift; sourceTree = "<group>"; };
 		57FEBF55229F21B700148709 /* StudyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyRouter.swift; sourceTree = "<group>"; };
 		57FEBF57229F28A000148709 /* SetTabBarVisible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTabBarVisible.swift; sourceTree = "<group>"; };
@@ -165,15 +146,10 @@
 		57FEF2ED2288AFE7000A4FD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57FEF2F22288AFE7000A4FD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Study.storyboard; sourceTree = "<group>"; };
 		57FEF2F52288AFE7000A4FD7 /* YouLang_Mobile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YouLang_Mobile.xcdatamodel; sourceTree = "<group>"; };
-		57FEF2FA2288AFE9000A4FD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57FEF2FC2288AFE9000A4FD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57FEF3012288AFE9000A4FD7 /* Una-MobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Una-MobileTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		57FEF3052288AFE9000A4FD7 /* YLUsersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YLUsersTests.swift; sourceTree = "<group>"; };
 		57FEF3072288AFE9000A4FD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57FEF31C2288BE37000A4FD7 /* AbstractErrorParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractErrorParser.swift; sourceTree = "<group>"; };
-		57FEF31D2288BE37000A4FD7 /* AbstractRequestFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractRequestFactory.swift; sourceTree = "<group>"; };
-		57FEF31E2288BE37000A4FD7 /* DataRequestCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRequestCodable.swift; sourceTree = "<group>"; };
-		57FEF3202288BE37000A4FD7 /* RequestRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestRouter.swift; sourceTree = "<group>"; };
 		57FEF3262288C5E3000A4FD7 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		57FEF3282288C616000A4FD7 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		57FEF32B2288C6FD000A4FD7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -229,14 +205,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		5700F28D22975EFE0060D34A /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				5700F28E22975F3A0060D34A /* Lato-Regular.ttf */,
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
 		5700F29022977D4C0060D34A /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,31 +235,10 @@
 		57635E76229813B1002AD534 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				57EC310423CA344000241831 /* UnaAPIService */,
 				57A9D73623C4AEF5005D1953 /* UnaDBService */,
-				57EC310423CA344000241831 /* UnaRESTService */,
-				57A9D73523C4ACCA005D1953 /* MockServer */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		57635E9122981B5F002AD534 /* YLResponses */ = {
-			isa = PBXGroup;
-			children = (
-				57B39D0E229821F60060D4C2 /* YLLogoutResponse.swift */,
-				57B39D122298225D0060D4C2 /* YLLoginResponse.swift */,
-				57B39D14229822680060D4C2 /* YLRegisterResponse.swift */,
-				570BBBE32298337A0053DC12 /* YLErrorResponse.swift */,
-			);
-			path = YLResponses;
-			sourceTree = "<group>";
-		};
-		57635E9222981B69002AD534 /* YLModels */ = {
-			isa = PBXGroup;
-			children = (
-				57EED4E82297D776002B8908 /* YLCourceModel.swift */,
-				57635E9322981B93002AD534 /* YLUserModel.swift */,
-			);
-			path = YLModels;
 			sourceTree = "<group>";
 		};
 		57A343B623D107A500C734F8 /* UI */ = {
@@ -326,15 +273,59 @@
 			path = Study;
 			sourceTree = "<group>";
 		};
-		57A9D73523C4ACCA005D1953 /* MockServer */ = {
+		57A343CD23D1EA5900C734F8 /* MoyaCodable */ = {
 			isa = PBXGroup;
 			children = (
-				572FAE2B229CB0E100C261F7 /* YLService.swift */,
-				57635E7B229814B7002AD534 /* YLRequestFactory.swift */,
-				570BBBE5229834530053DC12 /* YLErrorParser.swift */,
-				57C2226623C3ADDB002A0AD7 /* Requests */,
+				57A343CE23D1EA6100C734F8 /* Core */,
+				57A343D123D1EA6900C734F8 /* MoyaProvider */,
+				57A343D423D1EA7500C734F8 /* RxSwift */,
 			);
-			path = MockServer;
+			path = MoyaCodable;
+			sourceTree = "<group>";
+		};
+		57A343CE23D1EA6100C734F8 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				57A343CF23D1EA6600C734F8 /* Response+Codable.swift */,
+				57FEF31C2288BE37000A4FD7 /* AbstractErrorParser.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		57A343D123D1EA6900C734F8 /* MoyaProvider */ = {
+			isa = PBXGroup;
+			children = (
+				57A343D223D1EA7100C734F8 /* MoyaProvider+Request.swift */,
+			);
+			path = MoyaProvider;
+			sourceTree = "<group>";
+		};
+		57A343D423D1EA7500C734F8 /* RxSwift */ = {
+			isa = PBXGroup;
+			children = (
+				57A343D523D1EA8900C734F8 /* ObservableType+Codable.swift */,
+				57A343D723D1EA8B00C734F8 /* Single+Codable.swift */,
+			);
+			path = RxSwift;
+			sourceTree = "<group>";
+		};
+		57A343DB23D1EDB000C734F8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				57A343DF23D1EDB000C734F8 /* Fonts */,
+				57A343DC23D1EDB000C734F8 /* Assets.xcassets */,
+				57A343DD23D1EDB000C734F8 /* LaunchScreen.storyboard */,
+			);
+			name = Resources;
+			path = "Una-Mobile/Resources";
+			sourceTree = SOURCE_ROOT;
+		};
+		57A343DF23D1EDB000C734F8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				57A343E023D1EDB000C734F8 /* Lato-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		57A9D73623C4AEF5005D1953 /* UnaDBService */ = {
@@ -366,25 +357,15 @@
 			path = Presenters;
 			sourceTree = "<group>";
 		};
-		57C2226623C3ADDB002A0AD7 /* Requests */ = {
+		57EC310423CA344000241831 /* UnaAPIService */ = {
 			isa = PBXGroup;
 			children = (
-				57635E83229817E6002AD534 /* YLAuthRequestFactory.swift */,
-				57635E85229817F9002AD534 /* YLAuth.swift */,
-				57635E8722981814002AD534 /* YLUserRequestFactory.swift */,
-				57635E892298181D002AD534 /* YLUser.swift */,
-				57635E8B2298182D002AD534 /* YLCourceRequestFactory.swift */,
-				57635E8D22981837002AD534 /* YLCource.swift */,
+				57A343C723D1E74500C734F8 /* UnaAPI.swift */,
+				57A343C923D1E88000C734F8 /* UnaNetworkable.swift */,
+				57A343CB23D1E8F500C734F8 /* UnaNetworkManager.swift */,
+				57A343E823D1F41100C734F8 /* UnaNetworkErrorParser.swift */,
 			);
-			path = Requests;
-			sourceTree = "<group>";
-		};
-		57EC310423CA344000241831 /* UnaRESTService */ = {
-			isa = PBXGroup;
-			children = (
-				57EC310223CA343C00241831 /* UnaRESTService.swift */,
-			);
-			path = UnaRESTService;
+			path = UnaAPIService;
 			sourceTree = "<group>";
 		};
 		57EC310C23CDE9A100241831 /* Operations */ = {
@@ -420,8 +401,8 @@
 			children = (
 				57FEF3102288B044000A4FD7 /* App */,
 				57FEF3122288B054000A4FD7 /* Core */,
-				57FEF3112288B049000A4FD7 /* Resources */,
 				57FEF3132288B05A000A4FD7 /* Enviroments */,
+				57A343DB23D1EDB000C734F8 /* Resources */,
 			);
 			path = "Una-Mobile";
 			sourceTree = "<group>";
@@ -429,7 +410,6 @@
 		57FEF3042288AFE9000A4FD7 /* Una-MobileTests */ = {
 			isa = PBXGroup;
 			children = (
-				57FEF3052288AFE9000A4FD7 /* YLUsersTests.swift */,
 				57FEF3072288AFE9000A4FD7 /* Info.plist */,
 			);
 			path = "Una-MobileTests";
@@ -444,16 +424,6 @@
 				57FEF3142288B131000A4FD7 /* UI */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		57FEF3112288B049000A4FD7 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				5700F28D22975EFE0060D34A /* Fonts */,
-				5757C00F229736AD004C9E1E /* Assets.xcassets */,
-				57FEF2F92288AFE9000A4FD7 /* LaunchScreen.storyboard */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		57FEF3122288B054000A4FD7 /* Core */ = {
@@ -524,8 +494,6 @@
 			isa = PBXGroup;
 			children = (
 				57C2220723C321C6002A0AD7 /* ViewModels */,
-				57635E9222981B69002AD534 /* YLModels */,
-				57635E9122981B5F002AD534 /* YLResponses */,
 				570EB89823CA154100037211 /* UnaModels */,
 				57EED4EA2297D820002B8908 /* DifficultyLevel.swift */,
 				57FEBF5F229F6FB900148709 /* LessonTask.swift */,
@@ -537,6 +505,7 @@
 			isa = PBXGroup;
 			children = (
 				57A343B423D1008D00C734F8 /* Start.swift */,
+				57A343EA23D1FD2400C734F8 /* AuthService.swift */,
 				57EC310C23CDE9A100241831 /* Operations */,
 				57635E76229813B1002AD534 /* Network */,
 				57FEF33D2288E327000A4FD7 /* Routers */,
@@ -557,12 +526,8 @@
 			isa = PBXGroup;
 			children = (
 				57C2220523C31F02002A0AD7 /* NetworkHelper.swift */,
-				57FEF31C2288BE37000A4FD7 /* AbstractErrorParser.swift */,
-				57FEF31D2288BE37000A4FD7 /* AbstractRequestFactory.swift */,
 				570EB8A423CA1DBD00037211 /* AbstractPostgresRequestFactory.swift */,
-				57FEF31E2288BE37000A4FD7 /* DataRequestCodable.swift */,
-				57FEF3202288BE37000A4FD7 /* RequestRouter.swift */,
-				57A343C523D1E67100C734F8 /* Moya-Codable */,
+				57A343CD23D1EA5900C734F8 /* MoyaCodable */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -708,13 +673,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57FEF2FB2288AFE9000A4FD7 /* LaunchScreen.storyboard in Resources */,
-				5700F28F22975F3A0060D34A /* Lato-Regular.ttf in Resources */,
 				57FEF3362288D223000A4FD7 /* Authorization.storyboard in Resources */,
+				57A343E323D1EDB000C734F8 /* Lato-Regular.ttf in Resources */,
 				57FEF3342288D214000A4FD7 /* Welcome.storyboard in Resources */,
-				57A343C623D1E67100C734F8 /* Moya-Codable in Resources */,
+				57A343E123D1EDB000C734F8 /* Assets.xcassets in Resources */,
+				57A343E223D1EDB000C734F8 /* LaunchScreen.storyboard in Resources */,
 				57FEF2F32288AFE7000A4FD7 /* Study.storyboard in Resources */,
-				5757C010229736AD004C9E1E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -796,27 +760,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57A343CA23D1E88000C734F8 /* UnaNetworkable.swift in Sources */,
 				57FEBF60229F6FB900148709 /* LessonTask.swift in Sources */,
 				57B7278C23CA2DC8008B95C4 /* LessonPartViewPresenter.swift in Sources */,
-				57EED4E92297D776002B8908 /* YLCourceModel.swift in Sources */,
+				57A343CC23D1E8F500C734F8 /* UnaNetworkManager.swift in Sources */,
 				57A343C023D117B400C734F8 /* LastWelcomeViewController.swift in Sources */,
-				57B39D132298225D0060D4C2 /* YLLoginResponse.swift in Sources */,
 				57B7278623CA2955008B95C4 /* LessonPartsViewController.swift in Sources */,
-				570BBBE6229834530053DC12 /* YLErrorParser.swift in Sources */,
 				57FEF3302288C7BC000A4FD7 /* LoginViewController.swift in Sources */,
 				57C2226823C3B1CC002A0AD7 /* GradientView.swift in Sources */,
 				57A343BC23D10E0F00C734F8 /* WelcomeRouter.swift in Sources */,
-				57FEF3252288BE37000A4FD7 /* RequestRouter.swift in Sources */,
-				57635E8A2298181D002AD534 /* YLUser.swift in Sources */,
 				570EB89C23CA15F600037211 /* UnaLessonPart.swift in Sources */,
+				57A343EB23D1FD2400C734F8 /* AuthService.swift in Sources */,
 				57B7278A23CA2D57008B95C4 /* LessonPartViewModel.swift in Sources */,
-				570BBBE42298337A0053DC12 /* YLErrorResponse.swift in Sources */,
 				570EB89723CA141900037211 /* UnaDBServiceLessons.swift in Sources */,
 				5723F12422B8F136002085F8 /* UIColorFilters.swift in Sources */,
 				57EED4EB2297D820002B8908 /* DifficultyLevel.swift in Sources */,
 				5785C69F229F035D006F8B20 /* TaskViewController.swift in Sources */,
-				572FAE2C229CB0E100C261F7 /* YLService.swift in Sources */,
 				57FEBF56229F21B700148709 /* StudyRouter.swift in Sources */,
+				57A343C823D1E74500C734F8 /* UnaAPI.swift in Sources */,
 				57C2220923C321E9002A0AD7 /* LessonViewModel.swift in Sources */,
 				57FEF3322288CAD2000A4FD7 /* WelcomePageViewController.swift in Sources */,
 				57B7278823CA2B66008B95C4 /* LessonRouter.swift in Sources */,
@@ -825,42 +786,35 @@
 				5700F29422978FF80060D34A /* TapGestureToHideKeyboard.swift in Sources */,
 				57EC310B23CDDB3C00241831 /* StringOccurrences.swift in Sources */,
 				572C9047229ED01900154BA9 /* Validators.swift in Sources */,
+				57A343E923D1F41100C734F8 /* UnaNetworkErrorParser.swift in Sources */,
 				57A343C223D11E8C00C734F8 /* PreferredStatusBarStyleNavigationController.swift in Sources */,
 				57FEF32C2288C6FD000A4FD7 /* RegisterViewController.swift in Sources */,
 				57EC310723CA35FA00241831 /* UnaLessonTask.swift in Sources */,
-				57635E8822981814002AD534 /* YLUserRequestFactory.swift in Sources */,
 				57A343B523D1008D00C734F8 /* Start.swift in Sources */,
-				57FEF3222288BE37000A4FD7 /* AbstractRequestFactory.swift in Sources */,
 				5700F29222977D790060D34A /* TextFieldUnderline.swift in Sources */,
-				57B39D0F229821F60060D4C2 /* YLLogoutResponse.swift in Sources */,
 				570EB8A523CA1DBD00037211 /* AbstractPostgresRequestFactory.swift in Sources */,
-				57EC310323CA343C00241831 /* UnaRESTService.swift in Sources */,
 				57A343BA23D10AAC00C734F8 /* ArrayDifference.swift in Sources */,
-				57635E7C229814B7002AD534 /* YLRequestFactory.swift in Sources */,
 				57FEF2F62288AFE7000A4FD7 /* Una_Mobile.xcdatamodeld in Sources */,
 				57FEF3412288E804000A4FD7 /* LoginRouter.swift in Sources */,
 				57FEBF5B229F3CEA00148709 /* StudyTableViewCell.swift in Sources */,
-				57B39D15229822680060D4C2 /* YLRegisterResponse.swift in Sources */,
 				57FEF3272288C5E3000A4FD7 /* MainTabBarViewController.swift in Sources */,
-				57635E8E22981837002AD534 /* YLCource.swift in Sources */,
+				57A343D623D1EA8900C734F8 /* ObservableType+Codable.swift in Sources */,
 				57C2220623C31F02002A0AD7 /* NetworkHelper.swift in Sources */,
-				57635E84229817E6002AD534 /* YLAuthRequestFactory.swift in Sources */,
 				57C2221223C33A7B002A0AD7 /* LessonTaskViewModel.swift in Sources */,
 				57A343B823D109C800C734F8 /* UITableViewDataUpdater.swift in Sources */,
 				572C904B229EDD2800154BA9 /* UIAlertViewDelegate.swift in Sources */,
 				57FEF33F2288E37D000A4FD7 /* AuthRouter.swift in Sources */,
 				57FEF33C2288E2FA000A4FD7 /* BaseRouter.swift in Sources */,
 				57EC310923CA387F00241831 /* UnaDBServiceTasks.swift in Sources */,
-				57FEF3232288BE37000A4FD7 /* DataRequestCodable.swift in Sources */,
-				57635E9422981B93002AD534 /* YLUserModel.swift in Sources */,
+				57A343D023D1EA6600C734F8 /* Response+Codable.swift in Sources */,
 				57C2221023C331B7002A0AD7 /* LessonTaskViewPresenter.swift in Sources */,
+				57A343D823D1EA8B00C734F8 /* Single+Codable.swift in Sources */,
 				57FEBF58229F28A000148709 /* SetTabBarVisible.swift in Sources */,
 				57A9D73423C3D226005D1953 /* UIViewExtensions.swift in Sources */,
 				57FEF2EE2288AFE7000A4FD7 /* AppDelegate.swift in Sources */,
 				57EED4E52297D20A002B8908 /* StudyViewController.swift in Sources */,
 				57FEF32E2288C71B000A4FD7 /* PassRecoveryViewController.swift in Sources */,
-				57635E86229817F9002AD534 /* YLAuth.swift in Sources */,
-				57635E8C2298182D002AD534 /* YLCourceRequestFactory.swift in Sources */,
+				57A343D323D1EA7200C734F8 /* MoyaProvider+Request.swift in Sources */,
 				57FEF3462288E85C000A4FD7 /* RegisterRouter.swift in Sources */,
 				57FEF3292288C616000A4FD7 /* AuthViewController.swift in Sources */,
 				57FEF3212288BE37000A4FD7 /* AbstractErrorParser.swift in Sources */,
@@ -873,7 +827,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57FEF3062288AFE9000A4FD7 /* YLUsersTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -888,20 +841,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		57A343DD23D1EDB000C734F8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				57A343DE23D1EDB000C734F8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		57FEF2F12288AFE7000A4FD7 /* Study.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				57FEF2F22288AFE7000A4FD7 /* Base */,
 			);
 			name = Study.storyboard;
-			sourceTree = "<group>";
-		};
-		57FEF2F92288AFE9000A4FD7 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				57FEF2FA2288AFE9000A4FD7 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

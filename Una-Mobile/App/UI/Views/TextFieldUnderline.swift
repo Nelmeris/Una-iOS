@@ -10,8 +10,8 @@ import UIKit
 
 class TextFieldUnderline: UITextField {
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override func layoutSubviews() {
+        super.layoutSubviews()
         // Underline
         let bottomLine = CALayer()
         bottomLine.frame = CGRect(x: 0.0, y: self.frame.height - 1, width: self.frame.width, height: 1.0)

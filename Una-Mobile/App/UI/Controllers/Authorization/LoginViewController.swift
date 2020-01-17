@@ -58,25 +58,40 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AlertDelegate 
     // MARK: - Actions
     
     @IBAction func toMain(_ sender: Any) {
-        let email = emailField.text ?? ""
-        let password = passwordField.text ?? ""
-        YLService.shared.login(email: email, password: password) { response in
-            switch response.result {
-            case .success(let value):
-                if (!Keychain.save(value.accessToken, forKey: "access_token")) {
-                    fatalError()
-                }
-                DispatchQueue.main.async {
-                    self.router.toMain()
-                }
-            case .failure(let error):
-                if let ylError = error as? YLErrorResponses {
-                    self.showJustAlert(title: "Ошибка", message: ylError.errorDescription!)
-                } else {
-                    self.showJustAlert(title: "Сетевая ошибка", message: error.localizedDescription)
-                }
+        guard let data = getData() else { return }
+        AuthService.shared.login(email: data.email, password: data.password) { (isAuth, error) in
+            guard error == nil else {
+                self.showJustAlert(title: "Сетевая ошибка", message: error!.localizedDescription)
+                return
+            }
+            guard isAuth else {
+                self.showJustAlert(title: "Неизвестная ошибка")
+                return
+            }
+            DispatchQueue.main.async {
+                self.router.toMain()
             }
         }
+    }
+    
+    private func getData() -> (email: String, password: String)? {
+        guard let email = emailField.text,
+            !email.isEmpty else {
+            self.showJustAlert(title: "Ошибка", message: "Введите почту")
+            return nil
+        }
+        guard let password = passwordField.text,
+            !password.isEmpty else {
+            self.showJustAlert(title: "Ошибка", message: "Введите пароль")
+            return nil
+        }
+        do {
+//            let password = try ValidatorFactory.validatorFor(type: .password).validated(password)
+            return (email, password)
+        } catch (let error as ValidationError) {
+            showJustAlert(title: "Ошибка", message: error.message)
+        } catch {}
+        return nil
     }
     
     @IBAction func toPassRecovery(_ sender: Any) {

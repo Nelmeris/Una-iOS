@@ -9,19 +9,20 @@
 import Foundation
 import Moya
 
-public extension MoyaProvider {
+extension MoyaProvider {
     
-    // MARK: - 请求数据（返回一个对象模型）
+    // MARK: - For object
     @discardableResult
-    public func request<T: Codable>(_ target: Target,
-                                  objectModel: T.Type,
-                                  path: String? = nil,
-                                  success: ((_ returnData: T) -> ())?, failure: ((_ Error: MoyaError) -> ())?) -> Cancellable? {
+    func request<T: Decodable>(_ target: Target,
+                             errorParser: AbstractErrorParser,
+                             objectModel: T.Type,
+                             path: String? = nil,
+                             success: ((_ returnData: T) -> ())?, failure: ((_ Error: Error) -> ())?) -> Cancellable? {
         
         return request(target, completion: {
             
             if let error = $0.error {
-                
+                let error = errorParser.parse(error)
                 failure?(error)
                 return
             }
@@ -33,22 +34,25 @@ public extension MoyaProvider {
                 }
                 success?(returnData)
             } catch {
-                failure?(MoyaError.jsonMapping($0.value!))
+                let error = errorParser.parse(data: $0.value!)
+                failure?(error)
             }
         })
     }
     
-    // MARK: - 请求数据（返回一个数组模型）
+    // MARK: - For array
     @discardableResult
-    public func request<T: Codable>(_ target: Target,
-                                  arrayModel: T.Type,
-                                  path: String? = nil,
-                                  success: ((_ returnData: [T]) -> ())?, failure: ((_ Error: MoyaError) -> ())?) -> Cancellable? {
+    func request<T: Decodable>(_ target: Target,
+                               errorParser: AbstractErrorParser,
+                               arrayModel: T.Type,
+                               path: String? = nil,
+                               success: ((_ returnData: [T]) -> ())?,
+                               failure: ((_ Error: Error) -> ())?) -> Cancellable? {
         
         return request(target, completion: {
             
             if let error = $0.error {
-                
+                let error = errorParser.parse(error)
                 failure?(error)
                 return
             }
@@ -60,8 +64,10 @@ public extension MoyaProvider {
                 }
                 success?(returnData)
             } catch {
-                failure?(MoyaError.jsonMapping($0.value!))
+                let error = errorParser.parse(data: $0.value!)
+                failure?(error)
             }
         })
     }
+    
 }

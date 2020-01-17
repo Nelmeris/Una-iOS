@@ -10,17 +10,18 @@ import Foundation
 import RxSwift
 import Moya
 
-public extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Response {
+public extension PrimitiveSequence where Trait == SingleTrait, Element == Response {
     
-    public func mapObject<T: Codable>(_ type: T.Type, path: String? = nil) -> Single<T> {
+    func mapObject<T: Codable>(_ type: T.Type, path: String? = nil) -> Single<T> {
         return flatMap { response -> Single<T> in
             return Single.just(try response.mapObject(type, path: path))
         }
     }
     
-    public func mapArray<T: Codable>(_ type: T.Type, path: String? = nil) -> Single<[T]> {
+    func mapArray<T: Codable>(_ type: T.Type, path: String? = nil) -> Single<[T]> {
         return flatMap { response -> Single<[T]> in
             return Single.just(try response.mapArray(type, path: path))
         }
     }
+    
 }

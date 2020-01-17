@@ -12,7 +12,7 @@ import Moya
 public extension Response {
     
     // MARK: - 转成对象模型
-    public func mapObject<T: Codable>(_ type: T.Type, path: String? = nil) throws -> T {
+    func mapObject<T: Decodable>(_ type: T.Type, path: String? = nil) throws -> T {
         
         do {
             return try JSONDecoder().decode(T.self, from: try getJsonData(path))
@@ -22,7 +22,7 @@ public extension Response {
     }
     
     // MARK: - 转成数组模型
-    public func mapArray<T: Codable>(_ type: T.Type, path: String? = nil) throws -> [T] {
+    func mapArray<T: Decodable>(_ type: T.Type, path: String? = nil) throws -> [T] {
         
         do {
             return try JSONDecoder().decode([T].self, from: try getJsonData(path))

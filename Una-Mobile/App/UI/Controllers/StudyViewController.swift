@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Keychain
 
 class StudyViewController: UITableViewController, StudyView {
     

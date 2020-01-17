@@ -11,6 +11,7 @@ target 'Una-Mobile' do
   pod 'Keychain'
   pod 'PostgresClientKit'
   pod 'Moya' 
+  pod 'RxSwift'
 
   target 'Una-MobileTests' do
     inherit! :search_paths

@@ -7,17 +7,17 @@
 //
 
 import UIKit
-import Keychain
 
 class Start {
     
     static public let shared = Start()
-    private init() {}
+    private init() {
+        AuthService.shared.logout()
+    }
     
     private let welcomeIds = (storyboardName: "Welcome", vcId: "Page")
     private let authIds = (storyboardName: "Authorization", vcId: "Auth")
     private let isWelcomeKey = "isWelcome"
-    private let accessTokenKey = "access_token"
     
     public func configureWindow(_ window: UIWindow) {
         if #available(iOS 13.0, *) {
@@ -38,7 +38,7 @@ class Start {
         if !userDefaults.bool(forKey: isWelcomeKey) { // If need present WelcomePageViewController
             return UIStoryboard(name: welcomeIds.storyboardName, bundle: nil).instantiateViewController(withIdentifier: welcomeIds.vcId)
         } else {
-            if Keychain.load(accessTokenKey) != nil { // If need authorization
+            if !AuthService.shared.isAuth() { // If need authorization
                 let authVC = UIStoryboard(name: authIds.storyboardName, bundle: nil).instantiateViewController(withIdentifier: authIds.vcId)
                 let navControl = UINavigationController(rootViewController: authVC)
                 navControl.modalPresentationStyle = .fullScreen

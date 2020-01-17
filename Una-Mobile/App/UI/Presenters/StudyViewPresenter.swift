@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Keychain
 
 protocol StudyView: class {
     func setCources(lessons: [UnaLesson], viewModels: [LessonViewModel])
