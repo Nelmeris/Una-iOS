@@ -42,14 +42,25 @@ class StudyViewController: UITableViewController, StudyView {
     }
     
     private func configureTableView() {
-        view.backgroundColor = .white
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorColor = UIColor.clear
     }
     
     private func configureNavigationBar() {
         navigationItem.title = "Уроки".uppercased()
-        navigationController?.navigationBar.barStyle = .black
+
+        configureUserButton()
+    }
+    
+    private func configureUserButton() {
+        let avatarSize: CGFloat = 40
+        let image = UIImage(named: "DefaultUserImage")!
+        
+        self.navigationItem.rightBarButtonItem = NavBarUserItem(image, size: avatarSize, target: self, action: #selector(openProfile))
+    }
+    
+    @objc private func openProfile() {
+        router.toProfile()
     }
     
     func setCources(lessons: [UnaLesson], viewModels: [LessonViewModel]) {

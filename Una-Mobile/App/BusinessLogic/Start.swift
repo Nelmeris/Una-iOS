@@ -12,11 +12,11 @@ class Start {
     
     static public let shared = Start()
     private init() {
-        AuthService.shared.logout()
     }
     
     private let welcomeIds = (storyboardName: "Welcome", vcId: "Page")
     private let authIds = (storyboardName: "Authorization", vcId: "Auth")
+    private let studyIds = (storyboardName: "Study", vcId: "Study")
     private let isWelcomeKey = "isWelcome"
     
     public func configureWindow(_ window: UIWindow) {
@@ -33,18 +33,28 @@ class Start {
         navigationBarAppearace.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "MainColor")!]
     }
     
+    public func configureBarButtonItemAppearance() {
+        let BarButtonItemAppearance = UIBarButtonItem.appearance()
+        BarButtonItemAppearance.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.clear], for: .normal)
+    }
+    
     public func getRootController() -> UIViewController {
         let userDefaults = UserDefaults.standard
         if !userDefaults.bool(forKey: isWelcomeKey) { // If need present WelcomePageViewController
             return UIStoryboard(name: welcomeIds.storyboardName, bundle: nil).instantiateViewController(withIdentifier: welcomeIds.vcId)
         } else {
             if !AuthService.shared.isAuth() { // If need authorization
-                let authVC = UIStoryboard(name: authIds.storyboardName, bundle: nil).instantiateViewController(withIdentifier: authIds.vcId)
+                let storyboard = UIStoryboard(name: authIds.storyboardName, bundle: nil)
+                let authVC = storyboard.instantiateViewController(withIdentifier: authIds.vcId)
                 let navControl = UINavigationController(rootViewController: authVC)
                 navControl.modalPresentationStyle = .fullScreen
                 return navControl
             } else {
-                return MainTabBarViewController()
+                let storyboard = UIStoryboard(name: studyIds.storyboardName, bundle: nil)
+                let studyVC = storyboard.instantiateViewController(withIdentifier: studyIds.vcId)
+                let navControl = UINavigationController(rootViewController: studyVC)
+                studyVC.modalPresentationStyle = .fullScreen
+                return navControl
             }
         }
     }

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Profile View Controller-->
+        <scene sceneID="NJb-mz-syp">
+            <objects>
+                <viewController storyboardIdentifier="Profile" id="1r6-in-oXw" customClass="ProfileViewController" customModule="Юна" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="03B-l1-t5f">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BRw-vq-2Tl" customClass="GradientView" customModule="Юна" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="375" height="269.66666666666669"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultUserImage" translatesAutoresizingMaskIntoConstraints="NO" id="52i-TM-Ort">
+                                        <rect key="frame" x="137.66666666666666" y="25" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="CNI-AC-Vc1"/>
+                                            <constraint firstAttribute="width" secondItem="52i-TM-Ort" secondAttribute="height" id="orD-Iq-WfS"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Андрей Петров" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKb-Jx-bTi">
+                                        <rect key="frame" x="104.33333333333333" y="135" width="166.33333333333337" height="27.666666666666657"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
+                                        <color key="textColor" name="TextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Лондон, Великобритания" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XSC-Va-xeH">
+                                        <rect key="frame" x="82" y="166.66666666666666" width="211" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
+                                        <color key="textColor" name="AdditionalTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ученик" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hws-tw-yOb">
+                                        <rect key="frame" x="141" y="203.66666666666666" width="93" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
+                                        <color key="textColor" name="TextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="hws-tw-yOb" firstAttribute="centerX" secondItem="BRw-vq-2Tl" secondAttribute="centerX" id="2IW-Wc-8Ib"/>
+                                    <constraint firstItem="kKb-Jx-bTi" firstAttribute="centerX" secondItem="BRw-vq-2Tl" secondAttribute="centerX" id="Dfo-1j-Px7"/>
+                                    <constraint firstItem="XSC-Va-xeH" firstAttribute="centerX" secondItem="BRw-vq-2Tl" secondAttribute="centerX" id="I93-5v-IfD"/>
+                                    <constraint firstAttribute="bottom" secondItem="hws-tw-yOb" secondAttribute="bottom" constant="30" id="dyi-Cq-LdM"/>
+                                    <constraint firstItem="52i-TM-Ort" firstAttribute="centerX" secondItem="BRw-vq-2Tl" secondAttribute="centerX" id="gXx-au-eEl"/>
+                                    <constraint firstItem="52i-TM-Ort" firstAttribute="top" secondItem="BRw-vq-2Tl" secondAttribute="top" constant="25" id="iac-f6-WaR"/>
+                                    <constraint firstItem="hws-tw-yOb" firstAttribute="top" secondItem="XSC-Va-xeH" secondAttribute="bottom" constant="15" id="m2c-Ya-gQ0"/>
+                                    <constraint firstItem="kKb-Jx-bTi" firstAttribute="top" secondItem="52i-TM-Ort" secondAttribute="bottom" constant="10" id="sKM-hc-TPd"/>
+                                    <constraint firstItem="XSC-Va-xeH" firstAttribute="top" secondItem="kKb-Jx-bTi" secondAttribute="bottom" constant="4" id="yiS-Ca-M9M"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" red="0.13333333333333333" green="0.25882352941176467" blue="0.44705882352941173" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" red="0.16470588235294117" green="0.12549019607843137" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalMode" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="diagonalMode" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startLocation">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="BRw-vq-2Tl" firstAttribute="leading" secondItem="J8N-Xq-2tM" secondAttribute="leading" id="6Vn-UI-md6"/>
+                            <constraint firstItem="BRw-vq-2Tl" firstAttribute="trailing" secondItem="J8N-Xq-2tM" secondAttribute="trailing" id="Fjn-bV-0gB"/>
+                            <constraint firstItem="BRw-vq-2Tl" firstAttribute="top" secondItem="J8N-Xq-2tM" secondAttribute="top" id="tZD-fl-iHQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="J8N-Xq-2tM"/>
+                    </view>
+                    <connections>
+                        <outlet property="categoryLabel" destination="hws-tw-yOb" id="g9T-lT-uNd"/>
+                        <outlet property="locationLabel" destination="XSC-Va-xeH" id="R44-nS-Yyt"/>
+                        <outlet property="nameLabel" destination="kKb-Jx-bTi" id="rQs-Qi-XvK"/>
+                        <outlet property="photoImageView" destination="52i-TM-Ort" id="IzO-nd-nhn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ous-qA-SO4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-126.08695652173914" y="134.59821428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="DefaultUserImage" width="541" height="517"/>
+        <namedColor name="AdditionalTextColor">
+            <color red="0.75686274509803919" green="0.71372549019607845" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

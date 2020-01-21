@@ -13,6 +13,14 @@
 		570EB89A23CA155700037211 /* UnaLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570EB89923CA155700037211 /* UnaLesson.swift */; };
 		570EB89C23CA15F600037211 /* UnaLessonPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570EB89B23CA15F600037211 /* UnaLessonPart.swift */; };
 		570EB8A523CA1DBD00037211 /* AbstractPostgresRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570EB8A423CA1DBD00037211 /* AbstractPostgresRequestFactory.swift */; };
+		57153C5023D79A9000D867A7 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57153C4F23D79A9000D867A7 /* Profile.storyboard */; };
+		57153C5323D7A11500D867A7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57153C5223D7A11500D867A7 /* ProfileViewController.swift */; };
+		57153C5523D7A20E00D867A7 /* UnaAuthUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57153C5423D7A20E00D867A7 /* UnaAuthUser.swift */; };
+		57153C5723D7A29800D867A7 /* UnaUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57153C5623D7A29800D867A7 /* UnaUserProfile.swift */; };
+		57153C5923D7A43D00D867A7 /* UnaUserProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57153C5823D7A43D00D867A7 /* UnaUserProgress.swift */; };
+		57153C5B23D7A50E00D867A7 /* UnaDBServiceUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57153C5A23D7A50E00D867A7 /* UnaDBServiceUser.swift */; };
+		57153C5E23D7B33400D867A7 /* ImageResizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57153C5D23D7B33400D867A7 /* ImageResizing.swift */; };
+		57153C6023D7C0CB00D867A7 /* NavBarUserPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57153C5F23D7C0CB00D867A7 /* NavBarUserPhoto.swift */; };
 		5723F12422B8F136002085F8 /* UIColorFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5723F12322B8F136002085F8 /* UIColorFilters.swift */; };
 		572C9047229ED01900154BA9 /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572C9046229ED01800154BA9 /* Validators.swift */; };
 		572C904B229EDD2800154BA9 /* UIAlertViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572C904A229EDD2800154BA9 /* UIAlertViewDelegate.swift */; };
@@ -61,7 +69,6 @@
 		57FEF2F32288AFE7000A4FD7 /* Study.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57FEF2F12288AFE7000A4FD7 /* Study.storyboard */; };
 		57FEF2F62288AFE7000A4FD7 /* Una_Mobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF2F42288AFE7000A4FD7 /* Una_Mobile.xcdatamodeld */; };
 		57FEF3212288BE37000A4FD7 /* AbstractErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF31C2288BE37000A4FD7 /* AbstractErrorParser.swift */; };
-		57FEF3272288C5E3000A4FD7 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF3262288C5E3000A4FD7 /* MainTabBarViewController.swift */; };
 		57FEF3292288C616000A4FD7 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF3282288C616000A4FD7 /* AuthViewController.swift */; };
 		57FEF32C2288C6FD000A4FD7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF32B2288C6FD000A4FD7 /* RegisterViewController.swift */; };
 		57FEF32E2288C71B000A4FD7 /* PassRecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF32D2288C71B000A4FD7 /* PassRecoveryViewController.swift */; };
@@ -98,6 +105,14 @@
 		570EB89923CA155700037211 /* UnaLesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnaLesson.swift; sourceTree = "<group>"; };
 		570EB89B23CA15F600037211 /* UnaLessonPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnaLessonPart.swift; sourceTree = "<group>"; };
 		570EB8A423CA1DBD00037211 /* AbstractPostgresRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractPostgresRequestFactory.swift; sourceTree = "<group>"; };
+		57153C4F23D79A9000D867A7 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		57153C5223D7A11500D867A7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		57153C5423D7A20E00D867A7 /* UnaAuthUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnaAuthUser.swift; sourceTree = "<group>"; };
+		57153C5623D7A29800D867A7 /* UnaUserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnaUserProfile.swift; sourceTree = "<group>"; };
+		57153C5823D7A43D00D867A7 /* UnaUserProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnaUserProgress.swift; sourceTree = "<group>"; };
+		57153C5A23D7A50E00D867A7 /* UnaDBServiceUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnaDBServiceUser.swift; sourceTree = "<group>"; };
+		57153C5D23D7B33400D867A7 /* ImageResizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResizing.swift; sourceTree = "<group>"; };
+		57153C5F23D7C0CB00D867A7 /* NavBarUserPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarUserPhoto.swift; sourceTree = "<group>"; };
 		5723F12322B8F136002085F8 /* UIColorFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorFilters.swift; sourceTree = "<group>"; };
 		572C9046229ED01800154BA9 /* Validators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
 		572C904A229EDD2800154BA9 /* UIAlertViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertViewDelegate.swift; sourceTree = "<group>"; };
@@ -150,7 +165,6 @@
 		57FEF3012288AFE9000A4FD7 /* Una-MobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Una-MobileTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57FEF3072288AFE9000A4FD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57FEF31C2288BE37000A4FD7 /* AbstractErrorParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractErrorParser.swift; sourceTree = "<group>"; };
-		57FEF3262288C5E3000A4FD7 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		57FEF3282288C616000A4FD7 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		57FEF32B2288C6FD000A4FD7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		57FEF32D2288C71B000A4FD7 /* PassRecoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassRecoveryViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				5700F29122977D790060D34A /* TextFieldUnderline.swift */,
+				57153C5F23D7C0CB00D867A7 /* NavBarUserPhoto.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -219,6 +234,9 @@
 				570EB89923CA155700037211 /* UnaLesson.swift */,
 				570EB89B23CA15F600037211 /* UnaLessonPart.swift */,
 				57EC310623CA35FA00241831 /* UnaLessonTask.swift */,
+				57153C5423D7A20E00D867A7 /* UnaAuthUser.swift */,
+				57153C5623D7A29800D867A7 /* UnaUserProfile.swift */,
+				57153C5823D7A43D00D867A7 /* UnaUserProgress.swift */,
 			);
 			path = UnaModels;
 			sourceTree = "<group>";
@@ -228,8 +246,27 @@
 			children = (
 				570EB89623CA141900037211 /* UnaDBServiceLessons.swift */,
 				57EC310823CA387F00241831 /* UnaDBServiceTasks.swift */,
+				57153C5A23D7A50E00D867A7 /* UnaDBServiceUser.swift */,
 			);
 			path = Requests;
+			sourceTree = "<group>";
+		};
+		57153C5123D7A0D200D867A7 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				57153C5223D7A11500D867A7 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		57153C5C23D7ABA500D867A7 /* Study */ = {
+			isa = PBXGroup;
+			children = (
+				57EED4E42297D20A002B8908 /* StudyViewController.swift */,
+				57B7278523CA2955008B95C4 /* LessonPartsViewController.swift */,
+				5785C69E229F035D006F8B20 /* TaskViewController.swift */,
+			);
+			path = Study;
 			sourceTree = "<group>";
 		};
 		57635E76229813B1002AD534 /* Network */ = {
@@ -252,6 +289,7 @@
 				57A9D73323C3D226005D1953 /* UIViewExtensions.swift */,
 				57A343B723D109C800C734F8 /* UITableViewDataUpdater.swift */,
 				57A343C123D11E8C00C734F8 /* PreferredStatusBarStyleNavigationController.swift */,
+				57153C5D23D7B33400D867A7 /* ImageResizing.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -464,10 +502,8 @@
 			children = (
 				57FEF3442288E819000A4FD7 /* Welcome */,
 				57FEF32A2288C61A000A4FD7 /* Authorization */,
-				57FEF3262288C5E3000A4FD7 /* MainTabBarViewController.swift */,
-				57EED4E42297D20A002B8908 /* StudyViewController.swift */,
-				57B7278523CA2955008B95C4 /* LessonPartsViewController.swift */,
-				5785C69E229F035D006F8B20 /* TaskViewController.swift */,
+				57153C5C23D7ABA500D867A7 /* Study */,
+				57153C5123D7A0D200D867A7 /* Profile */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -478,6 +514,7 @@
 				57FEF3332288D214000A4FD7 /* Welcome.storyboard */,
 				57FEF3352288D223000A4FD7 /* Authorization.storyboard */,
 				57FEF2F12288AFE7000A4FD7 /* Study.storyboard */,
+				57153C4F23D79A9000D867A7 /* Profile.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -678,6 +715,7 @@
 				57FEF3342288D214000A4FD7 /* Welcome.storyboard in Resources */,
 				57A343E123D1EDB000C734F8 /* Assets.xcassets in Resources */,
 				57A343E223D1EDB000C734F8 /* LaunchScreen.storyboard in Resources */,
+				57153C5023D79A9000D867A7 /* Profile.storyboard in Resources */,
 				57FEF2F32288AFE7000A4FD7 /* Study.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -762,11 +800,13 @@
 			files = (
 				57A343CA23D1E88000C734F8 /* UnaNetworkable.swift in Sources */,
 				57FEBF60229F6FB900148709 /* LessonTask.swift in Sources */,
+				57153C5723D7A29800D867A7 /* UnaUserProfile.swift in Sources */,
 				57B7278C23CA2DC8008B95C4 /* LessonPartViewPresenter.swift in Sources */,
 				57A343CC23D1E8F500C734F8 /* UnaNetworkManager.swift in Sources */,
 				57A343C023D117B400C734F8 /* LastWelcomeViewController.swift in Sources */,
 				57B7278623CA2955008B95C4 /* LessonPartsViewController.swift in Sources */,
 				57FEF3302288C7BC000A4FD7 /* LoginViewController.swift in Sources */,
+				57153C5923D7A43D00D867A7 /* UnaUserProgress.swift in Sources */,
 				57C2226823C3B1CC002A0AD7 /* GradientView.swift in Sources */,
 				57A343BC23D10E0F00C734F8 /* WelcomeRouter.swift in Sources */,
 				570EB89C23CA15F600037211 /* UnaLessonPart.swift in Sources */,
@@ -775,13 +815,16 @@
 				570EB89723CA141900037211 /* UnaDBServiceLessons.swift in Sources */,
 				5723F12422B8F136002085F8 /* UIColorFilters.swift in Sources */,
 				57EED4EB2297D820002B8908 /* DifficultyLevel.swift in Sources */,
+				57153C6023D7C0CB00D867A7 /* NavBarUserPhoto.swift in Sources */,
 				5785C69F229F035D006F8B20 /* TaskViewController.swift in Sources */,
 				57FEBF56229F21B700148709 /* StudyRouter.swift in Sources */,
 				57A343C823D1E74500C734F8 /* UnaAPI.swift in Sources */,
 				57C2220923C321E9002A0AD7 /* LessonViewModel.swift in Sources */,
 				57FEF3322288CAD2000A4FD7 /* WelcomePageViewController.swift in Sources */,
 				57B7278823CA2B66008B95C4 /* LessonRouter.swift in Sources */,
+				57153C5323D7A11500D867A7 /* ProfileViewController.swift in Sources */,
 				57C2220E23C329BD002A0AD7 /* StudyViewPresenter.swift in Sources */,
+				57153C5523D7A20E00D867A7 /* UnaAuthUser.swift in Sources */,
 				570EB89A23CA155700037211 /* UnaLesson.swift in Sources */,
 				5700F29422978FF80060D34A /* TapGestureToHideKeyboard.swift in Sources */,
 				57EC310B23CDDB3C00241831 /* StringOccurrences.swift in Sources */,
@@ -789,6 +832,7 @@
 				57A343E923D1F41100C734F8 /* UnaNetworkErrorParser.swift in Sources */,
 				57A343C223D11E8C00C734F8 /* PreferredStatusBarStyleNavigationController.swift in Sources */,
 				57FEF32C2288C6FD000A4FD7 /* RegisterViewController.swift in Sources */,
+				57153C5B23D7A50E00D867A7 /* UnaDBServiceUser.swift in Sources */,
 				57EC310723CA35FA00241831 /* UnaLessonTask.swift in Sources */,
 				57A343B523D1008D00C734F8 /* Start.swift in Sources */,
 				5700F29222977D790060D34A /* TextFieldUnderline.swift in Sources */,
@@ -797,7 +841,6 @@
 				57FEF2F62288AFE7000A4FD7 /* Una_Mobile.xcdatamodeld in Sources */,
 				57FEF3412288E804000A4FD7 /* LoginRouter.swift in Sources */,
 				57FEBF5B229F3CEA00148709 /* StudyTableViewCell.swift in Sources */,
-				57FEF3272288C5E3000A4FD7 /* MainTabBarViewController.swift in Sources */,
 				57A343D623D1EA8900C734F8 /* ObservableType+Codable.swift in Sources */,
 				57C2220623C31F02002A0AD7 /* NetworkHelper.swift in Sources */,
 				57C2221223C33A7B002A0AD7 /* LessonTaskViewModel.swift in Sources */,
@@ -809,6 +852,7 @@
 				57A343D023D1EA6600C734F8 /* Response+Codable.swift in Sources */,
 				57C2221023C331B7002A0AD7 /* LessonTaskViewPresenter.swift in Sources */,
 				57A343D823D1EA8B00C734F8 /* Single+Codable.swift in Sources */,
+				57153C5E23D7B33400D867A7 /* ImageResizing.swift in Sources */,
 				57FEBF58229F28A000148709 /* SetTabBarVisible.swift in Sources */,
 				57A9D73423C3D226005D1953 /* UIViewExtensions.swift in Sources */,
 				57FEF2EE2288AFE7000A4FD7 /* AppDelegate.swift in Sources */,

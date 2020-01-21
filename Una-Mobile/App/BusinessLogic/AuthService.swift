@@ -16,6 +16,7 @@ final class AuthService {
     
     private let accessTokenKey = "access_token"
     private let accessTokenRefreshKey = "access_token_refresh"
+    private let usernameKey = "username"
     
     func isAuth() -> Bool {
         return Keychain.load(accessTokenKey) != nil
@@ -31,15 +32,61 @@ final class AuthService {
                 completion(false, nil)
                 return
             }
-            guard Keychain.save(token.access, forKey: self.accessTokenKey),
+            guard Keychain.save(email, forKey: self.usernameKey),
+                Keychain.save(token.access, forKey: self.accessTokenKey),
                 Keychain.save(token.refresh, forKey: self.accessTokenRefreshKey) else { fatalError() }
             completion(true, nil)
         }
     }
     
     func logout() {
+        _ = Keychain.delete(usernameKey)
         _ = Keychain.delete(accessTokenKey)
         _ = Keychain.delete(accessTokenRefreshKey)
+    }
+    
+    var token: String? {
+        Keychain.load(accessTokenKey)
+    }
+    
+    var refresh: String? {
+        Keychain.load(accessTokenRefreshKey)
+    }
+    
+    var username: String? {
+        Keychain.load(usernameKey)
+    }
+    
+    private var userCache: UnaAuthUser?
+    private var userProfileCache: UnaUserProfile?
+    
+    func getUser(completion: @escaping ((UnaAuthUser, UnaUserProfile)?) -> ()) {
+        if let user = userCache,
+            let profile = userProfileCache {
+            completion((user, profile))
+            return
+        }
+        guard let username = AuthService.shared.username else {
+            completion(nil)
+            return
+        }
+        do {
+            try UnaDBService.shared.getUser(with: username) { user in
+                guard let user = user else { fatalError() }
+                self.userCache = user
+                do {
+                    try UnaDBService.shared.getUserProfile(with: user.id) { profile in
+                        guard let profile = profile else { fatalError() }
+                        self.userProfileCache = profile
+                        completion((user, profile))
+                    }
+                } catch {
+                    print(error)
+                }
+            }
+        } catch {
+            print(error)
+        }
     }
     
 }

@@ -11,8 +11,10 @@ import UIKit
 final class LoginRouter: BaseRouter {
     
     private let storyboardName = "Authorization"
+    private let studyStoryboardName = "Study"
     
     private let passRecoveryVCId = "PassRecovery"
+    private let studyVCId = "Study"
     
     func toPassRecovery(configurate: ((PassRecoveryViewController) -> ())? = nil) {
         let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
@@ -22,10 +24,14 @@ final class LoginRouter: BaseRouter {
         show(passRecoveryVC, sender: self.controller)
     }
     
-    func toMain(configurate: ((MainTabBarViewController) -> ())? = nil) {
-        let controller = MainTabBarViewController()
-        configurate?(controller)
-        setAsRoot(controller)
+    func toMain(configurate: ((StudyViewController) -> ())? = nil) {
+        let storyboard = UIStoryboard(name: studyStoryboardName, bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: studyVCId)
+        guard let studyVC = controller as? StudyViewController else { fatalError() }
+        configurate?(studyVC)
+        let navControl = UINavigationController(rootViewController: studyVC)
+        studyVC.modalPresentationStyle = .fullScreen
+        self.setAsRoot(navControl)
     }
     
 }

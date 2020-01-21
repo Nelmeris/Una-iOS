@@ -26,10 +26,14 @@ final class WelcomeRouter: BaseRouter {
         self.setAsRoot(navControl)
     }
     
-    func toStudy(configurate: ((MainTabBarViewController) -> ())? = nil) {
-        let controller = MainTabBarViewController()
-        configurate?(controller)
-        setAsRoot(controller)
+    func toStudy(configurate: ((StudyViewController) -> ())? = nil) {
+        let storyboard = UIStoryboard(name: studyStoryboardName, bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: studyVCId)
+        guard let studyVC = controller as? StudyViewController else { fatalError() }
+        configurate?(studyVC)
+        let navControl = UINavigationController(rootViewController: studyVC)
+        studyVC.modalPresentationStyle = .fullScreen
+        self.setAsRoot(navControl)
     }
     
 }
