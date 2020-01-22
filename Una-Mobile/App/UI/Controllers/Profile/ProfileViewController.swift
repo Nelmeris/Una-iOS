@@ -36,6 +36,10 @@ class ProfileViewController: UIViewController {
         
         photoImageView.cornerRadius = photoImageView.frame.size.height / 2
         configureNavigationBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         showUser()
     }
     
@@ -51,7 +55,9 @@ class ProfileViewController: UIViewController {
     }
     
     @objc private func openProfileEditor() {
-        router.toEditor()
+        router.toEditor { controller in
+            controller.user = self.user
+        }
     }
 
 }

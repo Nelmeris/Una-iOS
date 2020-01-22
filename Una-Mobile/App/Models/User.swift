@@ -11,21 +11,34 @@ import Foundation
 struct User {
     
     let id: Int
-    let username: String
+    let email: String
     let firstName: String
     let lastName: String
     let isSuperuser: Bool
     let country: String
     let city: String
+    let birthday: Date?
     
     init(user: UnaAuthUser, profile: UnaUserProfile) {
         self.id = user.id
-        self.username = user.username
+        self.email = user.email
         self.firstName = user.firstName
         self.lastName = user.lastName
         self.isSuperuser = user.isSuperuser
         self.country = profile.country
         self.city = profile.city
+        self.birthday = profile.date
+    }
+    
+    init(id: Int, email: String, firstName: String, lastName: String, isSuperuser: Bool, country: String, city: String, birthday: Date?) {
+        self.id = id
+        self.email = email
+        self.firstName = firstName
+        self.lastName = lastName
+        self.isSuperuser = isSuperuser
+        self.country = country
+        self.city = city
+        self.birthday = birthday
     }
     
 }

@@ -12,7 +12,7 @@ import PostgresClientKit
 struct UnaAuthUser {
     
     let id: Int
-    let username: String
+    let email: String
     let firstName: String
     let lastName: String
     let isSuperuser: Bool
@@ -20,9 +20,17 @@ struct UnaAuthUser {
     init(from postgresValues: [PostgresValue]) throws {
         id = try postgresValues[0].int()
         isSuperuser = try postgresValues[3].bool()
-        username = try postgresValues[4].string()
+        email = try postgresValues[4].string()
         firstName = try postgresValues[5].string()
         lastName = try postgresValues[6].string()
+    }
+    
+    init(from user: User) {
+        self.id = user.id
+        self.email = user.email
+        self.firstName = user.firstName
+        self.lastName = user.lastName
+        self.isSuperuser = user.isSuperuser
     }
     
 }

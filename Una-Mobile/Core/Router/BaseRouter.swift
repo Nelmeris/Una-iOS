@@ -25,7 +25,7 @@ class BaseRouter: NSObject {
     }
     
     func setAsRoot(_ controller: UIViewController) {
-        UIApplication.shared.keyWindow?.rootViewController = controller
+        ApplicationRouter.shared.setAsRoot(controller)
     }
     
     func push(_ controller: UIViewController, animated: Bool) {

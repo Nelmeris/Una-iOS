@@ -29,13 +29,13 @@ extension UIViewController {
         let keyboardHeight = keyboardViewEndFrame.height - view.safeAreaInsets.bottom
 
         let contentHeight = scrollView.contentSize.height
-        let screenHeight = self.view.frame.height
+//        let screenHeight = self.view.frame.height
         let scrollViewHegith = scrollView.frame.size.height
         
         if keyboardNotification.name == UIResponder.keyboardWillHideNotification {
             scrollView.contentInset = .zero
-            let offset = contentHeight - screenHeight
-            scrollView.setContentOffset(CGPoint(x: 0, y: offset > 0 ? offset : 0), animated: true)
+//            let offset = scrollView.contentOffset.y - keyboardHeight
+//            scrollView.setContentOffset(CGPoint(x: 0, y: offset > 0 ? offset : 0), animated: true)
         } else {
             let offset = (contentHeight - position)
             > scrollView.frame.size.height - keyboardHeight

@@ -11,6 +11,8 @@ import Foundation
 protocol UnaDBServiceUserFactory {
     func getUser(with username: String, completion: @escaping (UnaAuthUser?) -> ()) throws
     func getUserProfile(with userId: Int, completion: @escaping (UnaUserProfile?) -> ()) throws
+    func putUserAuth(with user: UnaAuthUser, completion: @escaping () -> ()) throws
+    func putUserProfile(with profile: UnaUserProfile, completion: @escaping () -> ()) throws
 }
 
 extension UnaDBService: UnaDBServiceUserFactory {
@@ -45,6 +47,44 @@ extension UnaDBService: UnaDBServiceUserFactory {
     private func getUserProfileSQL() -> String {
         let usersTable = "userprofile_profile"
         return "SELECT * FROM \(usersTable) WHERE user_id = $1"
+    }
+    
+    func putUserAuth(with user: UnaAuthUser, completion: @escaping () -> ()) throws {
+        try self.request(with: (getAuthUserUpdateSQL(), [String(user.id), user.firstName, user.lastName, user.email])) { _ in
+            completion()
+        }
+    }
+    
+    private func getAuthUserUpdateSQL() -> String {
+        let usersTable = "auth_user"
+        return """
+        UPDATE \(usersTable) SET
+            first_name = $2,
+            last_name = $3,
+            email = $4
+        WHERE id = $1
+        """
+    }
+    
+    func putUserProfile(with profile: UnaUserProfile, completion: @escaping () -> ()) throws {
+        var dateStr: String = ""
+        if let date = profile.date {
+            dateStr = UnaUserProfile.dateFormatter.string(from: date)
+        }
+        try self.request(with: (getUserProfileUpdateSQL(), [String(profile.userId), profile.country, profile.city, dateStr])) { _ in
+            completion()
+        }
+    }
+    
+    private func getUserProfileUpdateSQL() -> String {
+        let usersTable = "userprofile_profile"
+        return """
+        UPDATE \(usersTable) SET
+            country = $2,
+            city = $3,
+            date = $4
+        WHERE user_id = $1
+        """
     }
     
 }

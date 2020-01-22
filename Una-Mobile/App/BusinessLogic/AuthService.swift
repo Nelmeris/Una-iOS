@@ -12,7 +12,7 @@ import Keychain
 final class AuthService {
     
     static let shared = AuthService()
-    private init() { logout() }
+    private init() {  }
     
     private let accessTokenKey = "access_token"
     private let accessTokenRefreshKey = "access_token_refresh"
@@ -43,6 +43,16 @@ final class AuthService {
         _ = Keychain.delete(usernameKey)
         _ = Keychain.delete(accessTokenKey)
         _ = Keychain.delete(accessTokenRefreshKey)
+        goToAuth()
+    }
+    
+    private func goToAuth() {
+        let storyboardName = "Authorization"
+        let viewControllerId = "Auth"
+        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: viewControllerId)
+        let navControl = UINavigationController(rootViewController: controller)
+        ApplicationRouter.shared.setAsRoot(navControl)
     }
     
     var token: String? {
@@ -77,6 +87,25 @@ final class AuthService {
                         let user = User(user: user, profile: profile)
                         self.userCache = user
                         completion(user)
+                    }
+                } catch {
+                    print(error)
+                }
+            }
+        } catch {
+            print(error)
+        }
+    }
+    
+    func saveUserChanges(_ user: User, completion: @escaping () -> ()) {
+        self.userCache = user
+        let unaAuthUser = UnaAuthUser(from: user)
+        let unaUserProfile = UnaUserProfile(from: user)
+        do {
+            try UnaDBService.shared.putUserAuth(with: unaAuthUser) {
+                do {
+                    try UnaDBService.shared.putUserProfile(with: unaUserProfile) {
+                        completion()
                     }
                 } catch {
                     print(error)
