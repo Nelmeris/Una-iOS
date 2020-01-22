@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  TUser.swift
 //  Una-Mobile
 //
 //  Created by Artem Kufaev on 22.01.2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct User {
+struct TUser {
     
     let id: Int
     let email: String
@@ -27,7 +27,7 @@ struct User {
         self.isSuperuser = user.isSuperuser
         self.country = profile.country
         self.city = profile.city
-        self.birthday = User.dateFormatter.date(from: profile.date ?? "")
+        self.birthday = TUser.dateFormatter.date(from: profile.date ?? "")
     }
     
     init(id: Int, email: String, firstName: String, lastName: String, isSuperuser: Bool, country: String, city: String, birthday: Date?) {
@@ -43,7 +43,7 @@ struct User {
     
     var birthdayString: String? {
         if let birthday = birthday {
-            return User.dateFormatter.string(from: birthday)
+            return TUser.dateFormatter.string(from: birthday)
         } else {
             return nil
         }

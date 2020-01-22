@@ -67,9 +67,9 @@ final class AuthService {
         Keychain.load(usernameKey)
     }
     
-    private var userCache: User?
+    private var userCache: TUser?
     
-    func getUser(completion: @escaping (User?) -> ()) {
+    func getUser(completion: @escaping (TUser?) -> ()) {
         if let user = userCache {
             completion(user)
             return
@@ -84,7 +84,7 @@ final class AuthService {
                 do {
                     try UnaDBService.shared.getUserProfile(with: user.id) { profile in
                         guard let profile = profile else { fatalError() }
-                        let user = User(user: user, profile: profile)
+                        let user = TUser(user: user, profile: profile)
                         self.userCache = user
                         completion(user)
                     }
@@ -97,7 +97,7 @@ final class AuthService {
         }
     }
     
-    func saveUserChanges(_ user: User, completion: @escaping () -> ()) {
+    func saveUserChanges(_ user: TUser, completion: @escaping () -> ()) {
         self.userCache = user
         let unaAuthUser = UnaAuthUser(from: user)
         let unaUserProfile = UnaUserProfile(from: user)

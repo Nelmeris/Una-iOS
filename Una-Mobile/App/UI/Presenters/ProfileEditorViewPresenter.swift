@@ -13,16 +13,16 @@ protocol ProfileEditorView: class {
 }
 
 protocol ProfileEditorViewPresenter {
-    init(view: ProfileEditorView, user: User)
+    init(view: ProfileEditorView, user: TUser)
 }
 
 
 class ProfileEditorPresenter : ProfileEditorViewPresenter {
     
     unowned let view: ProfileEditorView
-    private let user: User
+    private let user: TUser
     
-    required init(view: ProfileEditorView, user: User) {
+    required init(view: ProfileEditorView, user: TUser) {
         self.view = view
         self.user = user
     }

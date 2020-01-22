@@ -12,7 +12,7 @@ class ProfileEditorViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Properties
     
-    var user: User!
+    var user: TUser!
     
     // MARK: - Outlets
     
@@ -87,7 +87,7 @@ class ProfileEditorViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc private func dateChanged(datePicker: UIDatePicker) {
-        birthdayTextField.text = User.dateFormatter.string(from: datePicker.date)
+        birthdayTextField.text = TUser.dateFormatter.string(from: datePicker.date)
     }
     
     private func configureNavBar() {
@@ -141,7 +141,7 @@ class ProfileEditorViewController: UIViewController, UITextFieldDelegate {
         }
         guard let birthdayStr = birthdayTextField.text,
             !birthdayStr.isEmpty,
-            let birthday = User.dateFormatter.date(from: birthdayStr) else {
+            let birthday = TUser.dateFormatter.date(from: birthdayStr) else {
             print()
                 return
         }
@@ -155,7 +155,7 @@ class ProfileEditorViewController: UIViewController, UITextFieldDelegate {
         } catch {
             print(error)
         }
-        let user = User(id: self.user.id,
+        let user = TUser(id: self.user.id,
                         email: email.trimmingCharacters(in: .whitespaces),
                         firstName: name.trimmingCharacters(in: .whitespaces),
                         lastName: surname.trimmingCharacters(in: .whitespaces),

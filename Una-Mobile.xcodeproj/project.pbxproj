@@ -68,6 +68,8 @@
 		57ED2DCE23D848100010B577 /* ProfileEditorRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ED2DCD23D848100010B577 /* ProfileEditorRouter.swift */; };
 		57ED2DD023D8488B0010B577 /* RoundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ED2DCF23D8488B0010B577 /* RoundImage.swift */; };
 		57ED2DD223D887B10010B577 /* ProfileEditorViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ED2DD123D887B10010B577 /* ProfileEditorViewPresenter.swift */; };
+		57ED2DD623D89B0E0010B577 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ED2DD523D89B0E0010B577 /* CoreDataService.swift */; };
+		57ED2DD923D89CC90010B577 /* UnaModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57ED2DD723D89CC90010B577 /* UnaModel.xcdatamodeld */; };
 		57EED4E52297D20A002B8908 /* StudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EED4E42297D20A002B8908 /* StudyViewController.swift */; };
 		57EED4EB2297D820002B8908 /* DifficultyLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EED4EA2297D820002B8908 /* DifficultyLevel.swift */; };
 		57FEBF56229F21B700148709 /* StudyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEBF55229F21B700148709 /* StudyRouter.swift */; };
@@ -76,7 +78,6 @@
 		57FEBF60229F6FB900148709 /* LessonTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEBF5F229F6FB900148709 /* LessonTask.swift */; };
 		57FEF2EE2288AFE7000A4FD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF2ED2288AFE7000A4FD7 /* AppDelegate.swift */; };
 		57FEF2F32288AFE7000A4FD7 /* Study.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57FEF2F12288AFE7000A4FD7 /* Study.storyboard */; };
-		57FEF2F62288AFE7000A4FD7 /* Una_Mobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF2F42288AFE7000A4FD7 /* Una_Mobile.xcdatamodeld */; };
 		57FEF3212288BE37000A4FD7 /* AbstractErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF31C2288BE37000A4FD7 /* AbstractErrorParser.swift */; };
 		57FEF3292288C616000A4FD7 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF3282288C616000A4FD7 /* AuthViewController.swift */; };
 		57FEF32C2288C6FD000A4FD7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEF32B2288C6FD000A4FD7 /* RegisterViewController.swift */; };
@@ -169,6 +170,8 @@
 		57ED2DCD23D848100010B577 /* ProfileEditorRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditorRouter.swift; sourceTree = "<group>"; };
 		57ED2DCF23D8488B0010B577 /* RoundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImage.swift; sourceTree = "<group>"; };
 		57ED2DD123D887B10010B577 /* ProfileEditorViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditorViewPresenter.swift; sourceTree = "<group>"; };
+		57ED2DD523D89B0E0010B577 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		57ED2DD823D89CC90010B577 /* UnaModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UnaModel.xcdatamodel; sourceTree = "<group>"; };
 		57EED4E42297D20A002B8908 /* StudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyViewController.swift; sourceTree = "<group>"; };
 		57EED4EA2297D820002B8908 /* DifficultyLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyLevel.swift; sourceTree = "<group>"; };
 		57FEBF55229F21B700148709 /* StudyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyRouter.swift; sourceTree = "<group>"; };
@@ -178,7 +181,6 @@
 		57FEF2EA2288AFE7000A4FD7 /* Una.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Una.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57FEF2ED2288AFE7000A4FD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57FEF2F22288AFE7000A4FD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Study.storyboard; sourceTree = "<group>"; };
-		57FEF2F52288AFE7000A4FD7 /* YouLang_Mobile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YouLang_Mobile.xcdatamodel; sourceTree = "<group>"; };
 		57FEF2FC2288AFE9000A4FD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57FEF3012288AFE9000A4FD7 /* Una-MobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Una-MobileTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57FEF3072288AFE9000A4FD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -446,6 +448,13 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		57ED2DDB23D8A3ED0010B577 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		57FEF2E12288AFE7000A4FD7 = {
 			isa = PBXGroup;
 			children = (
@@ -563,6 +572,7 @@
 			isa = PBXGroup;
 			children = (
 				57153C6523D7C8C600D867A7 /* User.swift */,
+				57ED2DDB23D8A3ED0010B577 /* CoreData */,
 				57C2220723C321C6002A0AD7 /* ViewModels */,
 				570EB89823CA154100037211 /* UnaModels */,
 				57EED4EA2297D820002B8908 /* DifficultyLevel.swift */,
@@ -587,7 +597,8 @@
 		57FEF31A2288B1F7000A4FD7 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				57FEF2F42288AFE7000A4FD7 /* Una_Mobile.xcdatamodeld */,
+				57ED2DD523D89B0E0010B577 /* CoreDataService.swift */,
+				57ED2DD723D89CC90010B577 /* UnaModel.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -843,6 +854,7 @@
 				57A343CC23D1E8F500C734F8 /* UnaNetworkManager.swift in Sources */,
 				57A343C023D117B400C734F8 /* LastWelcomeViewController.swift in Sources */,
 				57B7278623CA2955008B95C4 /* LessonPartsViewController.swift in Sources */,
+				57ED2DD923D89CC90010B577 /* UnaModel.xcdatamodeld in Sources */,
 				57FEF3302288C7BC000A4FD7 /* LoginViewController.swift in Sources */,
 				57153C5923D7A43D00D867A7 /* UnaUserProgress.swift in Sources */,
 				57C2226823C3B1CC002A0AD7 /* GradientView.swift in Sources */,
@@ -865,6 +877,7 @@
 				57B7278823CA2B66008B95C4 /* LessonRouter.swift in Sources */,
 				57153C5323D7A11500D867A7 /* ProfileViewController.swift in Sources */,
 				57C2220E23C329BD002A0AD7 /* StudyViewPresenter.swift in Sources */,
+				57ED2DD623D89B0E0010B577 /* CoreDataService.swift in Sources */,
 				57153C5523D7A20E00D867A7 /* UnaAuthUser.swift in Sources */,
 				570EB89A23CA155700037211 /* UnaLesson.swift in Sources */,
 				5700F29422978FF80060D34A /* TapGestureToHideKeyboard.swift in Sources */,
@@ -879,7 +892,6 @@
 				5700F29222977D790060D34A /* TextFieldUnderline.swift in Sources */,
 				570EB8A523CA1DBD00037211 /* AbstractPostgresRequestFactory.swift in Sources */,
 				57A343BA23D10AAC00C734F8 /* ArrayDifference.swift in Sources */,
-				57FEF2F62288AFE7000A4FD7 /* Una_Mobile.xcdatamodeld in Sources */,
 				57FEF3412288E804000A4FD7 /* LoginRouter.swift in Sources */,
 				57FEBF5B229F3CEA00148709 /* StudyTableViewCell.swift in Sources */,
 				57A343D623D1EA8900C734F8 /* ObservableType+Codable.swift in Sources */,
@@ -1181,13 +1193,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		57FEF2F42288AFE7000A4FD7 /* Una_Mobile.xcdatamodeld */ = {
+		57ED2DD723D89CC90010B577 /* UnaModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				57FEF2F52288AFE7000A4FD7 /* YouLang_Mobile.xcdatamodel */,
+				57ED2DD823D89CC90010B577 /* UnaModel.xcdatamodel */,
 			);
-			currentVersion = 57FEF2F52288AFE7000A4FD7 /* YouLang_Mobile.xcdatamodel */;
-			path = Una_Mobile.xcdatamodeld;
+			currentVersion = 57ED2DD823D89CC90010B577 /* UnaModel.xcdatamodel */;
+			path = UnaModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

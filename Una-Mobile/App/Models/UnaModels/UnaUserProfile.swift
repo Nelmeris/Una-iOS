@@ -25,7 +25,7 @@ struct UnaUserProfile {
         date = try postgresValues[5].optionalString()
     }
     
-    init(from user: User) {
+    init(from user: TUser) {
         self.id = nil
         self.userId = user.id
         self.country = user.country

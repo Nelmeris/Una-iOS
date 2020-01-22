@@ -12,7 +12,7 @@ class ProfileViewController: UIViewController {
     
     // MARK: - Properties
     
-    private var user: User! {
+    private var user: TUser! {
         willSet {
             guard let user = newValue else { return }
             nameLabel.text = "\(user.firstName) \(user.lastName)"
