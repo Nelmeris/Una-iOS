@@ -52,7 +52,7 @@
                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Lo-5e-or9" customClass="DesignableButton" customModule="Юна" customModuleProvider="target">
-                                        <rect key="frame" x="80.666666666666686" y="319" width="144" height="45"/>
+                                        <rect key="frame" x="79.666666666666686" y="319" width="146" height="45"/>
                                         <color key="backgroundColor" name="AdditionColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="3gg-Ac-zFN"/>
@@ -71,7 +71,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yA-gg-ppD" customClass="DesignableButton" customModule="Юна" customModuleProvider="target">
-                                        <rect key="frame" x="80.666666666666686" y="394" width="144" height="45"/>
+                                        <rect key="frame" x="79.666666666666686" y="394" width="146" height="45"/>
                                         <color key="backgroundColor" name="AdditionColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="e4J-xg-ZlH"/>
@@ -156,13 +156,13 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TdJ-4h-T2C" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="734"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="933"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="FbK-Yg-Ym4">
-                                                <rect key="frame" x="47" y="40" width="281" height="277.66666666666669"/>
+                                                <rect key="frame" x="47" y="40" width="281" height="555"/>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Pq-gD-lcc" customClass="TextFieldUnderline" customModule="Юна" customModuleProvider="target">
-                                                <rect key="frame" x="50" y="362.66666666666669" width="275" height="35"/>
+                                                <rect key="frame" x="50" y="640" width="275" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="Efe-gD-8Up"/>
                                                 </constraints>
@@ -176,7 +176,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <textField opaque="NO" tag="1" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7OJ-SZ-SAs" customClass="TextFieldUnderline" customModule="Юна" customModuleProvider="target">
-                                                <rect key="frame" x="50" y="427.66666666666669" width="275" height="35"/>
+                                                <rect key="frame" x="50" y="705" width="275" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="KkU-et-Pf7"/>
                                                 </constraints>
@@ -190,7 +190,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GsY-XI-Pbu" customClass="DesignableButton" customModule="Юна" customModuleProvider="target">
-                                                <rect key="frame" x="62" y="512.66666666666663" width="251" height="38"/>
+                                                <rect key="frame" x="62" y="790" width="251" height="37"/>
                                                 <color key="backgroundColor" name="MainColor"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="21"/>
                                                 <state key="normal" title="ВОЙТИ">
@@ -206,7 +206,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bv4-WP-gw1">
-                                                <rect key="frame" x="105.66666666666669" y="570.66666666666663" width="164" height="36"/>
+                                                <rect key="frame" x="105.66666666666669" y="847" width="164" height="36"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle">
                                                         <fragment content="Забыли пароль?">
@@ -292,7 +292,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5u2-s5-bcE" customClass="TextFieldUnderline" customModule="Юна" customModuleProvider="target">
-                                <rect key="frame" x="50" y="394" width="275" height="35"/>
+                                <rect key="frame" x="50" y="699" width="275" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="UyT-o4-2Za"/>
                                 </constraints>
@@ -308,7 +308,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6op-V4-JfB" customClass="DesignableButton" customModule="Юна" customModuleProvider="target">
-                                <rect key="frame" x="62" y="479" width="251" height="30"/>
+                                <rect key="frame" x="62" y="784" width="251" height="30"/>
                                 <color key="backgroundColor" name="MainColor"/>
                                 <state key="normal" title="ОТПРАВИТЬ">
                                     <color key="titleColor" name="TextColor"/>
@@ -320,7 +320,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PassRecoveryPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="X59-0E-UMF">
-                                <rect key="frame" x="47" y="59" width="281" height="305"/>
+                                <rect key="frame" x="47" y="59" width="281" height="610"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -360,10 +360,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="734"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RegisterPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="vyo-ZP-eid">
-                                                <rect key="frame" x="47" y="40.000000000000014" width="281" height="211.66666666666674"/>
+                                                <rect key="frame" x="47" y="40" width="281" height="423"/>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qk0-uZ-VaI" customClass="TextFieldUnderline" customModule="Юна" customModuleProvider="target">
-                                                <rect key="frame" x="50" y="296.66666666666669" width="275" height="35"/>
+                                                <rect key="frame" x="50" y="508" width="275" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="DqQ-2H-T15"/>
                                                 </constraints>
@@ -376,7 +376,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Фамилия" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vo1-hU-uTm" customClass="TextFieldUnderline" customModule="Юна" customModuleProvider="target">
-                                                <rect key="frame" x="50" y="361.66666666666669" width="275" height="35"/>
+                                                <rect key="frame" x="50" y="573" width="275" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="Ugf-fC-aGX"/>
                                                 </constraints>
@@ -389,7 +389,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="boE-Ga-lIj" customClass="TextFieldUnderline" customModule="Юна" customModuleProvider="target">
-                                                <rect key="frame" x="50" y="426.66666666666669" width="275" height="35"/>
+                                                <rect key="frame" x="50" y="638" width="275" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="dzN-G6-eo2"/>
                                                 </constraints>
@@ -402,7 +402,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S6O-CF-8Gp" customClass="TextFieldUnderline" customModule="Юна" customModuleProvider="target">
-                                                <rect key="frame" x="50" y="491.66666666666663" width="275" height="35"/>
+                                                <rect key="frame" x="50" y="703" width="275" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="5QH-Zd-wE3"/>
                                                 </constraints>
@@ -415,7 +415,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOo-zR-4tL" customClass="DesignableButton" customModule="Юна" customModuleProvider="target">
-                                                <rect key="frame" x="62" y="641.66666666666663" width="251" height="50"/>
+                                                <rect key="frame" x="62" y="853" width="251" height="50"/>
                                                 <color key="backgroundColor" name="MainColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="0FX-kZ-qOx"/>
@@ -450,7 +450,7 @@
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Повторите пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QRr-6C-xCj" customClass="TextFieldUnderline" customModule="Юна" customModuleProvider="target">
-                                                <rect key="frame" x="50" y="556.66666666666663" width="275" height="35"/>
+                                                <rect key="frame" x="50" y="768" width="275" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="Jzi-lE-Uac"/>
                                                 </constraints>
