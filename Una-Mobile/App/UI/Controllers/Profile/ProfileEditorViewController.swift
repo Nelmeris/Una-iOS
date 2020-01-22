@@ -9,22 +9,22 @@
 import UIKit
 
 class ProfileEditorViewController: UIViewController {
-
+    
+    var user: User!
+    @IBOutlet weak var nameTextField: TextFieldUnderline!
+    @IBOutlet weak var surnameTextField: TextFieldUnderline!
+    @IBOutlet weak var cityTextField: TextFieldUnderline!
+    @IBOutlet weak var countryTextField: TextFieldUnderline!
+    @IBOutlet weak var birthdayTextField: TextFieldUnderline!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        showProfile()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func showProfile() {
+        
     }
-    */
 
 }

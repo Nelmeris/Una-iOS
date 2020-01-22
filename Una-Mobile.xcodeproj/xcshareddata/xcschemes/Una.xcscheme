@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "57FEF2E92288AFE7000A4FD7"
-               BuildableName = "&#x42e;&#x43d;&#x430;.app"
+               BuildableName = "Una.app"
                BlueprintName = "Una-Mobile"
                ReferencedContainer = "container:Una-Mobile.xcodeproj">
             </BuildableReference>
@@ -31,7 +31,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "57FEF2E92288AFE7000A4FD7"
-            BuildableName = "&#x42e;&#x43d;&#x430;.app"
+            BuildableName = "Una.app"
             BlueprintName = "Una-Mobile"
             ReferencedContainer = "container:Una-Mobile.xcodeproj">
          </BuildableReference>
@@ -66,7 +66,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "57FEF2E92288AFE7000A4FD7"
-            BuildableName = "&#x42e;&#x43d;&#x430;.app"
+            BuildableName = "Una.app"
             BlueprintName = "Una-Mobile"
             ReferencedContainer = "container:Una-Mobile.xcodeproj">
          </BuildableReference>
@@ -83,7 +83,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "57FEF2E92288AFE7000A4FD7"
-            BuildableName = "&#x42e;&#x43d;&#x430;.app"
+            BuildableName = "Una.app"
             BlueprintName = "Una-Mobile"
             ReferencedContainer = "container:Una-Mobile.xcodeproj">
          </BuildableReference>

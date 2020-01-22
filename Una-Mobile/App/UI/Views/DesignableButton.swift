@@ -38,7 +38,7 @@ class DesignableButton: UIButton {
         shadowOpacity = 0.16
         shadowRadius = 6
         titleLabel?.font = UIFont(name: "Lato", size: 21)
-        contentEdgeInsets = UIEdgeInsets(top: 10, left: 25, bottom: 10, right: 25)
+        contentEdgeInsets = UIEdgeInsets(top: 14.5, left: 29, bottom: 14.5, right: 29)
     }
     
 }

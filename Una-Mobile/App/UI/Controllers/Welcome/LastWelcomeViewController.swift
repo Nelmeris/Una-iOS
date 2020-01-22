@@ -14,7 +14,7 @@ class LastWelcomeViewController: UIViewController {
     @IBOutlet var router: WelcomeRouter!
     
     @IBAction func close(_ sender: Any) {
-        if !AuthService.shared.isAuth() { // If need authorization
+        if AuthService.shared.isAuth() { // If need authorization
             router.toStudy()
         } else {
             router.toAuth()

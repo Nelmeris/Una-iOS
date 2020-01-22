@@ -63,6 +63,7 @@
 		57EC310723CA35FA00241831 /* UnaLessonTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EC310623CA35FA00241831 /* UnaLessonTask.swift */; };
 		57EC310923CA387F00241831 /* UnaDBServiceTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EC310823CA387F00241831 /* UnaDBServiceTasks.swift */; };
 		57EC310B23CDDB3C00241831 /* StringOccurrences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EC310A23CDDB3C00241831 /* StringOccurrences.swift */; };
+		57ED2DC923D82FD70010B577 /* ScrollableKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ED2DC823D82FD70010B577 /* ScrollableKeyboard.swift */; };
 		57EED4E52297D20A002B8908 /* StudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EED4E42297D20A002B8908 /* StudyViewController.swift */; };
 		57EED4EB2297D820002B8908 /* DifficultyLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EED4EA2297D820002B8908 /* DifficultyLevel.swift */; };
 		57FEBF56229F21B700148709 /* StudyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEBF55229F21B700148709 /* StudyRouter.swift */; };
@@ -159,6 +160,7 @@
 		57EC310623CA35FA00241831 /* UnaLessonTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnaLessonTask.swift; sourceTree = "<group>"; };
 		57EC310823CA387F00241831 /* UnaDBServiceTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnaDBServiceTasks.swift; sourceTree = "<group>"; };
 		57EC310A23CDDB3C00241831 /* StringOccurrences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringOccurrences.swift; sourceTree = "<group>"; };
+		57ED2DC823D82FD70010B577 /* ScrollableKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableKeyboard.swift; sourceTree = "<group>"; };
 		57EED4E42297D20A002B8908 /* StudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyViewController.swift; sourceTree = "<group>"; };
 		57EED4EA2297D820002B8908 /* DifficultyLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyLevel.swift; sourceTree = "<group>"; };
 		57FEBF55229F21B700148709 /* StudyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyRouter.swift; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 				57A343B723D109C800C734F8 /* UITableViewDataUpdater.swift */,
 				57A343C123D11E8C00C734F8 /* PreferredStatusBarStyleNavigationController.swift */,
 				57153C5D23D7B33400D867A7 /* ImageResizing.swift */,
+				57ED2DC823D82FD70010B577 /* ScrollableKeyboard.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -836,6 +839,7 @@
 				57153C6823D7D21200D867A7 /* DesignableButton.swift in Sources */,
 				57C2220923C321E9002A0AD7 /* LessonViewModel.swift in Sources */,
 				57FEF3322288CAD2000A4FD7 /* WelcomePageViewController.swift in Sources */,
+				57ED2DC923D82FD70010B577 /* ScrollableKeyboard.swift in Sources */,
 				57B7278823CA2B66008B95C4 /* LessonRouter.swift in Sources */,
 				57153C5323D7A11500D867A7 /* ProfileViewController.swift in Sources */,
 				57C2220E23C329BD002A0AD7 /* StudyViewPresenter.swift in Sources */,

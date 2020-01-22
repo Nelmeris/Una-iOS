@@ -28,7 +28,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, AlertDelega
         
         configureTextFields()
         configureNavigationController()
-        registerForKeyboardNotifications()
+        registerForKeyboardNotifications(with: #selector(adjustForKeyboard))
         addTapGestureToHideKeyboard()
     }
     
@@ -44,19 +44,10 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, AlertDelega
     
     private func configureTextFields() {
         firstNameField.delegate = self
-        firstNameField.returnKeyType = .next
-        
         lastNameField.delegate = self
-        lastNameField.returnKeyType = .next
-        
         emailField.delegate = self
-        emailField.returnKeyType = .next
-        
         passwordField.delegate = self
-        passwordField.returnKeyType = .next
-        
         rPasswordField.delegate = self
-        rPasswordField.returnKeyType = .done
     }
     
     private func configureNavigationController() {
@@ -124,23 +115,13 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, AlertDelega
     
     // MARK: - Keyboard
     
-    private func registerForKeyboardNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(kbWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(kbWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    var selectedTextFieldYPosition: CGFloat = 0.0
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        selectedTextFieldYPosition = textField.frame.origin.y - textField.frame.size.height
     }
     
-    private func removeKeyboardNotifications() {
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    @objc func kbWillShow(_ notification: Notification) {
-        let offsetY = firstNameField.frame.origin.y - firstNameField.frame.size.height
-        scrollView.setContentOffset(CGPoint(x: 0, y: offsetY), animated: true)
-    }
-    
-    @objc func kbWillHide() {
-        scrollView.setContentOffset(CGPoint.zero, animated: true)
+    @objc func adjustForKeyboard(_ notification: Notification) {
+        scrollViewContentShift(keyboardNotification: notification, scrollView: scrollView, position: selectedTextFieldYPosition)
     }
     
     deinit {
