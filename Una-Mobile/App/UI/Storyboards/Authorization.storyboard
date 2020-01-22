@@ -69,7 +69,7 @@
                                             <action selector="toLogin:" destination="Meh-xj-u5M" eventType="touchUpInside" id="pg8-eq-PlS"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yA-gg-ppD" customClass="DesignableButton" customModule="Una" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yA-gg-ppD" customClass="DesignableButton" customModule="Una" customModuleProvider="target">
                                         <rect key="frame" x="63" y="394" width="179" height="45"/>
                                         <color key="backgroundColor" name="AdditionColor"/>
                                         <constraints>
@@ -204,7 +204,7 @@
                                                     <action selector="toMain:" destination="9bw-rN-gTv" eventType="touchUpInside" id="kxx-dG-46T"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bv4-WP-gw1">
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bv4-WP-gw1">
                                                 <rect key="frame" x="105.66666666666669" y="582.66666666666663" width="164" height="36"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle">

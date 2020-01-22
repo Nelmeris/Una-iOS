@@ -12,7 +12,8 @@ class Start {
     
     static public let shared = Start()
     private init() {
-        
+//        UserDefaults.standard.removeObject(forKey: isWelcomeKey)
+//        AuthService.shared.logout()
     }
     
     private let welcomeIds = (storyboardName: "Welcome", vcId: "Page")

@@ -67,11 +67,7 @@ extension UnaDBService: UnaDBServiceUserFactory {
     }
     
     func putUserProfile(with profile: UnaUserProfile, completion: @escaping () -> ()) throws {
-        var dateStr: String = ""
-        if let date = profile.date {
-            dateStr = UnaUserProfile.dateFormatter.string(from: date)
-        }
-        try self.request(with: (getUserProfileUpdateSQL(), [String(profile.userId), profile.country, profile.city, dateStr])) { _ in
+        try self.request(with: (getUserProfileUpdateSQL(), [String(profile.userId), profile.country, profile.city, profile.date ?? ""])) { _ in
             completion()
         }
     }

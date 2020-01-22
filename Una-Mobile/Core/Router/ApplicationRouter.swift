@@ -14,7 +14,7 @@ final class ApplicationRouter {
     private init() {}
     
     func setAsRoot(_ controller: UIViewController) {
-        guard let window = UIApplication.shared.windows.first else { fatalError() }
+        guard let window = UIApplication.shared.windows.first else { return }
         window.rootViewController = controller
     }
     

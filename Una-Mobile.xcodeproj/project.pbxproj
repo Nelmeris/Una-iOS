@@ -67,6 +67,7 @@
 		57ED2DCB23D837FD0010B577 /* ApplicationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ED2DCA23D837FD0010B577 /* ApplicationRouter.swift */; };
 		57ED2DCE23D848100010B577 /* ProfileEditorRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ED2DCD23D848100010B577 /* ProfileEditorRouter.swift */; };
 		57ED2DD023D8488B0010B577 /* RoundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ED2DCF23D8488B0010B577 /* RoundImage.swift */; };
+		57ED2DD223D887B10010B577 /* ProfileEditorViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ED2DD123D887B10010B577 /* ProfileEditorViewPresenter.swift */; };
 		57EED4E52297D20A002B8908 /* StudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EED4E42297D20A002B8908 /* StudyViewController.swift */; };
 		57EED4EB2297D820002B8908 /* DifficultyLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EED4EA2297D820002B8908 /* DifficultyLevel.swift */; };
 		57FEBF56229F21B700148709 /* StudyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FEBF55229F21B700148709 /* StudyRouter.swift */; };
@@ -167,6 +168,7 @@
 		57ED2DCA23D837FD0010B577 /* ApplicationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationRouter.swift; sourceTree = "<group>"; };
 		57ED2DCD23D848100010B577 /* ProfileEditorRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditorRouter.swift; sourceTree = "<group>"; };
 		57ED2DCF23D8488B0010B577 /* RoundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImage.swift; sourceTree = "<group>"; };
+		57ED2DD123D887B10010B577 /* ProfileEditorViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditorViewPresenter.swift; sourceTree = "<group>"; };
 		57EED4E42297D20A002B8908 /* StudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyViewController.swift; sourceTree = "<group>"; };
 		57EED4EA2297D820002B8908 /* DifficultyLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyLevel.swift; sourceTree = "<group>"; };
 		57FEBF55229F21B700148709 /* StudyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyRouter.swift; sourceTree = "<group>"; };
@@ -411,6 +413,7 @@
 				57C2220D23C329BD002A0AD7 /* StudyViewPresenter.swift */,
 				57B7278B23CA2DC8008B95C4 /* LessonPartViewPresenter.swift */,
 				57C2220F23C331B7002A0AD7 /* LessonTaskViewPresenter.swift */,
+				57ED2DD123D887B10010B577 /* ProfileEditorViewPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -884,6 +887,7 @@
 				57C2221223C33A7B002A0AD7 /* LessonTaskViewModel.swift in Sources */,
 				57A343B823D109C800C734F8 /* UITableViewDataUpdater.swift in Sources */,
 				572C904B229EDD2800154BA9 /* UIAlertViewDelegate.swift in Sources */,
+				57ED2DD223D887B10010B577 /* ProfileEditorViewPresenter.swift in Sources */,
 				57FEF33F2288E37D000A4FD7 /* AuthRouter.swift in Sources */,
 				57FEF33C2288E2FA000A4FD7 /* BaseRouter.swift in Sources */,
 				57EC310923CA387F00241831 /* UnaDBServiceTasks.swift in Sources */,

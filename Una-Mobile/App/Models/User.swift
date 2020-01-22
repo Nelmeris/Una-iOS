@@ -27,7 +27,7 @@ struct User {
         self.isSuperuser = user.isSuperuser
         self.country = profile.country
         self.city = profile.city
-        self.birthday = profile.date
+        self.birthday = User.dateFormatter.date(from: profile.date ?? "")
     }
     
     init(id: Int, email: String, firstName: String, lastName: String, isSuperuser: Bool, country: String, city: String, birthday: Date?) {
@@ -40,5 +40,19 @@ struct User {
         self.city = city
         self.birthday = birthday
     }
+    
+    var birthdayString: String? {
+        if let birthday = birthday {
+            return User.dateFormatter.string(from: birthday)
+        } else {
+            return nil
+        }
+    }
+    
+    static var dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        return dateFormatter
+    }()
     
 }

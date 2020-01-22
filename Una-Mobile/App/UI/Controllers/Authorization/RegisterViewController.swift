@@ -91,24 +91,17 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, AlertDelega
     // MARK: - TextField
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        switch textField {
-        case let field where field == firstNameField:
+        if textField == firstNameField {
             lastNameField.becomeFirstResponder()
-            break
-        case let field where field == lastNameField:
+        } else if textField == lastNameField {
             emailField.becomeFirstResponder()
-            break
-        case let field where field == emailField:
+        } else if textField == emailField {
             passwordField.becomeFirstResponder()
-            break
-        case let field where field == passwordField:
+        } else if textField == passwordField {
             rPasswordField.becomeFirstResponder()
-            break
-            
-        default:
+        } else {
             self.view.dismissKeyboard()
             registrationProcess(textField)
-            break;
         }
         return false
     }

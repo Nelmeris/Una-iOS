@@ -10,27 +10,88 @@ import UIKit
 
 class ProfileEditorViewController: UIViewController, UITextFieldDelegate {
     
+    // MARK: - Properties
+    
     var user: User!
     
-    @IBOutlet weak var scrollView: UIScrollView!
+    // MARK: - Outlets
     
+    // Views
+    @IBOutlet weak var scrollView: UIScrollView!
+    // Name
     @IBOutlet weak var nameTextField: TextFieldUnderline!
     @IBOutlet weak var surnameTextField: TextFieldUnderline!
+    // Location
     @IBOutlet weak var cityTextField: TextFieldUnderline!
     @IBOutlet weak var countryTextField: TextFieldUnderline!
+    // Birthday
     @IBOutlet weak var birthdayTextField: TextFieldUnderline!
+    var datePicker: UIDatePicker!
+    // Email
     @IBOutlet weak var emailTextField: TextFieldUnderline!
+    // Password
     @IBOutlet weak var passwordTextField: TextFieldUnderline!
     @IBOutlet weak var repeatPasswordTextField: TextFieldUnderline!
+    
     @IBOutlet var router: ProfileEditorRouter!
+    
+    // MARK: - Configures
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        configureDatePicker()
         configureTextFields()
+        configureNavBar()
         registerForKeyboardNotifications(with: #selector(adjustForKeyboard))
-        showProfile()
         addTapGestureToHideKeyboard()
+        
+        showProfile()
+    }
+    
+    private func configureDatePicker() {
+        datePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
+        var date = Date()
+        let maxAge = 100
+        var dateComponents = DateComponents()
+        dateComponents.year = maxAge * -1
+        datePicker.maximumDate = date
+        date = Calendar.current.date(byAdding: dateComponents, to: date)!
+        datePicker.minimumDate = date
+        datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
+    }
+    
+    // MARK: - TextField
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == nameTextField {
+            surnameTextField.becomeFirstResponder() // To surname
+        } else if textField == surnameTextField {
+            cityTextField.becomeFirstResponder() // To city
+        } else if textField == cityTextField {
+            countryTextField.becomeFirstResponder() // To country
+        } else if textField == countryTextField {
+            birthdayTextField.becomeFirstResponder() // To birthday
+        } else if textField == birthdayTextField {
+            emailTextField.becomeFirstResponder() // To email
+        } else if textField == emailTextField {
+            passwordTextField.becomeFirstResponder() // To password
+        } else if textField == passwordTextField {
+            repeatPasswordTextField.becomeFirstResponder() // To repeat password
+        } else {
+            self.view.dismissKeyboard()
+            saveChanges(textField)
+        }
+        return false
+    }
+    
+    @objc private func dateChanged(datePicker: UIDatePicker) {
+        birthdayTextField.text = User.dateFormatter.string(from: datePicker.date)
+    }
+    
+    private func configureNavBar() {
+        self.title = "Редактирование профиля".uppercased()
     }
     
     private func configureTextFields() {
@@ -39,6 +100,7 @@ class ProfileEditorViewController: UIViewController, UITextFieldDelegate {
         cityTextField.delegate = self
         countryTextField.delegate = self
         birthdayTextField.delegate = self
+        birthdayTextField.inputView = datePicker
         emailTextField.delegate = self
         passwordTextField.delegate = self
         repeatPasswordTextField.delegate = self
@@ -50,8 +112,8 @@ class ProfileEditorViewController: UIViewController, UITextFieldDelegate {
         cityTextField.text = user.city
         countryTextField.text = user.country
         if let birthday = user.birthday {
-            let str = UnaUserProfile.dateFormatter.string(from: birthday)
-            birthdayTextField.text = str
+            datePicker.setDate(birthday, animated: true)
+            birthdayTextField.text = user.birthdayString
         }
         emailTextField.text = user.email
     }
@@ -77,11 +139,9 @@ class ProfileEditorViewController: UIViewController, UITextFieldDelegate {
             print()
                 return
         }
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM.yyyy"
         guard let birthdayStr = birthdayTextField.text,
             !birthdayStr.isEmpty,
-            let birthday = dateFormatter.date(from: birthdayStr) else {
+            let birthday = User.dateFormatter.date(from: birthdayStr) else {
             print()
                 return
         }
@@ -95,7 +155,14 @@ class ProfileEditorViewController: UIViewController, UITextFieldDelegate {
         } catch {
             print(error)
         }
-        let user = User(id: self.user.id, email: email, firstName: name, lastName: surname, isSuperuser: self.user.isSuperuser, country: country, city: city, birthday: birthday)
+        let user = User(id: self.user.id,
+                        email: email.trimmingCharacters(in: .whitespaces),
+                        firstName: name.trimmingCharacters(in: .whitespaces),
+                        lastName: surname.trimmingCharacters(in: .whitespaces),
+                        isSuperuser: self.user.isSuperuser,
+                        country: country.trimmingCharacters(in: .whitespaces),
+                        city: city.trimmingCharacters(in: .whitespaces),
+                        birthday: birthday)
         AuthService.shared.saveUserChanges(user) {
             self.router.backToProfile(animated: true)
         }

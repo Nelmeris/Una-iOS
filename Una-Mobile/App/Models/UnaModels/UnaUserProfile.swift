@@ -15,15 +15,14 @@ struct UnaUserProfile {
     let userId: Int
     let country: String
     let city: String
-    let date: Date?
+    let date: String?
     
     init(from postgresValues: [PostgresValue]) throws {
         id = try postgresValues[0].int()
         userId = try postgresValues[4].int()
         country = try postgresValues[2].string()
         city = try postgresValues[3].string()
-        let dateStr = try postgresValues[5].optionalString()
-        date = UnaUserProfile.dateFormatter.date(from: dateStr ?? "")
+        date = try postgresValues[5].optionalString()
     }
     
     init(from user: User) {
@@ -31,13 +30,7 @@ struct UnaUserProfile {
         self.userId = user.id
         self.country = user.country
         self.city = user.city
-        self.date = user.birthday
+        self.date = user.birthdayString
     }
-    
-    static var dateFormatter: DateFormatter = {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM.yyyy"
-        return dateFormatter
-    }()
     
 }
