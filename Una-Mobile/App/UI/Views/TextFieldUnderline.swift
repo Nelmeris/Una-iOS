@@ -8,16 +8,24 @@
 
 import UIKit
 
+@IBDesignable
 class TextFieldUnderline: UITextField {
+    
+    var underline: CALayer = CALayer()
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        // Underline
-        let bottomLine = CALayer()
-        bottomLine.frame = CGRect(x: 0.0, y: self.frame.height - 1, width: self.frame.width, height: 1.0)
-        bottomLine.backgroundColor = UIColor(named: "MainColor")?.cgColor
+        
+        underline.frame = CGRect(x: 0.0, y: self.frame.height - 1, width: self.frame.width, height: underlineHeight)
+        underline.backgroundColor = underlineColor.cgColor
         self.borderStyle = UITextField.BorderStyle.none
-        self.layer.addSublayer(bottomLine)
+        self.layer.addSublayer(underline)
     }
+
+    @IBInspectable
+    var underlineHeight: CGFloat = 1.0
+
+    @IBInspectable
+    var underlineColor: UIColor = .black
 
 }

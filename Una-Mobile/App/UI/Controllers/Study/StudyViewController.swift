@@ -87,7 +87,6 @@ extension StudyViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.hidesBottomBarWhenPushed = true
         router.toLesson { (controller) in
-            self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
             controller.lesson = self.lessons[indexPath.row]
         }
         self.hidesBottomBarWhenPushed = false

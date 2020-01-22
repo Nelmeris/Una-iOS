@@ -12,6 +12,7 @@ class Start {
     
     static public let shared = Start()
     private init() {
+        
     }
     
     private let welcomeIds = (storyboardName: "Welcome", vcId: "Page")
@@ -35,7 +36,7 @@ class Start {
     
     public func configureBarButtonItemAppearance() {
         let BarButtonItemAppearance = UIBarButtonItem.appearance()
-        BarButtonItemAppearance.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.clear], for: .normal)
+        BarButtonItemAppearance.setBackButtonTitlePositionAdjustment(UIOffset(horizontal: -1000.0, vertical: 0.0), for: .default)
     }
     
     public func getRootController() -> UIViewController {

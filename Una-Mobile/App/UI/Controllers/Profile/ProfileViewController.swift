@@ -12,17 +12,12 @@ class ProfileViewController: UIViewController {
     
     // MARK: - Properties
     
-    private var user: UnaAuthUser! {
+    private var user: User! {
         willSet {
             guard let user = newValue else { return }
             nameLabel.text = "\(user.firstName) \(user.lastName)"
             categoryLabel.text = user.isSuperuser ? "Админ" : "Ученик"
-        }
-    }
-    private var profile: UnaUserProfile! {
-        willSet {
-            guard let profile = newValue else { return }
-            locationLabel.text = "\(profile.city), \(profile.country)"
+            locationLabel.text = "\(user.city), \(user.country)"
         }
     }
     
@@ -32,6 +27,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet var router: ProfileRouter!
     
     // MARK: - Configures
     
@@ -44,19 +40,18 @@ class ProfileViewController: UIViewController {
     }
     
     private func showUser() {
-        AuthService.shared.getUser { userData in
-            self.user = userData?.0
-            self.profile = userData?.1
+        AuthService.shared.getUser { user in
+            self.user = user
         }
     }
     
     private func configureNavigationBar() {
         self.title = "Профиль".uppercased()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(openProfileEditor))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(openProfileEditor))
     }
     
     @objc private func openProfileEditor() {
-        
+        router.toEditor()
     }
 
 }

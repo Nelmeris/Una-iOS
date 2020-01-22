@@ -12,7 +12,7 @@ import Keychain
 final class AuthService {
     
     static let shared = AuthService()
-    private init() {}
+    private init() { logout() }
     
     private let accessTokenKey = "access_token"
     private let accessTokenRefreshKey = "access_token_refresh"
@@ -57,13 +57,11 @@ final class AuthService {
         Keychain.load(usernameKey)
     }
     
-    private var userCache: UnaAuthUser?
-    private var userProfileCache: UnaUserProfile?
+    private var userCache: User?
     
-    func getUser(completion: @escaping ((UnaAuthUser, UnaUserProfile)?) -> ()) {
-        if let user = userCache,
-            let profile = userProfileCache {
-            completion((user, profile))
+    func getUser(completion: @escaping (User?) -> ()) {
+        if let user = userCache {
+            completion(user)
             return
         }
         guard let username = AuthService.shared.username else {
@@ -73,12 +71,12 @@ final class AuthService {
         do {
             try UnaDBService.shared.getUser(with: username) { user in
                 guard let user = user else { fatalError() }
-                self.userCache = user
                 do {
                     try UnaDBService.shared.getUserProfile(with: user.id) { profile in
                         guard let profile = profile else { fatalError() }
-                        self.userProfileCache = profile
-                        completion((user, profile))
+                        let user = User(user: user, profile: profile)
+                        self.userCache = user
+                        completion(user)
                     }
                 } catch {
                     print(error)

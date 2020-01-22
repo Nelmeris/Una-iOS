@@ -15,8 +15,10 @@ class WelcomePageViewController: UIPageViewController {
     let storyboardName = "Welcome"
     
     private(set) lazy var orderedViewControllers: [UIViewController] = {
-        [self.getViewController(withIdentifier: "Red"),
-         self.getViewController(withIdentifier: "Blue")]
+        [self.getViewController(withIdentifier: "Welcome1"),
+        self.getViewController(withIdentifier: "Welcome2"),
+        self.getViewController(withIdentifier: "Welcome3"),
+        self.getViewController(withIdentifier: "Welcome4")]
     }()
     
     // MARK: - Configures
