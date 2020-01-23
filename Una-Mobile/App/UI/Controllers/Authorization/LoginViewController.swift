@@ -59,7 +59,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, AlertDelegate 
     
     @IBAction func toMain(_ sender: Any) {
         guard let data = getData() else { return }
-        AuthService.shared.login(email: data.email, password: data.password) { (isAuth, error) in
+        AuthManager.shared.login(email: data.email, password: data.password) { (isAuth, error) in
             guard error == nil else {
                 self.showJustAlert(title: "Сетевая ошибка", message: error!.localizedDescription)
                 return

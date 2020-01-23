@@ -12,6 +12,9 @@ class Start {
     
     static public let shared = Start()
     private init() {
+        BaseUIOperation.queue.maxConcurrentOperationCount = 1
+        BaseDataBaseOperation.queue.maxConcurrentOperationCount = 1
+        BaseBackendOperation.queue.maxConcurrentOperationCount = 1
 //        UserDefaults.standard.removeObject(forKey: isWelcomeKey)
 //        AuthService.shared.logout()
     }
@@ -45,7 +48,7 @@ class Start {
         if !userDefaults.bool(forKey: isWelcomeKey) { // If need present WelcomePageViewController
             return UIStoryboard(name: welcomeIds.storyboardName, bundle: nil).instantiateViewController(withIdentifier: welcomeIds.vcId)
         } else {
-            if !AuthService.shared.isAuth() { // If need authorization
+            if !AuthManager.shared.isAuth() { // If need authorization
                 let storyboard = UIStoryboard(name: authIds.storyboardName, bundle: nil)
                 let authVC = storyboard.instantiateViewController(withIdentifier: authIds.vcId)
                 let navControl = UINavigationController(rootViewController: authVC)

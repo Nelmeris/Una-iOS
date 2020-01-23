@@ -28,8 +28,9 @@ final class LessonViewModelFactory {
         let title = lesson.title
         let stateText = "\(0) ИЗ \(lesson.parts?.count ?? 0) УРОКОВ"
         let progress = Float(0) / Float(lesson.parts?.count ?? 0)
-        let levelColor = lesson.difficulty.color()
-        let levelTitle = lesson.difficulty.rawValue
+        let difficulty = DifficultyLevel(rawValue: lesson.difficulty)
+        let levelColor = difficulty!.color()
+        let levelTitle = difficulty!.rawValue
         return LessonViewModel(title: title, stateText: stateText, progress: progress, levelColor: levelColor, levelTitle: levelTitle)
     }
     

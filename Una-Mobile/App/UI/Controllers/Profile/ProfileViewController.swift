@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, AlertDelegate {
     
     // MARK: - Properties
     
@@ -44,8 +44,13 @@ class ProfileViewController: UIViewController {
     }
     
     private func showUser() {
-        AuthService.shared.getUser { user in
-            self.user = user
+        AuthManager.shared.getUser { (user, error) in
+            DispatchQueue.main.async {
+                if let error = error {
+                    self.showJustAlert(title: "Operation Error", message: error.localizedDescription)
+                }
+                self.user = user
+            }
         }
     }
     

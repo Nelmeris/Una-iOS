@@ -9,6 +9,7 @@
 import PostgresClientKit
 
 class UnaLessonTask {
+    
     let id: Int
     let partId: Int
     let title: String
@@ -20,6 +21,7 @@ class UnaLessonTask {
         self.title = title
         self.text = text
     }
+    
 }
 
 class UnaLessonTaskFind: UnaLessonTask {

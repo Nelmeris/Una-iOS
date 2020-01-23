@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileEditorViewController: UIViewController, UITextFieldDelegate {
+class ProfileEditorViewController: UIViewController, UITextFieldDelegate, AlertDelegate {
     
     // MARK: - Properties
     
@@ -161,13 +161,19 @@ class ProfileEditorViewController: UIViewController, UITextFieldDelegate {
         self.user.country = country.trimmingCharacters(in: .whitespaces)
         self.user.city = city.trimmingCharacters(in: .whitespaces)
         self.user.birthday = birthday
-        AuthService.shared.saveUserChanges(user) {
-            self.router.backToProfile(animated: true)
+        AuthManager.shared.saveUserChanges(user) { error in
+            DispatchQueue.main.async {
+                if let error = error {
+                    self.showJustAlert(title: "Operation Error", message: error.localizedDescription)
+                } else {
+                    self.router.backToProfile(animated: true)
+                }
+            }
         }
     }
     
     @IBAction func exitFromAccount(_ sender: Any) {
-        AuthService.shared.logout()
+        AuthManager.shared.logout()
     }
     
     // MARK: - Keyboard
