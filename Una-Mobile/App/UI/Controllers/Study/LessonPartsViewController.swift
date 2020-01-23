@@ -35,7 +35,7 @@ class LessonPartsViewController: UIViewController {
     }
     
     private func configure() {
-        self.title = lesson.title!.uppercased()
+        self.title = "Описание урока".uppercased()
         self.titleLabel.text = lesson.title
     }
     

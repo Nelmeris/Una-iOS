@@ -25,6 +25,7 @@ class TaskViewController: UIViewController, UIGestureRecognizerDelegate, AlertDe
     @IBOutlet weak var textView: UITextView!
     @IBOutlet var swipeRightGestureRecognizer: UISwipeGestureRecognizer!
     @IBOutlet var swipeLeftGestureRecognizer: UISwipeGestureRecognizer!
+    @IBOutlet var router: TaskRouter!
     
     // MARK: - Configures
     
@@ -38,13 +39,13 @@ class TaskViewController: UIViewController, UIGestureRecognizerDelegate, AlertDe
         configureNavigationController() // конфигурация навигационного контроллера
         
         presenter = LessonTaskPresenter(view: self, lessonPart: lessonPart)
-        presenter.showLesson()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureNavigationController()
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        presenter.showLesson()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -152,9 +153,11 @@ class TaskViewController: UIViewController, UIGestureRecognizerDelegate, AlertDe
         helpMessageLabel.text = "\(message.uppercased()):"
     }
     
-    func setResult(message: String) {
-        showJustAlert(title: "Результат", message: message) { _ in
-            self.navigationController?.popViewController(animated: true)
+    func setResult(correctlyCount: Int, incorrectlyCount: Int) {
+        router.toResult { controller in
+            controller.part = self.lessonPart
+            controller.correctlyCount = correctlyCount
+            controller.incorrectlyCount = incorrectlyCount
         }
     }
     

@@ -10,7 +10,7 @@ import UIKit
 
 protocol LessonTaskView: class {
     func setTask(_ task: LessonTaskViewModel, isFirst: Bool, isLast: Bool)
-    func setResult(message: String)
+    func setResult(correctlyCount: Int, incorrectlyCount: Int)
 }
 
 protocol LessonTaskViewPresenter {
@@ -89,7 +89,7 @@ class LessonTaskPresenter : LessonTaskViewPresenter {
     
     func showResult() {
         let result = getResult()
-        view.setResult(message: "Верно \(result.goodCount) из \(result.count)")
+        view.setResult(correctlyCount: result.goodCount, incorrectlyCount: result.count - result.goodCount)
     }
     
     // Проверка общего результата
