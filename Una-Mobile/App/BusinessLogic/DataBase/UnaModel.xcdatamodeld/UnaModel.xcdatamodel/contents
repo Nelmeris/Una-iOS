@@ -5,6 +5,7 @@
         <attribute name="difficulty" attributeType="String" regularExpressionString="^[ABC][12]$"/>
         <attribute name="id" attributeType="Integer 64" usesScalarValueType="YES"/>
         <attribute name="title" attributeType="String"/>
+        <attribute name="underTitle" attributeType="String"/>
         <relationship name="parts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="LessonPart" inverseName="lesson" inverseEntity="LessonPart"/>
     </entity>
     <entity name="LessonPart" representedClassName="LessonPart" syncable="YES" codeGenerationType="class">
@@ -40,7 +41,7 @@
         <relationship name="statistic" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Statistic" inverseName="user" inverseEntity="Statistic"/>
     </entity>
     <elements>
-        <element name="Lesson" positionX="9.26171875" positionY="306.96875" width="128" height="118"/>
+        <element name="Lesson" positionX="9.26171875" positionY="306.96875" width="128" height="133"/>
         <element name="LessonPart" positionX="296.94921875" positionY="548.265625" width="128" height="118"/>
         <element name="LessonTask" positionX="272.72265625" positionY="178.171875" width="128" height="103"/>
         <element name="Statistic" positionX="263.5" positionY="10.97265625" width="128" height="133"/>

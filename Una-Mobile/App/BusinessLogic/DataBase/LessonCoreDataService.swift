@@ -36,6 +36,7 @@ class LessonCoreDataService: BaseCoreDataService {
         cdLesson.title = lesson.title
         cdLesson.descript = lesson.description
         cdLesson.difficulty = lesson.difficulty
+        cdLesson.underTitle = lesson.underTitle
         if let parts = lesson.parts {
             cdLesson.parts = NSSet(array: parts)
         }

@@ -12,6 +12,7 @@ struct LessonViewModel: Updateble {
     
     let id: Int
     let title: String
+    let underTitle: String
     let stateText: String
     let levelColor: UIColor
     let levelTitle: String
@@ -39,11 +40,12 @@ final class LessonViewModelFactory {
     private func viewModel(from lesson: Lesson) -> LessonViewModel {
         let id = Int(lesson.id)
         let title = lesson.title!
-        let stateText = "\(0) ИЗ \(lesson.parts?.count ?? 0) УРОКОВ"
+        let underTitle = lesson.underTitle!
+        let stateText = "\(0) ИЗ \(lesson.parts?.count ?? 0) ШАГОВ"
         let difficulty = DifficultyLevel(rawValue: lesson.difficulty!)
         let levelColor = difficulty!.color()
         let levelTitle = difficulty!.rawValue
-        return LessonViewModel(id: id, title: title, stateText: stateText, levelColor: levelColor, levelTitle: levelTitle)
+        return LessonViewModel(id: id, title: title, underTitle: underTitle, stateText: stateText, levelColor: levelColor, levelTitle: levelTitle)
     }
     
 }

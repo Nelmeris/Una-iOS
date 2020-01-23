@@ -30,9 +30,24 @@ class LessonPartPresenter : LessonPartViewPresenter {
     }
     
     func showParts() {
+        loadParts()
         guard let parts = lesson.parts?.allObjects as! [LessonPart]? else { return }
         let viewModels = self.viewModelFactory.construct(from: parts)
         self.view.setParts(parts, viewModels: viewModels)
+    }
+    
+    private func loadParts() {
+        LessonsDataManager.default.get(for: Int(lesson.id)) { result in
+            switch result {
+            case .success(let parts):
+                let viewModels = self.viewModelFactory.construct(from: parts)
+                self.view.setParts(parts, viewModels: viewModels)
+                break
+            case .failure(let error):
+                print(error)
+                // TODO
+            }
+        }
     }
     
 }

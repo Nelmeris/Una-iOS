@@ -73,8 +73,7 @@ class LoadUserUIOperation: BaseUIOperation {
             self.user = user
         case .failure(let error):
             self.result = .failure(error)
-        case .notFound:
-            self.result = .notFound
+        case .notFound: break
         }
     }
     

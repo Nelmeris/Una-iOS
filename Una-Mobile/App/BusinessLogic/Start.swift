@@ -15,7 +15,13 @@ class Start {
         BaseUIOperation.queue.maxConcurrentOperationCount = 1
         BaseDatabaseOperation.queue.maxConcurrentOperationCount = 1
         BaseBackendOperation.queue.maxConcurrentOperationCount = 1
-        AuthManager.shared.logout()
+        
+//        AuthManager.shared.logout()
+//        UserDefaults.standard.removeObject(forKey: isWelcomeKey)
+//        clearDatabase()
+    }
+    
+    private func clearDatabase() {
         let context = BaseCoreDataService.persistentContainer.viewContext
         let userCD = UserCoreDataService(context: context)
         let lessonCD = LessonCoreDataService(context: context)
@@ -29,8 +35,6 @@ class Start {
         } catch {
             print(error)
         }
-//        UserDefaults.standard.removeObject(forKey: isWelcomeKey)
-//        AuthService.shared.logout()
     }
     
     private let welcomeIds = (storyboardName: "Welcome", vcId: "Page")

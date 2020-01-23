@@ -2,7 +2,7 @@
 //  RoundImage.swift
 //  Una-Mobile
 //
-//  Created by Artem Kufaev on 23.01.2020.
+//  Created by Artem Kufaev on 22.01.2020.
 //  Copyright © 2020 Artem Kufaev. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 @IBDesignable
-class RoundImage: UIImageView {
+class RoundView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)

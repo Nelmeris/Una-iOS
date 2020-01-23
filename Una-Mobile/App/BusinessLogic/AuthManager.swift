@@ -19,7 +19,7 @@ final class AuthManager {
     private let userEmailKey = "user_email"
     
     func isAuth() -> Bool {
-        return Keychain.load(accessTokenKey) == nil
+        return Keychain.load(accessTokenKey) != nil
     }
     
     func login(email: String, password: String, completion: @escaping (Bool, Error?) -> ()) {

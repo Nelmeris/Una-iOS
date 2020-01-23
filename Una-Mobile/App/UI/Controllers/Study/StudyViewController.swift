@@ -93,11 +93,13 @@ extension StudyViewController {
     }
     
     private func updateTable(with models: [LessonViewModel]) {
-        let oldModels = self.viewModels
         DispatchQueue.main.async {
             self.tableView.beginUpdates()
+            self.tableView.updateData(data: self.viewModels, newData: models,
+                                      insertAnimation: .automatic,
+                                      deleteAnimation: .automatic,
+                                      reloadAnimation: .none)
             self.viewModels = models
-            self.tableView.updateData(data: oldModels, newData: models, insertAnimation: .automatic, deleteAnimation: .automatic, reloadAnimation: .none)
             self.tableView.endUpdates()
         }
     }
