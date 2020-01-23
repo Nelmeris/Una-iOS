@@ -365,10 +365,10 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CnH-av-FfJ">
-                                                            <rect key="frame" x="5" y="7" width="345" height="50"/>
+                                                            <rect key="frame" x="5" y="7" width="345" height="50.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Я хочу сказать о моем хобби " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yog-4h-yOP">
-                                                                    <rect key="frame" x="50" y="13" width="268" height="24"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Я хочу сказать о моем хобби" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yog-4h-yOP">
+                                                                    <rect key="frame" x="50" y="10" width="275" height="30"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                     <color key="textColor" name="TextColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -415,14 +415,16 @@
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="bottom" secondItem="VHk-Q3-H8T" secondAttribute="bottom" constant="10" id="0uz-0f-ITd"/>
+                                                                <constraint firstAttribute="bottom" secondItem="VHk-Q3-H8T" secondAttribute="bottom" priority="750" constant="10" id="0uz-0f-ITd"/>
+                                                                <constraint firstItem="yog-4h-yOP" firstAttribute="top" secondItem="CnH-av-FfJ" secondAttribute="top" constant="10" id="5xp-JW-0dE"/>
                                                                 <constraint firstItem="yog-4h-yOP" firstAttribute="leading" secondItem="VHk-Q3-H8T" secondAttribute="trailing" constant="10" id="7Hv-m7-fps"/>
                                                                 <constraint firstItem="VHk-Q3-H8T" firstAttribute="leading" secondItem="CnH-av-FfJ" secondAttribute="leading" constant="10" id="960-5L-hKW"/>
                                                                 <constraint firstItem="ZpO-1L-070" firstAttribute="centerX" secondItem="VHk-Q3-H8T" secondAttribute="centerX" id="HTz-07-AH4"/>
                                                                 <constraint firstItem="EKt-RI-KjW" firstAttribute="centerX" secondItem="VHk-Q3-H8T" secondAttribute="centerX" id="Q3Q-Ic-9rD"/>
-                                                                <constraint firstItem="yog-4h-yOP" firstAttribute="centerY" secondItem="VHk-Q3-H8T" secondAttribute="centerY" id="TtM-SA-2ZW"/>
+                                                                <constraint firstItem="yog-4h-yOP" firstAttribute="centerY" secondItem="VHk-Q3-H8T" secondAttribute="centerY" priority="750" id="TtM-SA-2ZW"/>
+                                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="yog-4h-yOP" secondAttribute="bottom" constant="10" id="egN-2n-xXZ"/>
                                                                 <constraint firstItem="VHk-Q3-H8T" firstAttribute="top" secondItem="CnH-av-FfJ" secondAttribute="top" constant="10" id="p1u-Wo-3Hy"/>
-                                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yog-4h-yOP" secondAttribute="trailing" symbolic="YES" id="xPK-mW-4ao"/>
+                                                                <constraint firstAttribute="trailing" secondItem="yog-4h-yOP" secondAttribute="trailing" constant="20" symbolic="YES" id="xPK-mW-4ao"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

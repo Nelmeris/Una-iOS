@@ -12,14 +12,19 @@
         <attribute name="id" attributeType="Integer 64" usesScalarValueType="NO"/>
         <attribute name="lessonId" attributeType="Integer 64" usesScalarValueType="NO"/>
         <attribute name="title" attributeType="String"/>
-        <relationship name="lesson" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Lesson" inverseName="parts" inverseEntity="Lesson"/>
+        <relationship name="lesson" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lesson" inverseName="parts" inverseEntity="Lesson"/>
         <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="LessonTask" inverseName="lessonPart" inverseEntity="LessonTask"/>
     </entity>
-    <entity name="LessonTask" representedClassName="LessonTask" syncable="YES" codeGenerationType="class">
+    <entity name="LessonTask" representedClassName="LessonTask" isAbstract="YES" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="partId" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="text" attributeType="String"/>
         <attribute name="title" attributeType="String"/>
         <relationship name="lessonPart" maxCount="1" deletionRule="Cascade" destinationEntity="LessonPart" inverseName="tasks" inverseEntity="LessonPart"/>
+    </entity>
+    <entity name="LessonTaskFind" representedClassName="LessonTaskFind" parentEntity="LessonTask" syncable="YES" codeGenerationType="class">
+        <attribute name="answers" attributeType="String"/>
+        <attribute name="rightAnswers" attributeType="String"/>
     </entity>
     <entity name="Statistic" representedClassName="Statistic" syncable="YES" codeGenerationType="class">
         <attribute name="isCorrectly" attributeType="Boolean" usesScalarValueType="YES"/>
@@ -43,7 +48,8 @@
     <elements>
         <element name="Lesson" positionX="9.26171875" positionY="306.96875" width="128" height="133"/>
         <element name="LessonPart" positionX="296.94921875" positionY="548.265625" width="128" height="118"/>
-        <element name="LessonTask" positionX="272.72265625" positionY="178.171875" width="128" height="103"/>
+        <element name="LessonTask" positionX="272.72265625" positionY="178.171875" width="128" height="118"/>
+        <element name="LessonTaskFind" positionX="126" positionY="144" width="128" height="73"/>
         <element name="Statistic" positionX="263.5" positionY="10.97265625" width="128" height="133"/>
         <element name="User" positionX="-54" positionY="-9" width="128" height="178"/>
     </elements>

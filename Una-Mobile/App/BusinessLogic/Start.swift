@@ -15,10 +15,10 @@ class Start {
         BaseUIOperation.queue.maxConcurrentOperationCount = 1
         BaseDatabaseOperation.queue.maxConcurrentOperationCount = 1
         BaseBackendOperation.queue.maxConcurrentOperationCount = 1
-        
+        print(BaseCoreDataService.persistentContainer.persistentStoreDescriptions.first?.url)
 //        AuthManager.shared.logout()
 //        UserDefaults.standard.removeObject(forKey: isWelcomeKey)
-//        clearDatabase()
+        clearDatabase()
     }
     
     private func clearDatabase() {

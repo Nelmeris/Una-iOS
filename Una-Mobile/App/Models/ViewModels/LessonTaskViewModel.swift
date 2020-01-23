@@ -132,14 +132,21 @@ final class LessonTaskViewModelFactory {
         var substrings: [LessonTaskSubstring] = []
         
         switch task {
-        case let task as UnaLessonTaskFind:
+        case let task as LessonTaskFind:
             var count = 0
+            let answersStr = task.answers!.components(separatedBy: ", ")
+            let rightAnswersStr = task.rightAnswers!.components(separatedBy: ", ")
+            var answers: [(String, Bool)] = []
+            for i in 0..<answersStr.count {
+                let isTrue = rightAnswersStr[i] == "true"
+                answers.append((answersStr[i], isTrue))
+            }
             while let startIndex = text.index(of: "//"), let endIndex = text.endIndex(of: "//") {
-                let str = task.answers[count].0
+                let str = answers[count].0
                 let range = Range<String.Index>(uncheckedBounds: (startIndex, endIndex))
                 text.replaceSubrange(range, with: str)
                 let index: Int = text.distance(from: text.startIndex, to: range.lowerBound)
-                let substring = LessonTaskSubstring(value: str, position: index, type: .find, answers: [LessonTaskAnswer(value: str, isCorrect: task.answers[count].1)])
+                let substring = LessonTaskSubstring(value: str, position: index, type: .find, answers: [LessonTaskAnswer(value: str, isCorrect: answers[count].1)])
                 substrings.append(substring)
                 count += 1
             }

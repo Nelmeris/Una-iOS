@@ -30,20 +30,26 @@ class LessonTaskCoreDataService: BaseCoreDataService {
         case failure(Error)
     }
     
-    func save(_ lessonTask: UnaLessonTask, completion: @escaping (SaveLessonTaskResult) -> ()) throws {
-        let cdLessonPart = try load(with: lessonTask.id) ?? LessonTask(context: context)
-        cdLessonPart.id = Int64(lessonTask.id)
-        cdLessonPart.title = lessonTask.title
-        cdLessonPart.text = lessonTask.text
-        let lessonPartCD = LessonPartCoreDataService(context: context)
-        cdLessonPart.lessonPart = try lessonPartCD.load(with: lessonTask.partId)!
-        saveContext {
-            if let error = $0 {
-                completion(.failure(error))
-            } else {
-                completion(.success(cdLessonPart))
-            }
+    private func save(_ lessonTask: UnaLessonTask) throws -> LessonTask {
+        let cdTask = try load(with: lessonTask.id)
+        switch lessonTask {
+        case let task as UnaLessonTaskFind:
+            let cdTaskFind = (cdTask ?? LessonTaskFind(context: context)) as! LessonTaskFind
+            try fillTask(cdTask: cdTaskFind, task: task)
+            cdTaskFind.answers = task.answers
+            cdTaskFind.rightAnswers = task.rightAnswers
+            return cdTaskFind
+        default: fatalError()
         }
+    }
+    
+    private func fillTask(cdTask: LessonTask, task: UnaLessonTask) throws {
+        cdTask.id = Int64(task.id)
+        cdTask.partId = Int64(task.partId)
+        cdTask.title = task.title
+        cdTask.text = task.text
+        let partCD = LessonPartCoreDataService(context: context)
+        cdTask.lessonPart = try partCD.load(with: task.partId)!
     }
     
     enum SaveLessonsResult {
@@ -54,17 +60,17 @@ class LessonTaskCoreDataService: BaseCoreDataService {
     func save(_ lessonTasks: [UnaLessonTask], completion: @escaping (SaveLessonsResult) -> ()) throws {
         var cdLessonTasks: [LessonTask] = []
         try lessonTasks.forEach { lessonTask in
-            try self.save(lessonTask) { result in
-                switch result {
-                case .success(let lessonTask):
-                    cdLessonTasks.append(lessonTask)
-                    if cdLessonTasks.count == lessonTasks.count {
-                        completion(.success(cdLessonTasks))
-                    }
-                case .failure(let error):
-                    completion(.failure(error))
-                    return
-                }
+            let task = try self.save(lessonTask)
+            cdLessonTasks.append(task)
+            if cdLessonTasks.count == lessonTasks.count {
+                completion(.success(cdLessonTasks))
+            }
+        }
+        saveContext {
+            if let error = $0 {
+                completion(.failure(error))
+            } else {
+                completion(.success(cdLessonTasks))
             }
         }
     }

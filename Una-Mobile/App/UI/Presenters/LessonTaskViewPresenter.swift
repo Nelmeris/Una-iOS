@@ -38,10 +38,28 @@ class LessonTaskPresenter : LessonTaskViewPresenter {
         self.lessonPart = lessonPart
     }
     
+    private func loadTasks() {
+        LessonsDataManager.default.getLessonTasks(for: lessonPart.id!.intValue) { result in
+            switch result {
+            case .success(let tasks):
+                self.lessonTasks = tasks
+                self.updateView()
+                break
+            case .failure(let error):
+                print(error)
+                // TODO
+            }
+        }
+    }
+    
     func showLesson() {
+        loadTasks()
         guard let tasks = lessonPart.tasks?.allObjects as! [LessonTask]? else { return }
         self.lessonTasks = tasks
-        self.viewModels = self.viewModelFactory.construct(from: tasks)
+    }
+    
+    private func updateView() {
+        self.viewModels = self.viewModelFactory.construct(from: self.lessonTasks)
         self.showTask()
     }
     

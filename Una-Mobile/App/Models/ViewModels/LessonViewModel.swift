@@ -18,11 +18,11 @@ struct LessonViewModel: Updateble {
     let levelTitle: String
     
     static func == (lhs: LessonViewModel, rhs: LessonViewModel) -> Bool {
-        let f = lhs.title == rhs.title &&
+        return lhs.id == rhs.id &&
+            lhs.title == rhs.title &&
             lhs.stateText == rhs.stateText &&
             lhs.levelColor.toHexString() == rhs.levelColor.toHexString() &&
             lhs.levelTitle == rhs.levelTitle
-        return f
     }
     
     func isUpdated(rhs: LessonViewModel) -> Bool {

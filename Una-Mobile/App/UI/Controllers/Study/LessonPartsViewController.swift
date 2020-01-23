@@ -27,15 +27,16 @@ class LessonPartsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureNavBar()
+        configure()
         configureTableView()
         
         presenter = LessonPartPresenter(view: self, lesson: lesson)
         presenter.showParts()
     }
     
-    private func configureNavBar() {
+    private func configure() {
         self.title = lesson.title!.uppercased()
+        self.titleLabel.text = lesson.title
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -57,7 +58,6 @@ class LessonPartsViewController: UIViewController {
     @IBAction func openTask(_ sender: Any) {
         guard viewModels.count != 0 else { return }
         router.toTask { (controller) in
-            self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
             controller.lessonPart = self.parts[self.selectedCellIndex]
         }
     }
@@ -67,7 +67,7 @@ class LessonPartsViewController: UIViewController {
 extension LessonPartsViewController: LessonPartView {
     
     func setParts(_ parts: [LessonPart], viewModels: [LessonPartViewModel]) {
-        self.parts = parts
+        self.parts = parts.sorted { $0.id!.intValue < $1.id!.intValue }
         for (index, model) in viewModels.enumerated() {
             if !model.isCompleted {
                 self.selectedCellIndex = index
@@ -104,6 +104,7 @@ extension LessonPartsViewController: UITableViewDelegate, UITableViewDataSource 
     private func updateTable(with models: [LessonPartViewModel]) {
         DispatchQueue.main.async {
             self.tableView.beginUpdates()
+            let models = models.sorted { $0.id < $1.id }
             self.tableView.updateData(data: self.viewModels, newData: models)
             self.viewModels = models
             self.tableView.endUpdates()

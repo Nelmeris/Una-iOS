@@ -59,6 +59,9 @@
 		5781F2FB23DA03F50099265C /* RoundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5781F2FA23DA03F50099265C /* RoundImage.swift */; };
 		5781F2FD23DA05AA0099265C /* LessonPartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5781F2FC23DA05AA0099265C /* LessonPartTableViewCell.swift */; };
 		5785C69F229F035D006F8B20 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5785C69E229F035D006F8B20 /* TaskViewController.swift */; };
+		5799F1A223DA3E05004E208D /* LoadLessonTasksUIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5799F1A123DA3E05004E208D /* LoadLessonTasksUIOperation.swift */; };
+		5799F1A423DA3E8A004E208D /* LoadLessonTasksDatabaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5799F1A323DA3E8A004E208D /* LoadLessonTasksDatabaseOperation.swift */; };
+		5799F1A623DA3ECA004E208D /* SaveLessonTasksDatabaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5799F1A523DA3ECA004E208D /* SaveLessonTasksDatabaseOperation.swift */; };
 		57A343B523D1008D00C734F8 /* Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A343B423D1008D00C734F8 /* Start.swift */; };
 		57A343B823D109C800C734F8 /* UITableViewDataUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A343B723D109C800C734F8 /* UITableViewDataUpdater.swift */; };
 		57A343BA23D10AAC00C734F8 /* ArrayDifference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A343B923D10AAC00C734F8 /* ArrayDifference.swift */; };
@@ -190,6 +193,9 @@
 		5781F2FA23DA03F50099265C /* RoundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImage.swift; sourceTree = "<group>"; };
 		5781F2FC23DA05AA0099265C /* LessonPartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonPartTableViewCell.swift; sourceTree = "<group>"; };
 		5785C69E229F035D006F8B20 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		5799F1A123DA3E05004E208D /* LoadLessonTasksUIOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadLessonTasksUIOperation.swift; sourceTree = "<group>"; };
+		5799F1A323DA3E8A004E208D /* LoadLessonTasksDatabaseOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadLessonTasksDatabaseOperation.swift; sourceTree = "<group>"; };
+		5799F1A523DA3ECA004E208D /* SaveLessonTasksDatabaseOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveLessonTasksDatabaseOperation.swift; sourceTree = "<group>"; };
 		57A343B423D1008D00C734F8 /* Start.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start.swift; sourceTree = "<group>"; };
 		57A343B723D109C800C734F8 /* UITableViewDataUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewDataUpdater.swift; sourceTree = "<group>"; };
 		57A343B923D10AAC00C734F8 /* ArrayDifference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayDifference.swift; sourceTree = "<group>"; };
@@ -444,6 +450,8 @@
 				5781F2DE23D9BD500099265C /* SaveLessonsDatabaseOperation.swift */,
 				5781F2F423D9E1130099265C /* LoadLessonPartsDatabaseOperation.swift */,
 				5781F2EC23D9DA820099265C /* SaveLessonPartsDatabaseOperation.swift */,
+				5799F1A323DA3E8A004E208D /* LoadLessonTasksDatabaseOperation.swift */,
+				5799F1A523DA3ECA004E208D /* SaveLessonTasksDatabaseOperation.swift */,
 			);
 			path = Lessons;
 			sourceTree = "<group>";
@@ -453,6 +461,7 @@
 			children = (
 				5781F2E423D9C4580099265C /* LoadLessonsUIOperation.swift */,
 				5781F2F223D9E0CC0099265C /* LoadLessonPartsUIOperation.swift */,
+				5799F1A123DA3E05004E208D /* LoadLessonTasksUIOperation.swift */,
 			);
 			path = Lessons;
 			sourceTree = "<group>";
@@ -1001,6 +1010,7 @@
 				5781F2CA23D9A06B0099265C /* LoadUserUIOperation.swift in Sources */,
 				57ED2DCE23D848100010B577 /* ProfileEditorRouter.swift in Sources */,
 				57FEBF60229F6FB900148709 /* LessonTaskSubstring.swift in Sources */,
+				5799F1A623DA3ECA004E208D /* SaveLessonTasksDatabaseOperation.swift in Sources */,
 				57153C5723D7A29800D867A7 /* UnaUserProfile.swift in Sources */,
 				5781F2B323D98BD90099265C /* UnaModel.xcdatamodeld in Sources */,
 				57B7278C23CA2DC8008B95C4 /* LessonPartViewPresenter.swift in Sources */,
@@ -1057,6 +1067,7 @@
 				5781F2C323D99C2F0099265C /* LoadUserBackendOperation.swift in Sources */,
 				5781F2B823D992280099265C /* BaseDatabaseOperation.swift in Sources */,
 				5781F2E123D9BF540099265C /* SaveContextDatabaseOperation.swift in Sources */,
+				5799F1A423DA3E8A004E208D /* LoadLessonTasksDatabaseOperation.swift in Sources */,
 				570EB8A523CA1DBD00037211 /* AbstractPostgresRequestFactory.swift in Sources */,
 				57A343BA23D10AAC00C734F8 /* ArrayDifference.swift in Sources */,
 				57FEF3412288E804000A4FD7 /* LoginRouter.swift in Sources */,
@@ -1087,6 +1098,7 @@
 				5781F2DD23D9BD460099265C /* LoadLessonsDatabaseOperation.swift in Sources */,
 				57153C5E23D7B33400D867A7 /* ImageResizing.swift in Sources */,
 				57FEBF58229F28A000148709 /* SetTabBarVisible.swift in Sources */,
+				5799F1A223DA3E05004E208D /* LoadLessonTasksUIOperation.swift in Sources */,
 				57A9D73423C3D226005D1953 /* DesignableViews.swift in Sources */,
 				57FEF2EE2288AFE7000A4FD7 /* AppDelegate.swift in Sources */,
 				57EED4E52297D20A002B8908 /* StudyViewController.swift in Sources */,

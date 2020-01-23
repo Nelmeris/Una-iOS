@@ -29,13 +29,13 @@ class StudyPresenter : StudyViewPresenter {
     }
     
     func showCources() {
-        LessonsDataManager.default.get { result in
+        LessonsDataManager.default.getLessons { result in
             switch result {
             case .success(let lessons):
                 self.lessons = lessons
                 self.updateView()
                 for (index, lesson) in lessons.enumerated() {
-                    LessonsDataManager.default.get(for: Int(lesson.id)) { result in
+                    LessonsDataManager.default.getLessonParts(for: Int(lesson.id)) { result in
                         switch result {
                         case .success(let parts):
                             self.lessons[index].parts = NSSet(array: parts)

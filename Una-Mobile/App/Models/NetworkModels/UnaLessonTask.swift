@@ -26,7 +26,8 @@ class UnaLessonTask {
 
 class UnaLessonTaskFind: UnaLessonTask {
     
-    let answers: [(String, Bool)]
+    let answers: String
+    let rightAnswers: String
     
     required init(from postgresValues: [PostgresValue]) throws {
         let id = try postgresValues[0].int()
@@ -34,15 +35,8 @@ class UnaLessonTaskFind: UnaLessonTask {
         let text = try postgresValues[2].string()
         let partId = try postgresValues[4].int()
         
-        let answersStr = try postgresValues[3].string().components(separatedBy: ", ")
-        let rightAnswersStr = try postgresValues[5].string().components(separatedBy: ", ")
-        
-        var answers: [(String, Bool)] = []
-        for i in 0..<answersStr.count {
-            let isTrue = rightAnswersStr[i] == "true"
-            answers.append((answersStr[i], isTrue))
-        }
-        self.answers = answers
+        self.answers = try postgresValues[3].string()
+        self.rightAnswers = try postgresValues[5].string()
         
         super.init(id: id, partId: partId, title: title, text: text)
     }

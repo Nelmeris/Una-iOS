@@ -120,27 +120,27 @@ class TaskViewController: UIViewController, UIGestureRecognizerDelegate, AlertDe
     }
     
     func setTask(_ task: LessonTaskViewModel, isFirst: Bool, isLast: Bool) {
-        if let viewModel = viewModel,
-            viewModel.progress == task.progress {
-            setTaskText(task.attributedText)
-        } else {
-            UIView.animate(withDuration: animationDuration / 2, animations: {
-                self.textView.alpha = 0
-            }, completion: { animated in
+        DispatchQueue.main.async {
+            if let viewModel = self.viewModel,
+                viewModel.progress == task.progress {
                 self.setTaskText(task.attributedText)
-                UIView.animate(withDuration: self.animationDuration / 2) {
-                    self.textView.alpha = 1
+            } else {
+                UIView.animate(withDuration: self.animationDuration / 2, animations: {
+                    self.textView.alpha = 0
+                }, completion: { animated in
+                    self.setTaskText(task.attributedText)
+                    UIView.animate(withDuration: self.animationDuration / 2) {
+                        self.textView.alpha = 1
+                    }
+                })
+                UIView.animate(withDuration: self.animationDuration) {
+                    self.progressView.setProgress(task.progress, animated: true)
                 }
-            })
-            UIView.animate(withDuration: animationDuration) {
-                self.progressView.setProgress(task.progress, animated: true)
+                
+                self.setHelpMessage(task.helpMessage)
             }
-            
-            setHelpMessage(task.helpMessage)
-//            setPrevButton(isEnabled: !isFirst)
-//            configureNextTaskButton(isLast: isLast)
+            self.viewModel = task
         }
-        self.viewModel = task
     }
     
     private func setTaskText(_ attributedText: NSMutableAttributedString) {

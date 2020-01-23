@@ -15,7 +15,8 @@ struct LessonPartViewModel: Updateble {
     let isCompleted: Bool
     
     static func == (lhs: LessonPartViewModel, rhs: LessonPartViewModel) -> Bool {
-        return lhs.title == rhs.title &&
+        return lhs.id == rhs.id &&
+            lhs.title == rhs.title &&
             lhs.isCompleted == rhs.isCompleted
     }
     

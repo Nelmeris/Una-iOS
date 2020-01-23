@@ -23,6 +23,7 @@ class LessonPartPresenter : LessonPartViewPresenter {
     unowned let view: LessonPartView
     private let viewModelFactory = LessonPartViewModelFactory()
     private let lesson: Lesson
+    private var lessonParts: [LessonPart] = []
     
     required init(view: LessonPartView, lesson: Lesson) {
         self.view = view
@@ -37,17 +38,35 @@ class LessonPartPresenter : LessonPartViewPresenter {
     }
     
     private func loadParts() {
-        LessonsDataManager.default.get(for: Int(lesson.id)) { result in
+        LessonsDataManager.default.getLessonParts(for: Int(lesson.id)) { result in
             switch result {
             case .success(let parts):
-                let viewModels = self.viewModelFactory.construct(from: parts)
-                self.view.setParts(parts, viewModels: viewModels)
+                self.lessonParts = parts
+                self.updateView()
+                for (index, part) in parts.enumerated() {
+                    LessonsDataManager.default.getLessonTasks(for: part.id!.intValue) { result in
+                        switch result {
+                        case .success(let tasks):
+                            self.lessonParts[index].tasks = NSSet(array: tasks)
+                            self.updateView()
+                            break
+                        case .failure(let error):
+                            print(error)
+                            // TODO
+                        }
+                    }
+                }
                 break
             case .failure(let error):
                 print(error)
                 // TODO
             }
         }
+    }
+    
+    private func updateView() {
+        let viewModels = self.viewModelFactory.construct(from: lessonParts)
+        self.view.setParts(self.lessonParts, viewModels: viewModels)
     }
     
 }
