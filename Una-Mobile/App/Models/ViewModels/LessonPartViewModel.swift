@@ -8,21 +8,31 @@
 
 import Foundation
 
-struct LessonPartViewModel: Hashable {
+struct LessonPartViewModel: Updateble {
     
+    let id: Int
     let title: String
+    
+    static func == (lhs: LessonPartViewModel, rhs: LessonPartViewModel) -> Bool {
+        return lhs.title == rhs.title
+    }
+    
+    func isUpdated(rhs: LessonPartViewModel) -> Bool {
+        return self != rhs && self.id == rhs.id
+    }
     
 }
 
 final class LessonPartViewModelFactory {
     
-    func construct(from parts: [UnaLessonPart]) -> [LessonPartViewModel] {
+    func construct(from parts: [LessonPart]) -> [LessonPartViewModel] {
         return parts.compactMap(self.viewModel)
     }
     
-    private func viewModel(from part: UnaLessonPart) -> LessonPartViewModel {
-        let title = part.title
-        return LessonPartViewModel(title: title)
+    private func viewModel(from part: LessonPart) -> LessonPartViewModel {
+        let id = part.id!.intValue
+        let title = part.title!
+        return LessonPartViewModel(id: id, title: title)
     }
     
 }

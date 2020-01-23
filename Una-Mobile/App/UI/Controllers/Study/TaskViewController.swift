@@ -14,7 +14,7 @@ class TaskViewController: UIViewController, UIGestureRecognizerDelegate, AlertDe
     private var presenter: LessonTaskViewPresenter!
     private let storyboardName = "Study"
     
-    var lessonPart: UnaLessonPart!
+    var lessonPart: LessonPart!
     private var viewModel: LessonTaskViewModel!
     private let animationDuration = 0.8
     
@@ -82,7 +82,7 @@ class TaskViewController: UIViewController, UIGestureRecognizerDelegate, AlertDe
     
     // Навигационная панель
     private func configureNavigationController() {
-        self.title = lessonPart.title.uppercased()
+        self.title = lessonPart.title!.uppercased()
         let navBar = self.navigationController?.navigationBar
         navBar?.setBackgroundImage(UIImage(), for: .default)
         navBar?.shadowImage = UIImage()

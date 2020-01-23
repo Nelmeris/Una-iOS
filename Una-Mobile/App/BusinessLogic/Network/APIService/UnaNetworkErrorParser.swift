@@ -11,14 +11,15 @@ import SwiftyJSON
 import Moya
 
 enum UnaResponseError: Error, LocalizedError {
-    case notJSON
+    case notJSON(data: Data)
     case badCredentials
     case unknown(code: Int, message: String)
     
     public var errorDescription: String? {
         switch self {
-        case .notJSON:
-            return NSLocalizedString("Некорректные данные", comment: "")
+        case .notJSON(let data):
+            let str = String(data: data, encoding: .utf8)
+            return NSLocalizedString("Некорректные данные c сервера: \(str ?? "nil")", comment: "")
         case .badCredentials:
             return NSLocalizedString("Неверные логин или пароль", comment: "")
         case .unknown(let code, let message):
@@ -44,7 +45,7 @@ class UnaNetworkErrorParser: AbstractErrorParser {
             }
             return UnaResponseError.unknown(code: data.statusCode, message: json.rawString()!)
         } catch {
-            return UnaResponseError.notJSON
+            return UnaResponseError.notJSON(data: data.data)
         }
     }
     

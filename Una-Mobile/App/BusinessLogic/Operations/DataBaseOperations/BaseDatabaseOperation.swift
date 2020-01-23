@@ -1,5 +1,5 @@
 //
-//  BaseDataBaseOperation.swift
+//  BaseDatabaseOperation.swift
 //  Una-Mobile
 //
 //  Created by Artem Kufaev on 23.01.2020.
@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-class BaseDataBaseOperation: AsyncOperation {
+class BaseDatabaseOperation: AsyncOperation {
     
     static var queue = OperationQueue()
     let context: NSManagedObjectContext

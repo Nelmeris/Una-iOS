@@ -9,7 +9,7 @@
 import Foundation
 
 protocol StudyView: class {
-    func setCources(lessons: [UnaLesson], viewModels: [LessonViewModel])
+    func setCources(lessons: [Lesson], viewModels: [LessonViewModel])
 }
 
 protocol StudyViewPresenter {
@@ -22,50 +22,41 @@ class StudyPresenter : StudyViewPresenter {
     
     unowned let view: StudyView
     private let viewModelFactory = LessonViewModelFactory()
-    private var lessons: [UnaLesson] = []
+    private var lessons: [Lesson] = []
     
     required init(view: StudyView) {
         self.view = view
     }
     
     func showCources() {
-        loadData { lessons in
-            self.lessons = lessons
-            for (i, _) in self.lessons.enumerated() {
-                self.loadParts(for: self.lessons[i]) { lesson in
-                    self.lessons[i] = lesson
-                    self.updateView()
+        LessonsDataManager.default.get { result in
+            switch result {
+            case .success(let lessons):
+                self.lessons = lessons
+                self.updateView()
+                for (index, lesson) in lessons.enumerated() {
+                    LessonsDataManager.default.get(for: Int(lesson.id)) { result in
+                        switch result {
+                        case .success(let parts):
+                            self.lessons[index].parts = NSSet(array: parts)
+                            self.updateView()
+                            break
+                        case .failure(let error):
+                            print(error)
+                            // TODO
+                        }
+                    }
                 }
+            case .failure(let error):
+                print(error)
+                // TODO
             }
-            self.updateView()
         }
     }
     
     private func updateView() {
         let viewModels = self.viewModelFactory.construct(from: lessons)
         self.view.setCources(lessons: lessons, viewModels: viewModels)
-    }
-    
-    private func loadData(completion: @escaping ([UnaLesson]) -> ()) {
-        do {
-            try UnaDBService.shared.getLessons { lessons in
-                completion(lessons)
-            }
-        } catch {
-            print(error)
-        }
-    }
-    
-    private func loadParts(for lesson: UnaLesson, completion: @escaping (UnaLesson) -> ()) {
-        var lesson = lesson
-        do {
-            try UnaDBService.shared.getLessonParts(for: lesson.id) { parts in
-                lesson.parts = parts
-                completion(lesson)
-            }
-        } catch {
-            print(error)
-        }
     }
     
 }

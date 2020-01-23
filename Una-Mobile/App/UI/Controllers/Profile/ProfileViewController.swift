@@ -44,12 +44,18 @@ class ProfileViewController: UIViewController, AlertDelegate {
     }
     
     private func showUser() {
-        AuthManager.shared.getUser { (user, error) in
+        guard let userEmail = AuthManager.shared.userEmail else {
+            AuthManager.shared.logout()
+            return
+        }
+        UserDataManager.default.get(with: userEmail) { result in
             DispatchQueue.main.async {
-                if let error = error {
+                switch result {
+                case .success(let user):
+                    self.user = user
+                case .failure(let error):
                     self.showJustAlert(title: "Operation Error", message: error.localizedDescription)
                 }
-                self.user = user
             }
         }
     }

@@ -11,8 +11,8 @@ import UIKit
 class LessonPartsViewController: UIViewController {
     
     // MARK: - Properties
-    var lesson: UnaLesson!
-    private var parts: [UnaLessonPart] = []
+    var lesson: Lesson!
+    private var parts: [LessonPart] = []
     private var viewModels: [LessonPartViewModel] = []
     private var presenter: LessonPartPresenter!
     
@@ -31,7 +31,7 @@ class LessonPartsViewController: UIViewController {
     }
     
     private func configureNavBar() {
-        self.title = lesson.title.uppercased()
+        self.title = lesson.title!.uppercased()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -51,7 +51,7 @@ class LessonPartsViewController: UIViewController {
 
 extension LessonPartsViewController: LessonPartView {
     
-    func setParts(_ parts: [UnaLessonPart], viewModels: [LessonPartViewModel]) {
+    func setParts(_ parts: [LessonPart], viewModels: [LessonPartViewModel]) {
         self.parts = parts
         self.updateTable(with: viewModels)
     }

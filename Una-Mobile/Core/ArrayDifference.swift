@@ -8,15 +8,20 @@
 
 import Foundation
 
-extension Array where Element: Hashable {
+protocol Updateble: Hashable {
+    func isUpdated(rhs: Self) -> Bool
+}
+
+extension Array where Element: Updateble {
     
     enum DataUpdateType {
-        case deleted, added
+        case deleted, added, updated, moved
     }
     
     struct DataUpdateInfo {
         let type: DataUpdateType
         let index: Int
+        let oldIndex: Int?
     }
     
     func difference(from other: [Element]) -> [Element] {
@@ -26,24 +31,23 @@ extension Array where Element: Hashable {
     }
     
     func updateInforms(from other: [Element]) -> [DataUpdateInfo] {
-        let array = self
         let different = self.difference(from: other)
         var updateInforms = [DataUpdateInfo]()
         for diffElement in different {
-            if (self.contains(diffElement)) {
-                for index in 0...array.count {
-                    if array[index] == diffElement {
-                        updateInforms.append(DataUpdateInfo(type: .deleted, index: index))
-                        break
-                    }
+            let indexInSelf = self.firstIndex { $0 == diffElement || $0.isUpdated(rhs: diffElement) }
+            let indexInOther = other.firstIndex { $0 == diffElement || $0.isUpdated(rhs: diffElement) }
+            if let indexInSelf = indexInSelf,
+                let indexInOther = indexInOther,
+                self[indexInSelf].isUpdated(rhs: other[indexInOther]) {
+                if indexInSelf == indexInOther {
+                    updateInforms.append(DataUpdateInfo(type: .updated, index: indexInOther, oldIndex: nil))
+                } else {
+                    updateInforms.append(DataUpdateInfo(type: .moved, index: indexInOther, oldIndex: indexInSelf))
                 }
-            } else {
-                for index in 0...other.count {
-                    if other[index] == diffElement {
-                        updateInforms.append(DataUpdateInfo(type: .added, index: index))
-                        break
-                    }
-                }
+            } else if let indexInSelf = indexInSelf {
+                updateInforms.append(DataUpdateInfo(type: .deleted, index: indexInSelf, oldIndex: nil))
+            } else if let indexInOther = indexInOther {
+                updateInforms.append(DataUpdateInfo(type: .added, index: indexInOther, oldIndex: nil))
             }
         }
         return updateInforms

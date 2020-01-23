@@ -115,7 +115,7 @@ struct LessonTaskViewModel {
 
 final class LessonTaskViewModelFactory {
     
-    func construct(from tasks: [UnaLessonTask]) -> [LessonTaskViewModel] {
+    func construct(from tasks: [LessonTask]) -> [LessonTaskViewModel] {
         var models: [LessonTaskViewModel] = []
         var number = 0
         tasks.forEach { task in
@@ -125,9 +125,9 @@ final class LessonTaskViewModelFactory {
         return models
     }
     
-    private func viewModel(from task: UnaLessonTask, number: Int, count: Int) -> LessonTaskViewModel {
-        var text = task.text
-        let helpMessage = task.title
+    private func viewModel(from task: LessonTask, number: Int, count: Int) -> LessonTaskViewModel {
+        var text = task.text!
+        let helpMessage = task.title!
         let progress = Float(number) / Float(count)
         var substrings: [LessonTaskSubstring] = []
         

@@ -161,12 +161,13 @@ class ProfileEditorViewController: UIViewController, UITextFieldDelegate, AlertD
         self.user.country = country.trimmingCharacters(in: .whitespaces)
         self.user.city = city.trimmingCharacters(in: .whitespaces)
         self.user.birthday = birthday
-        AuthManager.shared.saveUserChanges(user) { error in
+        UserDataManager.default.save(user) { result in
             DispatchQueue.main.async {
-                if let error = error {
-                    self.showJustAlert(title: "Operation Error", message: error.localizedDescription)
-                } else {
+                switch result {
+                case .success:
                     self.router.backToProfile(animated: true)
+                case .failure(let error):
+                    self.showJustAlert(title: "Operation Error", message: error.localizedDescription)
                 }
             }
         }

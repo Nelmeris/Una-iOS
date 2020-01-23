@@ -23,9 +23,9 @@ class LoadUserUIOperation: BaseUIOperation {
     private let dbQueue: OperationQueue
     private let backendQueue: OperationQueue
     
-    let loadFromDatabase: LoadUserDataBaseOperation
+    let loadFromDatabase: LoadUserDatabaseOperation
     let loadFromBackend: LoadUserBackendOperation
-    var saveToDatabase: SaveBackendUserDataBaseOperation?
+    var saveToDatabase: SaveUserDatabaseOperation?
     
     private(set) var result: LoadUserUIOperationResult? { didSet { finish() } }
     private var user: User?
@@ -41,7 +41,7 @@ class LoadUserUIOperation: BaseUIOperation {
         self.dbQueue = dbQueue
         self.backendQueue = backendQueue
         
-        loadFromDatabase = LoadUserDataBaseOperation(context: context, userEmail: userEmail)
+        loadFromDatabase = LoadUserDatabaseOperation(context: context, userEmail: userEmail)
         loadFromBackend = LoadUserBackendOperation(userEmail: userEmail)
         
         super.init()
@@ -91,7 +91,7 @@ class LoadUserUIOperation: BaseUIOperation {
     }
     
     private func startSaveToDB(authUser: UnaAuthUser, userProfile: UnaUserProfile) {
-        let saveToDatabase = SaveBackendUserDataBaseOperation(context: context, authUser: authUser, userProfile: userProfile)
+        let saveToDatabase = SaveUserDatabaseOperation(context: context, authUser: authUser, userProfile: userProfile)
         self.saveToDatabase = saveToDatabase
         let saveToDatabaseCompletion = BlockOperation(block: self.saveToDababaseCompletion)
         saveToDatabaseCompletion.addDependency(saveToDatabase)

@@ -9,11 +9,11 @@
 import Foundation
 
 protocol LessonPartView: class {
-    func setParts(_ parts: [UnaLessonPart], viewModels: [LessonPartViewModel])
+    func setParts(_ parts: [LessonPart], viewModels: [LessonPartViewModel])
 }
 
 protocol LessonPartViewPresenter {
-    init(view: LessonPartView, lesson: UnaLesson)
+    init(view: LessonPartView, lesson: Lesson)
     func showParts()
 }
 
@@ -22,28 +22,17 @@ class LessonPartPresenter : LessonPartViewPresenter {
     
     unowned let view: LessonPartView
     private let viewModelFactory = LessonPartViewModelFactory()
-    private let lesson: UnaLesson
+    private let lesson: Lesson
     
-    required init(view: LessonPartView, lesson: UnaLesson) {
+    required init(view: LessonPartView, lesson: Lesson) {
         self.view = view
         self.lesson = lesson
     }
     
     func showParts() {
-        loadData { parts in
-            let viewModels = self.viewModelFactory.construct(from: parts)
-            self.view.setParts(parts, viewModels: viewModels)
-        }
-    }
-    
-    private func loadData(completion: @escaping ([UnaLessonPart]) -> ()) {
-        do {
-            try UnaDBService.shared.getLessonParts(for: lesson.id) { parts in
-                completion(parts)
-            }
-        } catch {
-            print(error)
-        }
+        guard let parts = lesson.parts?.allObjects as! [LessonPart]? else { return }
+        let viewModels = self.viewModelFactory.construct(from: parts)
+        self.view.setParts(parts, viewModels: viewModels)
     }
     
 }

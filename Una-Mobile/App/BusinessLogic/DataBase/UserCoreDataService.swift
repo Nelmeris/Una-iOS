@@ -11,20 +11,27 @@ import CoreData
 
 class UserCoreDataService: BaseCoreDataService {
     
-    func loadUsers() throws -> [User] {
-        let request: NSFetchRequest<User> = NSFetchRequest(entityName: "User")
+    private let entityName = "User"
+    
+    func load() throws -> [User] {
+        let request: NSFetchRequest<User> = NSFetchRequest(entityName: entityName)
         request.sortDescriptors = [ NSSortDescriptor(key: "id", ascending: false) ]
         return try context.fetch(request)
     }
     
-    func loadUser(email: String) throws -> User? {
-        let request: NSFetchRequest<User> = NSFetchRequest(entityName: "User")
+    func load(email: String) throws -> User? {
+        let request: NSFetchRequest<User> = NSFetchRequest(entityName: entityName)
         request.predicate = NSPredicate(format: "email = %@", email)
         return try context.fetch(request).first
     }
     
-    func saveUser(authUser: UnaAuthUser, profile: UnaUserProfile, completion: @escaping (Error?) -> ()) throws -> User {
-        let user = try loadUser(email: authUser.email) ?? User(context: context)
+    enum SaveResult {
+        case success(User)
+        case failure(Error)
+    }
+    
+    func save(authUser: UnaAuthUser, profile: UnaUserProfile, completion: @escaping (SaveResult) -> ()) throws {
+        let user = try load(email: authUser.email) ?? User(context: context)
         user.id = Int64(authUser.id)
         user.email = authUser.email
         user.name = authUser.firstName
@@ -34,8 +41,13 @@ class UserCoreDataService: BaseCoreDataService {
         if let birthday = profile.date {
             user.birthday = UserCoreDataService.dateFormatter.date(from: birthday)
         }
-        saveContext { completion($0) }
-        return user
+        saveContext {
+            if let error = $0 {
+                completion(.failure(error))
+            } else {
+                completion(.success(user))
+            }
+        }
     }
     
     static var dateFormatter: DateFormatter = {
@@ -43,5 +55,10 @@ class UserCoreDataService: BaseCoreDataService {
         dateFormatter.dateFormat = "dd.MM.yyyy"
         return dateFormatter
     }()
+    
+    func removeAll() throws {
+        let data = try self.load()
+        data.forEach { self.context.delete($0) }
+    }
     
 }

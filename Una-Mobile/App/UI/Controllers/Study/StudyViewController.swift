@@ -13,7 +13,7 @@ class StudyViewController: UITableViewController, StudyView {
     // MARK: - Properties
     
     private var viewModels: [LessonViewModel] = []
-    private var lessons: [UnaLesson] = []
+    private var lessons: [Lesson] = []
     private let reusableId = "StudyTableViewCellReusable"
     private var presenter: StudyViewPresenter!
     
@@ -63,7 +63,7 @@ class StudyViewController: UITableViewController, StudyView {
         router.toProfile()
     }
     
-    func setCources(lessons: [UnaLesson], viewModels: [LessonViewModel]) {
+    func setCources(lessons: [Lesson], viewModels: [LessonViewModel]) {
         self.lessons = lessons
         self.updateTable(with: viewModels)
     }
@@ -93,9 +93,12 @@ extension StudyViewController {
     }
     
     private func updateTable(with models: [LessonViewModel]) {
-        self.viewModels = models
+        let oldModels = self.viewModels
         DispatchQueue.main.async {
-            self.tableView.updateData(data: self.viewModels, newData: models)
+            self.tableView.beginUpdates()
+            self.viewModels = models
+            self.tableView.updateData(data: oldModels, newData: models, insertAnimation: .automatic, deleteAnimation: .automatic, reloadAnimation: .none)
+            self.tableView.endUpdates()
         }
     }
     

@@ -13,8 +13,22 @@ class Start {
     static public let shared = Start()
     private init() {
         BaseUIOperation.queue.maxConcurrentOperationCount = 1
-        BaseDataBaseOperation.queue.maxConcurrentOperationCount = 1
+        BaseDatabaseOperation.queue.maxConcurrentOperationCount = 1
         BaseBackendOperation.queue.maxConcurrentOperationCount = 1
+        AuthManager.shared.logout()
+        let context = BaseCoreDataService.persistentContainer.viewContext
+        let userCD = UserCoreDataService(context: context)
+        let lessonCD = LessonCoreDataService(context: context)
+        let lessonPartCD = LessonPartCoreDataService(context: context)
+        let lessonTaskCD = LessonTaskCoreDataService(context: context)
+        do {
+            try userCD.removeAll()
+            try lessonCD.removeAll()
+            try lessonPartCD.removeAll()
+            try lessonTaskCD.removeAll()
+        } catch {
+            print(error)
+        }
 //        UserDefaults.standard.removeObject(forKey: isWelcomeKey)
 //        AuthService.shared.logout()
     }

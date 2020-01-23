@@ -1,5 +1,5 @@
 //
-//  SaveUserDataBaseOperation.swift
+//  SaveContextDatabaseOperation.swift
 //  Una-Mobile
 //
 //  Created by Artem Kufaev on 23.01.2020.
@@ -9,24 +9,18 @@
 import Foundation
 import CoreData
 
-enum SaveUserDataBaseOperationResult {
+enum SaveContextDatabaseOperationResult {
     case success
     case failure(Error)
 }
 
-class SaveUserDataBaseOperation: BaseDataBaseOperation {
+class SaveContextDatabaseOperation: BaseDatabaseOperation {
     
-    private(set) var result: SaveUserDataBaseOperationResult? { didSet { finish() } }
-    private let user: User
-    
-    init(context: NSManagedObjectContext, user: User) {
-        self.user = user
-        super.init(context: context)
-    }
+    private(set) var result: SaveContextDatabaseOperationResult? { didSet { finish() } }
     
     override func main() {
         guard !self.isCancelled else { return }
-        let dbService = UserCoreDataService(context: context)
+        let dbService = BaseCoreDataService(context: context)
         dbService.saveContext { error in
             if let error = error {
                 self.result = .failure(error)

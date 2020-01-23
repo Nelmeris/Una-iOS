@@ -22,7 +22,7 @@ class SaveUserUIOperation: BaseUIOperation {
     private let dbQueue: OperationQueue
     private let backendQueue: OperationQueue
     
-    let saveToDatabase: SaveUserDataBaseOperation
+    let saveToDatabase: SaveUserDatabaseOperation
     let saveToBackend: SaveUserBackendOperation
     
     private(set) var result: SaveUserUIOperationResult? { didSet { finish() } }
@@ -40,12 +40,12 @@ class SaveUserUIOperation: BaseUIOperation {
         
         let authUser = UnaAuthUser(from: user)
         let userProfile = UnaUserProfile(from: user)
-        saveToDatabase = SaveUserDataBaseOperation(context: context, user: user)
+        saveToDatabase = SaveUserDatabaseOperation(context: context, authUser: authUser, userProfile: userProfile)
         saveToBackend = SaveUserBackendOperation(authUser: authUser, userProfile: userProfile)
         
         super.init()
         
-        let saveToDBCompletion = BlockOperation(block: self.saveToDataBaseCompletion)
+        let saveToDBCompletion = BlockOperation(block: self.saveToDatabaseCompletion)
         saveToDBCompletion.addDependency(saveToDatabase)
         commonQueue.addOperation(saveToDBCompletion)
         dbQueue.addOperation(saveToDatabase)
@@ -59,7 +59,7 @@ class SaveUserUIOperation: BaseUIOperation {
         self.addDependency(saveToBackendCompletion)
     }
     
-    private func saveToDataBaseCompletion() {
+    private func saveToDatabaseCompletion() {
         guard let result = saveToDatabase.result else { fatalError() }
         switch result {
         case .failure(let error):

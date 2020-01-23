@@ -14,7 +14,7 @@ protocol LessonTaskView: class {
 }
 
 protocol LessonTaskViewPresenter {
-    init(view: LessonTaskView, lessonPart: UnaLessonPart)
+    init(view: LessonTaskView, lessonPart: LessonPart)
     func showLesson()
     func showNextTask()
     func showPrevTask()
@@ -27,33 +27,22 @@ class LessonTaskPresenter : LessonTaskViewPresenter {
     
     unowned let view: LessonTaskView
     
-    private var lessonTasks: [UnaLessonTask] = []
-    private let lessonPart: UnaLessonPart
+    private var lessonTasks: [LessonTask] = []
+    private let lessonPart: LessonPart
     private var viewModels: [LessonTaskViewModel] = []
     private let viewModelFactory = LessonTaskViewModelFactory()
     private var currentTask = 0
     
-    required init(view: LessonTaskView, lessonPart: UnaLessonPart) {
+    required init(view: LessonTaskView, lessonPart: LessonPart) {
         self.view = view
         self.lessonPart = lessonPart
     }
     
-    private func loadData(completion: @escaping ([UnaLessonTask]) -> ()) {
-        do {
-            try UnaDBService.shared.getTasks(for: lessonPart.id) { tasks in
-                completion(tasks)
-            }
-        } catch {
-            print(error)
-        }
-    }
-    
     func showLesson() {
-        loadData { tasks in
-            self.lessonTasks = tasks
-            self.viewModels = self.viewModelFactory.construct(from: tasks)
-            self.showTask()
-        }
+        guard let tasks = lessonPart.tasks?.allObjects as! [LessonTask]? else { return }
+        self.lessonTasks = tasks
+        self.viewModels = self.viewModelFactory.construct(from: tasks)
+        self.showTask()
     }
     
     func showNextTask() {

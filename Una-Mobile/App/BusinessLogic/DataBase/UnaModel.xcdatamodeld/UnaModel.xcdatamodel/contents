@@ -2,8 +2,8 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Lesson" representedClassName="Lesson" syncable="YES" codeGenerationType="class">
         <attribute name="descript" attributeType="String"/>
-        <attribute name="difficulity" attributeType="String" regularExpressionString="^[ABC][12]$"/>
-        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="difficulty" attributeType="String" regularExpressionString="^[ABC][12]$"/>
+        <attribute name="id" attributeType="Integer 64" usesScalarValueType="YES"/>
         <attribute name="title" attributeType="String"/>
         <relationship name="parts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="LessonPart" inverseName="lesson" inverseEntity="LessonPart"/>
     </entity>
@@ -16,6 +16,8 @@
     </entity>
     <entity name="LessonTask" representedClassName="LessonTask" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="text" attributeType="String"/>
+        <attribute name="title" attributeType="String"/>
         <relationship name="lessonPart" maxCount="1" deletionRule="Cascade" destinationEntity="LessonPart" inverseName="tasks" inverseEntity="LessonPart"/>
     </entity>
     <entity name="Statistic" representedClassName="Statistic" syncable="YES" codeGenerationType="class">
@@ -40,7 +42,7 @@
     <elements>
         <element name="Lesson" positionX="9.26171875" positionY="306.96875" width="128" height="118"/>
         <element name="LessonPart" positionX="296.94921875" positionY="548.265625" width="128" height="118"/>
-        <element name="LessonTask" positionX="272.72265625" positionY="178.171875" width="128" height="73"/>
+        <element name="LessonTask" positionX="272.72265625" positionY="178.171875" width="128" height="103"/>
         <element name="Statistic" positionX="263.5" positionY="10.97265625" width="128" height="133"/>
         <element name="User" positionX="-54" positionY="-9" width="128" height="178"/>
     </elements>

@@ -8,30 +8,42 @@
 
 import UIKit
 
-struct LessonViewModel: Hashable {
+struct LessonViewModel: Updateble {
     
+    let id: Int
     let title: String
     let stateText: String
-    let progress: Float
     let levelColor: UIColor
     let levelTitle: String
+    
+    static func == (lhs: LessonViewModel, rhs: LessonViewModel) -> Bool {
+        let f = lhs.title == rhs.title &&
+            lhs.stateText == rhs.stateText &&
+            lhs.levelColor.toHexString() == rhs.levelColor.toHexString() &&
+            lhs.levelTitle == rhs.levelTitle
+        return f
+    }
+    
+    func isUpdated(rhs: LessonViewModel) -> Bool {
+        return self != rhs && self.id == rhs.id
+    }
     
 }
 
 final class LessonViewModelFactory {
     
-    func construct(from lessons: [UnaLesson]) -> [LessonViewModel] {
+    func construct(from lessons: [Lesson]) -> [LessonViewModel] {
         return lessons.compactMap(self.viewModel)
     }
     
-    private func viewModel(from lesson: UnaLesson) -> LessonViewModel {
-        let title = lesson.title
+    private func viewModel(from lesson: Lesson) -> LessonViewModel {
+        let id = Int(lesson.id)
+        let title = lesson.title!
         let stateText = "\(0) ИЗ \(lesson.parts?.count ?? 0) УРОКОВ"
-        let progress = Float(0) / Float(lesson.parts?.count ?? 0)
-        let difficulty = DifficultyLevel(rawValue: lesson.difficulty)
+        let difficulty = DifficultyLevel(rawValue: lesson.difficulty!)
         let levelColor = difficulty!.color()
         let levelTitle = difficulty!.rawValue
-        return LessonViewModel(title: title, stateText: stateText, progress: progress, levelColor: levelColor, levelTitle: levelTitle)
+        return LessonViewModel(id: id, title: title, stateText: stateText, levelColor: levelColor, levelTitle: levelTitle)
     }
     
 }

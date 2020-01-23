@@ -1,5 +1,5 @@
 //
-//  SaveUserDataBaseOperation.swift
+//  SaveUserDatabaseOperation.swift
 //  Una-Mobile
 //
 //  Created by Artem Kufaev on 23.01.2020.
@@ -9,14 +9,14 @@
 import Foundation
 import CoreData
 
-enum SaveBackendUserDataBaseOperationResult {
+enum SaveUserDatabaseOperationResult {
     case success(User)
     case failure(Error)
 }
 
-class SaveBackendUserDataBaseOperation: BaseDataBaseOperation {
+class SaveUserDatabaseOperation: BaseDatabaseOperation {
     
-    private(set) var result: SaveBackendUserDataBaseOperationResult? { didSet { finish() } }
+    private(set) var result: SaveUserDatabaseOperationResult? { didSet { finish() } }
     private let authUser: UnaAuthUser
     private let userProfile: UnaUserProfile
     
@@ -30,12 +30,14 @@ class SaveBackendUserDataBaseOperation: BaseDataBaseOperation {
         guard !self.isCancelled else { return }
         let dbService = UserCoreDataService(context: context)
         do {
-            let user = try dbService.saveUser(authUser: authUser, profile: userProfile) { error in
-                if let error = error {
+            try dbService.save(authUser: authUser, profile: userProfile) { result in
+                switch result {
+                case .success(let user):
+                    self.result = .success(user)
+                case .failure(let error):
                     self.result = .failure(error)
                 }
             }
-            self.result = .success(user)
         } catch {
             self.result = .failure(error)
         }

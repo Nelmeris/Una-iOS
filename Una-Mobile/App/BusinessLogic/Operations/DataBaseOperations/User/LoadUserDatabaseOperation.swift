@@ -1,5 +1,5 @@
 //
-//  LoadUserDataBaseOperation.swift
+//  LoadUserDatabaseOperation.swift
 //  Una-Mobile
 //
 //  Created by Artem Kufaev on 23.01.2020.
@@ -9,15 +9,15 @@
 import Foundation
 import CoreData
 
-enum LoadUserDataBaseOperationResult {
+enum LoadUserDatabaseOperationResult {
     case success(User)
     case notFound
     case failure(Error)
 }
 
-class LoadUserDataBaseOperation: BaseDataBaseOperation {
+class LoadUserDatabaseOperation: BaseDatabaseOperation {
     
-    private(set) var result: LoadUserDataBaseOperationResult? { didSet { finish() } }
+    private(set) var result: LoadUserDatabaseOperationResult? { didSet { finish() } }
     private let email: String
     
     init(context: NSManagedObjectContext, userEmail: String) {
@@ -29,7 +29,7 @@ class LoadUserDataBaseOperation: BaseDataBaseOperation {
         guard !self.isCancelled else { return }
         let dbService = UserCoreDataService(context: context)
         do {
-            guard let user = try dbService.loadUser(email: email) else {
+            guard let user = try dbService.load(email: email) else {
                 self.result = .notFound
                 return
             }
