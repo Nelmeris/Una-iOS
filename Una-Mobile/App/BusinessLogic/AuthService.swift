@@ -16,7 +16,7 @@ final class AuthService {
     
     private let accessTokenKey = "access_token"
     private let accessTokenRefreshKey = "access_token_refresh"
-    private let usernameKey = "username"
+    private let userEmailKey = "user_email"
     
     func isAuth() -> Bool {
         return Keychain.load(accessTokenKey) != nil
@@ -32,7 +32,7 @@ final class AuthService {
                 completion(false, nil)
                 return
             }
-            guard Keychain.save(email, forKey: self.usernameKey),
+            guard Keychain.save(email, forKey: self.userEmailKey),
                 Keychain.save(token.access, forKey: self.accessTokenKey),
                 Keychain.save(token.refresh, forKey: self.accessTokenRefreshKey) else { fatalError() }
             completion(true, nil)
@@ -40,7 +40,7 @@ final class AuthService {
     }
     
     func logout() {
-        _ = Keychain.delete(usernameKey)
+        _ = Keychain.delete(userEmailKey)
         _ = Keychain.delete(accessTokenKey)
         _ = Keychain.delete(accessTokenRefreshKey)
         goToAuth()
@@ -63,56 +63,86 @@ final class AuthService {
         Keychain.load(accessTokenRefreshKey)
     }
     
-    var username: String? {
-        Keychain.load(usernameKey)
+    var userEmail: String? {
+        Keychain.load(userEmailKey)
     }
     
-    private var userCache: TUser?
+    var group = DispatchGroup()
     
-    func getUser(completion: @escaping (TUser?) -> ()) {
-        if let user = userCache {
-            completion(user)
-            return
-        }
-        guard let username = AuthService.shared.username else {
+    func getUser(completion: @escaping (User?) -> ()) {
+        guard let email = AuthService.shared.userEmail else {
             completion(nil)
             return
         }
-        do {
-            try UnaDBService.shared.getUser(with: username) { user in
-                guard let user = user else { fatalError() }
-                do {
-                    try UnaDBService.shared.getUserProfile(with: user.id) { profile in
-                        guard let profile = profile else { fatalError() }
-                        let user = TUser(user: user, profile: profile)
-                        self.userCache = user
+        let context = BaseCoreDataService.persistentContainer.viewContext
+        let db = UserCoreDataService(context: context)
+        DispatchQueue.global().async {
+            do {
+                if let user = try db.loadUsers(email: email).first {
+                    DispatchQueue.main.async {
                         completion(user)
                     }
-                } catch {
-                    print(error)
                 }
-            }
-        } catch {
-            print(error)
+                self.group.wait()
+                self.group.enter()
+                try UnaDBService.shared.getUser(with: email) { user in
+                    guard let user = user else { fatalError() }
+                    do {
+                        try UnaDBService.shared.getUserProfile(with: user.id) { profile in
+                            self.group.leave()
+                            guard let profile = profile else { fatalError() }
+                            do {
+                                let dbUser = try db.saveUser(authUser: user, profile: profile) { error in
+                                    if let error = error {
+                                        print(error)
+                                    }
+                                }
+                                DispatchQueue.main.async {
+                                    completion(dbUser)
+                                }
+                            } catch {
+                                print(error)
+                            }
+                        }
+                    } catch {
+                        print(error)
+                    }
+                }
+            } catch {
+               print(error)
+               completion(nil)
+           }
         }
     }
     
-    func saveUserChanges(_ user: TUser, completion: @escaping () -> ()) {
-        self.userCache = user
+    func saveUserChanges(_ user: User, completion: @escaping () -> ()) {
         let unaAuthUser = UnaAuthUser(from: user)
         let unaUserProfile = UnaUserProfile(from: user)
-        do {
-            try UnaDBService.shared.putUserAuth(with: unaAuthUser) {
-                do {
-                    try UnaDBService.shared.putUserProfile(with: unaUserProfile) {
-                        completion()
-                    }
-                } catch {
+        let context = BaseCoreDataService.persistentContainer.viewContext
+        let db = UserCoreDataService(context: context)
+        DispatchQueue.global().async {
+            db.saveContext { error in
+                DispatchQueue.main.async {
+                    completion()
+                }
+                if let error = error {
                     print(error)
                 }
             }
-        } catch {
-            print(error)
+            do {
+                self.group.wait()
+                self.group.enter()
+                try UnaDBService.shared.putUserAuth(with: unaAuthUser) {
+                    self.group.leave()
+                    do {
+                        try UnaDBService.shared.putUserProfile(with: unaUserProfile) { }
+                    } catch {
+                        print(error)
+                    }
+                }
+            } catch {
+                print(error)
+            }
         }
     }
     

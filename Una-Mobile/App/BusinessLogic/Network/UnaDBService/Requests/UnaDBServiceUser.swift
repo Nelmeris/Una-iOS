@@ -50,7 +50,7 @@ extension UnaDBService: UnaDBServiceUserFactory {
     }
     
     func putUserAuth(with user: UnaAuthUser, completion: @escaping () -> ()) throws {
-        try self.request(with: (getAuthUserUpdateSQL(), [String(user.id), user.firstName, user.lastName, user.email])) { _ in
+        try self.request(with: (getAuthUserUpdateSQL(), [String(user.id), user.firstName, user.lastName, user.email])) { values in
             completion()
         }
     }
@@ -67,7 +67,7 @@ extension UnaDBService: UnaDBServiceUserFactory {
     }
     
     func putUserProfile(with profile: UnaUserProfile, completion: @escaping () -> ()) throws {
-        try self.request(with: (getUserProfileUpdateSQL(), [String(profile.userId), profile.country, profile.city, profile.date ?? ""])) { _ in
+        try self.request(with: (getUserProfileUpdateSQL(), [String(profile.userId), profile.country ?? "", profile.city ?? "", profile.date ?? ""])) { _ in
             completion()
         }
     }

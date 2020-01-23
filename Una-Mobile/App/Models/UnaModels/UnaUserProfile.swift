@@ -13,24 +13,28 @@ struct UnaUserProfile {
     
     let id: Int?
     let userId: Int
-    let country: String
-    let city: String
+    let country: String?
+    let city: String?
     let date: String?
     
     init(from postgresValues: [PostgresValue]) throws {
         id = try postgresValues[0].int()
         userId = try postgresValues[4].int()
-        country = try postgresValues[2].string()
-        city = try postgresValues[3].string()
+        country = try postgresValues[2].optionalString()
+        city = try postgresValues[3].optionalString()
         date = try postgresValues[5].optionalString()
     }
     
-    init(from user: TUser) {
+    init(from user: User) {
         self.id = nil
-        self.userId = user.id
+        self.userId = Int(user.id)
         self.country = user.country
         self.city = user.city
-        self.date = user.birthdayString
+        if let birthday = user.birthday {
+            self.date = UserCoreDataService.dateFormatter.string(from: birthday)
+        } else {
+            self.date = nil
+        }
     }
     
 }

@@ -25,11 +25,11 @@ struct UnaAuthUser {
         lastName = try postgresValues[6].string()
     }
     
-    init(from user: TUser) {
-        self.id = user.id
-        self.email = user.email
-        self.firstName = user.firstName
-        self.lastName = user.lastName
+    init(from user: User) {
+        self.id = Int(user.id)
+        self.email = user.email!
+        self.firstName = user.name!
+        self.lastName = user.surname!
         self.isSuperuser = user.isSuperuser
     }
     

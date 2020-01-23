@@ -12,12 +12,12 @@ class ProfileViewController: UIViewController {
     
     // MARK: - Properties
     
-    private var user: TUser! {
+    private var user: User! {
         willSet {
             guard let user = newValue else { return }
-            nameLabel.text = "\(user.firstName) \(user.lastName)"
+            nameLabel.text = "\(user.name!) \(user.surname!)"
             categoryLabel.text = user.isSuperuser ? "Админ" : "Ученик"
-            locationLabel.text = "\(user.city), \(user.country)"
+            locationLabel.text = "\(user.city ?? ""), \(user.country ?? "")"
         }
     }
     

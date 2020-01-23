@@ -12,7 +12,7 @@ class ProfileEditorViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Properties
     
-    var user: TUser!
+    var user: User!
     
     // MARK: - Outlets
     
@@ -87,7 +87,7 @@ class ProfileEditorViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc private func dateChanged(datePicker: UIDatePicker) {
-        birthdayTextField.text = TUser.dateFormatter.string(from: datePicker.date)
+        birthdayTextField.text = UserCoreDataService.dateFormatter.string(from: datePicker.date)
     }
     
     private func configureNavBar() {
@@ -107,13 +107,13 @@ class ProfileEditorViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func showProfile() {
-        nameTextField.text = user.firstName
-        surnameTextField.text = user.lastName
+        nameTextField.text = user.name
+        surnameTextField.text = user.surname
         cityTextField.text = user.city
         countryTextField.text = user.country
         if let birthday = user.birthday {
             datePicker.setDate(birthday, animated: true)
-            birthdayTextField.text = user.birthdayString
+            birthdayTextField.text = UserCoreDataService.dateFormatter.string(from: birthday)
         }
         emailTextField.text = user.email
     }
@@ -141,7 +141,7 @@ class ProfileEditorViewController: UIViewController, UITextFieldDelegate {
         }
         guard let birthdayStr = birthdayTextField.text,
             !birthdayStr.isEmpty,
-            let birthday = TUser.dateFormatter.date(from: birthdayStr) else {
+            let birthday = UserCoreDataService.dateFormatter.date(from: birthdayStr) else {
             print()
                 return
         }
@@ -155,14 +155,12 @@ class ProfileEditorViewController: UIViewController, UITextFieldDelegate {
         } catch {
             print(error)
         }
-        let user = TUser(id: self.user.id,
-                        email: email.trimmingCharacters(in: .whitespaces),
-                        firstName: name.trimmingCharacters(in: .whitespaces),
-                        lastName: surname.trimmingCharacters(in: .whitespaces),
-                        isSuperuser: self.user.isSuperuser,
-                        country: country.trimmingCharacters(in: .whitespaces),
-                        city: city.trimmingCharacters(in: .whitespaces),
-                        birthday: birthday)
+        self.user.email = email.trimmingCharacters(in: .whitespaces)
+        self.user.name = name.trimmingCharacters(in: .whitespaces)
+        self.user.surname = surname.trimmingCharacters(in: .whitespaces)
+        self.user.country = country.trimmingCharacters(in: .whitespaces)
+        self.user.city = city.trimmingCharacters(in: .whitespaces)
+        self.user.birthday = birthday
         AuthService.shared.saveUserChanges(user) {
             self.router.backToProfile(animated: true)
         }

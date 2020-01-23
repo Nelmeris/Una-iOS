@@ -39,8 +39,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Андрей Петров" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKb-Jx-bTi">
-                                        <rect key="frame" x="104.33333333333333" y="135" width="166.33333333333337" height="27.666666666666657"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Андрей Петров" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKb-Jx-bTi">
+                                        <rect key="frame" x="25" y="135" width="325" height="27.666666666666657"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
                                         <color key="textColor" name="TextColor"/>
                                         <nil key="highlightedColor"/>
@@ -63,6 +63,7 @@
                                     <constraint firstItem="hws-tw-yOb" firstAttribute="centerX" secondItem="BRw-vq-2Tl" secondAttribute="centerX" id="2IW-Wc-8Ib"/>
                                     <constraint firstItem="kKb-Jx-bTi" firstAttribute="centerX" secondItem="BRw-vq-2Tl" secondAttribute="centerX" id="Dfo-1j-Px7"/>
                                     <constraint firstItem="XSC-Va-xeH" firstAttribute="centerX" secondItem="BRw-vq-2Tl" secondAttribute="centerX" id="I93-5v-IfD"/>
+                                    <constraint firstItem="kKb-Jx-bTi" firstAttribute="leading" secondItem="BRw-vq-2Tl" secondAttribute="leading" constant="25" id="XbC-1o-IU8"/>
                                     <constraint firstAttribute="bottom" secondItem="hws-tw-yOb" secondAttribute="bottom" constant="30" id="dyi-Cq-LdM"/>
                                     <constraint firstItem="52i-TM-Ort" firstAttribute="centerX" secondItem="BRw-vq-2Tl" secondAttribute="centerX" id="gXx-au-eEl"/>
                                     <constraint firstItem="52i-TM-Ort" firstAttribute="top" secondItem="BRw-vq-2Tl" secondAttribute="top" constant="25" id="iac-f6-WaR"/>
