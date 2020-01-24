@@ -38,6 +38,7 @@ class UserCoreDataService: BaseCoreDataService {
         user.surname = authUser.lastName
         user.city = profile.city
         user.country = profile.country
+        user.isSuperuser = authUser.isSuperuser
         if let birthday = profile.date {
             user.birthday = UserCoreDataService.dateFormatter.date(from: birthday)
         }

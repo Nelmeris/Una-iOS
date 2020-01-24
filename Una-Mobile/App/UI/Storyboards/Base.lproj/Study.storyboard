@@ -33,15 +33,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" allowsEditingTextAttributes="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVs-He-1dT">
-                                <rect key="frame" x="25" y="231" width="325" height="347"/>
+                                <rect key="frame" x="20" y="206" width="335" height="472"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</string>
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="24" name="Lato-Regular"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <font key="NSFont" size="23" name="Lato-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -53,14 +53,14 @@
                         <constraints>
                             <constraint firstItem="POa-jD-O1H" firstAttribute="trailing" secondItem="bzV-jG-7cI" secondAttribute="trailing" constant="20" id="5Ho-Y9-TPa"/>
                             <constraint firstItem="Z9Z-O9-yRp" firstAttribute="leading" secondItem="vkL-fm-UC4" secondAttribute="leadingMargin" id="AsA-zP-isN"/>
-                            <constraint firstItem="zVs-He-1dT" firstAttribute="top" secondItem="bzV-jG-7cI" secondAttribute="bottom" constant="125" id="Q86-uZ-Au1"/>
+                            <constraint firstItem="zVs-He-1dT" firstAttribute="top" secondItem="bzV-jG-7cI" secondAttribute="bottom" constant="100" id="Q86-uZ-Au1"/>
                             <constraint firstItem="Z9Z-O9-yRp" firstAttribute="trailing" secondItem="vkL-fm-UC4" secondAttribute="trailingMargin" id="Qzu-5q-tqz"/>
-                            <constraint firstItem="POa-jD-O1H" firstAttribute="bottom" secondItem="zVs-He-1dT" secondAttribute="bottom" constant="200" id="V9U-Gd-uXX"/>
+                            <constraint firstItem="POa-jD-O1H" firstAttribute="bottom" secondItem="zVs-He-1dT" secondAttribute="bottom" constant="100" id="V9U-Gd-uXX"/>
                             <constraint firstItem="bzV-jG-7cI" firstAttribute="leading" secondItem="POa-jD-O1H" secondAttribute="leading" constant="20" id="XKs-bL-V1D"/>
                             <constraint firstItem="Z9Z-O9-yRp" firstAttribute="top" secondItem="POa-jD-O1H" secondAttribute="top" constant="30" id="hs3-qE-d57"/>
-                            <constraint firstItem="POa-jD-O1H" firstAttribute="trailing" secondItem="zVs-He-1dT" secondAttribute="trailing" constant="25" id="qrO-Gl-Gmz"/>
+                            <constraint firstItem="POa-jD-O1H" firstAttribute="trailing" secondItem="zVs-He-1dT" secondAttribute="trailing" constant="20" id="qrO-Gl-Gmz"/>
                             <constraint firstItem="bzV-jG-7cI" firstAttribute="top" secondItem="Z9Z-O9-yRp" secondAttribute="bottom" constant="10" id="tOb-kw-PGH"/>
-                            <constraint firstItem="zVs-He-1dT" firstAttribute="leading" secondItem="POa-jD-O1H" secondAttribute="leading" constant="25" id="vWJ-tI-8Ch"/>
+                            <constraint firstItem="zVs-He-1dT" firstAttribute="leading" secondItem="POa-jD-O1H" secondAttribute="leading" constant="20" id="vWJ-tI-8Ch"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="POa-jD-O1H"/>
                         <userDefinedRuntimeAttributes>
@@ -332,7 +332,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AwK-dj-Ewp" customClass="GradientView" customModule="Una" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="375" height="649"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uE3-8g-P55">
                                         <rect key="frame" x="12" y="146.33333333333334" width="351" height="2"/>
@@ -360,7 +360,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qf9-8V-5Jn">
-                                        <rect key="frame" x="10" y="219.33333333333329" width="355" height="384.66666666666674"/>
+                                        <rect key="frame" x="10" y="219.33333333333329" width="355" height="402.66666666666674"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LessonPartTableViewCellReusable" id="SaB-1u-ZOa" customClass="LessonPartTableViewCell" customModule="Una" customModuleProvider="target">
@@ -509,7 +509,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJg-AR-swz" customClass="DesignableButton" customModule="Una" customModuleProvider="target">
-                                <rect key="frame" x="73" y="708" width="229" height="50"/>
+                                <rect key="frame" x="100" y="726" width="175" height="32"/>
                                 <color key="backgroundColor" red="0.29019607843137252" green="0.27450980392156865" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                 <state key="normal" title="ПРОДОЛЖИТЬ УРОК">
@@ -644,7 +644,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCy-pn-S1l" customClass="DesignableButton" customModule="Una" customModuleProvider="target">
-                                        <rect key="frame" x="65" y="521" width="245" height="50"/>
+                                        <rect key="frame" x="104" y="521" width="167" height="30"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="ВЕРНУТЬСЯ К СПИСКУ">
                                             <color key="titleColor" name="TextColor"/>
@@ -654,7 +654,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pa1-1m-Zze">
-                                        <rect key="frame" x="119.66666666666669" y="591" width="136" height="35"/>
+                                        <rect key="frame" x="119.66666666666669" y="571" width="136" height="35"/>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Пройти еще раз">

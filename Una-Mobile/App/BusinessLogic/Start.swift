@@ -15,10 +15,11 @@ class Start {
         BaseUIOperation.queue.maxConcurrentOperationCount = 1
         BaseDatabaseOperation.queue.maxConcurrentOperationCount = 1
         BaseBackendOperation.queue.maxConcurrentOperationCount = 1
-        print(BaseCoreDataService.persistentContainer.persistentStoreDescriptions.first?.url ?? "Ссылка на базу отсутствует")
-        AuthManager.shared.logout()
-        UserDefaults.standard.removeObject(forKey: isWelcomeKey)
-        clearDatabase()
+        let coreDataURL = BaseCoreDataService.persistentContainer.persistentStoreDescriptions.first?.url?.absoluteString
+        print("CoreData URL: \(coreDataURL ?? "NULL")")
+//        AuthManager.shared.logout()
+//        UserDefaults.standard.removeObject(forKey: isWelcomeKey)
+//        clearDatabase()
     }
     
     private func clearDatabase() {

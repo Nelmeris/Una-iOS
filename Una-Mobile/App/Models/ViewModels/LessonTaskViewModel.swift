@@ -29,7 +29,7 @@ struct LessonTaskViewModel {
     private mutating func createAttributedText() {
         var range = NSRange(location: 0, length: text.count)
         attributedText.addAttributes([
-            .font: UIFont(name: "Lato", size: 24)!],
+            .font: UIFont(name: "Lato", size: 23)!],
                                      range: range)
         
         for substring in substrings {

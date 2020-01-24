@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Eab-uS-ra6">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,7 +11,7 @@
         <!--Welcome Page View Controller-->
         <scene sceneID="61w-vX-hJn">
             <objects>
-                <pageViewController storyboardIdentifier="Page" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="none" id="Eab-uS-ra6" customClass="WelcomePageViewController" customModule="Юна" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="Page" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="none" id="Eab-uS-ra6" customClass="WelcomePageViewController" customModule="Una" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ea2-dK-vl5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -57,7 +56,7 @@
                             <pageControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="haJ-Mz-zAG">
                                 <rect key="frame" x="179.5" y="815" width="55" height="37"/>
                                 <color key="pageIndicatorTintColor" name="AdditionalTextColor"/>
-                                <color key="currentPageIndicatorTintColor" name="UnselectedColor"/>
+                                <color key="currentPageIndicatorTintColor" name="SecondColor"/>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -120,7 +119,7 @@
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="vJy-uq-CsQ">
                                 <rect key="frame" x="179.5" y="815" width="55" height="37"/>
                                 <color key="pageIndicatorTintColor" name="AdditionalTextColor"/>
-                                <color key="currentPageIndicatorTintColor" name="UnselectedColor"/>
+                                <color key="currentPageIndicatorTintColor" name="SecondColor"/>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -148,7 +147,7 @@
         <!--Last Welcome View Controller-->
         <scene sceneID="YdT-uv-3x2">
             <objects>
-                <viewController storyboardIdentifier="Welcome4" id="oH8-nO-ra2" customClass="LastWelcomeViewController" customModule="Юна" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Welcome4" id="oH8-nO-ra2" customClass="LastWelcomeViewController" customModule="Una" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YDI-AN-Ir5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -182,10 +181,10 @@
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" currentPage="3" translatesAutoresizingMaskIntoConstraints="NO" id="4oa-az-jwg">
                                 <rect key="frame" x="179.5" y="815" width="55" height="37"/>
                                 <color key="pageIndicatorTintColor" name="AdditionalTextColor"/>
-                                <color key="currentPageIndicatorTintColor" name="UnselectedColor"/>
+                                <color key="currentPageIndicatorTintColor" name="SecondColor"/>
                             </pageControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2D3-Yp-tYo" customClass="DesignableButton" customModule="Юна" customModuleProvider="target">
-                                <rect key="frame" x="153.5" y="734" width="107" height="41"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2D3-Yp-tYo" customClass="DesignableButton" customModule="Una" customModuleProvider="target">
+                                <rect key="frame" x="149.5" y="725" width="115" height="50"/>
                                 <color key="backgroundColor" name="MainColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Начать">
@@ -220,7 +219,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n35-46-yve" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <customObject id="8sQ-8J-Cxv" customClass="WelcomeRouter" customModule="Юна" customModuleProvider="target"/>
+                <customObject id="8sQ-8J-Cxv" customClass="WelcomeRouter" customModule="Una" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="180" y="788"/>
         </scene>
@@ -261,7 +260,7 @@
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="weU-Qp-95K">
                                 <rect key="frame" x="179.5" y="815" width="55" height="37"/>
                                 <color key="pageIndicatorTintColor" name="AdditionalTextColor"/>
-                                <color key="currentPageIndicatorTintColor" name="UnselectedColor"/>
+                                <color key="currentPageIndicatorTintColor" name="SecondColor"/>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -293,19 +292,19 @@
         <image name="Welcome3" width="155" height="155"/>
         <image name="Welcome4" width="153" height="153"/>
         <namedColor name="AdditionalTextColor">
-            <color red="0.75686274509803919" green="0.71372549019607845" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.75700002908706665" green="0.71399998664855957" blue="0.71399998664855957" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MainColor">
+            <color red="0.92199999094009399" green="0.32199999690055847" blue="0.33300000429153442" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MainColor">
             <color red="0.92156862745098034" green="0.32156862745098042" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="MainColor">
-            <color red="0.92156862745098034" green="0.32156862745098042" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="SecondColor">
+            <color red="0.21600000560283661" green="0.27099999785423279" blue="0.34900000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TextColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="UnselectedColor">
-            <color red="0.36862745098039218" green="0.36470588235294116" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>
