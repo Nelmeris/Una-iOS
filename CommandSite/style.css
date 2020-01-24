@@ -1,0 +1,39 @@
+.header-brown {
+    background-color: #EB5255;
+}
+
+.nav-link {
+    color: #ededed;
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+.card-header {
+    background: #EB5255;
+    color: white;
+}
+
+.avatar {
+    width: 10%;
+    border-radius: 100%;
+}
+
+.position {
+    color: #616161;
+}
+
+.logo {
+    width: 30%;
+}
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+    margin-top: 0;
+}
